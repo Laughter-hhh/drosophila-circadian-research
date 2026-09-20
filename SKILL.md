@@ -58,7 +58,7 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 - 对包含多个 cell/ROI/trace 的嵌套数据做 biological-unit 聚合与 cluster bootstrap：读取 `references/nested-cosinor.md`，运行 `scripts/analyze_nested_cosinor.py`；先按 `biological_replicate_id × time` 聚合，不得把下层观测当成独立动物，输出仍需标注为探索性且不替代 mixed-effects model。
 - 准备 formal mixed-effects handoff：读取 `references/mixed-model-handoff.md`，运行 `scripts/prepare_mixed_model_input.py`；仅当 manifest 为 `ready_for_mixed_model` 时运行 `scripts/emit_mixed_model_templates.py`，并在有可用统计运行时后再拟合，缺失运行时必须标记 `blocked`。
 - 检查 formal mixed-effects runtime：运行 `scripts/check_mixed_model_runtime.py`；该检查不安装依赖、不修改环境，只报告可用后端，所有拟合前仍需 ready manifest、收敛诊断和预先定义的 contrasts。
-- 审计候选证据表的来源、评分字段和淘汰理由：运行 `scripts/validate_candidate_evidence.py` 后再运行 `scripts/score_candidates.py`。
+- 审计候选证据表的来源、目标细胞亚型、评分字段和淘汰理由：运行 `scripts/validate_candidate_evidence.py` 后，按本任务的每个目标群运行 `scripts/score_candidates.py` 并指定一个或多个 `--target-cell`。证据必须带 `evidence_target_cells`；宽泛 `LNv` 不得自动等同于 s-/l-LNv，DN1p 也不得代表全部 DN；无可用评分时不报告虚假的 Top 候选。
 - 建立或审计文献/数据库检索证据链：读取 `references/evidence-search-log-schema.md`，运行 `scripts/validate_evidence_search_log.py`；每条证据必须记录查询、数据库、日期、物种、目标细胞、assay、readout、证据标签、来源标识和纳入/排除决定，不能只保留不可回溯的 URL 串。
 - 设计或审核信息增益预实验：读取 `references/information-gain-pilot-schema.md`，运行 `scripts/validate_information_gain_pilot.py`；必须写出缺失事实、最小 readout、experimental unit、对照、成人期边界和 go/no-go 规则，未核实的药物或 stock 只能标为待审计。
 - 审核电生理、成像、表达或行为数据的实验元数据：读取 `references/experimental-metadata-gate.md`，运行 `scripts/validate_experiment_metadata.py --assay ... --stage ...`；在节律或药理拟合前先核对 cell identity、sex、age、temperature、ZT/CT、batch、biological replicate 和技术重复层级。

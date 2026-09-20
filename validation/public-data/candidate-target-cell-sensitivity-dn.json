@@ -5,16 +5,61 @@
     "genetic_tools_priority"
   ],
   "target_cells_requested": [
-    "s-LNv",
-    "l-LNv",
-    "LNd",
     "DN"
   ],
-  "ranking_status": "insufficient_scored_evidence",
+  "ranking_status": "scored_ranking_available",
   "rankings": {
-    "default": [],
-    "expression_ephys_priority": [],
-    "genetic_tools_priority": []
+    "default": [
+      "na",
+      "Ork1",
+      "slo",
+      "Shaw",
+      "Shal",
+      "Irk1",
+      "para",
+      "Sh",
+      "trpl",
+      "Shab",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "Irk2",
+      "cac",
+      "sei"
+    ],
+    "expression_ephys_priority": [
+      "na",
+      "Ork1",
+      "slo",
+      "Shaw",
+      "Shal",
+      "Irk1",
+      "para",
+      "Sh",
+      "trpl",
+      "Shab",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "Irk2",
+      "cac",
+      "sei"
+    ],
+    "genetic_tools_priority": [
+      "na",
+      "Ork1",
+      "slo",
+      "Shaw",
+      "Shal",
+      "Irk1",
+      "para",
+      "trpl",
+      "Sh",
+      "Shab",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "Irk2",
+      "cac",
+      "sei"
+    ]
   },
   "shortlist_gate_pass": {
     "default": [],
@@ -27,57 +72,9 @@
     "genetic_tools_priority": []
   },
   "unscored_candidates": {
-    "default": [
-      "Sh",
-      "Shab",
-      "Shaw",
-      "Shal",
-      "cac",
-      "Ca-alpha1D",
-      "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
-      "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
-    ],
-    "expression_ephys_priority": [
-      "Sh",
-      "Shab",
-      "Shaw",
-      "Shal",
-      "cac",
-      "Ca-alpha1D",
-      "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
-      "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
-    ],
-    "genetic_tools_priority": [
-      "Sh",
-      "Shab",
-      "Shaw",
-      "Shal",
-      "cac",
-      "Ca-alpha1D",
-      "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
-      "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
-    ]
+    "default": [],
+    "expression_ephys_priority": [],
+    "genetic_tools_priority": []
   },
   "top_candidates": {
     "default": null,
@@ -90,9 +87,9 @@
     "genetic_tools_priority": []
   },
   "top_candidate_status": {
-    "default": "insufficient_scored_evidence",
-    "expression_ephys_priority": "insufficient_scored_evidence",
-    "genetic_tools_priority": "insufficient_scored_evidence"
+    "default": "no_target_scoped_scored_candidates",
+    "expression_ephys_priority": "no_target_scoped_scored_candidates",
+    "genetic_tools_priority": "no_target_scoped_scored_candidates"
   },
   "top_candidate_stable": null,
   "ranking_rule": "rank all scored evidence rows for the long list by target-specific directness, coverage_adjusted_score = score * weighted_coverage, coverage, and raw score; choose Top only among exact-gated or conditional-directness target-scoped rows; unscored, partial-coverage, and mismatched rows cannot become Top; tied tops are reported without an arbitrary single winner",

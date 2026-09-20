@@ -6,9 +6,9 @@
     {
       "run_id": "build-gse157504-candidate-evidence",
       "returncode": 0,
-      "stdout_sha256": "4d86bcdef42bf37c57b0ca5cd38220d2a8672f75aca215e671cedc7138f414c5",
+      "stdout_sha256": "9bdd4e08a84b893f99d228cad6a5966f788d14b3201fcc80138afa8cea42cd32",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_preview": ", behavior causality, or animal-level inference. Missing UMI/call rows do not prove biological absence or arrhythmicity.\", \"search_date\": \"2026-09-20\", \"input_sha256\": {\"candidate_list\": \"ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce\", \"feature_status\": \"8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a\", \"group_detection\": \"5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857\", \"rhythm_details\": \"a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1\"}, \"output_paths\": {\"candidate_evidence\": \"validation/public-data/GSE157504_candidate_evidence_handoff.csv\", \"evidence_search_log\": \"validation/public-data/GSE157504_candidate_evidence_search_log.csv\", \"report\": \"validation/public-data/GSE157504_candidate_evidence_handoff_report.json\"}, \"output_sha256\": {\"candidate_evidence\": \"6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de\", \"evidence_search_log\": \"f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8\"}}\n",
+      "stdout_preview": ", behavior causality, or animal-level inference. Missing UMI/call rows do not prove biological absence or arrhythmicity.\", \"search_date\": \"2026-09-20\", \"input_sha256\": {\"candidate_list\": \"ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce\", \"feature_status\": \"8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a\", \"group_detection\": \"5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857\", \"rhythm_details\": \"a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1\"}, \"output_paths\": {\"candidate_evidence\": \"validation/public-data/GSE157504_candidate_evidence_handoff.csv\", \"evidence_search_log\": \"validation/public-data/GSE157504_candidate_evidence_search_log.csv\", \"report\": \"validation/public-data/GSE157504_candidate_evidence_handoff_report.json\"}, \"output_sha256\": {\"candidate_evidence\": \"7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4\", \"evidence_search_log\": \"1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7\"}}\n",
       "stderr_preview": ""
     },
     {
@@ -40,22 +40,22 @@
     {
       "run_id": "build-gse157504-candidate-evidence",
       "path": "validation/public-data/GSE157504_candidate_evidence_handoff.csv",
-      "expected_sha256": "6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de",
-      "observed_sha256": "6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de",
+      "expected_sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+      "observed_sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
       "status": "replay_hash_verified"
     },
     {
       "run_id": "build-gse157504-candidate-evidence",
       "path": "validation/public-data/GSE157504_candidate_evidence_search_log.csv",
-      "expected_sha256": "f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8",
-      "observed_sha256": "f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8",
+      "expected_sha256": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7",
+      "observed_sha256": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7",
       "status": "replay_hash_verified"
     },
     {
       "run_id": "build-gse157504-candidate-evidence",
       "path": "validation/public-data/GSE157504_candidate_evidence_handoff_report.json",
-      "expected_sha256": "1ac3f0d1dfedd59452c7b13c20b3c9a0f046b15ada2693dfa714dd5ad10da180",
-      "observed_sha256": "1ac3f0d1dfedd59452c7b13c20b3c9a0f046b15ada2693dfa714dd5ad10da180",
+      "expected_sha256": "5762451588d294102fec32074ce20ed75b5a2aaedc5ca07d1721a3a1f57e7907",
+      "observed_sha256": "5762451588d294102fec32074ce20ed75b5a2aaedc5ca07d1721a3a1f57e7907",
       "status": "replay_hash_verified"
     },
     {
@@ -75,15 +75,15 @@
     {
       "run_id": "score-gse157504-evidence-readiness-diagnostic",
       "path": "validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv",
-      "expected_sha256": "3de77f31b7df36f1446c4aadb47320a905700c07ebc47157c21ebf39c1b8c0fd",
-      "observed_sha256": "3de77f31b7df36f1446c4aadb47320a905700c07ebc47157c21ebf39c1b8c0fd",
+      "expected_sha256": "ffba519aef8661a54186e88fed5e617fdd9b01f9a604c1f8ff6457fa0b3e4bf8",
+      "observed_sha256": "ffba519aef8661a54186e88fed5e617fdd9b01f9a604c1f8ff6457fa0b3e4bf8",
       "status": "replay_hash_verified"
     },
     {
       "run_id": "score-gse157504-evidence-readiness-diagnostic",
       "path": "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
-      "expected_sha256": "e9deea3de03753a3d6fbb09ed9d1dd3451b04dc5069f3ba9f87a9bef1dc71fbf",
-      "observed_sha256": "e9deea3de03753a3d6fbb09ed9d1dd3451b04dc5069f3ba9f87a9bef1dc71fbf",
+      "expected_sha256": "21388edc99992742e0f45bd7e4234a5728a1dbad494600d14522ebc561c87c26",
+      "observed_sha256": "21388edc99992742e0f45bd7e4234a5728a1dbad494600d14522ebc561c87c26",
       "status": "replay_hash_verified"
     }
   ],
@@ -92,7 +92,7 @@
   "manifest_validation": {
     "status": "verified_public_dataset_manifest",
     "formal_status": "online_source_content_verified",
-    "manifest_id": "GSE157504-candidate-evidence-bridge-20260920-readout-scope",
+    "manifest_id": "GSE157504-candidate-evidence-bridge-20260920-target-cell-gated",
     "dataset_id": "GSE157504",
     "accession": "GSE157504",
     "n_files": 11,
@@ -133,24 +133,24 @@
       {
         "path": "validation/public-data/GSE157504_candidate_evidence_handoff.csv",
         "role": "derived",
-        "expected_sha256": "6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de",
-        "observed_sha256": "6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de",
-        "size_bytes": 22608,
+        "expected_sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+        "observed_sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+        "size_bytes": 22960,
         "status": "hash_verified"
       },
       {
         "path": "validation/public-data/GSE157504_candidate_evidence_search_log.csv",
         "role": "derived",
-        "expected_sha256": "f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8",
-        "observed_sha256": "f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8",
-        "size_bytes": 27956,
+        "expected_sha256": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7",
+        "observed_sha256": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7",
+        "size_bytes": 28410,
         "status": "hash_verified"
       },
       {
         "path": "validation/public-data/GSE157504_candidate_evidence_handoff_report.json",
         "role": "derived",
-        "expected_sha256": "1ac3f0d1dfedd59452c7b13c20b3c9a0f046b15ada2693dfa714dd5ad10da180",
-        "observed_sha256": "1ac3f0d1dfedd59452c7b13c20b3c9a0f046b15ada2693dfa714dd5ad10da180",
+        "expected_sha256": "5762451588d294102fec32074ce20ed75b5a2aaedc5ca07d1721a3a1f57e7907",
+        "observed_sha256": "5762451588d294102fec32074ce20ed75b5a2aaedc5ca07d1721a3a1f57e7907",
         "size_bytes": 1750,
         "status": "hash_verified"
       },
@@ -173,17 +173,17 @@
       {
         "path": "validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv",
         "role": "derived",
-        "expected_sha256": "3de77f31b7df36f1446c4aadb47320a905700c07ebc47157c21ebf39c1b8c0fd",
-        "observed_sha256": "3de77f31b7df36f1446c4aadb47320a905700c07ebc47157c21ebf39c1b8c0fd",
-        "size_bytes": 26298,
+        "expected_sha256": "ffba519aef8661a54186e88fed5e617fdd9b01f9a604c1f8ff6457fa0b3e4bf8",
+        "observed_sha256": "ffba519aef8661a54186e88fed5e617fdd9b01f9a604c1f8ff6457fa0b3e4bf8",
+        "size_bytes": 27517,
         "status": "hash_verified"
       },
       {
         "path": "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
         "role": "derived",
-        "expected_sha256": "e9deea3de03753a3d6fbb09ed9d1dd3451b04dc5069f3ba9f87a9bef1dc71fbf",
-        "observed_sha256": "e9deea3de03753a3d6fbb09ed9d1dd3451b04dc5069f3ba9f87a9bef1dc71fbf",
-        "size_bytes": 2100,
+        "expected_sha256": "21388edc99992742e0f45bd7e4234a5728a1dbad494600d14522ebc561c87c26",
+        "observed_sha256": "21388edc99992742e0f45bd7e4234a5728a1dbad494600d14522ebc561c87c26",
+        "size_bytes": 3078,
         "status": "hash_verified"
       }
     ],

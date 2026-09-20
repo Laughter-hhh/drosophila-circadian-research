@@ -20,7 +20,7 @@
     "report": "validation/public-data/GSE157504_candidate_evidence_handoff_report.json"
   },
   "output_sha256": {
-    "candidate_evidence": "6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de",
-    "evidence_search_log": "f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8"
+    "candidate_evidence": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+    "evidence_search_log": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7"
   }
 }

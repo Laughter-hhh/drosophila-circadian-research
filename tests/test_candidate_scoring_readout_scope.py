@@ -14,10 +14,11 @@ class CandidateScoringReadoutScopeTests(unittest.TestCase):
             "candidate": "Shab",
             "evidence_label": "direct",
             "target_cell_scope": "direct_target_neuron",
+            "evidence_target_cells": "s-LNv",
             "assay": "single-cell RNA-seq raw UMI detection",
             "readout_match": "expression_or_localization",
         }
-        result = score_row(row)
+        result = score_row(row, target_cells=["s-LNv"])
         self.assertEqual(result["directness_gate"], "pass")
         self.assertEqual(result["readout_domain"], "molecular_expression_or_localization")
         self.assertIn("does not establish channel current", result["directness_basis"])
@@ -30,10 +31,11 @@ class CandidateScoringReadoutScopeTests(unittest.TestCase):
             "candidate": "Shal",
             "evidence_label": "direct",
             "target_cell_scope": "direct_target_neuron",
+            "evidence_target_cells": "s-LNv",
             "assay": "whole-cell electrophysiology",
             "readout_match": "membrane_potential_or_current",
         }
-        result = score_row(row)
+        result = score_row(row, target_cells=["s-LNv"])
         self.assertEqual(result["readout_domain"], "electrophysiology_or_membrane_potential_readout")
         self.assertIn("candidate-specific causality still requires", result["directness_basis"])
         self.assertIn("perturbation", result["directness_basis"])
@@ -43,9 +45,10 @@ class CandidateScoringReadoutScopeTests(unittest.TestCase):
             "candidate": "Shab",
             "evidence_label": "direct",
             "target_cell_scope": "direct_target_neuron",
+            "evidence_target_cells": "s-LNv",
             "assay": "single-cell RNA-seq",
             "readout_match": "expression_or_localization",
-        }])
+        }], target_cells=["s-LNv"])
         self.assertIn("transcript/localization evidence is not channel-function evidence", result["shortlist_gate_rule"])
         self.assertIn("perturbation and controls", result["shortlist_gate_rule"])
 

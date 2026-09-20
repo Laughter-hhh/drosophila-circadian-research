@@ -5,96 +5,117 @@
     "genetic_tools_priority"
   ],
   "target_cells_requested": [
-    "s-LNv",
-    "l-LNv",
-    "LNd",
-    "DN"
+    "l-LNv"
   ],
-  "ranking_status": "insufficient_scored_evidence",
+  "ranking_status": "scored_ranking_available",
   "rankings": {
-    "default": [],
-    "expression_ephys_priority": [],
-    "genetic_tools_priority": []
-  },
-  "shortlist_gate_pass": {
-    "default": [],
-    "expression_ephys_priority": [],
-    "genetic_tools_priority": []
-  },
-  "conditional_directness": {
-    "default": [],
-    "expression_ephys_priority": [],
-    "genetic_tools_priority": []
-  },
-  "unscored_candidates": {
     "default": [
-      "Sh",
-      "Shab",
+      "na",
       "Shaw",
       "Shal",
-      "cac",
+      "Irk1",
+      "Ork1",
+      "slo",
+      "para",
+      "Sh",
+      "trpl",
+      "Shab",
       "Ca-alpha1D",
       "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
       "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
+      "cac",
+      "sei"
     ],
     "expression_ephys_priority": [
-      "Sh",
-      "Shab",
+      "na",
       "Shaw",
       "Shal",
-      "cac",
+      "Irk1",
+      "Ork1",
+      "slo",
+      "para",
+      "Sh",
+      "trpl",
+      "Shab",
       "Ca-alpha1D",
       "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
       "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
+      "cac",
+      "sei"
     ],
     "genetic_tools_priority": [
-      "Sh",
-      "Shab",
+      "na",
       "Shaw",
       "Shal",
-      "cac",
+      "Irk1",
+      "Ork1",
+      "slo",
+      "para",
+      "trpl",
+      "Sh",
+      "Shab",
       "Ca-alpha1D",
       "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
       "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
+      "cac",
+      "sei"
     ]
   },
-  "top_candidates": {
-    "default": null,
-    "expression_ephys_priority": null,
-    "genetic_tools_priority": null
+  "shortlist_gate_pass": {
+    "default": [
+      "na",
+      "Shaw",
+      "Shal"
+    ],
+    "expression_ephys_priority": [
+      "na",
+      "Shaw",
+      "Shal"
+    ],
+    "genetic_tools_priority": [
+      "na",
+      "Shaw",
+      "Shal"
+    ]
   },
-  "top_candidate_ties": {
+  "conditional_directness": {
+    "default": [
+      "Irk1"
+    ],
+    "expression_ephys_priority": [
+      "Irk1"
+    ],
+    "genetic_tools_priority": [
+      "Irk1"
+    ]
+  },
+  "unscored_candidates": {
     "default": [],
     "expression_ephys_priority": [],
     "genetic_tools_priority": []
   },
-  "top_candidate_status": {
-    "default": "insufficient_scored_evidence",
-    "expression_ephys_priority": "insufficient_scored_evidence",
-    "genetic_tools_priority": "insufficient_scored_evidence"
+  "top_candidates": {
+    "default": "na",
+    "expression_ephys_priority": "na",
+    "genetic_tools_priority": "na"
   },
-  "top_candidate_stable": null,
+  "top_candidate_ties": {
+    "default": [
+      "na"
+    ],
+    "expression_ephys_priority": [
+      "na"
+    ],
+    "genetic_tools_priority": [
+      "na"
+    ]
+  },
+  "top_candidate_status": {
+    "default": "target_scoped_top_available",
+    "expression_ephys_priority": "target_scoped_top_available",
+    "genetic_tools_priority": "target_scoped_top_available"
+  },
+  "top_candidate_stable": true,
   "ranking_rule": "rank all scored evidence rows for the long list by target-specific directness, coverage_adjusted_score = score * weighted_coverage, coverage, and raw score; choose Top only among exact-gated or conditional-directness target-scoped rows; unscored, partial-coverage, and mismatched rows cannot become Top; tied tops are reported without an arbitrary single winner",
   "shortlist_gate_rule": "pass requires direct target-neuron evidence (direct label, target_cell_scope=direct_target_neuron, named assay, matched readout), exact evidence_target_cells coverage of every requested --target-cell, coverage >= 0.5, and observed_dimensions >= 3; without a requested target cell no direct shortlist pass is assigned; directness is specific to the matched readout: transcript/localization evidence is not channel-function evidence, and current/membrane-potential observations alone do not establish candidate-specific causality without perturbation and controls",
   "inference_warning": "Ranking is an evidence triage aid, not a biological conclusion; source support and reagent identity require independent audit."

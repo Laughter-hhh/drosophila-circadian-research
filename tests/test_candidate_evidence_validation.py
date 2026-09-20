@@ -11,7 +11,7 @@ from scripts.validate_candidate_evidence import validate
 
 
 FIELDS = [
-    "candidate", "class", "organism", "target_cell_scope", "assay", "readout_match", "evidence_label",
+    "candidate", "class", "organism", "target_cell_scope", "evidence_target_cells", "assay", "readout_match", "evidence_label",
     "expression", "electrophysiology", "genetic_tools", "class_match", "rhythmic_evidence", "fly_causal", "cross_species",
     "keep_drop_reason", "sources", "confidence", "evidence_notes",
 ]
@@ -30,7 +30,7 @@ class CandidateEvidenceValidationTests(unittest.TestCase):
         row = {field: "NA" for field in FIELDS}
         row.update({
             "candidate": "Shaw", "class": "gated_Kv3", "organism": "Drosophila melanogaster",
-            "target_cell_scope": "direct_target_neuron", "assay": "whole-cell electrophysiology",
+            "target_cell_scope": "direct_target_neuron", "evidence_target_cells": "s-LNv", "assay": "whole-cell electrophysiology",
             "readout_match": "membrane_potential_or_current", "evidence_label": "direct",
             "expression": "3", "sources": "synthetic-source", "confidence": "high",
             "keep_drop_reason": "retain for pilot", "evidence_notes": "Conclusion|direct target-neuron current evidence.",
@@ -67,6 +67,17 @@ class CandidateEvidenceValidationTests(unittest.TestCase):
             path.unlink(missing_ok=True)
         self.assertEqual(result["status"], "invalid_candidate_evidence_table")
         self.assertTrue(any(issue["type"] == "direct_label_without_target_assay_readout" for issue in result["issues"]))
+
+    def test_direct_label_requires_named_evidence_target_cells(self):
+        row = self._valid_row()
+        row["evidence_target_cells"] = "unverified"
+        path = self._write(row)
+        try:
+            result = validate(path)
+        finally:
+            path.unlink(missing_ok=True)
+        self.assertEqual(result["status"], "invalid_candidate_evidence_table")
+        self.assertTrue(any(issue["type"] == "direct_label_without_evidence_target_cells" for issue in result["issues"]))
 
     def test_invalid_evidence_label_is_rejected(self):
         row = self._valid_row()

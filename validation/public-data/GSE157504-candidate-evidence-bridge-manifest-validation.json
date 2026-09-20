@@ -1,7 +1,7 @@
 {
   "status": "verified_public_dataset_manifest",
   "formal_status": "online_source_content_verified",
-  "manifest_id": "GSE157504-candidate-evidence-bridge-20260920-readout-scope",
+  "manifest_id": "GSE157504-candidate-evidence-bridge-20260920-target-cell-gated",
   "dataset_id": "GSE157504",
   "accession": "GSE157504",
   "n_files": 11,
@@ -42,24 +42,24 @@
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_handoff.csv",
       "role": "derived",
-      "expected_sha256": "6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de",
-      "observed_sha256": "6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de",
-      "size_bytes": 22608,
+      "expected_sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+      "observed_sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+      "size_bytes": 22960,
       "status": "hash_verified"
     },
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_search_log.csv",
       "role": "derived",
-      "expected_sha256": "f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8",
-      "observed_sha256": "f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8",
-      "size_bytes": 27956,
+      "expected_sha256": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7",
+      "observed_sha256": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7",
+      "size_bytes": 28410,
       "status": "hash_verified"
     },
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_handoff_report.json",
       "role": "derived",
-      "expected_sha256": "1ac3f0d1dfedd59452c7b13c20b3c9a0f046b15ada2693dfa714dd5ad10da180",
-      "observed_sha256": "1ac3f0d1dfedd59452c7b13c20b3c9a0f046b15ada2693dfa714dd5ad10da180",
+      "expected_sha256": "5762451588d294102fec32074ce20ed75b5a2aaedc5ca07d1721a3a1f57e7907",
+      "observed_sha256": "5762451588d294102fec32074ce20ed75b5a2aaedc5ca07d1721a3a1f57e7907",
       "size_bytes": 1750,
       "status": "hash_verified"
     },
@@ -82,17 +82,17 @@
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv",
       "role": "derived",
-      "expected_sha256": "3de77f31b7df36f1446c4aadb47320a905700c07ebc47157c21ebf39c1b8c0fd",
-      "observed_sha256": "3de77f31b7df36f1446c4aadb47320a905700c07ebc47157c21ebf39c1b8c0fd",
-      "size_bytes": 26298,
+      "expected_sha256": "ffba519aef8661a54186e88fed5e617fdd9b01f9a604c1f8ff6457fa0b3e4bf8",
+      "observed_sha256": "ffba519aef8661a54186e88fed5e617fdd9b01f9a604c1f8ff6457fa0b3e4bf8",
+      "size_bytes": 27517,
       "status": "hash_verified"
     },
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
       "role": "derived",
-      "expected_sha256": "e9deea3de03753a3d6fbb09ed9d1dd3451b04dc5069f3ba9f87a9bef1dc71fbf",
-      "observed_sha256": "e9deea3de03753a3d6fbb09ed9d1dd3451b04dc5069f3ba9f87a9bef1dc71fbf",
-      "size_bytes": 2100,
+      "expected_sha256": "21388edc99992742e0f45bd7e4234a5728a1dbad494600d14522ebc561c87c26",
+      "observed_sha256": "21388edc99992742e0f45bd7e4234a5728a1dbad494600d14522ebc561c87c26",
+      "size_bytes": 3078,
       "status": "hash_verified"
     }
   ],

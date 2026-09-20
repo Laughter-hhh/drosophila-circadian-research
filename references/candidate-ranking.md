@@ -20,6 +20,7 @@
 
 - `organism`：证据来自哪个物种；默认候选物种为 *Drosophila melanogaster*。
 - `target_cell_scope`：`direct_target_neuron`、`nearby_clock_neuron`、`indirect_or_unverified` 或 `none_or_unverified`。
+- `evidence_target_cells`：直接实验支持的具体细胞亚型，以分号分隔（如 `s-LNv;l-LNv`、`DN1p`）；混合群记为 `LN_ITP_ambiguous`，无可核实范围记为 `unverified`。
 - `assay`：实际使用的 assay（例如 whole-cell electrophysiology、RNAi、immunostaining、single-cell RNA-seq）。
 - `readout_match`：`membrane_potential_or_current`、`expression_or_localization`、`behavior_only` 或 `none_or_unverified`。
 - `evidence_label`：`direct`、`near_direct`、`indirect` 或 `unverified`。
@@ -27,6 +28,8 @@
 `directness_gate=pass` 只允许同时满足：`evidence_label=direct`、直接目标时钟神经元范围、具名 assay，以及匹配膜电位/电流或表达/定位 readout。`near_direct` 只能得到 `conditional_directness`，用于信息获取或 pilot，不得伪装成直接 Top 候选。`indirect` 与 `unverified` 保留在长名单中，但必须标成需要直接证据。
 
 `directness_gate` 是**readout-specific**，不能跨 readout 解释：`expression_or_localization` 下的 `direct` 仅表示目标细胞中的转录本/表达/定位被直接测量，不等于通道电流、膜电位节律或功能因果证据；`membrane_potential_or_current` 也可能是观察性 readout，若要声称候选通道导致变化，必须核实候选特异扰动、相应对照和 readout。评分输出的 `readout_domain` 与 `directness_basis` 会明确列出当前直接性覆盖的 readout 域。`shortlist_gate` 是证据分流而非功能因果证明。
+
+必须为本次问题用 `--target-cell` 显式指定一个或多个目标亚型。`LNv` 不自动覆盖 `s-LNv`/`l-LNv`；`DN1p` 只覆盖该子集，不能代表全部 `DN`；`LN_ITP_ambiguous` 不映射到纯亚型。只有全部目标均有精确证据覆盖才通过直接匹配，子集覆盖须标记 partial/conditional。若所有评分维度均为 `NA`，应报告 `insufficient_scored_evidence`、空排名与空 Top；并列最高者完整列出，不任意指定赢家。
 
 如果满足 coverage 的直接 gate 候选少于用户要求的 Top 5/Top 10，必须报告“direct-gate 候选不足”，并同时给出 conditional/indirect 候选及其升级实验；不得用间接证据填满直接 Top-K。
 

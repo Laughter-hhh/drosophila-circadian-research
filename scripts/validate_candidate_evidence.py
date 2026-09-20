@@ -20,12 +20,12 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.score_candidates import DIMENSIONS, DIRECTNESS_LABELS, MISSING, READOUT_MATCHES, TARGET_SCOPES, _rating
+from scripts.score_candidates import DIMENSIONS, DIRECTNESS_LABELS, MISSING, READOUT_MATCHES, TARGET_SCOPES, UNVERIFIED_CELL, _rating, parse_cell_tokens
 from scripts.validate_evidence_search_log import validate as validate_search_log
 
 
 REQUIRED = {
-    "candidate", "class", "organism", "target_cell_scope", "assay", "readout_match", "evidence_label",
+    "candidate", "class", "organism", "target_cell_scope", "evidence_target_cells", "assay", "readout_match", "evidence_label",
     "expression", "electrophysiology", "genetic_tools", "class_match", "rhythmic_evidence", "fly_causal", "cross_species",
     "keep_drop_reason", "sources", "confidence", "evidence_notes",
 }
@@ -50,7 +50,7 @@ def _base_validate(rows: list[dict[str, str]], fieldnames: set[str]) -> list[dic
         if candidate in seen:
             issues.append({"line": line_number, "candidate": candidate, "type": "duplicate_candidate"})
         seen.add(candidate)
-        for field in ("class", "organism", "target_cell_scope", "assay", "readout_match", "evidence_label", "keep_drop_reason", "confidence", "evidence_notes"):
+        for field in ("class", "organism", "target_cell_scope", "evidence_target_cells", "assay", "readout_match", "evidence_label", "keep_drop_reason", "confidence", "evidence_notes"):
             if not _present(row.get(field)):
                 issues.append({"line": line_number, "candidate": candidate, "type": f"missing_{field}"})
         target = (row.get("target_cell_scope") or "").strip().lower()
@@ -64,6 +64,13 @@ def _base_validate(rows: list[dict[str, str]], fieldnames: set[str]) -> list[dic
             issues.append({"line": line_number, "candidate": candidate, "type": "invalid_evidence_label", "value": label})
         if label == "direct" and (target != "direct_target_neuron" or not _present(row.get("assay")) or readout not in {"membrane_potential_or_current", "expression_or_localization"}):
             issues.append({"line": line_number, "candidate": candidate, "type": "direct_label_without_target_assay_readout"})
+        try:
+            evidence_cells = parse_cell_tokens(row.get("evidence_target_cells"))
+        except ValueError as exc:
+            evidence_cells = []
+            issues.append({"line": line_number, "candidate": candidate, "type": "invalid_evidence_target_cells", "message": str(exc)})
+        if label == "direct" and (not evidence_cells or evidence_cells == [UNVERIFIED_CELL]):
+            issues.append({"line": line_number, "candidate": candidate, "type": "direct_label_without_evidence_target_cells"})
         observed = 0
         for field in DIMENSIONS:
             try:
@@ -112,14 +119,25 @@ def _apply_search_log_gate(rows: list[dict[str, str]], search_log_path: Path, is
             if not checked:
                 issues.append({"line": line_number, "candidate": candidate, "type": "label_requires_checked_search_log_source", "evidence_label": label})
         if label == "direct":
+            try:
+                candidate_cells = set(parse_cell_tokens(row.get("evidence_target_cells")))
+            except ValueError:
+                candidate_cells = set()
             matching = [
                 log_row for log_row in candidate_logs
                 if (log_row.get("evidence_label") or "").strip().lower() == "direct"
+                and (log_row.get("source_support_status") or "").strip().lower() == "checked"
                 and (log_row.get("target_cell_scope") or "").strip() == (row.get("target_cell_scope") or "").strip()
                 and (log_row.get("readout_match") or "").strip() == (row.get("readout_match") or "").strip()
             ]
-            if not matching:
-                issues.append({"line": line_number, "candidate": candidate, "type": "direct_candidate_not_supported_by_matching_log_scope"})
+            log_cells: set[str] = set()
+            for log_row in matching:
+                try:
+                    log_cells.update(parse_cell_tokens(log_row.get("evidence_target_cells")))
+                except ValueError:
+                    continue
+            if not matching or not candidate_cells or not candidate_cells.issubset(log_cells):
+                issues.append({"line": line_number, "candidate": candidate, "type": "direct_candidate_not_supported_by_matching_log_cells"})
     return log_result
 
 

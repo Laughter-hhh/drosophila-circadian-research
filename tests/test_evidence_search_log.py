@@ -12,7 +12,7 @@ from scripts.validate_evidence_search_log import validate
 
 FIELDS = [
     "record_id", "candidate", "query", "database", "search_date", "source_id", "source_url_or_identifier", "source_type",
-    "organism", "target_cell_scope", "assay", "readout_match", "evidence_label", "claim_type", "source_support_status",
+    "organism", "target_cell_scope", "evidence_target_cells", "assay", "readout_match", "evidence_label", "claim_type", "source_support_status",
     "result_summary", "decision", "decision_reason",
 ]
 
@@ -31,7 +31,7 @@ class EvidenceSearchLogTests(unittest.TestCase):
             "record_id": "rec-001", "candidate": "Shaw", "query": "Shaw LNv circadian current",
             "database": "PubMed", "search_date": "2026-09-06", "source_id": "PMID:31612994",
             "source_url_or_identifier": "https://pubmed.ncbi.nlm.nih.gov/31612994/", "source_type": "primary_paper",
-            "organism": "Drosophila melanogaster", "target_cell_scope": "direct_target_neuron",
+            "organism": "Drosophila melanogaster", "target_cell_scope": "direct_target_neuron", "evidence_target_cells": "s-LNv;l-LNv",
             "assay": "whole-cell electrophysiology", "readout_match": "membrane_potential_or_current",
             "evidence_label": "direct", "claim_type": "conclusion", "source_support_status": "checked",
             "result_summary": "Circadian Shaw current was measured in clock neurons.", "decision": "include",
@@ -59,6 +59,17 @@ class EvidenceSearchLogTests(unittest.TestCase):
         types = {issue["type"] for issue in result["issues"]}
         self.assertIn("direct_label_without_target_assay_readout", types)
         self.assertIn("direct_label_requires_checked_source", types)
+
+    def test_direct_log_requires_named_evidence_target_cells(self):
+        row = self._valid()
+        row["evidence_target_cells"] = "unverified"
+        path = self._write(row)
+        try:
+            result = validate(path)
+        finally:
+            path.unlink(missing_ok=True)
+        self.assertEqual(result["status"], "invalid_evidence_search_log")
+        self.assertTrue(any(issue["type"] == "direct_label_without_evidence_target_cells" for issue in result["issues"]))
 
     def test_unverified_cannot_be_included(self):
         row = self._valid()

@@ -10,10 +10,16 @@ import json
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.score_candidates import UNVERIFIED_CELL, parse_cell_tokens
+
 
 REQUIRED = {
     "record_id", "candidate", "query", "database", "search_date", "source_id", "source_url_or_identifier", "source_type",
-    "organism", "target_cell_scope", "assay", "readout_match", "evidence_label", "claim_type", "source_support_status",
+    "organism", "target_cell_scope", "evidence_target_cells", "assay", "readout_match", "evidence_label", "claim_type", "source_support_status",
     "result_summary", "decision", "decision_reason",
 }
 SOURCE_TYPES = {"primary_paper", "preprint", "review", "FlyBase", "GEO", "stock_database", "other_database"}
@@ -68,6 +74,11 @@ def validate(path: Path) -> dict[str, object]:
         target = (row.get("target_cell_scope") or "").strip()
         if target not in TARGET_SCOPES:
             issues.append({"line": line_number, "record_id": record_id, "type": "invalid_target_cell_scope", "value": target})
+        try:
+            evidence_cells = parse_cell_tokens(row.get("evidence_target_cells"))
+        except ValueError as exc:
+            evidence_cells = []
+            issues.append({"line": line_number, "record_id": record_id, "type": "invalid_evidence_target_cells", "message": str(exc)})
         readout = (row.get("readout_match") or "").strip()
         if readout not in READOUTS:
             issues.append({"line": line_number, "record_id": record_id, "type": "invalid_readout_match", "value": readout})
@@ -85,6 +96,8 @@ def validate(path: Path) -> dict[str, object]:
             issues.append({"line": line_number, "record_id": record_id, "type": "invalid_decision", "value": decision})
         if label == "direct" and (target != "direct_target_neuron" or readout not in {"membrane_potential_or_current", "expression_or_localization"} or not _present(row.get("assay"))):
             issues.append({"line": line_number, "record_id": record_id, "type": "direct_label_without_target_assay_readout"})
+        if label == "direct" and (not evidence_cells or evidence_cells == [UNVERIFIED_CELL]):
+            issues.append({"line": line_number, "record_id": record_id, "type": "direct_label_without_evidence_target_cells"})
         if label == "direct" and support != "checked":
             issues.append({"line": line_number, "record_id": record_id, "type": "direct_label_requires_checked_source"})
         if label == "unverified" and decision == "include":

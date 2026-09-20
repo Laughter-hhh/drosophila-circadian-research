@@ -22,6 +22,9 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET_GROUPS = ("s-LNv", "l-LNv", "LNd", "DN")
+TARGET_SUBGROUPS = ("DN1", "DN1p", "DN1a", "DN2", "DN3")
+TARGET_CELLS = (*TARGET_GROUPS, *TARGET_SUBGROUPS)
+CELL_ORDER = {name: index for index, name in enumerate((*TARGET_GROUPS, *TARGET_SUBGROUPS, "LN_ITP_ambiguous", "unverified"))}
 AMBIGUOUS_GROUPS = {"LN_ITP_ambiguous", "LN_ITP"}
 SOURCE_GEO = "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504"
 SOURCE_PAPER = "https://elifesciences.org/articles/63056"
@@ -35,13 +38,15 @@ GROUP_FIELDS = (
 )
 RHYTHM_FIELDS = ("candidate", "priority_class", "condition", "cluster", "author_rhythm_class", "F24_score", "phase_F24_reported", "JTK_BH_q_value")
 EVIDENCE_FIELDS = (
-    "candidate", "class", "organism", "target_cell_scope", "assay", "readout_match", "evidence_label",
+    "candidate", "class", "organism", "target_cell_scope", "evidence_target_cells", "assay", "readout_match", "evidence_label",
     "expression", "electrophysiology", "genetic_tools", "class_match", "rhythmic_evidence", "fly_causal", "cross_species",
     "keep_drop_reason", "sources", "confidence", "evidence_notes",
 )
+RANKING_DIMENSIONS = ("expression", "electrophysiology", "genetic_tools", "class_match", "rhythmic_evidence", "fly_causal", "cross_species")
+
 SEARCH_LOG_FIELDS = (
     "record_id", "candidate", "query", "database", "search_date", "source_id", "source_url_or_identifier",
-    "source_type", "organism", "target_cell_scope", "assay", "readout_match", "evidence_label", "claim_type",
+    "source_type", "organism", "target_cell_scope", "evidence_target_cells", "assay", "readout_match", "evidence_label", "claim_type",
     "source_support_status", "result_summary", "decision", "decision_reason",
 )
 
@@ -69,23 +74,39 @@ def _read_csv(path: Path, required: tuple[str, ...]) -> list[dict[str, str]]:
 
 def _cluster_group(cluster: str) -> str:
     label = cluster.strip().split(":", 1)[-1]
-    if label == "s_LNv":
+    normalized = label.casefold().replace("_", "").replace("-", "")
+    if normalized == "slnv":
         return "s-LNv"
-    if label == "l_LNv":
+    if normalized == "llnv":
         return "l-LNv"
-    if label.startswith("LNd"):
+    if normalized.startswith("lnd"):
         return "LNd"
-    if label.startswith("DN"):
-        return "DN"
-    if label.startswith("LN_ITP"):
+    if normalized.startswith("ln_itp") or normalized.startswith("lnitp"):
         return "LN_ITP_ambiguous"
+    if normalized.startswith("dn1p"):
+        return "DN1p"
+    if normalized.startswith("dn1a"):
+        return "DN1a"
+    if normalized.startswith("dn1"):
+        return "DN1"
+    if normalized.startswith("dn2"):
+        return "DN2"
+    if normalized.startswith("dn3"):
+        return "DN3"
+    if normalized.startswith("dn"):
+        return "DN"
     return "other_or_unmapped"
+
+
+def _join_target_cells(values: list[str]) -> str:
+    cells = {cell.strip() for value in values for cell in value.split(";") if cell.strip() and cell.strip() != "unverified"}
+    return ";".join(sorted(cells, key=lambda cell: CELL_ORDER.get(cell, len(CELL_ORDER)))) if cells else "unverified"
 
 
 def _format_detection(rows: list[dict[str, str]]) -> str:
     formatted: list[str] = []
     for row in sorted(rows, key=lambda r: (r["cell_group"], r["condition"])):
-        if row["cell_group"] not in (*TARGET_GROUPS, *AMBIGUOUS_GROUPS):
+        if row["cell_group"] not in (*TARGET_CELLS, *AMBIGUOUS_GROUPS):
             continue
         formatted.append(
             f"{row['cell_group']} {row['condition']} {row['n_cells_detected']}/{row['n_annotated_cells']} "
@@ -178,9 +199,10 @@ def _validate_and_index(
 
 
 def _raw_log_row(candidate: str, candidate_class: str, feature: dict[str, str], groups: list[dict[str, str]], search_date: str) -> dict[str, str]:
-    target_rows = [row for row in groups if row["cell_group"] in TARGET_GROUPS]
+    target_rows = [row for row in groups if row["cell_group"] in TARGET_CELLS]
     detected_rows = [row for row in target_rows if int(row["n_cells_detected"]) > 0]
     detected_total = sum(int(row["n_cells_detected"]) for row in detected_rows)
+    evidence_cells = _join_target_cells([row["cell_group"] for row in detected_rows])
     total_observed = sum(int(row["n_annotated_cells"]) for row in target_rows)
     feature_status = feature["raw_feature_status"]
     if detected_rows:
@@ -209,6 +231,7 @@ def _raw_log_row(candidate: str, candidate_class: str, feature: dict[str, str], 
         "source_type": "GEO",
         "organism": "Drosophila melanogaster",
         "target_cell_scope": target,
+        "evidence_target_cells": evidence_cells,
         "assay": "single-cell RNA-seq raw UMI count matrix",
         "readout_match": readout,
         "evidence_label": label,
@@ -221,8 +244,11 @@ def _raw_log_row(candidate: str, candidate_class: str, feature: dict[str, str], 
 
 
 def _rhythm_log_row(candidate: str, rhythm_rows: list[dict[str, str]], search_date: str) -> dict[str, str]:
-    target_rows = [row for row in rhythm_rows if _cluster_group(row["cluster"]) in TARGET_GROUPS]
+    target_rows = [row for row in rhythm_rows if _cluster_group(row["cluster"]) in TARGET_CELLS]
     ambiguous_rows = [row for row in rhythm_rows if _cluster_group(row["cluster"]) in AMBIGUOUS_GROUPS]
+    evidence_cells = _join_target_cells([_cluster_group(row["cluster"]) for row in target_rows])
+    if evidence_cells == "unverified" and ambiguous_rows:
+        evidence_cells = "LN_ITP_ambiguous"
     if target_rows:
         label, target, readout, claim, decision = "direct", "direct_target_neuron", "expression_or_localization", "conclusion", "include"
         summary = "Author-reported high-confidence rhythm rows in target groups: " + _format_rhythms(target_rows) + ". The extraction transcribes the supplement and does not refit the rhythm model."
@@ -246,6 +272,7 @@ def _rhythm_log_row(candidate: str, rhythm_rows: list[dict[str, str]], search_da
         "source_type": "primary_paper",
         "organism": "Drosophila melanogaster",
         "target_cell_scope": target,
+        "evidence_target_cells": evidence_cells,
         "assay": "author-reported high-confidence single-cell transcript-rhythm table",
         "readout_match": readout,
         "evidence_label": label,
@@ -289,6 +316,9 @@ def build_rows(
         label = "direct" if direct else "unverified"
         detection_text = _format_detection(detections)
         rhythm_text = _format_rhythms(candidate_rhythms)
+        direct_cell_records = [record for record in (raw_record, rhythm_record) if record["evidence_label"] == "direct"]
+        evidence_cell_records = direct_cell_records or [raw_record, rhythm_record]
+        evidence_cells = _join_target_cells([record["evidence_target_cells"] for record in evidence_cell_records])
         if not candidate_rhythms:
             rhythm_text = "No row in the author high-confidence table; not listed does not mean arrhythmic."
         feature_status = feature["raw_feature_status"]
@@ -306,6 +336,7 @@ def build_rows(
             "class": item["priority_class"],
             "organism": "Drosophila melanogaster",
             "target_cell_scope": target_scope,
+            "evidence_target_cells": evidence_cells,
             "assay": "single-cell RNA-seq raw UMI detection and author-reported rhythm-table extraction",
             "readout_match": readout,
             "evidence_label": label,
@@ -331,7 +362,7 @@ def build_rows(
         "n_search_log_records": len(log),
         "n_with_direct_target_group_raw_umi_detection": direct_expression,
         "n_with_author_high_confidence_rhythm_rows_in_target_groups": direct_rhythm,
-        "n_candidates_with_all_ranking_dimensions_unrated": sum(all(row[field] == "NA" for field in EVIDENCE_FIELDS[7:14]) for row in evidence),
+        "n_candidates_with_all_ranking_dimensions_unrated": sum(all(row[field] == "NA" for field in RANKING_DIMENSIONS) for row in evidence),
         "ranking_policy": "No 0-3 scores are assigned by this bridge. Feed the evidence rows into the candidate workflow, add separately sourced evidence, then score only after an explicit rubric is justified.",
         "inference_warning": "Raw UMI detection and author rhythm-list membership are transcript evidence only; neither establishes channel current, membrane-potential rhythm, behavior causality, or animal-level inference. Missing UMI/call rows do not prove biological absence or arrhythmicity.",
     }

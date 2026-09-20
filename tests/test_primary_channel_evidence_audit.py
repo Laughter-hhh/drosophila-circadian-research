@@ -48,7 +48,7 @@ class PrimaryChannelEvidenceAuditTests(unittest.TestCase):
         candidates = read_csv_rows("candidate-evidence-real.csv")
         na = next(row for row in candidates if row["candidate"] == "na")
         self.assertEqual(na["evidence_label"], "direct")
-        self.assertEqual(score_row(na)["directness_gate"], "pass")
+        self.assertEqual(score_row(na, target_cells=["DN1p"])["directness_gate"], "pass")
         self.assertIn("DN1p", na["keep_drop_reason"])
 
     def test_irk1_native_and_cultured_cell_readouts_remain_separated(self):

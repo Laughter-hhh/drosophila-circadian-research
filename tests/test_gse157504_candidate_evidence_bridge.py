@@ -73,11 +73,13 @@ class GSE157504CandidateEvidenceBridgeTests(unittest.TestCase):
                 evidence = list(csv.DictReader(handle))
             by_candidate = {row["candidate"]: row for row in evidence}
             self.assertEqual(by_candidate["Shab"]["evidence_label"], "direct")
+            self.assertEqual(by_candidate["Shab"]["evidence_target_cells"], "s-LNv")
             self.assertEqual(by_candidate["Shab"]["expression"], "NA")
             self.assertEqual(by_candidate["para"]["evidence_label"], "unverified")
             self.assertIn("not evidence of biological absence", by_candidate["para"]["keep_drop_reason"])
             self.assertEqual(by_candidate["Ork1"]["evidence_label"], "unverified")
             self.assertIn("LN_ITP", by_candidate["Ork1"]["evidence_notes"])
+            self.assertEqual(by_candidate["Ork1"]["evidence_target_cells"], "LN_ITP_ambiguous")
             ranked = rank_rows(evidence)
             self.assertTrue(all(row["shortlist_gate"] == "needs_evidence" for row in ranked))
             self.assertTrue(all(row["score"] is None and row["coverage"] == 0 for row in ranked))
@@ -128,6 +130,7 @@ class GSE157504CandidateEvidenceBridgeTests(unittest.TestCase):
             evidence_path, log_path, _ = outputs
             self.assertEqual(report["n_candidates"], 15)
             self.assertEqual(report["n_search_log_records"], 30)
+            self.assertEqual(report["n_candidates_with_all_ranking_dimensions_unrated"], 15)
             self.assertEqual(validate_search_log(log_path)["status"], "verified_evidence_search_log")
             self.assertEqual(validate_candidate_table(evidence_path, log_path)["status"], "verified_candidate_evidence_table")
             with evidence_path.open(newline="", encoding="utf-8") as handle:

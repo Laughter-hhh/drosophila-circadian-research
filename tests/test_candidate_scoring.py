@@ -13,6 +13,7 @@ def _direct(candidate="direct"):
         "candidate": candidate,
         "organism": "Drosophila melanogaster",
         "target_cell_scope": "direct_target_neuron",
+        "evidence_target_cells": "s-LNv",
         "assay": "whole-cell electrophysiology",
         "readout_match": "membrane_potential_or_current",
         "evidence_label": "direct",
@@ -33,7 +34,7 @@ class CandidateScoringTests(unittest.TestCase):
         direct_expression.update({"expression": "3", "electrophysiology": "3", "genetic_tools": "0", "class_match": "0", "rhythmic_evidence": "0", "fly_causal": "0", "cross_species": "0"})
         direct_tools = _direct("tools-led")
         direct_tools.update({"expression": "1", "electrophysiology": "1", "genetic_tools": "2", "class_match": "2", "rhythmic_evidence": "2", "fly_causal": "2", "cross_species": "2"})
-        result = sensitivity([direct_expression, direct_tools])
+        result = sensitivity([direct_expression, direct_tools], target_cells=["s-LNv"])
         self.assertIn("rankings", result)
         self.assertIn("top_candidates", result)
         self.assertEqual(set(result["top_candidates"].values()), {"expression-led", "tools-led"})
@@ -60,7 +61,7 @@ class CandidateScoringTests(unittest.TestCase):
     def test_directness_gate_requires_target_assay_and_readout(self):
         row = _direct("Shaw")
         row.update({"expression": "3", "electrophysiology": "3", "class_match": "3"})
-        result = score_row(row)
+        result = score_row(row, target_cells=["s-LNv"])
         self.assertEqual(result["directness_gate"], "pass")
         self.assertEqual(result["shortlist_gate"], "pass")
 
