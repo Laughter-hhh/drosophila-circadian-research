@@ -1,8 +1,8 @@
 {
   "status": "ready_for_mixed_model",
-  "input_file": "validation\\synthetic\\one_timepoint_per_fly_formal.csv",
+  "input_file": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\one_timepoint_per_fly_formal.csv",
   "input_file_metadata": {
-    "path": "validation\\synthetic\\one_timepoint_per_fly_formal.csv",
+    "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\one_timepoint_per_fly_formal.csv",
     "size_bytes": 3045,
     "sha256": "24be9ac447c735b3fe6e4e946cea5f5810dd67a6c7c779748d266ff44dd52a3d"
   },
@@ -22,9 +22,9 @@
     "temperature_C",
     "lighting"
   ],
-  "output_table": "validation\\synthetic\\one_timepoint_per_fly_formal_aggregated.csv",
+  "output_table": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\one_timepoint_per_fly_formal_aggregated.csv",
   "output_table_metadata": {
-    "path": "validation\\synthetic\\one_timepoint_per_fly_formal_aggregated.csv",
+    "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\one_timepoint_per_fly_formal_aggregated.csv",
     "size_bytes": 1527,
     "sha256": "d50ddb1d5a537544b3c7c265de7534e753a85c856705e5f4dcc4676afa56c63f"
   },

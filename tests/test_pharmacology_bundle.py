@@ -61,8 +61,9 @@ class PharmacologyBundleTests(unittest.TestCase):
         result = validate(self._public_plan(), self._public_source_log())
         self.assertEqual(result["status"], "verified_pharmacology_bundle")
         self.assertEqual(result["formal_status"], "conditional_pilot_only")
-        self.assertEqual(result["blocker_provenance"]["status"], "conditional_blocker_source_linkage")
-        self.assertTrue(any(warning["type"] == "blocker_concentration_not_verified" for warning in result["warnings"]))
+        self.assertEqual(result["blocker_provenance"]["status"], "verified_blocker_source_linkage")
+        self.assertTrue(any(warning["type"] == "dose_response_not_validated" for warning in result["warnings"]))
+        self.assertTrue(any(warning["type"] == "washout_not_validated" for warning in result["warnings"]))
 
     def test_bundle_requires_blocker_source_log(self):
         result = validate(self._public_plan())

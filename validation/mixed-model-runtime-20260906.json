@@ -1,6 +1,6 @@
 {
   "status": "blocked_mixed_model_runtime_unavailable",
-  "python": "LOCAL_PATH\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "python": "C:\\Users\\laugh\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
   "python_packages": {
     "numpy": true,
     "pandas": true,

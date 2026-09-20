@@ -3,7 +3,7 @@
   "model": "fixed-effects cosinor with HC3-robust covariance",
   "formula": "value ~ cos24 + sin24 + measured formal covariates with non-invariant levels",
   "random_effect": null,
-  "manifest": "validation\\synthetic\\one_timepoint_flat_formal_manifest.json",
+  "manifest": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\one_timepoint_flat_formal_manifest.json",
   "n_rows": 16,
   "n_biological_replicates": 16,
   "n_unique_time_points": 4,

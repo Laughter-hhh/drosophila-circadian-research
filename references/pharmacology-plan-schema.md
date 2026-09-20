@@ -12,7 +12,7 @@ stage 只能是 pilot、conditional_pilot 或 formal。任何其他标签（例�
 
 ## 状态字段
 
-- selectivity_status: native_verified, heterologous_only, not_assessed 或 unknown。
+- selectivity_status: native_verified, heterologous_only, not_assessed 或 unknown。native_verified 表示引用来源在目标 native 神经元中用对应遗传缺失/抑制等对照验证了 blocker-sensitive current；它是来源级证据，不代表本实验室已完成验证，也不证明该药在所有浓度、细胞或制备中具有绝对选择性。
 - dose_response_status: validated, not_assessed 或 unknown。
 - washout_status: validated, needs_confirmation, not_applicable 或 unknown。
 - conditional_pilot/pilot 可以在这些状态未完成时通过格式审计，但会产生警告并标记为 blocked_for_formal；formal 必须同时满足 native_verified、validated dose-response 和 validated/not_applicable washout，否则拒绝。
@@ -43,7 +43,7 @@ status=verified_pharmacology_plan 只表示表格结构、格式和 stage-gate �
 - source log 必须通过 validate_pharmacology_source_log.py；
 - source_url 必须与 source log 的来源链接；
 - target_neuron 必须与计划 neuron 一致；
-- formal 行必须有 checked source、matched concentration 和 native_verified selectivity；
+- formal 行必须有 checked source、matched concentration 和 native_verified selectivity；若只有文献级 native 选择性，仍应在 formal 实验中确认当前 preparation、vehicle、局部剂量和 off-target 风险。
 - pilot 行可以保留 not_assessed，但会产生 blocker_concentration_not_verified 或 blocker_native_selectivity_not_verified warning。
 
 source log 的必需字段包括 record_id、plan_id、candidate、blocker、source_id、source_url_or_identifier、target_neuron、assay、evidence_label、source_support_status、concentration_status、reported_concentration、reported_concentration_unit、selectivity_support_status、result_summary、decision 和 decision_reason。concentration_status=not_assessed 或 conflict 时，reported concentration/units 可以写 NA；matched 时必须有正数和合法单位。

@@ -154,9 +154,9 @@
         ]
       }
     ],
-    "candidate_evidence_path": "validation\\public-data\\candidate-evidence-real.csv",
-    "search_log_path": "validation\\public-data\\candidate-evidence-search-log.csv",
-    "candidate_mapping_path": "validation\\public-data\\pharmacology-candidate-synonyms.csv",
+    "candidate_evidence_path": "E:\\skill\\drosophila-circadian-research\\validation\\public-data\\candidate-evidence-real.csv",
+    "search_log_path": "E:\\skill\\drosophila-circadian-research\\validation\\public-data\\candidate-evidence-search-log.csv",
+    "candidate_mapping_path": "E:\\skill\\drosophila-circadian-research\\validation\\public-data\\pharmacology-candidate-synonyms.csv",
     "candidate_provenance": {
       "status": "blocked_candidate_evidence_linkage",
       "candidate_evidence_validation": {
@@ -164,7 +164,7 @@
         "n_rows": 15,
         "n_candidates": 15,
         "issues": [],
-        "search_log_path": "validation\\public-data\\candidate-evidence-search-log.csv",
+        "search_log_path": "E:\\skill\\drosophila-circadian-research\\validation\\public-data\\candidate-evidence-search-log.csv",
         "inference_warning": "Validation checks schema, evidence labels and traceability fields; source-log mode checks linkage and declared support status but still does not replace online/full-text review.",
         "evidence_search_log": {
           "status": "verified_evidence_search_log",

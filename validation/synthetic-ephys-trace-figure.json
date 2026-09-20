@@ -15,12 +15,12 @@
     "fly04"
   ],
   "input_file_metadata": {
-    "path": "validation\\synthetic-ephys-trace-derived.csv",
+    "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic-ephys-trace-derived.csv",
     "sha256": "af56526e90a906385da9d9352c04d54212ab7e68bf6583bb5eafbca76d4375a2",
     "size_bytes": 524
   },
   "output_file_metadata": {
-    "path": "validation\\synthetic-ephys-trace-figure.svg",
+    "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic-ephys-trace-figure.svg",
     "sha256": "ae2771f8229fd484df46537cd8b3fc96d4d3e02df4a3fac5126105504b461428",
     "size_bytes": 3278
   },

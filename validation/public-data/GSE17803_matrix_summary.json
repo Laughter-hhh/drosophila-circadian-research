@@ -1,8 +1,8 @@
 {
   "status": "exploratory_geo_parse",
-  "source_file": "validation\\public-data\\GSE17803_series_matrix.txt.gz",
+  "source_file": "E:\\skill\\drosophila-circadian-research\\validation\\public-data\\GSE17803_series_matrix.txt.gz",
   "input_file_metadata": {
-    "path": "validation\\public-data\\GSE17803_series_matrix.txt.gz",
+    "path": "E:\\skill\\drosophila-circadian-research\\validation\\public-data\\GSE17803_series_matrix.txt.gz",
     "size_bytes": 1029882,
     "sha256": "1e152aa1f40ec38add896ca31a932b929d207aba84deac8a84c2f356382beeeb"
   },

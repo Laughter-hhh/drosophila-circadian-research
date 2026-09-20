@@ -89,7 +89,7 @@
       "issues": [],
       "warnings": [],
       "input_file_metadata": {
-        "path": "validation\\synthetic-ephys-trace-metadata.csv",
+        "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic-ephys-trace-metadata.csv",
         "size_bytes": 693,
         "sha256": "4f0a0fd7ef9f93d4900ff3aa3875bb1dfab47086a5ebdf263ed298a88dbeac5e"
       },
@@ -103,7 +103,7 @@
       "issues": [],
       "warnings": [],
       "input_file_metadata": {
-        "path": "validation\\synthetic-ephys-nested-raw-qc.csv",
+        "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic-ephys-nested-raw-qc.csv",
         "size_bytes": 1381,
         "sha256": "0725a219080ac2de6e60b268acd374f4c4ca3ef1cfd71d67fd88388ad9116a8d"
       },
@@ -112,17 +112,17 @@
     "issues": [],
     "input_file_metadata": {
       "metadata": {
-        "path": "validation\\synthetic-ephys-trace-metadata.csv",
+        "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic-ephys-trace-metadata.csv",
         "size_bytes": 693,
         "sha256": "4f0a0fd7ef9f93d4900ff3aa3875bb1dfab47086a5ebdf263ed298a88dbeac5e"
       },
       "raw_qc": {
-        "path": "validation\\synthetic-ephys-nested-raw-qc.csv",
+        "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic-ephys-nested-raw-qc.csv",
         "size_bytes": 1381,
         "sha256": "0725a219080ac2de6e60b268acd374f4c4ca3ef1cfd71d67fd88388ad9116a8d"
       },
       "measurements": {
-        "path": "validation\\synthetic-ephys-trace-derived-rerun.csv",
+        "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic-ephys-trace-derived-rerun.csv",
         "size_bytes": 524,
         "sha256": "af56526e90a906385da9d9352c04d54212ab7e68bf6583bb5eafbca76d4375a2"
       }

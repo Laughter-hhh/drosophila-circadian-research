@@ -1,8 +1,8 @@
 {
   "status": "ready_for_mixed_model",
-  "input_file": "validation\\synthetic\\nested_clock_data_formal.csv",
+  "input_file": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\nested_clock_data_formal.csv",
   "input_file_metadata": {
-    "path": "validation\\synthetic\\nested_clock_data_formal.csv",
+    "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\nested_clock_data_formal.csv",
     "size_bytes": 6141,
     "sha256": "931018fdc9bae83d57d27c90f64e1406aa65002e0f1059584962dca334d78630"
   },
@@ -22,9 +22,9 @@
     "temperature_C",
     "lighting"
   ],
-  "output_table": "validation\\synthetic\\nested_clock_data_formal_aggregated.csv",
+  "output_table": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\nested_clock_data_formal_aggregated.csv",
   "output_table_metadata": {
-    "path": "validation\\synthetic\\nested_clock_data_formal_aggregated.csv",
+    "path": "E:\\skill\\drosophila-circadian-research\\validation\\synthetic\\nested_clock_data_formal_aggregated.csv",
     "size_bytes": 2883,
     "sha256": "f05ea39f89f768b4d362f50f38c354ee35c1b832bd036b0d49a763a876572b2f"
   },
