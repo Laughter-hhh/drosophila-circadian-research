@@ -1,0 +1,210 @@
+{
+  "status": "verified_public_dataset_replay",
+  "n_runs": 2,
+  "n_output_checks": 7,
+  "runs": [
+    {
+      "run_id": "extract-published-channel-rhythms",
+      "returncode": 0,
+      "stdout_sha256": "70dbb5754c4efd2e41cd751a9860f89179b06489475673b9abb78862e051df58",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "{\"status\": \"verified_published_sc_clock_channel_rhythm_extraction\", \"n_candidates\": 15, \"n_candidate_cluster_condition_rows\": 21}\n",
+      "stderr_preview": ""
+    },
+    {
+      "run_id": "audit-raw-count-cell-detection",
+      "returncode": 0,
+      "stdout_sha256": "595a5cb0655bd877f44596d550e57a99ff9b6ccb64a55113cdf8b816f1e1607a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "{\"status\": \"verified_raw_count_cell_detection_join\", \"n_annotation_cells\": 2615, \"n_unique_annotated_cells_matched_once\": 2615, \"n_candidates_with_exact_feature\": 14}\n",
+      "stderr_preview": ""
+    }
+  ],
+  "output_checks": [
+    {
+      "run_id": "extract-published-channel-rhythms",
+      "path": "validation/public-data/GSE157504_candidate_rhythm_summary.csv",
+      "expected_sha256": "0df6bf0d549379af18958ebbacb26355168479b04e43b18d35e3d57fb450a1b4",
+      "observed_sha256": "0df6bf0d549379af18958ebbacb26355168479b04e43b18d35e3d57fb450a1b4",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "extract-published-channel-rhythms",
+      "path": "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+      "expected_sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1",
+      "observed_sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "extract-published-channel-rhythms",
+      "path": "validation/public-data/GSE157504_candidate_rhythm_extraction.json",
+      "expected_sha256": "9345f27c2e7138d90239f7d4c2e0f53eec7c23c14e4db8d318238474d4e6a7a7",
+      "observed_sha256": "9345f27c2e7138d90239f7d4c2e0f53eec7c23c14e4db8d318238474d4e6a7a7",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "audit-raw-count-cell-detection",
+      "path": "validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv",
+      "expected_sha256": "612e00fe006fb5ac44f5c7af48da89824c6000836429011437cb270af99a5245",
+      "observed_sha256": "612e00fe006fb5ac44f5c7af48da89824c6000836429011437cb270af99a5245",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "audit-raw-count-cell-detection",
+      "path": "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+      "expected_sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857",
+      "observed_sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "audit-raw-count-cell-detection",
+      "path": "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+      "expected_sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a",
+      "observed_sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "audit-raw-count-cell-detection",
+      "path": "validation/public-data/GSE157504_candidate_raw_detection_audit.json",
+      "expected_sha256": "5dcfeb251649acf48f84ff57b312a61ea1c3aa84011c35077fe5c8734991eb59",
+      "observed_sha256": "5dcfeb251649acf48f84ff57b312a61ea1c3aa84011c35077fe5c8734991eb59",
+      "status": "replay_hash_verified"
+    }
+  ],
+  "issues": [],
+  "inference_warning": "Replay verifies deterministic execution and declared output hashes in an isolated temporary mirror; it does not establish biological validity, normalization suitability, statistical adequacy or causal conclusions.",
+  "manifest_validation": {
+    "status": "verified_public_dataset_manifest",
+    "formal_status": "online_source_content_verified",
+    "manifest_id": "GSE157504-ion-channel-candidate-audit-20260920",
+    "dataset_id": "GSE157504",
+    "accession": "GSE157504",
+    "n_files": 11,
+    "n_runs": 2,
+    "file_checks": [
+      {
+        "path": "validation/public-data/GSE157504_RAW.tar",
+        "role": "raw",
+        "expected_sha256": "ad4e99a063214780d61346b54e79fdb751e1a9c64efbcb0705fd04d42594c2bf",
+        "observed_sha256": "ad4e99a063214780d61346b54e79fdb751e1a9c64efbcb0705fd04d42594c2bf",
+        "size_bytes": 27043840,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_clock_neurons_annotation.csv",
+        "role": "annotation",
+        "expected_sha256": "acf34eb2c550febc40b1eb228fcd87ce59b9ecdb7f5cec8b5ebf3c29bdb2debe",
+        "observed_sha256": "acf34eb2c550febc40b1eb228fcd87ce59b9ecdb7f5cec8b5ebf3c29bdb2debe",
+        "size_bytes": 195865,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_published_rhythmic_genes_supp1.xlsx",
+        "role": "other",
+        "expected_sha256": "d3553deb0290bb56d73ab7713ec6b73f5749dc9d466dcdb5063b91cdef5c804b",
+        "observed_sha256": "d3553deb0290bb56d73ab7713ec6b73f5749dc9d466dcdb5063b91cdef5c804b",
+        "size_bytes": 424963,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE22308_candidate_genes.csv",
+        "role": "candidate_list",
+        "expected_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+        "observed_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+        "size_bytes": 251,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_candidate_rhythm_summary.csv",
+        "role": "derived",
+        "expected_sha256": "0df6bf0d549379af18958ebbacb26355168479b04e43b18d35e3d57fb450a1b4",
+        "observed_sha256": "0df6bf0d549379af18958ebbacb26355168479b04e43b18d35e3d57fb450a1b4",
+        "size_bytes": 2585,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+        "role": "derived",
+        "expected_sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1",
+        "observed_sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1",
+        "size_bytes": 2994,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_candidate_rhythm_extraction.json",
+        "role": "derived",
+        "expected_sha256": "9345f27c2e7138d90239f7d4c2e0f53eec7c23c14e4db8d318238474d4e6a7a7",
+        "observed_sha256": "9345f27c2e7138d90239f7d4c2e0f53eec7c23c14e4db8d318238474d4e6a7a7",
+        "size_bytes": 2692,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv",
+        "role": "derived",
+        "expected_sha256": "612e00fe006fb5ac44f5c7af48da89824c6000836429011437cb270af99a5245",
+        "observed_sha256": "612e00fe006fb5ac44f5c7af48da89824c6000836429011437cb270af99a5245",
+        "size_bytes": 332041,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+        "role": "derived",
+        "expected_sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857",
+        "observed_sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857",
+        "size_bytes": 10677,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+        "role": "derived",
+        "expected_sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a",
+        "observed_sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a",
+        "size_bytes": 2584,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE157504_candidate_raw_detection_audit.json",
+        "role": "derived",
+        "expected_sha256": "5dcfeb251649acf48f84ff57b312a61ea1c3aa84011c35077fe5c8734991eb59",
+        "observed_sha256": "5dcfeb251649acf48f84ff57b312a61ea1c3aa84011c35077fe5c8734991eb59",
+        "size_bytes": 10027,
+        "status": "hash_verified"
+      }
+    ],
+    "run_checks": [
+      {
+        "run_id": "extract-published-channel-rhythms",
+        "script": "scripts/extract_published_sc_clock_channel_rhythms.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/GSE22308_candidate_genes.csv",
+          "validation/public-data/GSE157504_published_rhythmic_genes_supp1.xlsx"
+        ],
+        "outputs": [
+          "validation/public-data/GSE157504_candidate_rhythm_summary.csv",
+          "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+          "validation/public-data/GSE157504_candidate_rhythm_extraction.json"
+        ]
+      },
+      {
+        "run_id": "audit-raw-count-cell-detection",
+        "script": "scripts/audit_gse157504_candidate_detection.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/GSE157504_RAW.tar",
+          "validation/public-data/GSE157504_clock_neurons_annotation.csv",
+          "validation/public-data/GSE22308_candidate_genes.csv"
+        ],
+        "outputs": [
+          "validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv",
+          "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+          "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+          "validation/public-data/GSE157504_candidate_raw_detection_audit.json"
+        ]
+      }
+    ],
+    "issues": [],
+    "warnings": [],
+    "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "report_id": "synthetic-power-basis-20260908",
+  "records": [
+    {
+      "plan_id": "EXP-Formal-Shaw",
+      "design_type": "nested_or_cosinor_external",
+      "independent_biological_unit": "fly",
+      "effect_size_metric": "amplitude_difference",
+      "effect_size": 0.8,
+      "effect_size_low": 0.5,
+      "effect_size_high": 1.0,
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "comparison_count": 1,
+      "multiplicity_method": "none",
+      "cluster_structure": "one primary cell per fly; recording day is a blocking factor; no lower-level observation is treated as an independent fly",
+      "basis_status": "pilot_estimate",
+      "basis_source": "synthetic public fixture; not a real biological estimate",
+      "calculation_method": "externally_reviewed_power",
+      "n_per_group": 63,
+      "minimum_n_total": 126
+    }
+  ]
+}
+
+

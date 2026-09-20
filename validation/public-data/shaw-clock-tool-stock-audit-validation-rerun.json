@@ -1,0 +1,66 @@
+{
+  "status": "verified_stock_audit",
+  "formal_status": "blocked_identity_not_verified",
+  "n_rows": 9,
+  "n_candidates": 9,
+  "n_identity_verified": 0,
+  "n_identity_not_verified": 9,
+  "issues": [],
+  "warnings": [
+    {
+      "line": 2,
+      "candidate": "Pdf-GAL4",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    },
+    {
+      "line": 3,
+      "candidate": "cry-GAL4",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    },
+    {
+      "line": 4,
+      "candidate": "tim-GAL4-line27",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    },
+    {
+      "line": 5,
+      "candidate": "UAS-Shaw-RA-FLAG-12B",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    },
+    {
+      "line": 6,
+      "candidate": "na-RNAi-KK102435",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    },
+    {
+      "line": 7,
+      "candidate": "Shal-RNAi-JF02154",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    },
+    {
+      "line": 8,
+      "candidate": "Irk1-RNAi-JF01841",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    },
+    {
+      "line": 9,
+      "candidate": "Shaw-RNAi-JF02982",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    },
+    {
+      "line": 10,
+      "candidate": "Shaw-Sym-RNAi",
+      "type": "identity_not_ready_for_formal_cross",
+      "verification_status": "partial"
+    }
+  ],
+  "inference_warning": "Validation checks identity-field completeness, FlyBase URL/ID consistency, and format only; it does not verify current inventory, genotype correctness, chromosome location, driver expression, background purity, or construct function. formal_status therefore never means a complete experimental readiness decision."
+}

@@ -1,0 +1,25 @@
+sample_id,species,genotype_background,sex,age_stage,temperature_C,lighting,ZT_or_CT,experimental_unit,biological_replicate_id,batch_id,cell_type,platform,source_accession
+GSM555213,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,ELAV_ZT12_rep1,unknown,ELAV neurons,GPL1322,GSE22308
+GSM555214,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,ELAV_ZT12_rep2,unknown,ELAV neurons,GPL1322,GSE22308
+GSM555215,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,ELAV_ZT12_rep3,unknown,ELAV neurons,GPL1322,GSE22308
+GSM555216,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,ELAV_ZT0_rep1,unknown,ELAV neurons,GPL1322,GSE22308
+GSM555217,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,ELAV_ZT0_rep2,unknown,ELAV neurons,GPL1322,GSE22308
+GSM555218,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,ELAV_ZT0_rep3,unknown,ELAV neurons,GPL1322,GSE22308
+GSM555219,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,large_ZT0_rep1,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555220,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,large_ZT0_rep2,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555221,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,large_ZT0_rep3,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555222,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT6,pooled_cell_sample,large_ZT6_rep1,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555223,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT6,pooled_cell_sample,large_ZT6_rep2,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555224,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,large_ZT12_rep1,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555225,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,large_ZT12_rep2,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555226,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,large_ZT12_rep3,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555227,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT18,pooled_cell_sample,large_ZT18_rep1,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555228,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT18,pooled_cell_sample,large_ZT18_rep2,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555229,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,small_ZT12_rep1,unknown,small_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555230,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,small_ZT12_rep2,unknown,small_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555231,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,small_ZT0_rep1,unknown,small_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555232,Drosophila melanogaster,yw,male_and_female,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,small_ZT0_rep2,unknown,small_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555233,Drosophila melanogaster,per01,male,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,per01_large_ZT12_rep1,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555234,Drosophila melanogaster,per01,male,adult,unknown,LD 12:12,ZT12,pooled_cell_sample,per01_large_ZT12_rep2,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555235,Drosophila melanogaster,per01,male,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,per01_large_ZT0_rep1,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308
+GSM555236,Drosophila melanogaster,per01,male,adult,unknown,LD 12:12,ZT0,pooled_cell_sample,per01_large_ZT0_rep2,unknown,large_PDF_circadian_neurons,GPL1322,GSE22308

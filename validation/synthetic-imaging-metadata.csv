@@ -1,0 +1,2 @@
+metadata_row_id,species,genotype,sex,age_days,temperature_C,lighting,ZT_or_CT,experimental_unit,biological_replicate_id,batch_id,preparation,cell_type,roi_id,technical_replicate_id
+imeta01,Drosophila melanogaster,w1118,female,5,25,LD 12:12,ZT4,brain,ibrain01,image_batch_1,ex vivo whole brain,s-LNv,roi01,image_trace01

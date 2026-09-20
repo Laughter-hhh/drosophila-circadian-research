@@ -1,0 +1,78 @@
+{
+  "status": "verified_preanalysis_bundle",
+  "assay": "ephys",
+  "stage": "exploratory",
+  "n_metadata_rows": 4,
+  "n_raw_records": 4,
+  "n_pass_raw_records": 4,
+  "n_measurement_rows": 4,
+  "n_measurement_record_ids": 4,
+  "orphan_measurement_record_ids": [],
+  "metadata_gate": {
+    "status": "verified_metadata",
+    "assay": "ephys",
+    "stage": "exploratory",
+    "required_fields": [
+      "species",
+      "genotype",
+      "sex",
+      "age_days",
+      "temperature_C",
+      "lighting",
+      "ZT_or_CT",
+      "experimental_unit",
+      "biological_replicate_id",
+      "batch_id",
+      "preparation",
+      "cell_type",
+      "recording_id",
+      "technical_replicate_id"
+    ],
+    "n_rows": 4,
+    "n_biological_replicates": 4,
+    "experimental_units": [
+      "fly"
+    ],
+    "issues": [],
+    "warnings": [],
+    "input_file_metadata": {
+      "path": "validation/synthetic-ephys-trace-metadata.csv",
+      "size_bytes": 693,
+      "sha256": "4f0a0fd7ef9f93d4900ff3aa3875bb1dfab47086a5ebdf263ed298a88dbeac5e"
+    },
+    "inference_warning": "Metadata verification is a schema/QC result; it does not establish rhythm, causality, power, cell identity or source-data validity."
+  },
+  "raw_qc_gate": {
+    "status": "verified_raw_qc_provenance",
+    "assay": "ephys",
+    "n_rows": 4,
+    "n_records": 4,
+    "issues": [],
+    "warnings": [],
+    "input_file_metadata": {
+      "path": "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+      "size_bytes": 1182,
+      "sha256": "93b61bd6f60ebb3cc64e6d2a5bd819d40a238afd901e93a225a9dcaae94a463e"
+    },
+    "inference_warning": "Raw-file provenance/QC verification does not establish cell identity, channel selectivity, rhythm, causality or biological validity."
+  },
+  "issues": [],
+  "input_file_metadata": {
+    "metadata": {
+      "path": "validation/synthetic-ephys-trace-metadata.csv",
+      "size_bytes": 693,
+      "sha256": "4f0a0fd7ef9f93d4900ff3aa3875bb1dfab47086a5ebdf263ed298a88dbeac5e"
+    },
+    "raw_qc": {
+      "path": "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+      "size_bytes": 1182,
+      "sha256": "93b61bd6f60ebb3cc64e6d2a5bd819d40a238afd901e93a225a9dcaae94a463e"
+    },
+    "measurements": {
+      "path": "validation/synthetic-ephys-trace-replay-derived.csv",
+      "size_bytes": 524,
+      "sha256": "af56526e90a906385da9d9352c04d54212ab7e68bf6583bb5eafbca76d4375a2"
+    }
+  },
+  "inference_warning": "Bundle verification establishes input linkage and provenance only; it does not establish rhythm, cell identity, channel selectivity, causality or statistical power."
+}

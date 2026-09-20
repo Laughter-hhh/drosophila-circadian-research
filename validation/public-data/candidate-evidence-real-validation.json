@@ -1,0 +1,7 @@
+{
+  "status": "verified_candidate_evidence_table",
+  "n_rows": 15,
+  "n_candidates": 15,
+  "issues": [],
+  "inference_warning": "Validation checks schema, evidence labels and traceability fields; it does not verify that cited sources support the ratings or that a reagent is currently in stock."
+}

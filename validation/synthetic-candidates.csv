@@ -1,0 +1,4 @@
+candidate,expression,electrophysiology,genetic_tools,class_match,rhythmic_evidence,fly_causal,cross_species,evidence_note
+expression-led,3,3,0,0,0,0,0,"strong expression and patch-clamp evidence; limited genetic support"
+tools-led,1,1,2,2,2,2,2,"good genetic toolkit and cross-species support; weak direct fly physiology"
+balanced,2,2,2,2,1,1,1,"moderate evidence across dimensions"

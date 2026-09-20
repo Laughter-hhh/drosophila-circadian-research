@@ -1,0 +1,14 @@
+{
+  "status": "verified_raw_qc_provenance",
+  "assay": "ephys",
+  "n_rows": 4,
+  "n_records": 4,
+  "issues": [],
+  "warnings": [],
+  "input_file_metadata": {
+    "path": "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+    "size_bytes": 1182,
+    "sha256": "93b61bd6f60ebb3cc64e6d2a5bd819d40a238afd901e93a225a9dcaae94a463e"
+  },
+  "inference_warning": "Raw-file provenance/QC verification does not establish cell identity, channel selectivity, rhythm, causality or biological validity."
+}

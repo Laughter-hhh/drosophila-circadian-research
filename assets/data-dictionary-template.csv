@@ -1,0 +1,11 @@
+field,description,example,unit,source,required,notes
+species,organism,Drosophila melanogaster,,experiment record,yes,
+genotype,complete genotype,w1118,,stock record,yes,
+sex,biological sex,female,,experiment record,yes,
+age_days,age at assay,5,days,experiment record,yes,
+temperature_C,assay temperature,25,C,experiment record,yes,
+lighting,lighting condition,LD 12:12,,experiment record,yes,
+ZT_or_CT,circadian time,ZT2,,timestamp,yes,
+experimental_unit,independent unit,fly,,analysis plan,yes,
+biological_replicate_id,animal or sample identifier,fly_001,,sample sheet,yes,
+batch_id,recording or library batch,batch_01,,run log,yes,

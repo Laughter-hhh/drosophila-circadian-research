@@ -1,0 +1,5 @@
+{
+  "status": "verified_mixed_model_result",
+  "blocking_reasons": [],
+  "interpretation": "Technical QC only; inspect model formula, estimand, residual structure and independent replication before biological claims."
+}

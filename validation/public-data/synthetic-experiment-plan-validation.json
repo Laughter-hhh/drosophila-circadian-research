@@ -1,0 +1,11 @@
+{
+  "status": "verified_experiment_plan",
+  "formal_status": "formal_gate_passed_external_checks_pending",
+  "n_rows": 4,
+  "n_plans": 4,
+  "formal_rows": 1,
+  "formal_passes": 1,
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "This validator checks experimental-plan completeness, stage gates and control declarations; it does not establish biological causality, assay performance, reagent selectivity, statistical power or observed results."
+}

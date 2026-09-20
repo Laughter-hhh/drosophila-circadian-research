@@ -1,0 +1,17 @@
+biological_replicate_id,subunit_id,time_hours,value,experimental_unit,gene_symbol,cell_type,background,batch_id,sex,age_days,genotype,temperature_C,lighting
+flat0,flat0_cell0,0,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat1,flat1_cell0,0,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat2,flat2_cell0,0,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat3,flat3_cell0,0,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat4,flat4_cell0,6,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat5,flat5_cell0,6,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat6,flat6_cell0,6,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat7,flat7_cell0,6,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat8,flat8_cell0,12,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat9,flat9_cell0,12,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat10,flat10_cell0,12,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat11,flat11_cell0,12,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat12,flat12_cell0,18,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat13,flat13_cell0,18,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat14,flat14_cell0,18,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12
+flat15,flat15_cell0,18,5.0,fly,na,s-LNv,w1118,batch1,female,5,pdf-GAL4/UAS-GCaMP,25,LD 12:12

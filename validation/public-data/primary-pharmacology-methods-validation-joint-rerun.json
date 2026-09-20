@@ -1,0 +1,196 @@
+{
+  "status": "invalid_pharmacology_plan",
+  "formal_status": "blocked_by_validation_issues",
+  "n_rows": 4,
+  "n_plans": 4,
+  "formal_rows": 0,
+  "formal_passes": 0,
+  "issues": [
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "candidate": "Shaker",
+      "type": "candidate_missing_from_evidence_table"
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "candidate": "Shab",
+      "type": "pharmacology_source_not_linked_to_candidate_evidence"
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "candidate": "Shab",
+      "type": "candidate_evidence_label_not_actionable",
+      "evidence_label": "unverified"
+    }
+  ],
+  "warnings": [
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "type": "native_selectivity_not_verified",
+      "status": "heterologous_only"
+    },
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "type": "dose_response_not_validated",
+      "status": "not_assessed"
+    },
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "type": "washout_not_validated",
+      "status": "needs_confirmation"
+    },
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "type": "blocked_for_formal",
+      "gates": [
+        "dose_response",
+        "native_selectivity",
+        "washout"
+      ]
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "type": "native_selectivity_not_verified",
+      "status": "heterologous_only"
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "type": "dose_response_not_validated",
+      "status": "not_assessed"
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "type": "washout_not_validated",
+      "status": "needs_confirmation"
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "type": "blocked_for_formal",
+      "gates": [
+        "dose_response",
+        "native_selectivity",
+        "washout"
+      ]
+    },
+    {
+      "line": 4,
+      "plan_id": "SM19-Shaw",
+      "type": "native_selectivity_not_verified",
+      "status": "heterologous_only"
+    },
+    {
+      "line": 4,
+      "plan_id": "SM19-Shaw",
+      "type": "dose_response_not_validated",
+      "status": "not_assessed"
+    },
+    {
+      "line": 4,
+      "plan_id": "SM19-Shaw",
+      "type": "washout_not_validated",
+      "status": "needs_confirmation"
+    },
+    {
+      "line": 4,
+      "plan_id": "SM19-Shaw",
+      "type": "blocked_for_formal",
+      "gates": [
+        "dose_response",
+        "native_selectivity",
+        "washout"
+      ]
+    },
+    {
+      "line": 5,
+      "plan_id": "SM19-Shal",
+      "type": "native_selectivity_not_verified",
+      "status": "heterologous_only"
+    },
+    {
+      "line": 5,
+      "plan_id": "SM19-Shal",
+      "type": "dose_response_not_validated",
+      "status": "not_assessed"
+    },
+    {
+      "line": 5,
+      "plan_id": "SM19-Shal",
+      "type": "washout_not_validated",
+      "status": "needs_confirmation"
+    },
+    {
+      "line": 5,
+      "plan_id": "SM19-Shal",
+      "type": "blocked_for_formal",
+      "gates": [
+        "dose_response",
+        "native_selectivity",
+        "washout"
+      ]
+    }
+  ],
+  "candidate_evidence_path": "validation\\public-data\\candidate-evidence-real.csv",
+  "search_log_path": "validation\\public-data\\candidate-evidence-search-log.csv",
+  "candidate_provenance": {
+    "status": "blocked_candidate_evidence_linkage",
+    "candidate_evidence_validation": {
+      "status": "verified_candidate_evidence_table",
+      "n_rows": 15,
+      "n_candidates": 15,
+      "issues": [],
+      "search_log_path": "validation\\public-data\\candidate-evidence-search-log.csv",
+      "inference_warning": "Validation checks schema, evidence labels and traceability fields; source-log mode checks linkage and declared support status but still does not replace online/full-text review.",
+      "evidence_search_log": {
+        "status": "verified_evidence_search_log",
+        "n_rows": 15,
+        "n_records": 15,
+        "issues": [],
+        "inference_warning": "Schema validation does not prove that a source supports the claim; each primary source still requires online/full-text review."
+      }
+    },
+    "records": [
+      {
+        "line": 3,
+        "plan_id": "SM19-Shab",
+        "candidate": "Shab",
+        "evidence_label": "unverified",
+        "target_cell_scope": "indirect_or_unverified",
+        "readout_match": "none_or_unverified",
+        "source_linked": false,
+        "evidence_sources": "https://flybase.org/reports/FBgn0262593"
+      },
+      {
+        "line": 4,
+        "plan_id": "SM19-Shaw",
+        "candidate": "Shaw",
+        "evidence_label": "direct",
+        "target_cell_scope": "direct_target_neuron",
+        "readout_match": "membrane_potential_or_current",
+        "source_linked": true,
+        "evidence_sources": "https://flybase.org/reports/FBgn0003386;https://pubmed.ncbi.nlm.nih.gov/31612994/;https://pmc.ncbi.nlm.nih.gov/articles/PMC2386553/"
+      },
+      {
+        "line": 5,
+        "plan_id": "SM19-Shal",
+        "candidate": "Shal",
+        "evidence_label": "direct",
+        "target_cell_scope": "direct_target_neuron",
+        "readout_match": "membrane_potential_or_current",
+        "source_linked": true,
+        "evidence_sources": "https://flybase.org/reports/FBgn0005564;https://pubmed.ncbi.nlm.nih.gov/31612994/"
+      }
+    ]
+  },
+  "inference_warning": "Validation checks completeness, format, formal-stage status gates, and optional candidate/source linkage; it does not verify native-cell selectivity, dose-response values, onset, washout kinetics, toxicity, or that cited sources support the chosen conditions. formal_status is a stage-gate summary, not a biological result."
+}

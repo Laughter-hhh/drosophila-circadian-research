@@ -1,0 +1,101 @@
+{
+  "status": "executed_fixed_effects",
+  "model": "fixed-effects cosinor with HC3-robust covariance",
+  "formula": "value ~ cos24 + sin24 + measured formal covariates with non-invariant levels",
+  "random_effect": null,
+  "manifest": "validation\\synthetic\\one_timepoint_flat_formal_manifest.json",
+  "provenance": {
+    "table_file_metadata": {
+      "path": "validation\\synthetic\\one_timepoint_flat_formal_aggregated.csv",
+      "size_bytes": 1500,
+      "sha256": "92c1c24d1a1bc46889be6b8ba39c360cfa946ec1c8cb41ef3cd12ca7c9ac283a"
+    },
+    "manifest_output_table_metadata": {
+      "path": "validation\\synthetic\\one_timepoint_flat_formal_aggregated.csv",
+      "size_bytes": 1500,
+      "sha256": "92c1c24d1a1bc46889be6b8ba39c360cfa946ec1c8cb41ef3cd12ca7c9ac283a"
+    },
+    "hash_match": true
+  },
+  "n_rows": 16,
+  "n_biological_replicates": 16,
+  "n_unique_time_points": 4,
+  "n_repeated_biological_replicates": 0,
+  "rank": 3,
+  "df_resid": 13,
+  "design_metadata": {
+    "invariant_covariates": [
+      "batch_id",
+      "sex",
+      "genotype",
+      "lighting",
+      "age_days",
+      "temperature_C"
+    ],
+    "numeric_centers": {},
+    "categorical_reference_levels": {}
+  },
+  "coefficients": {
+    "Intercept": {
+      "estimate": 5.0,
+      "se_hc3": 0.0,
+      "normal_approx_95_ci": [
+        5.0,
+        5.0
+      ],
+      "z": null,
+      "p_normal_approx": null
+    },
+    "cos24": {
+      "estimate": -2.220446049250313e-16,
+      "se_hc3": 0.0,
+      "normal_approx_95_ci": [
+        -2.220446049250313e-16,
+        -2.220446049250313e-16
+      ],
+      "z": null,
+      "p_normal_approx": null
+    },
+    "sin24": {
+      "estimate": 6.32786584433358e-17,
+      "se_hc3": 0.0,
+      "normal_approx_95_ci": [
+        6.32786584433358e-17,
+        6.32786584433358e-17
+      ],
+      "z": null,
+      "p_normal_approx": null
+    }
+  },
+  "cosinor": {
+    "beta_cos24": -2.220446049250313e-16,
+    "beta_sin24": 6.32786584433358e-17,
+    "amplitude": 2.3088524247058664e-16,
+    "acrophase_hours": null,
+    "amplitude_normal_approx_95_ci": [
+      2.3088524247058664e-16,
+      2.3088524247058664e-16
+    ],
+    "cov_cos24_sin24_hc3": 0.0
+  },
+  "residual_diagnostics": {
+    "n": 16,
+    "n_finite": 16,
+    "mean": 0.0,
+    "sd": 0.0,
+    "max_abs": 0.0
+  },
+  "technical_qc": {
+    "full_rank": true,
+    "positive_residual_df": true,
+    "all_residuals_finite": true,
+    "max_leverage": 0.18750000000000006
+  },
+  "runtime_versions": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1"
+  },
+  "uncertainty_note": "HC3 covariance and normal-approximation intervals; review estimand and small-sample limitations before formal claims."
+}

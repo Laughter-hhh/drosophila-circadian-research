@@ -1,0 +1,55 @@
+{
+  "status": "verified_raw_qc_provenance",
+  "assay": "ephys",
+  "n_rows": 3,
+  "n_records": 3,
+  "issues": [],
+  "warnings": [
+    {
+      "line": 4,
+      "record_id": "rec03",
+      "type": "raw_file_not_attached"
+    },
+    {
+      "line": 4,
+      "record_id": "rec03",
+      "type": "analysis_unblinded"
+    },
+    {
+      "line": 4,
+      "record_id": "rec03",
+      "type": "missing_or_nonfinite_metric",
+      "field": "seal_MOhm"
+    },
+    {
+      "line": 4,
+      "record_id": "rec03",
+      "type": "missing_or_nonfinite_metric",
+      "field": "access_resistance_MOhm"
+    },
+    {
+      "line": 4,
+      "record_id": "rec03",
+      "type": "missing_or_nonfinite_metric",
+      "field": "holding_current_pA"
+    },
+    {
+      "line": 4,
+      "record_id": "rec03",
+      "type": "missing_or_nonfinite_metric",
+      "field": "baseline_drift_mV_per_min"
+    },
+    {
+      "line": 4,
+      "record_id": "rec03",
+      "type": "missing_or_nonfinite_metric",
+      "field": "sampling_rate_Hz"
+    }
+  ],
+  "input_file_metadata": {
+    "path": "validation\\synthetic-ephys-raw-qc.csv",
+    "size_bytes": 988,
+    "sha256": "3369e6f0287ae68832b11a6770cec4bbde45599e05d5211cd5da64988ee60600"
+  },
+  "inference_warning": "Raw-file provenance/QC verification does not establish cell identity, channel selectivity, rhythm, causality or biological validity."
+}

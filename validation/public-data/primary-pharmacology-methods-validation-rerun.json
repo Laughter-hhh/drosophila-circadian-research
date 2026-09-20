@@ -1,0 +1,124 @@
+{
+  "status": "verified_pharmacology_plan",
+  "formal_status": "conditional_pilot_only",
+  "n_rows": 4,
+  "n_plans": 4,
+  "formal_rows": 0,
+  "formal_passes": 0,
+  "issues": [],
+  "warnings": [
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "type": "native_selectivity_not_verified",
+      "status": "heterologous_only"
+    },
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "type": "dose_response_not_validated",
+      "status": "not_assessed"
+    },
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "type": "washout_not_validated",
+      "status": "needs_confirmation"
+    },
+    {
+      "line": 2,
+      "plan_id": "SM19-Shaker",
+      "type": "blocked_for_formal",
+      "gates": [
+        "dose_response",
+        "native_selectivity",
+        "washout"
+      ]
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "type": "native_selectivity_not_verified",
+      "status": "heterologous_only"
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "type": "dose_response_not_validated",
+      "status": "not_assessed"
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "type": "washout_not_validated",
+      "status": "needs_confirmation"
+    },
+    {
+      "line": 3,
+      "plan_id": "SM19-Shab",
+      "type": "blocked_for_formal",
+      "gates": [
+        "dose_response",
+        "native_selectivity",
+        "washout"
+      ]
+    },
+    {
+      "line": 4,
+      "plan_id": "SM19-Shaw",
+      "type": "native_selectivity_not_verified",
+      "status": "heterologous_only"
+    },
+    {
+      "line": 4,
+      "plan_id": "SM19-Shaw",
+      "type": "dose_response_not_validated",
+      "status": "not_assessed"
+    },
+    {
+      "line": 4,
+      "plan_id": "SM19-Shaw",
+      "type": "washout_not_validated",
+      "status": "needs_confirmation"
+    },
+    {
+      "line": 4,
+      "plan_id": "SM19-Shaw",
+      "type": "blocked_for_formal",
+      "gates": [
+        "dose_response",
+        "native_selectivity",
+        "washout"
+      ]
+    },
+    {
+      "line": 5,
+      "plan_id": "SM19-Shal",
+      "type": "native_selectivity_not_verified",
+      "status": "heterologous_only"
+    },
+    {
+      "line": 5,
+      "plan_id": "SM19-Shal",
+      "type": "dose_response_not_validated",
+      "status": "not_assessed"
+    },
+    {
+      "line": 5,
+      "plan_id": "SM19-Shal",
+      "type": "washout_not_validated",
+      "status": "needs_confirmation"
+    },
+    {
+      "line": 5,
+      "plan_id": "SM19-Shal",
+      "type": "blocked_for_formal",
+      "gates": [
+        "dose_response",
+        "native_selectivity",
+        "washout"
+      ]
+    }
+  ],
+  "inference_warning": "Validation checks completeness, format, and formal-stage status gates only; it does not verify native-cell selectivity, dose-response values, onset, washout kinetics, toxicity, or that cited sources support the chosen conditions. formal_status is a stage-gate summary, not a biological result."
+}

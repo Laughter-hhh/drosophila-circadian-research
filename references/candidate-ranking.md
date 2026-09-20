@@ -1,0 +1,82 @@
+# 离子通道候选生成与排序
+
+## 建立长名单
+
+从 FlyBase、目标神经元 bulk/single-cell 数据、已有 electrophysiology、circadian screens、行为表型与跨物种研究汇总候选。保留阴性和冲突结果。
+
+按优先级分类：
+
+1. Leak channels 与 gated ion channels
+2. 其他直接形成离子电导的 channels
+3. Gap junction components
+4. Pumps、transporters、exchangers
+5. 调控 channel trafficking、phosphorylation 或 degradation 的蛋白
+
+不要因为类别优先级低而删除有强直接证据的候选。
+
+## 证据标签与 directness gate
+
+候选表必须把下列字段与评分分开保存：
+
+- `organism`：证据来自哪个物种；默认候选物种为 *Drosophila melanogaster*。
+- `target_cell_scope`：`direct_target_neuron`、`nearby_clock_neuron`、`indirect_or_unverified` 或 `none_or_unverified`。
+- `assay`：实际使用的 assay（例如 whole-cell electrophysiology、RNAi、immunostaining、single-cell RNA-seq）。
+- `readout_match`：`membrane_potential_or_current`、`expression_or_localization`、`behavior_only` 或 `none_or_unverified`。
+- `evidence_label`：`direct`、`near_direct`、`indirect` 或 `unverified`。
+
+`directness_gate=pass` 只允许同时满足：`evidence_label=direct`、直接目标时钟神经元范围、具名 assay，以及匹配膜电位/电流或表达/定位 readout。`near_direct` 只能得到 `conditional_directness`，用于信息获取或 pilot，不得伪装成直接 Top 候选。`indirect` 与 `unverified` 保留在长名单中，但必须标成需要直接证据。
+
+`directness_gate` 是**readout-specific**，不能跨 readout 解释：`expression_or_localization` 下的 `direct` 仅表示目标细胞中的转录本/表达/定位被直接测量，不等于通道电流、膜电位节律或功能因果证据；`membrane_potential_or_current` 也可能是观察性 readout，若要声称候选通道导致变化，必须核实候选特异扰动、相应对照和 readout。评分输出的 `readout_domain` 与 `directness_basis` 会明确列出当前直接性覆盖的 readout 域。`shortlist_gate` 是证据分流而非功能因果证明。
+
+如果满足 coverage 的直接 gate 候选少于用户要求的 Top 5/Top 10，必须报告“direct-gate 候选不足”，并同时给出 conditional/indirect 候选及其升级实验；不得用间接证据填满直接 Top-K。
+
+## 默认透明评分
+
+每项按 `0–3` 评分；缺失证据记 `NA`，不要记作 0。用以下权重生成初始排序，用户可覆盖：
+
+| 维度 | 权重 | 3 分示例 |
+|---|---:|---|
+| 目标时钟神经元表达 | 4 | 多个独立数据或直接成像在目标神经元支持 |
+| 已有电生理证据 | 4 | 操作该候选直接改变目标或紧邻神经元的相关电流或膜电位 |
+| 遗传工具可获得性 | 3 | 当前可核实的多个独立 reagents，且可做 cell/adult specificity |
+| 通道类别匹配 | 2 | leak 或与目标 readout 直接相关的 gated channel |
+| 昼夜节律证据 | 2 | 多时间点、适当模型支持 expression/localization/function rhythm |
+| 果蝇节律或行为因果证据 | 1 | 严格 controls 下有节律或行为效应 |
+| 跨物种机制支持 | 0.5 | 同源通道在 circadian neurons 中有直接机制证据 |
+
+计算：`score = Σ(observed rating × weight) / Σ(observed maximum × weight) × 100`。
+
+同时报告 evidence coverage，防止只有少量维度的候选获得虚高分。排序先按 directness gate/score，再按 coverage-adjusted score；总分不能掩盖表达矛盾、药理工具非选择性、reagent 未核实、发育表型、背景效应或 readout 不匹配。
+
+## 候选表与检索日志的联合门槛
+
+`scripts/validate_candidate_evidence.py` 默认做 schema 检查；真实候选进入排序前，使用：
+
+```powershell
+python scripts/validate_candidate_evidence.py candidates.csv `
+  --search-log evidence-search-log.csv `
+  --output candidate-evidence-validation.json
+```
+
+`--search-log` 会先验证 evidence-search log，然后要求每个候选出现在 log 中、候选表的 `sources` 至少与 log 的 `source_id` 或 `source_url_or_identifier` 共享一个标识，并对 `direct`/`near_direct`/`indirect` 标签要求至少一个 `source_support_status=checked` 记录。`direct` 还必须有匹配的 target scope 和 readout。这个门槛证明的是可追溯性和声明的一致性，不替代在线打开原文、数据库记录或核对 reagent 当前状态。
+
+合成夹具可以继续只做 schema 验证；若要模拟正式证据链，必须同时提供结构化 search log，并在报告中保留检索日期、查询、来源类型和纳入/降级决定。
+
+## 输出表
+
+完整长名单至少包含：
+
+| Candidate | Class | Organism | Target-cell scope | Assay | Readout match | Evidence label | Target-neuron expression | Electrophysiology | Genetic tools | Rhythmic evidence | Fly phenotype | Score | Coverage | Directness gate | Confidence | Keep/drop reason | Sources | Evidence notes |
+|---|---|---|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|---|---|---|---|
+
+先按 directness、score、coverage 综合排序，再深入分析 direct-gate Top 5 或 Top 10；若数量不足，明确列出缺口，不得静默补齐。对每个 Top 候选给出：
+
+- 最强支持与最强反证
+- 关键未知项
+- 最便宜或最快的信息获取步骤
+- pharmacological electrophysiology pilot
+- RNAi pilot 与避免发育效应的方案
+- 阳性结果的正交验证
+- 明确的淘汰或升级标准
+
+对降级候选写出原因，例如“目标神经元无可核实表达”“只有非果蝇证据”“药理选择性不足”“无可用遗传工具”，而不是静默删除。

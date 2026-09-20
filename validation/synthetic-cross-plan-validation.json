@@ -1,0 +1,8 @@
+{
+  "status": "verified_cross_plan",
+  "n_rows": 1,
+  "n_crosses": 1,
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "This audit checks completeness and formatting only; it does not confirm stock identity, genotype correctness, insertion chromosome, driver expression, or current availability."
+}

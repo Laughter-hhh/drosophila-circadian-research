@@ -1,0 +1,160 @@
+{
+  "status": "verified_exploratory_bundle_cosinor",
+  "assay": "ephys",
+  "stage": "exploratory",
+  "period_hours": 24.0,
+  "time_system": "ZT",
+  "group_by": [
+    "cell_type",
+    "genotype"
+  ],
+  "n_groups": 1,
+  "n_fit_groups": 1,
+  "n_insufficient_groups": 0,
+  "groups": [
+    {
+      "group": {
+        "cell_type": "s-LNv",
+        "genotype": "w1118"
+      },
+      "status": "exploratory_descriptive_fit",
+      "design": "longitudinal",
+      "n_biological_replicates": 2,
+      "n_aggregated_observations": 8,
+      "n_unique_time_points": 4,
+      "n_technical_measurements": 9,
+      "minimum_required_observations": 4,
+      "minimum_required_unique_time_points": 3,
+      "time_system": "ZT",
+      "period_hours": 24.0,
+      "mesor": 10.5,
+      "amplitude": 1.5811388300841895,
+      "phase_peak_hours": 1.2289965881948002,
+      "r_squared": 0.7142857142857143,
+      "n_observations": 8,
+      "n_subjects": 2,
+      "inference_warning": "Descriptive fit only; use a biological-unit-aware model or permutation test for inference."
+    }
+  ],
+  "warnings": [],
+  "bundle_gate": {
+    "status": "verified_preanalysis_bundle",
+    "assay": "ephys",
+    "stage": "exploratory",
+    "n_metadata_rows": 3,
+    "n_raw_records": 3,
+    "n_pass_raw_records": 2,
+    "n_measurement_rows": 9,
+    "n_measurement_record_ids": 2,
+    "orphan_measurement_record_ids": [],
+    "metadata_gate": {
+      "status": "verified_metadata",
+      "assay": "ephys",
+      "stage": "exploratory",
+      "required_fields": [
+        "species",
+        "genotype",
+        "sex",
+        "age_days",
+        "temperature_C",
+        "lighting",
+        "ZT_or_CT",
+        "experimental_unit",
+        "biological_replicate_id",
+        "batch_id",
+        "preparation",
+        "cell_type",
+        "recording_id",
+        "technical_replicate_id"
+      ],
+      "n_rows": 3,
+      "n_biological_replicates": 3,
+      "experimental_units": [
+        "cell"
+      ],
+      "issues": [],
+      "warnings": [],
+      "input_file_metadata": {
+        "path": "validation\\synthetic-ephys-bundle-metadata.csv",
+        "size_bytes": 569,
+        "sha256": "2f4c431b2f8a2d5783ff76f38380abe012c28720d1be58fa2ff88ed21a937d64"
+      },
+      "inference_warning": "Metadata verification is a schema/QC result; it does not establish rhythm, causality, power, cell identity or source-data validity."
+    },
+    "raw_qc_gate": {
+      "status": "verified_raw_qc_provenance",
+      "assay": "ephys",
+      "n_rows": 3,
+      "n_records": 3,
+      "issues": [],
+      "warnings": [
+        {
+          "line": 4,
+          "record_id": "rec03",
+          "type": "raw_file_not_attached"
+        },
+        {
+          "line": 4,
+          "record_id": "rec03",
+          "type": "analysis_unblinded"
+        },
+        {
+          "line": 4,
+          "record_id": "rec03",
+          "type": "missing_or_nonfinite_metric",
+          "field": "seal_MOhm"
+        },
+        {
+          "line": 4,
+          "record_id": "rec03",
+          "type": "missing_or_nonfinite_metric",
+          "field": "access_resistance_MOhm"
+        },
+        {
+          "line": 4,
+          "record_id": "rec03",
+          "type": "missing_or_nonfinite_metric",
+          "field": "holding_current_pA"
+        },
+        {
+          "line": 4,
+          "record_id": "rec03",
+          "type": "missing_or_nonfinite_metric",
+          "field": "baseline_drift_mV_per_min"
+        },
+        {
+          "line": 4,
+          "record_id": "rec03",
+          "type": "missing_or_nonfinite_metric",
+          "field": "sampling_rate_Hz"
+        }
+      ],
+      "input_file_metadata": {
+        "path": "validation\\synthetic-ephys-raw-qc.csv",
+        "size_bytes": 988,
+        "sha256": "3369e6f0287ae68832b11a6770cec4bbde45599e05d5211cd5da64988ee60600"
+      },
+      "inference_warning": "Raw-file provenance/QC verification does not establish cell identity, channel selectivity, rhythm, causality or biological validity."
+    },
+    "issues": [],
+    "input_file_metadata": {
+      "metadata": {
+        "path": "validation\\synthetic-ephys-bundle-metadata.csv",
+        "size_bytes": 569,
+        "sha256": "2f4c431b2f8a2d5783ff76f38380abe012c28720d1be58fa2ff88ed21a937d64"
+      },
+      "raw_qc": {
+        "path": "validation\\synthetic-ephys-raw-qc.csv",
+        "size_bytes": 988,
+        "sha256": "3369e6f0287ae68832b11a6770cec4bbde45599e05d5211cd5da64988ee60600"
+      },
+      "measurements": {
+        "path": "validation\\synthetic-ephys-cosinor-derived.csv",
+        "size_bytes": 304,
+        "sha256": "8da1ec199db7000b27c1249532fc47c0046e43f4f4aa0fe4da8aa9632674df67"
+      }
+    },
+    "inference_warning": "Bundle verification establishes input linkage and provenance only; it does not establish rhythm, cell identity, channel selectivity, causality or statistical power."
+  },
+  "inference_warning": "Descriptive fixed-period fits only. Technical repeats were averaged within biological replicate and time; no p-values, multiple-testing correction, causal inference or biological-unit-aware mixed-effects result is produced."
+}

@@ -1,0 +1,16 @@
+gene_symbol,priority_class
+Sh,gated_Kv
+Shab,gated_Kv
+Shaw,gated_Kv
+Shal,gated_Kv
+para,gated_Na
+cac,gated_Ca
+Ca-alpha1D,gated_Ca
+Ca-alpha1T,gated_Ca
+slo,gated_KCa
+sei,gated_Kv
+eag,gated_Kv
+Irk1,leak_Kir
+Irk2,leak_Kir
+Ork1,leak_K2P_like
+trpl,TRP_cation

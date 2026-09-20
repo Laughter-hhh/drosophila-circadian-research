@@ -1,0 +1,84 @@
+{
+  "manifest_id": "GSE157504-ion-channel-candidate-audit-20260920",
+  "dataset_id": "GSE157504",
+  "accession": "GSE157504",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
+  "retrieved_at_utc": "2026-09-20T05:47:23Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-20T06:30:43Z",
+  "source_check_method": "web_open",
+  "source_observed_tokens": [
+    "GSE157504",
+    "A transcriptomic taxonomy of Drosophila circadian neurons around the clock",
+    "Drosophila melanogaster",
+    "single-cell RNA sequencing",
+    "17 clock neuron categories",
+    "2,615 clock neurons",
+    "light:dark (LD)",
+    "constant darkness (DD)",
+    "Ma et al., eLife 10:e63056 (2021)"
+  ],
+  "source_observation_note": "The official eLife article was inspected from its indexed full-text result, including its title, single-cell circadian-neuron scope, 17 clock-neuron categories, figure description for 2,615 cells, LD/DD framing, and data-availability link to GSE157504 and the Rosbash lab analysis repository. Direct GEO page access returned a CAPTCHA and the direct eLife page request returned 403 in this session; the GEO search result still exposed GSE157504 and a CT02 sample, and the official eLife supplementary XLSX was downloaded from the eLife CDN and hash-checked.",
+  "analysis_context": {
+    "time_system": "LD samples are reported as ZT; DD samples are reported as CT. The author annotation stores a ztNN token in some DD cell IDs, so the join applies a condition-aware zt-to-CT alias without relabeling the experimental condition.",
+    "experimental_unit": "The single-cell columns are observations nested within source experiment/collection replicate; they are not independent fly-level replicates. The raw-count output is descriptive only.",
+    "normalization_status": "Raw matrix outputs are UMI counts with no normalization or rhythm model. The separate supplement extraction transcribes author-reported TP10K-based high-confidence cycling calls and does not re-fit them.",
+    "biological_unit_limitations": "The paper reports two experiments per condition. The supplied cell annotation does not identify individual flies or establish the fly-pool size per collection in the files reviewed. The source rhythmicity methods used individual cells as JTK replicates and randomly split cells for Fourier analysis; uncertainty is not re-estimated at biological-experiment level here. No channel protein, current, voltage, or causal behavior conclusion is supported by this transcript-only audit."
+  },
+  "files": [
+    {"path": "validation/public-data/GSE157504_RAW.tar", "role": "raw", "sha256": "ad4e99a063214780d61346b54e79fdb751e1a9c64efbcb0705fd04d42594c2bf", "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504"},
+    {"path": "validation/public-data/GSE157504_clock_neurons_annotation.csv", "role": "annotation", "sha256": "acf34eb2c550febc40b1eb228fcd87ce59b9ecdb7f5cec8b5ebf3c29bdb2debe", "source_url": "https://github.com/rosbashlab/scRNA_seq_clock_neurons"},
+    {"path": "validation/public-data/GSE157504_published_rhythmic_genes_supp1.xlsx", "role": "other", "sha256": "d3553deb0290bb56d73ab7713ec6b73f5749dc9d466dcdb5063b91cdef5c804b", "source_url": "https://cdn.elifesciences.org/articles/63056/elife-63056-supp1-v2.xlsx"},
+    {"path": "validation/public-data/GSE22308_candidate_genes.csv", "role": "candidate_list", "sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce", "source_url": ""},
+    {"path": "validation/public-data/GSE157504_candidate_rhythm_summary.csv", "role": "derived", "sha256": "0df6bf0d549379af18958ebbacb26355168479b04e43b18d35e3d57fb450a1b4"},
+    {"path": "validation/public-data/GSE157504_candidate_rhythm_details.csv", "role": "derived", "sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1"},
+    {"path": "validation/public-data/GSE157504_candidate_rhythm_extraction.json", "role": "derived", "sha256": "9345f27c2e7138d90239f7d4c2e0f53eec7c23c14e4db8d318238474d4e6a7a7"},
+    {"path": "validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv", "role": "derived", "sha256": "612e00fe006fb5ac44f5c7af48da89824c6000836429011437cb270af99a5245"},
+    {"path": "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv", "role": "derived", "sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857"},
+    {"path": "validation/public-data/GSE157504_candidate_raw_feature_status.csv", "role": "derived", "sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a"},
+    {"path": "validation/public-data/GSE157504_candidate_raw_detection_audit.json", "role": "derived", "sha256": "5dcfeb251649acf48f84ff57b312a61ea1c3aa84011c35077fe5c8734991eb59"}
+  ],
+  "runs": [
+    {
+      "run_id": "extract-published-channel-rhythms",
+      "script": "scripts/extract_published_sc_clock_channel_rhythms.py",
+      "script_sha256": "8a3fcfb5f1076311607f5a939fa8d2498bbec3954a16255eec810c2232aabd41",
+      "command": "python scripts/extract_published_sc_clock_channel_rhythms.py validation/public-data/GSE22308_candidate_genes.csv validation/public-data/GSE157504_published_rhythmic_genes_supp1.xlsx --source-url https://elifesciences.org/articles/63056 --provenance-root . --expected-candidate-sha256 ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce --expected-supplement-sha256 d3553deb0290bb56d73ab7713ec6b73f5749dc9d466dcdb5063b91cdef5c804b --summary-output validation/public-data/GSE157504_candidate_rhythm_summary.csv --detail-output validation/public-data/GSE157504_candidate_rhythm_details.csv --report-output validation/public-data/GSE157504_candidate_rhythm_extraction.json",
+      "inputs": ["validation/public-data/GSE22308_candidate_genes.csv", "validation/public-data/GSE157504_published_rhythmic_genes_supp1.xlsx"],
+      "outputs": ["validation/public-data/GSE157504_candidate_rhythm_summary.csv", "validation/public-data/GSE157504_candidate_rhythm_details.csv", "validation/public-data/GSE157504_candidate_rhythm_extraction.json"],
+      "status": "verified",
+      "command_argv": [
+        "python", "scripts/extract_published_sc_clock_channel_rhythms.py",
+        "validation/public-data/GSE22308_candidate_genes.csv", "validation/public-data/GSE157504_published_rhythmic_genes_supp1.xlsx",
+        "--source-url", "https://elifesciences.org/articles/63056", "--provenance-root", ".",
+        "--expected-candidate-sha256", "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+        "--expected-supplement-sha256", "d3553deb0290bb56d73ab7713ec6b73f5749dc9d466dcdb5063b91cdef5c804b",
+        "--summary-output", "validation/public-data/GSE157504_candidate_rhythm_summary.csv",
+        "--detail-output", "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+        "--report-output", "validation/public-data/GSE157504_candidate_rhythm_extraction.json"
+      ]
+    },
+    {
+      "run_id": "audit-raw-count-cell-detection",
+      "script": "scripts/audit_gse157504_candidate_detection.py",
+      "script_sha256": "e2737e9a20c93081ee1da87be89da5677b7c544e7b3c191b34bffb157fe4a39e",
+      "command": "python scripts/audit_gse157504_candidate_detection.py validation/public-data/GSE157504_RAW.tar validation/public-data/GSE157504_clock_neurons_annotation.csv validation/public-data/GSE22308_candidate_genes.csv --provenance-root . --expected-raw-sha256 ad4e99a063214780d61346b54e79fdb751e1a9c64efbcb0705fd04d42594c2bf --expected-annotation-sha256 acf34eb2c550febc40b1eb228fcd87ce59b9ecdb7f5cec8b5ebf3c29bdb2debe --expected-candidate-sha256 ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce --sample-output validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv --group-output validation/public-data/GSE157504_candidate_raw_detection_by_group.csv --feature-output validation/public-data/GSE157504_candidate_raw_feature_status.csv --report-output validation/public-data/GSE157504_candidate_raw_detection_audit.json",
+      "inputs": ["validation/public-data/GSE157504_RAW.tar", "validation/public-data/GSE157504_clock_neurons_annotation.csv", "validation/public-data/GSE22308_candidate_genes.csv"],
+      "outputs": ["validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv", "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv", "validation/public-data/GSE157504_candidate_raw_feature_status.csv", "validation/public-data/GSE157504_candidate_raw_detection_audit.json"],
+      "status": "verified",
+      "command_argv": [
+        "python", "scripts/audit_gse157504_candidate_detection.py",
+        "validation/public-data/GSE157504_RAW.tar", "validation/public-data/GSE157504_clock_neurons_annotation.csv", "validation/public-data/GSE22308_candidate_genes.csv",
+        "--provenance-root", ".",
+        "--expected-raw-sha256", "ad4e99a063214780d61346b54e79fdb751e1a9c64efbcb0705fd04d42594c2bf",
+        "--expected-annotation-sha256", "acf34eb2c550febc40b1eb228fcd87ce59b9ecdb7f5cec8b5ebf3c29bdb2debe",
+        "--expected-candidate-sha256", "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+        "--sample-output", "validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv",
+        "--group-output", "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+        "--feature-output", "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+        "--report-output", "validation/public-data/GSE157504_candidate_raw_detection_audit.json"
+      ]
+    }
+  ]
+}

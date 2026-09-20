@@ -1,0 +1,9 @@
+record_id,time_seconds,roi_id,value
+irec01,0,roi01,100
+irec01,1,roi01,110
+irec01,2,roi01,105
+irec01,3,roi01,115
+irec01,0,roi02,80
+irec01,1,roi02,90
+irec01,2,roi02,85
+irec01,3,roi02,95

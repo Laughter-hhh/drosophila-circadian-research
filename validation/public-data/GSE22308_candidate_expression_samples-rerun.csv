@@ -1,0 +1,361 @@
+gene_symbol,sample_id,cell_type,time,background,probe_count,expression,probe_ids
+Sh,GSM555213,ELAV neurons,ZT12,yw,7,8.953019585,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555214,ELAV neurons,ZT12,yw,7,8.590637598,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555215,ELAV neurons,ZT12,yw,7,9.257019904,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555216,ELAV neurons,ZT0,yw,7,8.700632683,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555217,ELAV neurons,ZT0,yw,7,9.536469195,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555218,ELAV neurons,ZT0,yw,7,9.394631696,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555219,large PDF circadian neurons,ZT0,yw,7,9.112606836,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555220,large PDF circadian neurons,ZT0,yw,7,9.39653032,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555221,large PDF circadian neurons,ZT0,yw,7,9.432744939,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555222,large PDF circadian neurons,ZT6,yw,7,9.661190599,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555223,large PDF circadian neurons,ZT6,yw,7,9.415314193,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555224,large PDF circadian neurons,ZT12,yw,7,8.986069774,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555225,large PDF circadian neurons,ZT12,yw,7,7.939683264,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555226,large PDF circadian neurons,ZT12,yw,7,9.452536614,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555227,large PDF circadian neurons,ZT18,yw,7,9.094742216,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555228,large PDF circadian neurons,ZT18,yw,7,9.124875669,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555229,small PDF circadian neurons,ZT12,yw,7,8.89220933,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555230,small PDF circadian neurons,ZT12,yw,7,9.386043235,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555231,small PDF circadian neurons,ZT0,yw,7,8.495900576,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555232,small PDF circadian neurons,ZT0,yw,7,9.515319009,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555233,large PDF circadian neurons,ZT12,per01,7,8.922896918,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555234,large PDF circadian neurons,ZT12,per01,7,9.307110425,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555235,large PDF circadian neurons,ZT0,per01,7,8.030699697,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM555236,large PDF circadian neurons,ZT0,per01,7,9.195205548,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Shab,GSM555213,ELAV neurons,ZT12,yw,2,4.465561317000001,1633404_at;1638535_a_at
+Shab,GSM555214,ELAV neurons,ZT12,yw,2,5.271731923,1633404_at;1638535_a_at
+Shab,GSM555215,ELAV neurons,ZT12,yw,2,3.134449385,1633404_at;1638535_a_at
+Shab,GSM555216,ELAV neurons,ZT0,yw,2,3.7362755595,1633404_at;1638535_a_at
+Shab,GSM555217,ELAV neurons,ZT0,yw,2,3.445778121,1633404_at;1638535_a_at
+Shab,GSM555218,ELAV neurons,ZT0,yw,2,3.7939677115,1633404_at;1638535_a_at
+Shab,GSM555219,large PDF circadian neurons,ZT0,yw,2,3.1137677945,1633404_at;1638535_a_at
+Shab,GSM555220,large PDF circadian neurons,ZT0,yw,2,4.184638238,1633404_at;1638535_a_at
+Shab,GSM555221,large PDF circadian neurons,ZT0,yw,2,4.0005869965,1633404_at;1638535_a_at
+Shab,GSM555222,large PDF circadian neurons,ZT6,yw,2,3.3402098025,1633404_at;1638535_a_at
+Shab,GSM555223,large PDF circadian neurons,ZT6,yw,2,4.808131087,1633404_at;1638535_a_at
+Shab,GSM555224,large PDF circadian neurons,ZT12,yw,2,4.098126543999999,1633404_at;1638535_a_at
+Shab,GSM555225,large PDF circadian neurons,ZT12,yw,2,4.415210053,1633404_at;1638535_a_at
+Shab,GSM555226,large PDF circadian neurons,ZT12,yw,2,3.553071394,1633404_at;1638535_a_at
+Shab,GSM555227,large PDF circadian neurons,ZT18,yw,2,3.2038244365,1633404_at;1638535_a_at
+Shab,GSM555228,large PDF circadian neurons,ZT18,yw,2,2.981404099,1633404_at;1638535_a_at
+Shab,GSM555229,small PDF circadian neurons,ZT12,yw,2,4.9135183125,1633404_at;1638535_a_at
+Shab,GSM555230,small PDF circadian neurons,ZT12,yw,2,3.9447309280000002,1633404_at;1638535_a_at
+Shab,GSM555231,small PDF circadian neurons,ZT0,yw,2,4.030047214,1633404_at;1638535_a_at
+Shab,GSM555232,small PDF circadian neurons,ZT0,yw,2,3.153896781,1633404_at;1638535_a_at
+Shab,GSM555233,large PDF circadian neurons,ZT12,per01,2,2.623335728,1633404_at;1638535_a_at
+Shab,GSM555234,large PDF circadian neurons,ZT12,per01,2,3.187586159,1633404_at;1638535_a_at
+Shab,GSM555235,large PDF circadian neurons,ZT0,per01,2,3.114110073,1633404_at;1638535_a_at
+Shab,GSM555236,large PDF circadian neurons,ZT0,per01,2,2.635576725,1633404_at;1638535_a_at
+Shaw,GSM555213,ELAV neurons,ZT12,yw,2,6.4582067925,1623070_a_at;1632961_at
+Shaw,GSM555214,ELAV neurons,ZT12,yw,2,7.8586678995,1623070_a_at;1632961_at
+Shaw,GSM555215,ELAV neurons,ZT12,yw,2,6.1399856725,1623070_a_at;1632961_at
+Shaw,GSM555216,ELAV neurons,ZT0,yw,2,6.667760765,1623070_a_at;1632961_at
+Shaw,GSM555217,ELAV neurons,ZT0,yw,2,7.5652993765000005,1623070_a_at;1632961_at
+Shaw,GSM555218,ELAV neurons,ZT0,yw,2,6.7365715395,1623070_a_at;1632961_at
+Shaw,GSM555219,large PDF circadian neurons,ZT0,yw,2,4.665495823,1623070_a_at;1632961_at
+Shaw,GSM555220,large PDF circadian neurons,ZT0,yw,2,5.7452829995000005,1623070_a_at;1632961_at
+Shaw,GSM555221,large PDF circadian neurons,ZT0,yw,2,5.7586451095,1623070_a_at;1632961_at
+Shaw,GSM555222,large PDF circadian neurons,ZT6,yw,2,3.8814034845,1623070_a_at;1632961_at
+Shaw,GSM555223,large PDF circadian neurons,ZT6,yw,2,4.045111771,1623070_a_at;1632961_at
+Shaw,GSM555224,large PDF circadian neurons,ZT12,yw,2,5.049810773,1623070_a_at;1632961_at
+Shaw,GSM555225,large PDF circadian neurons,ZT12,yw,2,4.576419521,1623070_a_at;1632961_at
+Shaw,GSM555226,large PDF circadian neurons,ZT12,yw,2,5.0026619885,1623070_a_at;1632961_at
+Shaw,GSM555227,large PDF circadian neurons,ZT18,yw,2,4.792891303,1623070_a_at;1632961_at
+Shaw,GSM555228,large PDF circadian neurons,ZT18,yw,2,4.405818936999999,1623070_a_at;1632961_at
+Shaw,GSM555229,small PDF circadian neurons,ZT12,yw,2,7.1872516235,1623070_a_at;1632961_at
+Shaw,GSM555230,small PDF circadian neurons,ZT12,yw,2,5.871867984,1623070_a_at;1632961_at
+Shaw,GSM555231,small PDF circadian neurons,ZT0,yw,2,6.8374095530000005,1623070_a_at;1632961_at
+Shaw,GSM555232,small PDF circadian neurons,ZT0,yw,2,5.6111291505,1623070_a_at;1632961_at
+Shaw,GSM555233,large PDF circadian neurons,ZT12,per01,2,2.6750977474999997,1623070_a_at;1632961_at
+Shaw,GSM555234,large PDF circadian neurons,ZT12,per01,2,2.9846810010000002,1623070_a_at;1632961_at
+Shaw,GSM555235,large PDF circadian neurons,ZT0,per01,2,3.9293515169999997,1623070_a_at;1632961_at
+Shaw,GSM555236,large PDF circadian neurons,ZT0,per01,2,2.748974637,1623070_a_at;1632961_at
+Shal,GSM555213,ELAV neurons,ZT12,yw,1,8.199555309,1638398_at
+Shal,GSM555214,ELAV neurons,ZT12,yw,1,6.501792926,1638398_at
+Shal,GSM555215,ELAV neurons,ZT12,yw,1,4.049288737,1638398_at
+Shal,GSM555216,ELAV neurons,ZT0,yw,1,6.731235408,1638398_at
+Shal,GSM555217,ELAV neurons,ZT0,yw,1,7.717395988,1638398_at
+Shal,GSM555218,ELAV neurons,ZT0,yw,1,7.519606872,1638398_at
+Shal,GSM555219,large PDF circadian neurons,ZT0,yw,1,3.541321378,1638398_at
+Shal,GSM555220,large PDF circadian neurons,ZT0,yw,1,2.810038446,1638398_at
+Shal,GSM555221,large PDF circadian neurons,ZT0,yw,1,3.044314198,1638398_at
+Shal,GSM555222,large PDF circadian neurons,ZT6,yw,1,4.750375011,1638398_at
+Shal,GSM555223,large PDF circadian neurons,ZT6,yw,1,2.651915424,1638398_at
+Shal,GSM555224,large PDF circadian neurons,ZT12,yw,1,5.820204446,1638398_at
+Shal,GSM555225,large PDF circadian neurons,ZT12,yw,1,6.540606913,1638398_at
+Shal,GSM555226,large PDF circadian neurons,ZT12,yw,1,2.420306313,1638398_at
+Shal,GSM555227,large PDF circadian neurons,ZT18,yw,1,2.318349967,1638398_at
+Shal,GSM555228,large PDF circadian neurons,ZT18,yw,1,2.984271395,1638398_at
+Shal,GSM555229,small PDF circadian neurons,ZT12,yw,1,6.443738333,1638398_at
+Shal,GSM555230,small PDF circadian neurons,ZT12,yw,1,4.814559075,1638398_at
+Shal,GSM555231,small PDF circadian neurons,ZT0,yw,1,6.711595571,1638398_at
+Shal,GSM555232,small PDF circadian neurons,ZT0,yw,1,4.751171539,1638398_at
+Shal,GSM555233,large PDF circadian neurons,ZT12,per01,1,2.880727742,1638398_at
+Shal,GSM555234,large PDF circadian neurons,ZT12,per01,1,2.942765603,1638398_at
+Shal,GSM555235,large PDF circadian neurons,ZT0,per01,1,2.537201871,1638398_at
+Shal,GSM555236,large PDF circadian neurons,ZT0,per01,1,5.056596031,1638398_at
+para,GSM555213,ELAV neurons,ZT12,yw,1,9.232682164,1627300_at
+para,GSM555214,ELAV neurons,ZT12,yw,1,9.168359732,1627300_at
+para,GSM555215,ELAV neurons,ZT12,yw,1,9.37063128,1627300_at
+para,GSM555216,ELAV neurons,ZT0,yw,1,8.958101391,1627300_at
+para,GSM555217,ELAV neurons,ZT0,yw,1,8.8722062,1627300_at
+para,GSM555218,ELAV neurons,ZT0,yw,1,8.854491019,1627300_at
+para,GSM555219,large PDF circadian neurons,ZT0,yw,1,7.242383903,1627300_at
+para,GSM555220,large PDF circadian neurons,ZT0,yw,1,7.200720563,1627300_at
+para,GSM555221,large PDF circadian neurons,ZT0,yw,1,7.285007015,1627300_at
+para,GSM555222,large PDF circadian neurons,ZT6,yw,1,8.40661235,1627300_at
+para,GSM555223,large PDF circadian neurons,ZT6,yw,1,8.185937304,1627300_at
+para,GSM555224,large PDF circadian neurons,ZT12,yw,1,8.373219676,1627300_at
+para,GSM555225,large PDF circadian neurons,ZT12,yw,1,7.655204974,1627300_at
+para,GSM555226,large PDF circadian neurons,ZT12,yw,1,8.332908839,1627300_at
+para,GSM555227,large PDF circadian neurons,ZT18,yw,1,6.481152938,1627300_at
+para,GSM555228,large PDF circadian neurons,ZT18,yw,1,8.32549668,1627300_at
+para,GSM555229,small PDF circadian neurons,ZT12,yw,1,8.024284581,1627300_at
+para,GSM555230,small PDF circadian neurons,ZT12,yw,1,8.47775473,1627300_at
+para,GSM555231,small PDF circadian neurons,ZT0,yw,1,8.034370798,1627300_at
+para,GSM555232,small PDF circadian neurons,ZT0,yw,1,7.336032079,1627300_at
+para,GSM555233,large PDF circadian neurons,ZT12,per01,1,6.923884622,1627300_at
+para,GSM555234,large PDF circadian neurons,ZT12,per01,1,7.451325935,1627300_at
+para,GSM555235,large PDF circadian neurons,ZT0,per01,1,6.578221496,1627300_at
+para,GSM555236,large PDF circadian neurons,ZT0,per01,1,6.252924432,1627300_at
+cac,GSM555213,ELAV neurons,ZT12,yw,2,6.4447948870000005,1640033_at;1640614_at
+cac,GSM555214,ELAV neurons,ZT12,yw,2,6.821797484499999,1640033_at;1640614_at
+cac,GSM555215,ELAV neurons,ZT12,yw,2,6.6576593885,1640033_at;1640614_at
+cac,GSM555216,ELAV neurons,ZT0,yw,2,6.447980369000001,1640033_at;1640614_at
+cac,GSM555217,ELAV neurons,ZT0,yw,2,6.430860477,1640033_at;1640614_at
+cac,GSM555218,ELAV neurons,ZT0,yw,2,6.652411103,1640033_at;1640614_at
+cac,GSM555219,large PDF circadian neurons,ZT0,yw,2,6.227189523,1640033_at;1640614_at
+cac,GSM555220,large PDF circadian neurons,ZT0,yw,2,6.497064943,1640033_at;1640614_at
+cac,GSM555221,large PDF circadian neurons,ZT0,yw,2,6.4895275305,1640033_at;1640614_at
+cac,GSM555222,large PDF circadian neurons,ZT6,yw,2,6.785425689,1640033_at;1640614_at
+cac,GSM555223,large PDF circadian neurons,ZT6,yw,2,6.663055425,1640033_at;1640614_at
+cac,GSM555224,large PDF circadian neurons,ZT12,yw,2,6.6195225115000005,1640033_at;1640614_at
+cac,GSM555225,large PDF circadian neurons,ZT12,yw,2,6.8618351195,1640033_at;1640614_at
+cac,GSM555226,large PDF circadian neurons,ZT12,yw,2,6.4685942255,1640033_at;1640614_at
+cac,GSM555227,large PDF circadian neurons,ZT18,yw,2,6.5893902855,1640033_at;1640614_at
+cac,GSM555228,large PDF circadian neurons,ZT18,yw,2,6.7759946410000005,1640033_at;1640614_at
+cac,GSM555229,small PDF circadian neurons,ZT12,yw,2,6.3594437575,1640033_at;1640614_at
+cac,GSM555230,small PDF circadian neurons,ZT12,yw,2,7.1012864105,1640033_at;1640614_at
+cac,GSM555231,small PDF circadian neurons,ZT0,yw,2,6.951242179,1640033_at;1640614_at
+cac,GSM555232,small PDF circadian neurons,ZT0,yw,2,6.817915703000001,1640033_at;1640614_at
+cac,GSM555233,large PDF circadian neurons,ZT12,per01,2,6.424488748,1640033_at;1640614_at
+cac,GSM555234,large PDF circadian neurons,ZT12,per01,2,6.719101503,1640033_at;1640614_at
+cac,GSM555235,large PDF circadian neurons,ZT0,per01,2,6.2015344924999996,1640033_at;1640614_at
+cac,GSM555236,large PDF circadian neurons,ZT0,per01,2,6.6921210495,1640033_at;1640614_at
+Ca-alpha1D,GSM555213,ELAV neurons,ZT12,yw,1,10.07934345,1640092_a_at
+Ca-alpha1D,GSM555214,ELAV neurons,ZT12,yw,1,10.29243139,1640092_a_at
+Ca-alpha1D,GSM555215,ELAV neurons,ZT12,yw,1,10.00086699,1640092_a_at
+Ca-alpha1D,GSM555216,ELAV neurons,ZT0,yw,1,10.08928464,1640092_a_at
+Ca-alpha1D,GSM555217,ELAV neurons,ZT0,yw,1,10.29797141,1640092_a_at
+Ca-alpha1D,GSM555218,ELAV neurons,ZT0,yw,1,10.06702468,1640092_a_at
+Ca-alpha1D,GSM555219,large PDF circadian neurons,ZT0,yw,1,10.25266707,1640092_a_at
+Ca-alpha1D,GSM555220,large PDF circadian neurons,ZT0,yw,1,9.307702349,1640092_a_at
+Ca-alpha1D,GSM555221,large PDF circadian neurons,ZT0,yw,1,9.72993444,1640092_a_at
+Ca-alpha1D,GSM555222,large PDF circadian neurons,ZT6,yw,1,9.376735264,1640092_a_at
+Ca-alpha1D,GSM555223,large PDF circadian neurons,ZT6,yw,1,10.02189672,1640092_a_at
+Ca-alpha1D,GSM555224,large PDF circadian neurons,ZT12,yw,1,9.174797584,1640092_a_at
+Ca-alpha1D,GSM555225,large PDF circadian neurons,ZT12,yw,1,10.38772615,1640092_a_at
+Ca-alpha1D,GSM555226,large PDF circadian neurons,ZT12,yw,1,9.375213908,1640092_a_at
+Ca-alpha1D,GSM555227,large PDF circadian neurons,ZT18,yw,1,9.993670373,1640092_a_at
+Ca-alpha1D,GSM555228,large PDF circadian neurons,ZT18,yw,1,9.820690118,1640092_a_at
+Ca-alpha1D,GSM555229,small PDF circadian neurons,ZT12,yw,1,10.37833823,1640092_a_at
+Ca-alpha1D,GSM555230,small PDF circadian neurons,ZT12,yw,1,10.1546543,1640092_a_at
+Ca-alpha1D,GSM555231,small PDF circadian neurons,ZT0,yw,1,10.15663804,1640092_a_at
+Ca-alpha1D,GSM555232,small PDF circadian neurons,ZT0,yw,1,9.869787285,1640092_a_at
+Ca-alpha1D,GSM555233,large PDF circadian neurons,ZT12,per01,1,9.299620706,1640092_a_at
+Ca-alpha1D,GSM555234,large PDF circadian neurons,ZT12,per01,1,9.346449639,1640092_a_at
+Ca-alpha1D,GSM555235,large PDF circadian neurons,ZT0,per01,1,9.621277523,1640092_a_at
+Ca-alpha1D,GSM555236,large PDF circadian neurons,ZT0,per01,1,9.243110324,1640092_a_at
+Ca-alpha1T,GSM555213,ELAV neurons,ZT12,yw,1,5.460805326,1630042_at
+Ca-alpha1T,GSM555214,ELAV neurons,ZT12,yw,1,5.382694164,1630042_at
+Ca-alpha1T,GSM555215,ELAV neurons,ZT12,yw,1,3.802158037,1630042_at
+Ca-alpha1T,GSM555216,ELAV neurons,ZT0,yw,1,5.595787956,1630042_at
+Ca-alpha1T,GSM555217,ELAV neurons,ZT0,yw,1,5.362658653,1630042_at
+Ca-alpha1T,GSM555218,ELAV neurons,ZT0,yw,1,5.414210568,1630042_at
+Ca-alpha1T,GSM555219,large PDF circadian neurons,ZT0,yw,1,3.802390807,1630042_at
+Ca-alpha1T,GSM555220,large PDF circadian neurons,ZT0,yw,1,4.032465117,1630042_at
+Ca-alpha1T,GSM555221,large PDF circadian neurons,ZT0,yw,1,3.425895001,1630042_at
+Ca-alpha1T,GSM555222,large PDF circadian neurons,ZT6,yw,1,4.289298925,1630042_at
+Ca-alpha1T,GSM555223,large PDF circadian neurons,ZT6,yw,1,5.012723943,1630042_at
+Ca-alpha1T,GSM555224,large PDF circadian neurons,ZT12,yw,1,5.430186302,1630042_at
+Ca-alpha1T,GSM555225,large PDF circadian neurons,ZT12,yw,1,5.047278367,1630042_at
+Ca-alpha1T,GSM555226,large PDF circadian neurons,ZT12,yw,1,5.239567186,1630042_at
+Ca-alpha1T,GSM555227,large PDF circadian neurons,ZT18,yw,1,3.531656681,1630042_at
+Ca-alpha1T,GSM555228,large PDF circadian neurons,ZT18,yw,1,3.209751937,1630042_at
+Ca-alpha1T,GSM555229,small PDF circadian neurons,ZT12,yw,1,4.271836065,1630042_at
+Ca-alpha1T,GSM555230,small PDF circadian neurons,ZT12,yw,1,3.54347728,1630042_at
+Ca-alpha1T,GSM555231,small PDF circadian neurons,ZT0,yw,1,2.880342828,1630042_at
+Ca-alpha1T,GSM555232,small PDF circadian neurons,ZT0,yw,1,4.695907888,1630042_at
+Ca-alpha1T,GSM555233,large PDF circadian neurons,ZT12,per01,1,2.444638638,1630042_at
+Ca-alpha1T,GSM555234,large PDF circadian neurons,ZT12,per01,1,2.447433541,1630042_at
+Ca-alpha1T,GSM555235,large PDF circadian neurons,ZT0,per01,1,2.778233025,1630042_at
+Ca-alpha1T,GSM555236,large PDF circadian neurons,ZT0,per01,1,2.421377877,1630042_at
+slo,GSM555213,ELAV neurons,ZT12,yw,1,6.340243033,1637301_a_at
+slo,GSM555214,ELAV neurons,ZT12,yw,1,6.930433015,1637301_a_at
+slo,GSM555215,ELAV neurons,ZT12,yw,1,5.915252286,1637301_a_at
+slo,GSM555216,ELAV neurons,ZT0,yw,1,5.997471857,1637301_a_at
+slo,GSM555217,ELAV neurons,ZT0,yw,1,6.559054438,1637301_a_at
+slo,GSM555218,ELAV neurons,ZT0,yw,1,5.938756443,1637301_a_at
+slo,GSM555219,large PDF circadian neurons,ZT0,yw,1,5.608398852,1637301_a_at
+slo,GSM555220,large PDF circadian neurons,ZT0,yw,1,5.514471659,1637301_a_at
+slo,GSM555221,large PDF circadian neurons,ZT0,yw,1,5.555418567,1637301_a_at
+slo,GSM555222,large PDF circadian neurons,ZT6,yw,1,6.457047543,1637301_a_at
+slo,GSM555223,large PDF circadian neurons,ZT6,yw,1,5.367091252,1637301_a_at
+slo,GSM555224,large PDF circadian neurons,ZT12,yw,1,6.86688804,1637301_a_at
+slo,GSM555225,large PDF circadian neurons,ZT12,yw,1,4.956392019,1637301_a_at
+slo,GSM555226,large PDF circadian neurons,ZT12,yw,1,5.462920804,1637301_a_at
+slo,GSM555227,large PDF circadian neurons,ZT18,yw,1,5.671486246,1637301_a_at
+slo,GSM555228,large PDF circadian neurons,ZT18,yw,1,5.952549133,1637301_a_at
+slo,GSM555229,small PDF circadian neurons,ZT12,yw,1,6.148537808,1637301_a_at
+slo,GSM555230,small PDF circadian neurons,ZT12,yw,1,5.458435451,1637301_a_at
+slo,GSM555231,small PDF circadian neurons,ZT0,yw,1,5.612403963,1637301_a_at
+slo,GSM555232,small PDF circadian neurons,ZT0,yw,1,5.526538992,1637301_a_at
+slo,GSM555233,large PDF circadian neurons,ZT12,per01,1,5.821617792,1637301_a_at
+slo,GSM555234,large PDF circadian neurons,ZT12,per01,1,5.115852594,1637301_a_at
+slo,GSM555235,large PDF circadian neurons,ZT0,per01,1,5.765236309,1637301_a_at
+slo,GSM555236,large PDF circadian neurons,ZT0,per01,1,5.095163408,1637301_a_at
+sei,GSM555213,ELAV neurons,ZT12,yw,1,9.642918078,1629418_s_at
+sei,GSM555214,ELAV neurons,ZT12,yw,1,9.629846477,1629418_s_at
+sei,GSM555215,ELAV neurons,ZT12,yw,1,8.701955906,1629418_s_at
+sei,GSM555216,ELAV neurons,ZT0,yw,1,8.66767826,1629418_s_at
+sei,GSM555217,ELAV neurons,ZT0,yw,1,9.001481521,1629418_s_at
+sei,GSM555218,ELAV neurons,ZT0,yw,1,9.281393712,1629418_s_at
+sei,GSM555219,large PDF circadian neurons,ZT0,yw,1,8.59176669,1629418_s_at
+sei,GSM555220,large PDF circadian neurons,ZT0,yw,1,8.991591692,1629418_s_at
+sei,GSM555221,large PDF circadian neurons,ZT0,yw,1,8.702447665,1629418_s_at
+sei,GSM555222,large PDF circadian neurons,ZT6,yw,1,8.025768055,1629418_s_at
+sei,GSM555223,large PDF circadian neurons,ZT6,yw,1,8.133466725,1629418_s_at
+sei,GSM555224,large PDF circadian neurons,ZT12,yw,1,8.454968699,1629418_s_at
+sei,GSM555225,large PDF circadian neurons,ZT12,yw,1,8.649520897,1629418_s_at
+sei,GSM555226,large PDF circadian neurons,ZT12,yw,1,8.989431386,1629418_s_at
+sei,GSM555227,large PDF circadian neurons,ZT18,yw,1,9.211469617,1629418_s_at
+sei,GSM555228,large PDF circadian neurons,ZT18,yw,1,8.872146267,1629418_s_at
+sei,GSM555229,small PDF circadian neurons,ZT12,yw,1,8.05504,1629418_s_at
+sei,GSM555230,small PDF circadian neurons,ZT12,yw,1,8.501100147,1629418_s_at
+sei,GSM555231,small PDF circadian neurons,ZT0,yw,1,8.973424861,1629418_s_at
+sei,GSM555232,small PDF circadian neurons,ZT0,yw,1,8.819482605,1629418_s_at
+sei,GSM555233,large PDF circadian neurons,ZT12,per01,1,8.495357912,1629418_s_at
+sei,GSM555234,large PDF circadian neurons,ZT12,per01,1,8.158992158,1629418_s_at
+sei,GSM555235,large PDF circadian neurons,ZT0,per01,1,8.028965329,1629418_s_at
+sei,GSM555236,large PDF circadian neurons,ZT0,per01,1,7.985107049,1629418_s_at
+eag,GSM555213,ELAV neurons,ZT12,yw,1,4.613354945,1635822_at
+eag,GSM555214,ELAV neurons,ZT12,yw,1,4.923228816,1635822_at
+eag,GSM555215,ELAV neurons,ZT12,yw,1,5.032528875,1635822_at
+eag,GSM555216,ELAV neurons,ZT0,yw,1,5.261498432,1635822_at
+eag,GSM555217,ELAV neurons,ZT0,yw,1,4.651313657,1635822_at
+eag,GSM555218,ELAV neurons,ZT0,yw,1,4.734720072,1635822_at
+eag,GSM555219,large PDF circadian neurons,ZT0,yw,1,4.797603272,1635822_at
+eag,GSM555220,large PDF circadian neurons,ZT0,yw,1,4.61525904,1635822_at
+eag,GSM555221,large PDF circadian neurons,ZT0,yw,1,4.58649782,1635822_at
+eag,GSM555222,large PDF circadian neurons,ZT6,yw,1,4.633337091,1635822_at
+eag,GSM555223,large PDF circadian neurons,ZT6,yw,1,4.634572639,1635822_at
+eag,GSM555224,large PDF circadian neurons,ZT12,yw,1,4.743257261,1635822_at
+eag,GSM555225,large PDF circadian neurons,ZT12,yw,1,4.813184757,1635822_at
+eag,GSM555226,large PDF circadian neurons,ZT12,yw,1,4.624173877,1635822_at
+eag,GSM555227,large PDF circadian neurons,ZT18,yw,1,5.169892141,1635822_at
+eag,GSM555228,large PDF circadian neurons,ZT18,yw,1,4.868951049,1635822_at
+eag,GSM555229,small PDF circadian neurons,ZT12,yw,1,4.648917138,1635822_at
+eag,GSM555230,small PDF circadian neurons,ZT12,yw,1,4.757594352,1635822_at
+eag,GSM555231,small PDF circadian neurons,ZT0,yw,1,4.489450028,1635822_at
+eag,GSM555232,small PDF circadian neurons,ZT0,yw,1,4.722901799,1635822_at
+eag,GSM555233,large PDF circadian neurons,ZT12,per01,1,2.85643886,1635822_at
+eag,GSM555234,large PDF circadian neurons,ZT12,per01,1,2.852398521,1635822_at
+eag,GSM555235,large PDF circadian neurons,ZT0,per01,1,2.847338149,1635822_at
+eag,GSM555236,large PDF circadian neurons,ZT0,per01,1,2.783876711,1635822_at
+Irk1,GSM555213,ELAV neurons,ZT12,yw,2,3.8452804925,1626256_at;1627795_at
+Irk1,GSM555214,ELAV neurons,ZT12,yw,2,2.8568845325,1626256_at;1627795_at
+Irk1,GSM555215,ELAV neurons,ZT12,yw,2,3.819305293,1626256_at;1627795_at
+Irk1,GSM555216,ELAV neurons,ZT0,yw,2,3.5707237625,1626256_at;1627795_at
+Irk1,GSM555217,ELAV neurons,ZT0,yw,2,3.5695687195000003,1626256_at;1627795_at
+Irk1,GSM555218,ELAV neurons,ZT0,yw,2,3.076327735,1626256_at;1627795_at
+Irk1,GSM555219,large PDF circadian neurons,ZT0,yw,2,4.3705174509999996,1626256_at;1627795_at
+Irk1,GSM555220,large PDF circadian neurons,ZT0,yw,2,2.7301176920000003,1626256_at;1627795_at
+Irk1,GSM555221,large PDF circadian neurons,ZT0,yw,2,3.515177973,1626256_at;1627795_at
+Irk1,GSM555222,large PDF circadian neurons,ZT6,yw,2,3.0437788135000003,1626256_at;1627795_at
+Irk1,GSM555223,large PDF circadian neurons,ZT6,yw,2,3.861978917,1626256_at;1627795_at
+Irk1,GSM555224,large PDF circadian neurons,ZT12,yw,2,6.0891572025,1626256_at;1627795_at
+Irk1,GSM555225,large PDF circadian neurons,ZT12,yw,2,6.5715630775000005,1626256_at;1627795_at
+Irk1,GSM555226,large PDF circadian neurons,ZT12,yw,2,6.7654248125,1626256_at;1627795_at
+Irk1,GSM555227,large PDF circadian neurons,ZT18,yw,2,4.8793688235,1626256_at;1627795_at
+Irk1,GSM555228,large PDF circadian neurons,ZT18,yw,2,4.207333453,1626256_at;1627795_at
+Irk1,GSM555229,small PDF circadian neurons,ZT12,yw,2,7.1427907265,1626256_at;1627795_at
+Irk1,GSM555230,small PDF circadian neurons,ZT12,yw,2,6.8162372730000005,1626256_at;1627795_at
+Irk1,GSM555231,small PDF circadian neurons,ZT0,yw,2,4.5450363905,1626256_at;1627795_at
+Irk1,GSM555232,small PDF circadian neurons,ZT0,yw,2,4.3349786895,1626256_at;1627795_at
+Irk1,GSM555233,large PDF circadian neurons,ZT12,per01,2,5.165393383,1626256_at;1627795_at
+Irk1,GSM555234,large PDF circadian neurons,ZT12,per01,2,5.252147798,1626256_at;1627795_at
+Irk1,GSM555235,large PDF circadian neurons,ZT0,per01,2,4.8544870620000005,1626256_at;1627795_at
+Irk1,GSM555236,large PDF circadian neurons,ZT0,per01,2,4.4798068125,1626256_at;1627795_at
+Irk2,GSM555213,ELAV neurons,ZT12,yw,1,3.172657643,1638466_a_at
+Irk2,GSM555214,ELAV neurons,ZT12,yw,1,2.835562736,1638466_a_at
+Irk2,GSM555215,ELAV neurons,ZT12,yw,1,2.923397651,1638466_a_at
+Irk2,GSM555216,ELAV neurons,ZT0,yw,1,3.309118092,1638466_a_at
+Irk2,GSM555217,ELAV neurons,ZT0,yw,1,3.094732974,1638466_a_at
+Irk2,GSM555218,ELAV neurons,ZT0,yw,1,3.047195338,1638466_a_at
+Irk2,GSM555219,large PDF circadian neurons,ZT0,yw,1,3.086631059,1638466_a_at
+Irk2,GSM555220,large PDF circadian neurons,ZT0,yw,1,5.369496156,1638466_a_at
+Irk2,GSM555221,large PDF circadian neurons,ZT0,yw,1,2.867900539,1638466_a_at
+Irk2,GSM555222,large PDF circadian neurons,ZT6,yw,1,3.077723599,1638466_a_at
+Irk2,GSM555223,large PDF circadian neurons,ZT6,yw,1,3.621169779,1638466_a_at
+Irk2,GSM555224,large PDF circadian neurons,ZT12,yw,1,3.071790659,1638466_a_at
+Irk2,GSM555225,large PDF circadian neurons,ZT12,yw,1,3.075490221,1638466_a_at
+Irk2,GSM555226,large PDF circadian neurons,ZT12,yw,1,3.181419865,1638466_a_at
+Irk2,GSM555227,large PDF circadian neurons,ZT18,yw,1,3.244213842,1638466_a_at
+Irk2,GSM555228,large PDF circadian neurons,ZT18,yw,1,3.089459354,1638466_a_at
+Irk2,GSM555229,small PDF circadian neurons,ZT12,yw,1,3.085372034,1638466_a_at
+Irk2,GSM555230,small PDF circadian neurons,ZT12,yw,1,3.671272392,1638466_a_at
+Irk2,GSM555231,small PDF circadian neurons,ZT0,yw,1,2.934896099,1638466_a_at
+Irk2,GSM555232,small PDF circadian neurons,ZT0,yw,1,3.086863642,1638466_a_at
+Irk2,GSM555233,large PDF circadian neurons,ZT12,per01,1,2.29153648,1638466_a_at
+Irk2,GSM555234,large PDF circadian neurons,ZT12,per01,1,2.291222438,1638466_a_at
+Irk2,GSM555235,large PDF circadian neurons,ZT0,per01,1,2.290714601,1638466_a_at
+Irk2,GSM555236,large PDF circadian neurons,ZT0,per01,1,2.292685178,1638466_a_at
+Ork1,GSM555213,ELAV neurons,ZT12,yw,1,2.391324882,1635938_s_at
+Ork1,GSM555214,ELAV neurons,ZT12,yw,1,2.348847854,1635938_s_at
+Ork1,GSM555215,ELAV neurons,ZT12,yw,1,2.30073116,1635938_s_at
+Ork1,GSM555216,ELAV neurons,ZT0,yw,1,2.389266084,1635938_s_at
+Ork1,GSM555217,ELAV neurons,ZT0,yw,1,2.407464928,1635938_s_at
+Ork1,GSM555218,ELAV neurons,ZT0,yw,1,2.417022917,1635938_s_at
+Ork1,GSM555219,large PDF circadian neurons,ZT0,yw,1,2.469017785,1635938_s_at
+Ork1,GSM555220,large PDF circadian neurons,ZT0,yw,1,2.407117679,1635938_s_at
+Ork1,GSM555221,large PDF circadian neurons,ZT0,yw,1,2.38588996,1635938_s_at
+Ork1,GSM555222,large PDF circadian neurons,ZT6,yw,1,2.439684418,1635938_s_at
+Ork1,GSM555223,large PDF circadian neurons,ZT6,yw,1,2.422021594,1635938_s_at
+Ork1,GSM555224,large PDF circadian neurons,ZT12,yw,1,2.402740077,1635938_s_at
+Ork1,GSM555225,large PDF circadian neurons,ZT12,yw,1,2.479516439,1635938_s_at
+Ork1,GSM555226,large PDF circadian neurons,ZT12,yw,1,2.397926418,1635938_s_at
+Ork1,GSM555227,large PDF circadian neurons,ZT18,yw,1,2.578943922,1635938_s_at
+Ork1,GSM555228,large PDF circadian neurons,ZT18,yw,1,2.482864718,1635938_s_at
+Ork1,GSM555229,small PDF circadian neurons,ZT12,yw,1,2.437175799,1635938_s_at
+Ork1,GSM555230,small PDF circadian neurons,ZT12,yw,1,2.605881755,1635938_s_at
+Ork1,GSM555231,small PDF circadian neurons,ZT0,yw,1,2.367904669,1635938_s_at
+Ork1,GSM555232,small PDF circadian neurons,ZT0,yw,1,2.570270134,1635938_s_at
+Ork1,GSM555233,large PDF circadian neurons,ZT12,per01,1,2.376009717,1635938_s_at
+Ork1,GSM555234,large PDF circadian neurons,ZT12,per01,1,2.369194849,1635938_s_at
+Ork1,GSM555235,large PDF circadian neurons,ZT0,per01,1,2.373204597,1635938_s_at
+Ork1,GSM555236,large PDF circadian neurons,ZT0,per01,1,2.374923766,1635938_s_at
+trpl,GSM555213,ELAV neurons,ZT12,yw,1,2.707542705,1633649_s_at
+trpl,GSM555214,ELAV neurons,ZT12,yw,1,2.729641851,1633649_s_at
+trpl,GSM555215,ELAV neurons,ZT12,yw,1,2.756432611,1633649_s_at
+trpl,GSM555216,ELAV neurons,ZT0,yw,1,2.741351803,1633649_s_at
+trpl,GSM555217,ELAV neurons,ZT0,yw,1,2.827314312,1633649_s_at
+trpl,GSM555218,ELAV neurons,ZT0,yw,1,3.424623306,1633649_s_at
+trpl,GSM555219,large PDF circadian neurons,ZT0,yw,1,2.72861831,1633649_s_at
+trpl,GSM555220,large PDF circadian neurons,ZT0,yw,1,2.788830062,1633649_s_at
+trpl,GSM555221,large PDF circadian neurons,ZT0,yw,1,2.729399935,1633649_s_at
+trpl,GSM555222,large PDF circadian neurons,ZT6,yw,1,2.981116585,1633649_s_at
+trpl,GSM555223,large PDF circadian neurons,ZT6,yw,1,2.759067697,1633649_s_at
+trpl,GSM555224,large PDF circadian neurons,ZT12,yw,1,2.74662421,1633649_s_at
+trpl,GSM555225,large PDF circadian neurons,ZT12,yw,1,2.744534579,1633649_s_at
+trpl,GSM555226,large PDF circadian neurons,ZT12,yw,1,2.751189647,1633649_s_at
+trpl,GSM555227,large PDF circadian neurons,ZT18,yw,1,2.838003509,1633649_s_at
+trpl,GSM555228,large PDF circadian neurons,ZT18,yw,1,3.077768794,1633649_s_at
+trpl,GSM555229,small PDF circadian neurons,ZT12,yw,1,2.769443682,1633649_s_at
+trpl,GSM555230,small PDF circadian neurons,ZT12,yw,1,2.713048103,1633649_s_at
+trpl,GSM555231,small PDF circadian neurons,ZT0,yw,1,2.749239113,1633649_s_at
+trpl,GSM555232,small PDF circadian neurons,ZT0,yw,1,2.759622244,1633649_s_at
+trpl,GSM555233,large PDF circadian neurons,ZT12,per01,1,2.558525588,1633649_s_at
+trpl,GSM555234,large PDF circadian neurons,ZT12,per01,1,2.545983511,1633649_s_at
+trpl,GSM555235,large PDF circadian neurons,ZT0,per01,1,2.664975333,1633649_s_at
+trpl,GSM555236,large PDF circadian neurons,ZT0,per01,1,2.563515225,1633649_s_at

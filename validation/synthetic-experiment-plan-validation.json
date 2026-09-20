@@ -1,0 +1,49 @@
+{
+  "status": "verified_experiment_plan",
+  "formal_status": "formal_gate_passed_external_checks_pending",
+  "n_rows": 4,
+  "n_plans": 4,
+  "formal_rows": 1,
+  "formal_passes": 1,
+  "issues": [],
+  "warnings": [],
+  "power_gate": {
+    "status": "verified_power_basis_report",
+    "report_id": "synthetic-power-basis-20260908",
+    "n_records": 1,
+    "n_formal_eligible": 1,
+    "records": [
+      {
+        "plan_id": "EXP-Formal-Shaw",
+        "line": 1,
+        "independent_biological_unit": "fly",
+        "basis_status": "pilot_estimate",
+        "declared_n_per_group": 63,
+        "declared_minimum_n_total": 126,
+        "formal_eligible": true,
+        "issues": [],
+        "warnings": [
+          {
+            "line": 1,
+            "plan_id": "EXP-Formal-Shaw",
+            "type": "complex_design_not_reduced_to_independent_two_group_formula"
+          }
+        ],
+        "calculation": {
+          "method": "externally_reviewed_power",
+          "computed": false
+        }
+      }
+    ],
+    "issues": [],
+    "warnings": [
+      {
+        "line": 1,
+        "plan_id": "EXP-Formal-Shaw",
+        "type": "complex_design_not_reduced_to_independent_two_group_formula"
+      }
+    ],
+    "inference_warning": "This report verifies declared planning assumptions and transparent calculations only; it does not establish biological effect, assay quality, causal validity or achieved power."
+  },
+  "inference_warning": "This validator checks experimental-plan completeness, stage gates, control declarations and (when supplied) a transparent power-basis report; it does not establish biological causality, assay performance, reagent selectivity or achieved power."
+}

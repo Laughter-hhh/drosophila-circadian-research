@@ -1,0 +1,49 @@
+{
+  "scenarios": [
+    "default",
+    "expression_ephys_priority",
+    "genetic_tools_priority"
+  ],
+  "rankings": {
+    "default": [
+      "balanced",
+      "tools-led",
+      "expression-led"
+    ],
+    "expression_ephys_priority": [
+      "balanced",
+      "expression-led",
+      "tools-led"
+    ],
+    "genetic_tools_priority": [
+      "balanced",
+      "tools-led",
+      "expression-led"
+    ]
+  },
+  "shortlist_gate_pass": {
+    "default": [
+      "balanced",
+      "tools-led",
+      "expression-led"
+    ],
+    "expression_ephys_priority": [
+      "balanced",
+      "expression-led",
+      "tools-led"
+    ],
+    "genetic_tools_priority": [
+      "balanced",
+      "tools-led",
+      "expression-led"
+    ]
+  },
+  "top_candidates": {
+    "default": "balanced",
+    "expression_ephys_priority": "balanced",
+    "genetic_tools_priority": "balanced"
+  },
+  "top_candidate_stable": true,
+  "ranking_rule": "sort by coverage_adjusted_score = raw_score * weighted_coverage, then coverage and raw_score",
+  "shortlist_gate_rule": "pass requires coverage >= 0.5 and observed_dimensions >= 3; this is an evidence-completeness gate, not a biological conclusion"
+}

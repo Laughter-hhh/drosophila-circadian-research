@@ -1,0 +1,19 @@
+{
+  "status": "executed_mixed_model",
+  "formula": "value ~ cos24 + sin24",
+  "random_effect": "1 | biological_replicate_id",
+  "n_rows": 32,
+  "n_biological_replicates": 8,
+  "converged": true,
+  "fixed_effects": {"cos24": 2.0, "sin24": -1.0},
+  "cosinor": {
+    "beta_cos24": 2.0,
+    "beta_sin24": -1.0,
+    "amplitude": 2.2360679,
+    "acrophase_hours": 1.759,
+    "amplitude_normal_approx_95_ci": [1.5, 3.0]
+  },
+  "residual_diagnostics": {"n": 32, "n_finite": 32, "mean": 0.0, "sd": 0.4, "max_abs": 1.1},
+  "technical_qc": {"converged": true, "all_residuals_finite": true},
+  "runtime_versions": {"python": "3.12", "numpy": "2", "pandas": "2", "statsmodels": "0.14"}
+}

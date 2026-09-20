@@ -1,0 +1,48 @@
+{
+  "status": "verified_primary_genetics",
+  "n_rows": 8,
+  "issues": [],
+  "warnings": [
+    {
+      "line": 2,
+      "paper_id": "Griffith2008",
+      "type": "stock_identity_still_required"
+    },
+    {
+      "line": 3,
+      "paper_id": "Griffith2008",
+      "type": "stock_identity_still_required"
+    },
+    {
+      "line": 4,
+      "paper_id": "Griffith2008",
+      "type": "stock_identity_still_required"
+    },
+    {
+      "line": 5,
+      "paper_id": "Griffith2008",
+      "type": "stock_identity_still_required"
+    },
+    {
+      "line": 6,
+      "paper_id": "Griffith2008",
+      "type": "stock_identity_still_required"
+    },
+    {
+      "line": 7,
+      "paper_id": "Griffith2008",
+      "type": "stock_identity_still_required"
+    },
+    {
+      "line": 8,
+      "paper_id": "Griffith2008",
+      "type": "stock_identity_still_required"
+    },
+    {
+      "line": 9,
+      "paper_id": "Griffith2008",
+      "type": "stock_identity_still_required"
+    }
+  ],
+  "inference_warning": "Validation checks extraction completeness and format only; it does not verify stock identity, driver expression, background, or the reported biological effect."
+}

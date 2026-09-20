@@ -1,0 +1,69 @@
+{
+  "manifest_id": "zenodo-18214640-20lux-metadata-audit-20260908",
+  "dataset_id": "zenodo-18214640-20lux-main",
+  "accession": "10.5281/zenodo.18214640",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://zenodo.org/records/18214640",
+  "retrieved_at_utc": "2026-09-08T02:48:30Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-08T02:20:00Z",
+  "source_check_method": "web_open",
+  "source_observed_tokens": [
+    "Fruit flies actively restart their circadian clock by proactively shaping their environment",
+    "Drosophila melanogaster",
+    "20lux_main.dataset.csv",
+    "ethoscope_raw_data.zip",
+    "machine_name",
+    "region_id",
+    "condition",
+    "baseline_days"
+  ],
+  "source_observation_note": "Official Zenodo record was opened; it listed the 20lux_main.dataset.csv metadata file and large raw ethoscope archive. The direct metadata CSV was downloaded and hashed locally; raw recordings were not downloaded.",
+  "analysis_context": {
+    "time_system": "The metadata CSV does not define a complete ZT/CT schedule; baseline_days requires interpretation from the source protocol.",
+    "experimental_unit": "A machine-date-region row is a metadata candidate for an ROI/fly record; individual-fly identity was not independently validated.",
+    "normalization_status": "Metadata-only audit; raw ethoscope recordings and behavioral feature extraction were not downloaded or rerun.",
+    "biological_unit_limitations": "Local metadata lacks genotype/strain, sex, age_days, temperature_C, LD/DD timing definition, validated individual-fly identifiers and raw recording checksums."
+  },
+  "files": [
+    {
+      "path": "validation/public-data/zenodo-18214640-20lux-main-dataset.csv",
+      "role": "raw",
+      "sha256": "1879cb556e1f84a225520b5a4d4689244b7109bfe850261d24dd3137c7fb1008"
+    },
+    {
+      "path": "validation/public-data/zenodo-18214640-20lux-metadata-audit.json",
+      "role": "derived",
+      "sha256": "f1623d6abaa871fd657859555eebef015390d0601fe74e42663b4d0d34ed631e"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "audit-zenodo-20lux-metadata",
+      "script": "scripts/audit_public_behavior_metadata.py",
+      "script_sha256": "479a81f726cc7f694a0f45520d253cba80311ae14e129f29c6ae6132ff5d45d5",
+      "command": "python scripts/audit_public_behavior_metadata.py validation/public-data/zenodo-18214640-20lux-main-dataset.csv --source-url https://zenodo.org/records/18214640 --expected-sha256 1879cb556e1f84a225520b5a4d4689244b7109bfe850261d24dd3137c7fb1008 --provenance-path validation/public-data/zenodo-18214640-20lux-main-dataset.csv --output validation/public-data/zenodo-18214640-20lux-metadata-audit.json",
+      "inputs": [
+        "validation/public-data/zenodo-18214640-20lux-main-dataset.csv"
+      ],
+      "outputs": [
+        "validation/public-data/zenodo-18214640-20lux-metadata-audit.json"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/audit_public_behavior_metadata.py",
+        "validation/public-data/zenodo-18214640-20lux-main-dataset.csv",
+        "--source-url",
+        "https://zenodo.org/records/18214640",
+        "--expected-sha256",
+        "1879cb556e1f84a225520b5a4d4689244b7109bfe850261d24dd3137c7fb1008",
+        "--provenance-path",
+        "validation/public-data/zenodo-18214640-20lux-main-dataset.csv",
+        "--output",
+        "validation/public-data/zenodo-18214640-20lux-metadata-audit.json"
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,68 @@
+{
+  "status": "ready_for_mixed_model",
+  "input_file": "validation\\synthetic\\one_timepoint_flat_formal.csv",
+  "input_file_metadata": {
+    "path": "validation\\synthetic\\one_timepoint_flat_formal.csv",
+    "size_bytes": 1617,
+    "sha256": "e84543f8839520c2a1a85b0f5e4addc160bb36d3c56cc6450e454d738541af33"
+  },
+  "input_columns": [
+    "biological_replicate_id",
+    "subunit_id",
+    "time_hours",
+    "value",
+    "experimental_unit",
+    "gene_symbol",
+    "cell_type",
+    "background",
+    "batch_id",
+    "sex",
+    "age_days",
+    "genotype",
+    "temperature_C",
+    "lighting"
+  ],
+  "output_table": "validation\\synthetic\\one_timepoint_flat_formal_aggregated.csv",
+  "output_table_metadata": {
+    "path": "validation\\synthetic\\one_timepoint_flat_formal_aggregated.csv",
+    "size_bytes": 1500,
+    "sha256": "92c1c24d1a1bc46889be6b8ba39c360cfa946ec1c8cb41ef3cd12ca7c9ac283a"
+  },
+  "experimental_unit": "fly",
+  "n_analysis_strata": 1,
+  "analysis_strata": [
+    {
+      "gene_symbol": "na",
+      "cell_type": "s-LNv",
+      "background": "w1118"
+    }
+  ],
+  "n_raw_observations": 16,
+  "n_aggregated_unit_time_means": 16,
+  "n_biological_replicates": 16,
+  "n_repeated_biological_replicates": 0,
+  "n_unique_time_points": 4,
+  "missing_covariate_counts": {},
+  "invalid_covariate_counts": {},
+  "metadata_conflicts": [],
+  "blocking_reasons": [],
+  "model_specification": {
+    "analysis_stratum": "one gene_symbol × cell_type × background per model input",
+    "fixed_effects": [
+      "intercept",
+      "cos(2*pi*time_hours/24)",
+      "sin(2*pi*time_hours/24)",
+      "batch_id",
+      "sex",
+      "age_days",
+      "genotype",
+      "temperature_C",
+      "lighting"
+    ],
+    "random_effects": [],
+    "random_effect_note": "Random intercept is estimable only when biological replicates contribute repeated aggregated observations within one analysis stratum; otherwise use biological replicate as the independent unit without a random intercept.",
+    "aggregation": "mean within gene_symbol × cell_type × background × biological_replicate_id × time_hours",
+    "period_hours": 24.0,
+    "note": "Specification only; fit in a supported mixed-effects runtime and pre-register contrasts/QC before formal claims."
+  }
+}

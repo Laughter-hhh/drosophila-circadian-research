@@ -1,0 +1,21 @@
+{
+  "status": "invalid_stock_audit",
+  "issues": [
+    {
+      "type": "missing_columns",
+      "columns": [
+        "availability_status",
+        "balancer_or_marker",
+        "full_genotype",
+        "genetic_background",
+        "insertion_chromosome",
+        "notes",
+        "source_url",
+        "stock_center",
+        "stock_number",
+        "verification_status"
+      ]
+    }
+  ],
+  "n_rows": 0
+}

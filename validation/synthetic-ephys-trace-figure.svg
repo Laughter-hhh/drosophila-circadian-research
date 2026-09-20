@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">Synthetic ephys resting membrane potential</text>
+<text x="450" y="52" text-anchor="middle" font-family="Arial" font-size="12">ZT · resting_membrane_potential [mV]</text>
+<line x1="82" y1="492" x2="864" y2="492" stroke="#222"/>
+<line x1="82" y1="76" x2="82" y2="492" stroke="#222"/>
+<line x1="82" y1="492" x2="82" y2="497" stroke="#222"/>
+<text x="82" y="514" text-anchor="middle" font-family="Arial" font-size="11">-1</text>
+<line x1="277.5" y1="492" x2="277.5" y2="497" stroke="#222"/>
+<text x="277.5" y="514" text-anchor="middle" font-family="Arial" font-size="11">4</text>
+<line x1="473" y1="492" x2="473" y2="497" stroke="#222"/>
+<text x="473" y="514" text-anchor="middle" font-family="Arial" font-size="11">9</text>
+<line x1="668.5" y1="492" x2="668.5" y2="497" stroke="#222"/>
+<text x="668.5" y="514" text-anchor="middle" font-family="Arial" font-size="11">14</text>
+<line x1="864" y1="492" x2="864" y2="497" stroke="#222"/>
+<text x="864" y="514" text-anchor="middle" font-family="Arial" font-size="11">19</text>
+<line x1="77" y1="492" x2="82" y2="492" stroke="#222"/>
+<text x="72" y="496" text-anchor="end" font-family="Arial" font-size="11">7.83</text>
+<line x1="77" y1="388" x2="82" y2="388" stroke="#222"/>
+<text x="72" y="392" text-anchor="end" font-family="Arial" font-size="11">8.99</text>
+<line x1="77" y1="284" x2="82" y2="284" stroke="#222"/>
+<text x="72" y="288" text-anchor="end" font-family="Arial" font-size="11">10.2</text>
+<line x1="77" y1="180" x2="82" y2="180" stroke="#222"/>
+<text x="72" y="184" text-anchor="end" font-family="Arial" font-size="11">11.3</text>
+<line x1="77" y1="76" x2="82" y2="76" stroke="#222"/>
+<text x="72" y="80" text-anchor="end" font-family="Arial" font-size="11">12.5</text>
+<text x="473" y="542" text-anchor="middle" font-family="Arial" font-size="12">time (ZT)</text>
+<text x="18" y="284" transform="rotate(-90 18 284)" text-anchor="middle" font-family="Arial" font-size="12">value (mV)</text>
+<circle cx="121.1" cy="104.69" r="3.2" fill="#1b6ca8" fill-opacity="0.48"><title>fly01: 0.0 = 12.15</title></circle>
+<circle cx="355.7" cy="284" r="3.2" fill="#d1495b" fill-opacity="0.48"><title>fly02: 6.0 = 10.15</title></circle>
+<circle cx="590.3" cy="463.31" r="3.2" fill="#2a9d8f" fill-opacity="0.48"><title>fly03: 12.0 = 8.15</title></circle>
+<circle cx="824.9" cy="284" r="3.2" fill="#e9c46a" fill-opacity="0.48"><title>fly04: 18.0 = 10.15</title></circle>
+<line x1="704" y1="76" x2="722" y2="76" stroke="#1b6ca8" stroke-width="3"/>
+<text x="728" y="80" font-family="Arial" font-size="11">fly01</text>
+<line x1="704" y1="92" x2="722" y2="92" stroke="#d1495b" stroke-width="3"/>
+<text x="728" y="96" font-family="Arial" font-size="11">fly02</text>
+<line x1="704" y1="108" x2="722" y2="108" stroke="#2a9d8f" stroke-width="3"/>
+<text x="728" y="112" font-family="Arial" font-size="11">fly03</text>
+<line x1="704" y1="124" x2="722" y2="124" stroke="#e9c46a" stroke-width="3"/>
+<text x="728" y="128" font-family="Arial" font-size="11">fly04</text>
+</svg>

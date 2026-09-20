@@ -1,0 +1,28 @@
+{
+  "status": "verified_visualization_export",
+  "analysis_status": "executed_visualization_only",
+  "scientific_status": "not_a_rhythm_test",
+  "time_system": "ZT",
+  "metric_name": "resting_membrane_potential",
+  "value_unit": "mV",
+  "group_column": "biological_replicate_id",
+  "n_rows": 4,
+  "n_groups": 4,
+  "groups": [
+    "fly01",
+    "fly02",
+    "fly03",
+    "fly04"
+  ],
+  "input_file_metadata": {
+    "path": "validation\\synthetic-ephys-trace-derived-rerun.csv",
+    "sha256": "af56526e90a906385da9d9352c04d54212ab7e68bf6583bb5eafbca76d4375a2",
+    "size_bytes": 524
+  },
+  "output_file_metadata": {
+    "path": "validation\\synthetic-ephys-trace-rerun-figure.svg",
+    "sha256": "b68e81f329df6f0be35c963342cc8f9d3c528709820de275ccc5bc72af8ff192",
+    "size_bytes": 3262
+  },
+  "inference_warning": "SVG export preserves raw rows and deterministic time-point means; it does not estimate rhythmicity, significance or causality."
+}

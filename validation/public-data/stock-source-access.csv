@@ -1,0 +1,4 @@
+record_id,source_url,expected_tokens
+stock-pdf,https://flybase.org/reports/FBst0080939,FBst0080939;80939
+stock-shal,https://flybase.org/reports/FBal0244846,FBal0244846;31879
+paper-sm19,https://pubmed.ncbi.nlm.nih.gov/31612994/,31612994;PMID:31612994

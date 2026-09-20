@@ -1,0 +1,9 @@
+{
+  "status": "verified_source_access_report",
+  "formal_status": "report_schema_verified",
+  "report_status": "conditional_source_access",
+  "n_records": 3,
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "This validator checks report structure and provenance fields; it does not independently prove that an automated token match or manual observation is true."
+}

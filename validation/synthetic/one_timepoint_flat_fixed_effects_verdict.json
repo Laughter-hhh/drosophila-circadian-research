@@ -1,0 +1,5 @@
+{
+  "status": "verified_fixed_effects_result",
+  "blocking_reasons": [],
+  "interpretation": "Technical QC and file-identity checks only; HC3 and normal-approximation uncertainty do not replace estimand review, independent replication or biological interpretation."
+}

@@ -1,0 +1,4 @@
+metadata_row_id,species,genotype,sex,age_days,temperature_C,lighting,ZT_or_CT,experimental_unit,biological_replicate_id,batch_id,preparation,cell_type,recording_id,technical_replicate_id
+meta01,Drosophila melanogaster,w1118,female,5,25,LD 12:12,ZT2,cell,fly01,patch_batch_1,ex vivo whole brain,s-LNv,rec01,trace01
+meta02,Drosophila melanogaster,w1118,female,5,25,LD 12:12,ZT8,cell,fly02,patch_batch_1,ex vivo whole brain,s-LNv,rec02,trace02
+meta03,Drosophila melanogaster,w1118,female,5,25,LD 12:12,ZT14,cell,fly03,patch_batch_1,ex vivo whole brain,s-LNv,rec03,trace03

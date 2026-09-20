@@ -1,0 +1,69 @@
+{
+  "status": "verified_public_dataset_replay",
+  "n_runs": 1,
+  "n_output_checks": 1,
+  "runs": [
+    {
+      "run_id": "audit-zenodo-20lux-metadata",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "",
+      "stderr_preview": ""
+    }
+  ],
+  "output_checks": [
+    {
+      "run_id": "audit-zenodo-20lux-metadata",
+      "path": "validation/public-data/zenodo-18214640-20lux-metadata-audit.json",
+      "expected_sha256": "f1623d6abaa871fd657859555eebef015390d0601fe74e42663b4d0d34ed631e",
+      "observed_sha256": "f1623d6abaa871fd657859555eebef015390d0601fe74e42663b4d0d34ed631e",
+      "status": "replay_hash_verified"
+    }
+  ],
+  "issues": [],
+  "inference_warning": "Replay verifies deterministic execution and declared output hashes in an isolated temporary mirror; it does not establish biological validity, normalization suitability, statistical adequacy or causal conclusions.",
+  "manifest_validation": {
+    "status": "verified_public_dataset_manifest",
+    "formal_status": "online_source_content_verified",
+    "manifest_id": "zenodo-18214640-20lux-metadata-audit-20260908",
+    "dataset_id": "zenodo-18214640-20lux-main",
+    "accession": "10.5281/zenodo.18214640",
+    "n_files": 2,
+    "n_runs": 1,
+    "file_checks": [
+      {
+        "path": "validation/public-data/zenodo-18214640-20lux-main-dataset.csv",
+        "role": "raw",
+        "expected_sha256": "1879cb556e1f84a225520b5a4d4689244b7109bfe850261d24dd3137c7fb1008",
+        "observed_sha256": "1879cb556e1f84a225520b5a4d4689244b7109bfe850261d24dd3137c7fb1008",
+        "size_bytes": 8622,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/zenodo-18214640-20lux-metadata-audit.json",
+        "role": "derived",
+        "expected_sha256": "f1623d6abaa871fd657859555eebef015390d0601fe74e42663b4d0d34ed631e",
+        "observed_sha256": "f1623d6abaa871fd657859555eebef015390d0601fe74e42663b4d0d34ed631e",
+        "size_bytes": 1455,
+        "status": "hash_verified"
+      }
+    ],
+    "run_checks": [
+      {
+        "run_id": "audit-zenodo-20lux-metadata",
+        "script": "scripts/audit_public_behavior_metadata.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/zenodo-18214640-20lux-main-dataset.csv"
+        ],
+        "outputs": [
+          "validation/public-data/zenodo-18214640-20lux-metadata-audit.json"
+        ]
+      }
+    ],
+    "issues": [],
+    "warnings": [],
+    "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+  }
+}

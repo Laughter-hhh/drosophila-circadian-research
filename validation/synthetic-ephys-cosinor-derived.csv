@@ -1,0 +1,10 @@
+record_id,metadata_row_id,biological_replicate_id,time_hours,value
+rec01,meta01,fly01,0,12.0
+rec01,meta01,fly01,6,10.0
+rec01,meta01,fly01,6,10.0
+rec01,meta01,fly01,12,8.0
+rec01,meta01,fly01,18,10.0
+rec02,meta02,fly02,0,12.0
+rec02,meta02,fly02,6,12.0
+rec02,meta02,fly02,12,10.0
+rec02,meta02,fly02,18,10.0

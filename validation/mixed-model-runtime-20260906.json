@@ -1,0 +1,16 @@
+{
+  "status": "blocked_mixed_model_runtime_unavailable",
+  "python": "LOCAL_PATH\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "python_packages": {
+    "numpy": true,
+    "pandas": true,
+    "statsmodels": false
+  },
+  "executables": {
+    "Rscript": null,
+    "matlab": null,
+    "octave": null
+  },
+  "available_backends": [],
+  "interpretation": "Availability only; fitting still requires a ready manifest, model review, convergence checks and pre-specified contrasts."
+}

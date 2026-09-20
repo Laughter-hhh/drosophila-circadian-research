@@ -1,0 +1,43 @@
+{
+  "status": "exploratory_nested_cosinor_inference",
+  "method": "fixed 24-hour cosinor on biological-unit × time means + cluster bootstrap",
+  "seed": 20260906,
+  "n_permutations": 1000,
+  "n_bootstrap": 1000,
+  "n_groups": 1,
+  "groups": [
+    {
+      "n_raw_observations": 64,
+      "experimental_unit": "fly",
+      "n_aggregated_biological_unit_time_means": 32,
+      "n_biological_replicates": 8,
+      "n_unique_time_points": 4,
+      "mean_subunits_per_biological_unit_time": 2.0,
+      "max_subunits_per_biological_unit_time": 2,
+      "status": "exploratory_nested_cosinor",
+      "period_hours": 24.0,
+      "observed_amplitude": 4.0,
+      "observed_phase_peak_hours": 24.0,
+      "observed_r_squared": 0.999931450011923,
+      "p_amplitude_permutation": 0.000999000999000999,
+      "bootstrap_amplitude_ci95": [
+        4.0,
+        4.0
+      ],
+      "bootstrap_phase_ci95": [
+        24.0,
+        24.0
+      ],
+      "n_permutations": 1000,
+      "n_bootstrap_success": 1000,
+      "n_bootstrap_requested": 1000,
+      "permutation_mode": "within_biological_unit_time_shuffle",
+      "inference_warning": "Biological-unit aggregation plus cluster bootstrap is exploratory; confirm with a pre-specified mixed-effects model before publication claims.",
+      "gene_symbol": "na",
+      "cell_type": "s-LNv",
+      "background": "w1118",
+      "q_amplitude_bh": 0.000999000999000999
+    }
+  ],
+  "inference_warning": "Exploratory nested analysis only; a publication-grade mixed-effects model remains required."
+}

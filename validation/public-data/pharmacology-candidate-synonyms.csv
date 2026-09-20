@@ -1,0 +1,2 @@
+source_candidate,evidence_candidate,mapping_type,mapping_status,mapping_source,notes
+Shaker,Sh,official_symbol_alias,checked,https://flybase.org/reports/FBgn0003380,FlyBase gene report identifies Dmel\\Sh and the name Shaker; mapping is identity-only and does not upgrade evidence.

@@ -1,0 +1,55 @@
+{
+  "status": "verified_published_sc_clock_channel_rhythm_extraction",
+  "analysis_stage": "published_evidence_extraction",
+  "source_url": "https://elifesciences.org/articles/63056",
+  "inputs": {
+    "candidate_list": {
+      "path": "validation/public-data/GSE22308_candidate_genes.csv",
+      "size_bytes": 251,
+      "sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+      "integrity": "verified_sha256"
+    },
+    "published_supplement": {
+      "path": "validation/public-data/GSE157504_published_rhythmic_genes_supp1.xlsx",
+      "size_bytes": 424963,
+      "sha256": "d3553deb0290bb56d73ab7713ec6b73f5749dc9d466dcdb5063b91cdef5c804b",
+      "integrity": "verified_sha256"
+    }
+  },
+  "software": {
+    "python": "3.12.14",
+    "openpyxl": "3.1.5"
+  },
+  "n_candidates": 15,
+  "n_supplement_rows_scanned": {
+    "LD": 2243,
+    "DD": 1359
+  },
+  "n_candidate_cluster_condition_rows": 21,
+  "n_candidates_with_author_HC_rhythm_rows": 9,
+  "candidate_rows_without_HC_call": [
+    "Shal",
+    "para",
+    "sei",
+    "Irk2",
+    "Ork1",
+    "trpl"
+  ],
+  "author_reported_rhythm_criteria": [
+    "To be considered cycling, the following cutoffs were used: a JTK cycle adjusted p-value of less than 0.05, a F24 score of greater than 0.5, and a cycling amplitude (maximum expression divided by minimum expression) of at least 1.5-fold (if minimum was zero and maximum was >.8; amplitude threshold was met) , and a maximum expression of at least 0.8 TP10K."
+  ],
+  "methodology_caution": "The source paper reports two experiments per condition. Its rhythmicity analysis treated individual cells as replicates for JTK and randomly split cells into two pseudo-replicates for Fourier analysis. This extraction transcribes published calls; it does not independently re-estimate uncertainty at the biological-experiment level.",
+  "inference_warning": "A listed HC_cycler is evidence for author-reported rhythmic mRNA abundance in the named cluster/condition only. It does not establish channel protein abundance, channel current, membrane-potential rhythm, or causal control of behavior. An unlisted candidate is not evidence of absent expression or arrhythmicity.",
+  "outputs": {
+    "summary": {
+      "path": "validation/public-data/GSE157504_candidate_rhythm_summary.csv",
+      "size_bytes": 2585,
+      "sha256": "0df6bf0d549379af18958ebbacb26355168479b04e43b18d35e3d57fb450a1b4"
+    },
+    "details": {
+      "path": "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+      "size_bytes": 2994,
+      "sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1"
+    }
+  }
+}

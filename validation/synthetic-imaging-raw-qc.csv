@@ -1,0 +1,4 @@
+record_id,raw_file_path,raw_file_sha256,file_status,metadata_row_id,biological_replicate_id,experimental_unit,assay,cell_type,cell_identity_method,qc_status,exclusion_reason,blinding_status,derived_output_path,roi_count,motion_qc,focus_qc,signal_to_noise
+irec01,not_attached,not_available,not_attached,imeta01,ibrain01,brain,imaging,s-LNv,PER/TIM marker plus anatomy,pass,,blinded,outputs/irec01.csv,2,0.1,0.1,8.5
+
+

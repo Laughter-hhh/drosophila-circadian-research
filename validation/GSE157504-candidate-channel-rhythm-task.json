@@ -1,0 +1,74 @@
+{
+  "task_id": "GSE157504-candidate-channel-rhythm-audit-20260920",
+  "status": "verified",
+  "research_question": "Among the 15 candidate channel genes, which are represented in the GSE157504 raw feature matrix, what fraction of annotated cells has raw UMI count >0 by clock-neuron group/cluster/condition/timepoint, and which genes are listed in the authors' high-confidence rhythmic-transcript supplement?",
+  "hypothesis": "Exploratory expectation only: candidate transcript detection and author-reported rhythm calls differ by clock-neuron group and LD/DD condition; this task does not test a biological hypothesis inferentially.",
+  "alternative_hypotheses": [
+    "A zero UMI count can reflect single-cell dropout rather than true absence.",
+    "A gene not represented by an exact feature symbol may be unevaluable because of annotation/symbol mapping, not biological absence.",
+    "A transcript absent from the authors' high-confidence cycling list may fail their cutoffs or have insufficient power; it is not thereby proven arrhythmic.",
+    "The LN_ITP cluster contains more than one anatomical clock-neuron class and cannot be treated as pure s-LNv or LNd evidence."
+  ],
+  "species": "Drosophila melanogaster",
+  "preparation": "Published single-cell RNA-seq count matrices for circadian neurons and the paper's author-processed high-confidence cycling-transcript supplement.",
+  "cell_type": "The provided annotation covers 2,615 cells in 17 selected high-confidence clusters; broad groups include s-LNv, l-LNv, LNd, DN, and an explicitly ambiguous LN_ITP group.",
+  "experimental_unit": "Single-cell count column nested within collection replicate/experiment; not an independent fly-level experimental unit for inference.",
+  "primary_readout": "Descriptive fraction of uniquely matched annotated cells with raw UMI count >0 per candidate, group/cluster/condition/timepoint/replicate.",
+  "secondary_readouts": [
+    "Exact candidate feature presence in the raw matrix.",
+    "Author-reported high-confidence rhythmic transcript rows by cluster and LD/DD condition, extracted without refitting the rhythm model.",
+    "Barcode join coverage and annotation time-grid coverage."
+  ],
+  "time_system": "Report LD as ZT and DD as CT; the DD annotation token ztNN is condition-aware normalized to raw CTNN.",
+  "input_files": [
+    "validation/public-data/GSE157504_RAW.tar",
+    "validation/public-data/GSE157504_clock_neurons_annotation.csv",
+    "validation/public-data/GSE157504_published_rhythmic_genes_supp1.xlsx",
+    "validation/public-data/GSE22308_candidate_genes.csv"
+  ],
+  "required_metadata": [
+    "Cell barcode, condition, time, collection replicate, and author cluster label.",
+    "Exact raw feature symbol and raw count value.",
+    "Source experiment/fly-level identity and pool size where available; these are not fully established by the provided files."
+  ],
+  "analysis_plan": "Hash-check inputs; join author annotations to all raw compressed count matrices using a documented leading-X cleanup and DD-only zt-to-CT barcode alias; summarize raw count detection without normalization or inferential tests; separately extract the authors' high-confidence rhythm rows from the eLife supplement; record all outputs and commands in the public-data manifest; replay in an isolated mirror and compare output hashes.",
+  "decision_gate": "Interpret the raw-count output only if all annotation barcodes match exactly once and the replicate/timepoint annotation grid is complete. Treat absent exact features as unevaluable. Treat absence from the author high-confidence list as 'not listed under author criteria,' never as proof of no expression or arrhythmicity. No causal, current, voltage, or behavior claim is permitted from these transcript data.",
+  "expected_outputs": [
+    "validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv",
+    "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+    "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+    "validation/public-data/GSE157504_candidate_raw_detection_audit.json",
+    "validation/public-data/GSE157504_candidate_rhythm_summary.csv",
+    "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+    "validation/public-data/GSE157504_candidate_rhythm_extraction.json",
+    "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json"
+  ],
+  "acceptance_tests": [
+    "Synthetic positive/negative extraction tests pass for the published-table workflow, including hash mismatch, duplicate candidates, non-finite values, output path safety, and evidence-boundary wording.",
+    "Synthetic raw-tar integration tests pass for leading-X stripping, DD-only zt-to-CT join, group mapping, absent-feature semantics, and incomplete-join nonzero status.",
+    "Real raw join matches 2,615/2,615 annotated barcodes exactly once across 84 matrices; all six timepoints are present in each of LD_1, LD_2, DD_1, and DD_2; 5,445 raw columns remain outside the supplied high-confidence annotation.",
+    "The raw feature list represents 14 of 15 candidates; para is labelled unevaluable in this matrix, not absent.",
+    "The published supplement scan covers 2,243 LD and 1,359 DD rows and extracts 21 candidate cluster-condition rows for nine candidates.",
+    "The public-data manifest validates without issues, and isolated replay returns verified_public_dataset_replay with all seven declared output hashes matching."
+  ],
+  "software_versions": {
+    "python": "3.12.14",
+    "openpyxl": "3.1.5",
+    "python_standard_library": "tarfile, gzip, csv, hashlib"
+  },
+  "source_log": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
+    "https://elifesciences.org/articles/63056",
+    "https://cdn.elifesciences.org/articles/63056/elife-63056-supp1-v2.xlsx",
+    "https://github.com/rosbashlab/scRNA_seq_clock_neurons"
+  ],
+  "result_summary": "Shab raw UMI was detected in s-LNv in 160/181 annotated LD cells and 97/142 annotated DD cells, matching the independent read-only forward audit. The published supplement lists Shab as a high-confidence cycler in s-LNv under both LD and DD. These findings prioritize follow-up only; they are not biological-replicate-level tests or evidence of channel function.",
+  "limitations": [
+    "Cells are nested observations, not independent flies; no cell-level inferential comparison or rhythm model was fit.",
+    "Single-cell zero counts are vulnerable to dropout.",
+    "The extraction only transcribes the author-reported high-confidence cycling list, not all tested expression values.",
+    "The author rhythm method's cell-level JTK replication/pseudo-replication is retained as a methodological caution.",
+    "No protein, localization, electrophysiological current, membrane-potential, or causal behavior evidence is measured."
+  ],
+  "provenance_manifest": "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json"
+}

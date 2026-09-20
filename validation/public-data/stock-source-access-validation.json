@@ -1,0 +1,93 @@
+{
+  "status": "conditional_source_access",
+  "formal_status": "blocked_online_content_not_verified",
+  "n_rows": 3,
+  "n_records": 3,
+  "issues": [],
+  "warnings": [
+    {
+      "line": 2,
+      "record_id": "stock-pdf",
+      "type": "source_content_token_not_found",
+      "http_status": 202,
+      "expected_tokens": [
+        "fbst0080939",
+        "80939"
+      ]
+    },
+    {
+      "line": 3,
+      "record_id": "stock-shal",
+      "type": "source_content_token_not_found",
+      "http_status": 202,
+      "expected_tokens": [
+        "fbal0244846",
+        "31879"
+      ]
+    },
+    {
+      "line": 4,
+      "record_id": "paper-sm19",
+      "type": "source_content_token_not_found",
+      "http_status": 203,
+      "expected_tokens": [
+        "31612994",
+        "pmid:31612994"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "line": 2,
+      "record_id": "stock-pdf",
+      "source_url": "https://flybase.org/reports/FBst0080939",
+      "final_url": "https://flybase.org/reports/FBst0080939",
+      "http_status": 202,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes_read": 2105,
+      "body_sha256": "009746fd91b5fdffa2fee0c314268c2fe9e7c8dd91e8fd45c6ef1ed34bfcf2f3",
+      "expected_tokens": [
+        "fbst0080939",
+        "80939"
+      ],
+      "matched_tokens": [],
+      "access_status": "reachable_content_unverified",
+      "elapsed_seconds": 0.36
+    },
+    {
+      "line": 3,
+      "record_id": "stock-shal",
+      "source_url": "https://flybase.org/reports/FBal0244846",
+      "final_url": "https://flybase.org/reports/FBal0244846",
+      "http_status": 202,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes_read": 2105,
+      "body_sha256": "e2f48c31dcb0e42ded809d6688f5d59b170e22cd50ea4c762e53c24d2c019c02",
+      "expected_tokens": [
+        "fbal0244846",
+        "31879"
+      ],
+      "matched_tokens": [],
+      "access_status": "reachable_content_unverified",
+      "elapsed_seconds": 0.281
+    },
+    {
+      "line": 4,
+      "record_id": "paper-sm19",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/31612994/",
+      "final_url": "https://pubmed.ncbi.nlm.nih.gov/31612994/",
+      "http_status": 203,
+      "content_type": "text/html; charset=utf-8",
+      "bytes_read": 5565,
+      "body_sha256": "4d069e629e3870949eecdda5d3badbf7f54d9a724ccb599ddf899cbfdf370344",
+      "expected_tokens": [
+        "31612994",
+        "pmid:31612994"
+      ],
+      "matched_tokens": [],
+      "access_status": "reachable_content_unverified",
+      "elapsed_seconds": 0.594
+    }
+  ],
+  "inference_warning": "A reachable page and token match support source-access traceability only; they do not prove the page is current, the genotype is correct, the stock is available, or the cited source supports the biological claim."
+}

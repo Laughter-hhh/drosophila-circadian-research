@@ -1,0 +1,20 @@
+{
+  "task_id": "example-channel-screen",
+  "status": "planning",
+  "research_question": "Which candidate channel acutely changes the resting membrane potential of s-LNv?",
+  "hypothesis": "",
+  "alternative_hypotheses": [],
+  "species": "Drosophila melanogaster",
+  "preparation": "",
+  "cell_type": "s-LNv",
+  "experimental_unit": "fly",
+  "primary_readout": "resting membrane potential",
+  "secondary_readouts": [],
+  "time_system": "",
+  "input_files": [],
+  "required_metadata": ["genotype", "sex", "age_days", "temperature_C", "lighting", "ZT_or_CT", "biological_replicate_id", "batch_id"],
+  "analysis_plan": "",
+  "decision_gate": "",
+  "expected_outputs": ["qc_table", "analysis_table", "figure", "analysis_log"],
+  "acceptance_tests": ["metadata_complete", "positive_and_negative_controls", "rerun_within_tolerance"]
+}

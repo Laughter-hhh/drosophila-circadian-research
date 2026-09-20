@@ -1,0 +1,6 @@
+record_id,raw_file_path,raw_file_sha256,file_status,metadata_row_id,biological_replicate_id,experimental_unit,assay,cell_type,cell_identity_method,qc_status,exclusion_reason,blinding_status,derived_output_path,seal_MOhm,access_resistance_MOhm,holding_current_pA,baseline_drift_mV_per_min,sampling_rate_Hz
+rec01,synthetic-raw/trace01.abf,6eacc77f2ed1ecb362eaa1fbaf5fcbe58d268e52967054736f6c575240c62f55,present,meta01,fly01,fly,ephys,s-LNv,PER/TIM marker plus anatomy,pass,,blinded,outputs/rec01.csv,1.2,18.0,-4.0,0.02,10000
+rec02,synthetic-raw/trace02.abf,2504df828e3c1ed68c711e6a6f8366430f27a438635f68c01f65c3ed5e8f2b46,present,meta02,fly02,fly,ephys,s-LNv,PER/TIM marker plus anatomy,pass,,blinded,outputs/rec02.csv,1.1,20.0,-3.5,0.03,10000
+rec03,synthetic-raw/trace01.abf,6eacc77f2ed1ecb362eaa1fbaf5fcbe58d268e52967054736f6c575240c62f55,present,meta03,fly03,fly,ephys,s-LNv,PER/TIM marker plus anatomy,pass,,blinded,outputs/rec03.csv,1.3,19.0,-3.8,0.02,10000
+rec04,synthetic-raw/trace02.abf,2504df828e3c1ed68c711e6a6f8366430f27a438635f68c01f65c3ed5e8f2b46,present,meta04,fly04,fly,ephys,s-LNv,PER/TIM marker plus anatomy,pass,,blinded,outputs/rec04.csv,1.4,21.0,-3.2,0.03,10000
+

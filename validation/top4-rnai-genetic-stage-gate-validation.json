@@ -1,0 +1,81 @@
+{
+  "status": "verified_genetic_stage_gate",
+  "n_rows": 5,
+  "n_crosses": 5,
+  "formal_rows": 0,
+  "formal_passes": 0,
+  "issues": [],
+  "warnings": [
+    {
+      "line": 2,
+      "cross_id": "pilot-na-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "stock_identity_not_verified"
+      ]
+    },
+    {
+      "line": 3,
+      "cross_id": "pilot-Shaw-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "stock_identity_not_verified"
+      ]
+    },
+    {
+      "line": 4,
+      "cross_id": "pilot-Shal-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "stock_identity_not_verified"
+      ]
+    },
+    {
+      "line": 5,
+      "cross_id": "pilot-Irk1-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "stock_identity_not_verified"
+      ]
+    },
+    {
+      "line": 6,
+      "cross_id": "pilot-Shaw-Sym-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "stock_identity_not_verified"
+      ]
+    }
+  ],
+  "inference_warning": "This gate checks declared fields and, when supplied, joins stock candidates to the stock audit; it does not verify expression, knockdown efficiency, insertion direction, background purity, or current inventory."
+}

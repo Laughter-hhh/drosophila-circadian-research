@@ -1,0 +1,16 @@
+candidate,priority_class,published_rhythm_status,n_author_reported_rows,conditions,clusters,interpretation_limit
+Sh,gated_Kv,author_reported_HC_cycler,3,DD;LD,4:DN1p;8:LN_ITP,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+Shab,gated_Kv,author_reported_HC_cycler,3,DD;LD,2:s_LNv;5:LNd_Trissin,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+Shaw,gated_Kv,author_reported_HC_cycler,2,DD;LD,2:s_LNv,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+Shal,gated_Kv,not_listed_in_author_HC_cycler_table,0,,,not listed among author high-confidence cyclers; does not imply absent expression or no rhythm
+para,gated_Na,not_listed_in_author_HC_cycler_table,0,,,not listed among author high-confidence cyclers; does not imply absent expression or no rhythm
+cac,gated_Ca,author_reported_HC_cycler,1,LD,5:LNd_Trissin,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+Ca-alpha1D,gated_Ca,author_reported_HC_cycler,1,LD,7:DN1p,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+Ca-alpha1T,gated_Ca,author_reported_HC_cycler,2,LD,1:DN1p_CNMa;3:DN1a,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+slo,gated_KCa,author_reported_HC_cycler,1,LD,3:DN1a,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+sei,gated_Kv,not_listed_in_author_HC_cycler_table,0,,,not listed among author high-confidence cyclers; does not imply absent expression or no rhythm
+eag,gated_Kv,author_reported_HC_cycler,2,LD,2:s_LNv;7:DN1p,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+Irk1,leak_Kir,author_reported_HC_cycler,6,DD;LD,1:DN1p_CNMa;2:s_LNv;5:LNd_Trissin;8:LN_ITP,"author-reported transcript rhythm only; not channel protein, current, membrane-potential or causal evidence"
+Irk2,leak_Kir,not_listed_in_author_HC_cycler_table,0,,,not listed among author high-confidence cyclers; does not imply absent expression or no rhythm
+Ork1,leak_K2P_like,not_listed_in_author_HC_cycler_table,0,,,not listed among author high-confidence cyclers; does not imply absent expression or no rhythm
+trpl,TRP_cation,not_listed_in_author_HC_cycler_table,0,,,not listed among author high-confidence cyclers; does not imply absent expression or no rhythm

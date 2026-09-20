@@ -1,0 +1,243 @@
+{
+  "manifest_id": "synthetic-ephys-trace-replay-20260908",
+  "analysis_scope": "synthetic Drosophila s-LNv whole-cell trace QC and exploratory cosinor pipeline",
+  "analysis_context": {
+    "species": "Drosophila melanogaster",
+    "assay": "ephys",
+    "experimental_unit": "fly",
+    "time_system": "ZT",
+    "scientific_status": "synthetic exploratory workflow validation; not biological evidence"
+  },
+  "files": [
+    {
+      "path": "validation/synthetic-raw/trace01.abf",
+      "role": "raw",
+      "sha256": "6eacc77f2ed1ecb362eaa1fbaf5fcbe58d268e52967054736f6c575240c62f55"
+    },
+    {
+      "path": "validation/synthetic-raw/trace02.abf",
+      "role": "raw",
+      "sha256": "2504df828e3c1ed68c711e6a6f8366430f27a438635f68c01f65c3ed5e8f2b46"
+    },
+    {
+      "path": "validation/synthetic-ephys-traces.csv",
+      "role": "trace_export",
+      "sha256": "1daeca0e7913b07346bfb80826d0fb55541ac77c372915f92e29937853bd7146"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-metadata.csv",
+      "role": "metadata",
+      "sha256": "4f0a0fd7ef9f93d4900ff3aa3875bb1dfab47086a5ebdf263ed298a88dbeac5e"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+      "role": "raw_qc",
+      "sha256": "93b61bd6f60ebb3cc64e6d2a5bd819d40a238afd901e93a225a9dcaae94a463e"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-metadata-validation.json",
+      "role": "report",
+      "sha256": "57cac4c673aeb0d3db3f388eabd3766bf908251c1c4168eb3187958d6d3475fe"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-raw-qc-validation.json",
+      "role": "report",
+      "sha256": "991b98c20c8965b0ca3e74f26254df7337909866fa5fc8a88081ec2eacda1fd7"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-derived.csv",
+      "role": "derived",
+      "sha256": "af56526e90a906385da9d9352c04d54212ab7e68bf6583bb5eafbca76d4375a2"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-derivation.json",
+      "role": "report",
+      "sha256": "d5d4276a906d593f6f3d5b5d88a2eb6bbfe2a8afe1b15c60ac1e6d7e03757fc1"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-bundle-validation.json",
+      "role": "report",
+      "sha256": "34c4203a637194aa71c9d556e97659a29b477e27cfbab6b0dc6f83a2428d939b"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-cosinor.json",
+      "role": "report",
+      "sha256": "a4582230d6d13c6b1a65d512287957102426d7623e992a5ac2fdad4603bd0597"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "validate-metadata",
+      "script": "scripts/validate_experiment_metadata.py",
+      "script_sha256": "b7ca055e0611f8ff7d9fce12b3a85a502d6adc4cf2a890c02455a721b5050975",
+      "status": "verified",
+      "inputs": [
+        "validation/synthetic-ephys-trace-metadata.csv"
+      ],
+      "outputs": [
+        "validation/synthetic-ephys-trace-replay-metadata-validation.json"
+      ],
+      "command_argv": [
+        "python",
+        "scripts/validate_experiment_metadata.py",
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "--assay",
+        "ephys",
+        "--stage",
+        "exploratory",
+        "--provenance-root",
+        ".",
+        "--output",
+        "validation/synthetic-ephys-trace-replay-metadata-validation.json"
+      ]
+    },
+    {
+      "run_id": "validate-raw-qc",
+      "script": "scripts/validate_raw_qc_provenance.py",
+      "script_sha256": "639324616661779a0168239ebce2856e6df86e4be8f5879cb0364e3f2221c8e1",
+      "status": "verified",
+      "inputs": [
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+        "validation/synthetic-raw/trace01.abf",
+        "validation/synthetic-raw/trace02.abf"
+      ],
+      "outputs": [
+        "validation/synthetic-ephys-trace-replay-raw-qc-validation.json"
+      ],
+      "command_argv": [
+        "python",
+        "scripts/validate_raw_qc_provenance.py",
+        "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+        "--assay",
+        "ephys",
+        "--metadata",
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "--check-files",
+        "--provenance-root",
+        ".",
+        "--output",
+        "validation/synthetic-ephys-trace-replay-raw-qc-validation.json"
+      ]
+    },
+    {
+      "run_id": "derive-trace-measurements",
+      "script": "scripts/derive_trace_measurements.py",
+      "script_sha256": "66a4be80d1ce4e80d2332d2173f0bfd6af9e64ad9695c87be0e16f791afa5e51",
+      "status": "verified",
+      "inputs": [
+        "validation/synthetic-ephys-traces.csv",
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+        "validation/synthetic-raw/trace01.abf",
+        "validation/synthetic-raw/trace02.abf"
+      ],
+      "outputs": [
+        "validation/synthetic-ephys-trace-replay-derived.csv",
+        "validation/synthetic-ephys-trace-replay-derivation.json"
+      ],
+      "command_argv": [
+        "python",
+        "scripts/derive_trace_measurements.py",
+        "--traces",
+        "validation/synthetic-ephys-traces.csv",
+        "--metadata",
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "--raw-qc",
+        "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+        "--assay",
+        "ephys",
+        "--stage",
+        "exploratory",
+        "--check-files",
+        "--metric-name",
+        "resting_membrane_potential",
+        "--value-unit",
+        "mV",
+        "--provenance-root",
+        ".",
+        "--output",
+        "validation/synthetic-ephys-trace-replay-derived.csv",
+        "--report",
+        "validation/synthetic-ephys-trace-replay-derivation.json"
+      ]
+    },
+    {
+      "run_id": "validate-preanalysis-bundle",
+      "script": "scripts/validate_preanalysis_bundle.py",
+      "script_sha256": "41a3b62a488379fd3adc142fcedb0a8e4a8bc4f16ef2e891fde951ca5249b74d",
+      "status": "verified",
+      "inputs": [
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+        "validation/synthetic-ephys-trace-replay-derived.csv",
+        "validation/synthetic-raw/trace01.abf",
+        "validation/synthetic-raw/trace02.abf"
+      ],
+      "outputs": [
+        "validation/synthetic-ephys-trace-replay-bundle-validation.json"
+      ],
+      "command_argv": [
+        "python",
+        "scripts/validate_preanalysis_bundle.py",
+        "--metadata",
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "--raw-qc",
+        "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+        "--measurements",
+        "validation/synthetic-ephys-trace-replay-derived.csv",
+        "--assay",
+        "ephys",
+        "--stage",
+        "exploratory",
+        "--check-files",
+        "--provenance-root",
+        ".",
+        "--output",
+        "validation/synthetic-ephys-trace-replay-bundle-validation.json"
+      ]
+    },
+    {
+      "run_id": "analyze-exploratory-cosinor",
+      "script": "scripts/analyze_preanalysis_cosinor.py",
+      "script_sha256": "7f8650daab43fa62252ac793e15b0843e29e829bc81552069e5ea190396a75a3",
+      "status": "verified",
+      "inputs": [
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+        "validation/synthetic-ephys-trace-replay-derived.csv",
+        "validation/synthetic-raw/trace01.abf",
+        "validation/synthetic-raw/trace02.abf"
+      ],
+      "outputs": [
+        "validation/synthetic-ephys-trace-replay-cosinor.json"
+      ],
+      "command_argv": [
+        "python",
+        "scripts/analyze_preanalysis_cosinor.py",
+        "--metadata",
+        "validation/synthetic-ephys-trace-metadata.csv",
+        "--raw-qc",
+        "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+        "--measurements",
+        "validation/synthetic-ephys-trace-replay-derived.csv",
+        "--assay",
+        "ephys",
+        "--stage",
+        "exploratory",
+        "--check-files",
+        "--time-system",
+        "ZT",
+        "--group-by",
+        "cell_type",
+        "--metric-name",
+        "resting_membrane_potential",
+        "--provenance-root",
+        ".",
+        "--output",
+        "validation/synthetic-ephys-trace-replay-cosinor.json"
+      ]
+    }
+  ]
+}
+

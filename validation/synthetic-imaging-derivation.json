@@ -1,0 +1,110 @@
+{
+  "assay": "imaging",
+  "stage": "exploratory",
+  "metric_name": "mean_fluorescence",
+  "value_unit": "AU",
+  "min_samples": 4,
+  "time_mode": "metadata",
+  "time_bin_seconds": null,
+  "metadata_gate": {
+    "status": "verified_metadata",
+    "assay": "imaging",
+    "stage": "exploratory",
+    "required_fields": [
+      "species",
+      "genotype",
+      "sex",
+      "age_days",
+      "temperature_C",
+      "lighting",
+      "ZT_or_CT",
+      "experimental_unit",
+      "biological_replicate_id",
+      "batch_id",
+      "preparation",
+      "cell_type",
+      "roi_id",
+      "technical_replicate_id"
+    ],
+    "n_rows": 1,
+    "n_biological_replicates": 1,
+    "experimental_units": [
+      "brain"
+    ],
+    "issues": [],
+    "warnings": [
+      {
+        "type": "few_biological_replicates_for_exploration",
+        "n_biological_replicates": 1
+      }
+    ],
+    "input_file_metadata": {
+      "path": "validation\\synthetic-imaging-metadata.csv",
+      "size_bytes": 319,
+      "sha256": "5d68d96c39b699b0127b06b18007e19e041562c7c8623e325d511c92470870f7"
+    },
+    "inference_warning": "Metadata verification is a schema/QC result; it does not establish rhythm, causality, power, cell identity or source-data validity."
+  },
+  "raw_qc_gate": {
+    "status": "verified_raw_qc_provenance",
+    "assay": "imaging",
+    "n_rows": 1,
+    "n_records": 1,
+    "issues": [],
+    "warnings": [
+      {
+        "line": 2,
+        "record_id": "irec01",
+        "type": "raw_file_not_attached"
+      }
+    ],
+    "input_file_metadata": {
+      "path": "validation\\synthetic-imaging-raw-qc.csv",
+      "size_bytes": 416,
+      "sha256": "1c6dde09583ccaeb624dac9a456eb159d4e33ca0f7043b46e9a09fab04b72ce7"
+    },
+    "inference_warning": "Raw-file provenance/QC verification does not establish cell identity, channel selectivity, rhythm, causality or biological validity."
+  },
+  "input_file_metadata": {
+    "traces": {
+      "path": "validation\\synthetic-imaging-traces.csv",
+      "size_bytes": 184,
+      "sha256": "dd6425850ea632a0331ec2a94ba82607d78f12866b3b6d56ff5d358a132c7d09"
+    },
+    "metadata": {
+      "path": "validation\\synthetic-imaging-metadata.csv",
+      "size_bytes": 319,
+      "sha256": "5d68d96c39b699b0127b06b18007e19e041562c7c8623e325d511c92470870f7"
+    },
+    "raw_qc": {
+      "path": "validation\\synthetic-imaging-raw-qc.csv",
+      "size_bytes": 416,
+      "sha256": "1c6dde09583ccaeb624dac9a456eb159d4e33ca0f7043b46e9a09fab04b72ce7"
+    }
+  },
+  "issues": [],
+  "warnings": [
+    {
+      "type": "raw_hash_check_disabled",
+      "message": "Raw-file existence/hash verification was explicitly disabled; derived output is provisional."
+    },
+    {
+      "type": "pass_raw_file_not_present",
+      "record_ids": [
+        "irec01"
+      ],
+      "message": "Explicitly provisional because raw files are not attached."
+    }
+  ],
+  "inference_warning": "Trace derivation is a deterministic measurement/QC step; it does not establish rhythmicity, channel identity, causality or statistical significance.",
+  "status": "verified_trace_derivation",
+  "n_trace_rows": 8,
+  "n_pass_records": 1,
+  "n_output_rows": 2,
+  "ignored_nonpass_record_ids": [],
+  "output_file_metadata": {
+    "path": "validation\\synthetic-imaging-derived.csv",
+    "size_bytes": 340,
+    "sha256": "1176fa8f1fe2e2a59d20a7380c98f8ce6d2ee8b3c6c79723380825ac2a515d96"
+  }
+}

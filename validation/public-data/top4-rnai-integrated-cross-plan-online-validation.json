@@ -1,0 +1,133 @@
+{
+  "status": "verified_integrated_cross_plan",
+  "formal_status": "conditional_pilot_only",
+  "n_rows": 4,
+  "n_crosses": 4,
+  "formal_rows": 0,
+  "formal_passes": 0,
+  "issues": [],
+  "warnings": [
+    {
+      "line": 2,
+      "cross_id": "integrated-na-Pdf",
+      "field": "driver_stock_candidate",
+      "type": "online_source_not_verified",
+      "access_status": "missing"
+    },
+    {
+      "line": 2,
+      "cross_id": "integrated-na-Pdf",
+      "field": "effector_stock_candidate",
+      "type": "online_source_not_verified",
+      "access_status": "missing"
+    },
+    {
+      "line": 2,
+      "cross_id": "integrated-na-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "online_source_not_verified",
+        "stock_identity_not_verified"
+      ]
+    },
+    {
+      "line": 3,
+      "cross_id": "integrated-Shaw-Pdf",
+      "field": "driver_stock_candidate",
+      "type": "online_source_not_verified",
+      "access_status": "missing"
+    },
+    {
+      "line": 3,
+      "cross_id": "integrated-Shaw-Pdf",
+      "field": "effector_stock_candidate",
+      "type": "online_source_not_verified",
+      "access_status": "missing"
+    },
+    {
+      "line": 3,
+      "cross_id": "integrated-Shaw-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "online_source_not_verified",
+        "stock_identity_not_verified"
+      ]
+    },
+    {
+      "line": 4,
+      "cross_id": "integrated-Shal-Pdf",
+      "field": "driver_stock_candidate",
+      "type": "online_source_not_verified",
+      "access_status": "missing"
+    },
+    {
+      "line": 4,
+      "cross_id": "integrated-Shal-Pdf",
+      "field": "effector_stock_candidate",
+      "type": "online_source_not_verified",
+      "access_status": "missing"
+    },
+    {
+      "line": 4,
+      "cross_id": "integrated-Shal-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "online_source_not_verified",
+        "stock_identity_not_verified"
+      ]
+    },
+    {
+      "line": 5,
+      "cross_id": "integrated-Irk1-Pdf",
+      "field": "driver_stock_candidate",
+      "type": "online_source_not_verified",
+      "access_status": "missing"
+    },
+    {
+      "line": 5,
+      "cross_id": "integrated-Irk1-Pdf",
+      "field": "effector_stock_candidate",
+      "type": "online_source_not_verified",
+      "access_status": "missing"
+    },
+    {
+      "line": 5,
+      "cross_id": "integrated-Irk1-Pdf",
+      "type": "blocked_for_formal",
+      "gates": [
+        "adult_restriction",
+        "background_match",
+        "developmental_control",
+        "driver_expression",
+        "driver_identity",
+        "effector_identity",
+        "online_source_not_verified",
+        "stock_identity_not_verified"
+      ]
+    }
+  ],
+  "source_access_report": {
+    "status": "conditional_source_access",
+    "validation_status": "verified_source_access_report",
+    "n_records": 3
+  },
+  "inference_warning": "This audit combines cross-plan completeness and stock-to-cross name linkage; it does not prove Mendelian segregation, expression, knockdown efficiency, insertion direction, background purity, or current stock inventory. formal_status is a stage-gate summary, not a biological result."
+}

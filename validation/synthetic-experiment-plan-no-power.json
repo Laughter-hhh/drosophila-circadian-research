@@ -1,0 +1,25 @@
+{
+  "status": "invalid_experiment_plan",
+  "formal_status": "blocked_by_validation_issues",
+  "n_rows": 4,
+  "n_plans": 4,
+  "formal_rows": 1,
+  "formal_passes": 0,
+  "issues": [
+    {
+      "line": 5,
+      "plan_id": "EXP-Formal-Shaw",
+      "type": "formal_requires_power_basis_report"
+    }
+  ],
+  "warnings": [],
+  "power_gate": {
+    "status": "missing_power_basis_report",
+    "issues": [
+      {
+        "type": "formal_requires_power_basis_report"
+      }
+    ]
+  },
+  "inference_warning": "This validator checks experimental-plan completeness, stage gates, control declarations and (when supplied) a transparent power-basis report; it does not establish biological causality, assay performance, reagent selectivity or achieved power."
+}

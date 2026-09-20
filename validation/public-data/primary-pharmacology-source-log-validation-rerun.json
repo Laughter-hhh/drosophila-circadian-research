@@ -1,0 +1,8 @@
+{
+  "status": "verified_pharmacology_source_log",
+  "n_rows": 4,
+  "n_records": 4,
+  "n_plan_candidate_blockers": 4,
+  "issues": [],
+  "inference_warning": "This log validator checks blocker-specific source-record structure and self-consistency; it does not prove pharmacological selectivity, dose-response, washout, toxicity, or native-cell causality."
+}

@@ -1,0 +1,76 @@
+{
+  "manifest_id": "GSE157504-candidate-evidence-bridge-20260920-readout-scope",
+  "dataset_id": "GSE157504",
+  "accession": "GSE157504",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
+  "retrieved_at_utc": "2026-09-20T05:47:23Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-20T07:31:34Z",
+  "source_check_method": "web_open",
+  "source_observed_tokens": ["GSE157504", "Drosophila melanogaster", "single-cell RNA sequencing", "LD", "DD", "Supplementary file 1", "eLife 10:e63056 (2021)"],
+  "source_observation_note": "The official eLife paper and figures/data page identify GSE157504 as a clock-neuron single-cell RNA-seq dataset and Supplementary file 1 as author-reported rhythmic genes by cluster and LD/DD. This handoff does not refit rhythm or interpret transcript evidence as channel function. Direct GEO access limitations are recorded in the parent manifest.",
+  "analysis_context": {
+    "time_system": "LD is ZT; DD is CT; source labels are preserved and phase is not recomputed.",
+    "experimental_unit": "Cells nested within collection replicate; no fly-level inference.",
+    "normalization_status": "No additional normalization or rhythm model; raw UMI detection and author rhythm calls remain separate.",
+    "biological_unit_limitations": "Independent fly IDs and pool sizes are not established. Raw UMI fractions are descriptive; author rows are transcribed, not refit. No protein, current, membrane potential, or causal behavior is measured.",
+    "upstream_manifest_id": "GSE157504-ion-channel-candidate-audit-20260920",
+    "scoring_policy": "All seven candidate score dimensions remain NA; no validated rubric maps transcript summaries to scores."
+  },
+  "files": [
+    {"path":"validation/public-data/GSE22308_candidate_genes.csv","role":"candidate_list","sha256":"ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce"},
+    {"path":"validation/public-data/GSE157504_candidate_raw_feature_status.csv","role":"derived","sha256":"8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a"},
+    {"path":"validation/public-data/GSE157504_candidate_raw_detection_by_group.csv","role":"derived","sha256":"5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857"},
+    {"path":"validation/public-data/GSE157504_candidate_rhythm_details.csv","role":"derived","sha256":"a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1"},
+    {"path":"validation/public-data/GSE157504_candidate_evidence_handoff.csv","role":"derived","sha256":"6ef5d8d348a468478c175f732540843c51c8cf2b1150eab2f982cbf58775f7de"},
+    {"path":"validation/public-data/GSE157504_candidate_evidence_search_log.csv","role":"derived","sha256":"f0a946a780d87586d83435eb4dd2a9cec477088c60183901581489860a5443c8"},
+    {"path":"validation/public-data/GSE157504_candidate_evidence_handoff_report.json","role":"derived","sha256":"1ac3f0d1dfedd59452c7b13c20b3c9a0f046b15ada2693dfa714dd5ad10da180"},
+    {"path":"validation/public-data/GSE157504_candidate_evidence_search_log_validation.json","role":"derived","sha256":"2de0ada01d19286bf63e6cc3020340b654b3d39bd7351e1f4e28fe0a2a66f1ce"},
+    {"path":"validation/public-data/GSE157504_candidate_evidence_handoff_validation.json","role":"derived","sha256":"ea63d330e49330fc7a1f9f3e2c5a39bc390daba82d7bb1dd9a7b2e3edfdd9f7b"},
+    {"path":"validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv","role":"derived","sha256":"3de77f31b7df36f1446c4aadb47320a905700c07ebc47157c21ebf39c1b8c0fd"},
+    {"path":"validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json","role":"derived","sha256":"e9deea3de03753a3d6fbb09ed9d1dd3451b04dc5069f3ba9f87a9bef1dc71fbf"}
+  ],
+  "runs": [
+    {
+      "run_id":"build-gse157504-candidate-evidence",
+      "script":"scripts/build_gse157504_candidate_evidence.py",
+      "script_sha256":"730991b3813ce610133d6039f925eeaf298c13ebd05fa153c336498f9f6ed344",
+      "command":"python scripts/build_gse157504_candidate_evidence.py validation/public-data/GSE22308_candidate_genes.csv validation/public-data/GSE157504_candidate_raw_feature_status.csv validation/public-data/GSE157504_candidate_raw_detection_by_group.csv validation/public-data/GSE157504_candidate_rhythm_details.csv --provenance-root . --expected-candidate-sha256 ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce --expected-feature-sha256 8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a --expected-group-sha256 5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857 --expected-rhythm-sha256 a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1 --search-date 2026-09-20 --evidence-output validation/public-data/GSE157504_candidate_evidence_handoff.csv --search-log-output validation/public-data/GSE157504_candidate_evidence_search_log.csv --report-output validation/public-data/GSE157504_candidate_evidence_handoff_report.json",
+      "inputs":["validation/public-data/GSE22308_candidate_genes.csv","validation/public-data/GSE157504_candidate_raw_feature_status.csv","validation/public-data/GSE157504_candidate_raw_detection_by_group.csv","validation/public-data/GSE157504_candidate_rhythm_details.csv"],
+      "outputs":["validation/public-data/GSE157504_candidate_evidence_handoff.csv","validation/public-data/GSE157504_candidate_evidence_search_log.csv","validation/public-data/GSE157504_candidate_evidence_handoff_report.json"],
+      "status":"executed",
+      "command_argv":["python","scripts/build_gse157504_candidate_evidence.py","validation/public-data/GSE22308_candidate_genes.csv","validation/public-data/GSE157504_candidate_raw_feature_status.csv","validation/public-data/GSE157504_candidate_raw_detection_by_group.csv","validation/public-data/GSE157504_candidate_rhythm_details.csv","--provenance-root",".","--expected-candidate-sha256","ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce","--expected-feature-sha256","8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a","--expected-group-sha256","5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857","--expected-rhythm-sha256","a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1","--search-date","2026-09-20","--evidence-output","validation/public-data/GSE157504_candidate_evidence_handoff.csv","--search-log-output","validation/public-data/GSE157504_candidate_evidence_search_log.csv","--report-output","validation/public-data/GSE157504_candidate_evidence_handoff_report.json"]
+    },
+    {
+      "run_id":"validate-gse157504-evidence-search-log",
+      "script":"scripts/validate_evidence_search_log.py",
+      "script_sha256":"9a54a87ad1c75626929f69732be5b3b1c62c621c977dfb42584b4384d7e9c6e9",
+      "command":"python scripts/validate_evidence_search_log.py validation/public-data/GSE157504_candidate_evidence_search_log.csv --output validation/public-data/GSE157504_candidate_evidence_search_log_validation.json",
+      "inputs":["validation/public-data/GSE157504_candidate_evidence_search_log.csv"],
+      "outputs":["validation/public-data/GSE157504_candidate_evidence_search_log_validation.json"],
+      "status":"executed",
+      "command_argv":["python","scripts/validate_evidence_search_log.py","validation/public-data/GSE157504_candidate_evidence_search_log.csv","--output","validation/public-data/GSE157504_candidate_evidence_search_log_validation.json"]
+    },
+    {
+      "run_id":"validate-gse157504-candidate-evidence-table",
+      "script":"scripts/validate_candidate_evidence.py",
+      "script_sha256":"99abccca0225a0acb79ffe62d061f4ab81833ea0c1370f2d11bf85380fbeb92c",
+      "command":"python scripts/validate_candidate_evidence.py validation/public-data/GSE157504_candidate_evidence_handoff.csv --search-log validation/public-data/GSE157504_candidate_evidence_search_log.csv --output validation/public-data/GSE157504_candidate_evidence_handoff_validation.json",
+      "inputs":["validation/public-data/GSE157504_candidate_evidence_handoff.csv","validation/public-data/GSE157504_candidate_evidence_search_log.csv"],
+      "outputs":["validation/public-data/GSE157504_candidate_evidence_handoff_validation.json"],
+      "status":"executed",
+      "command_argv":["python","scripts/validate_candidate_evidence.py","validation/public-data/GSE157504_candidate_evidence_handoff.csv","--search-log","validation/public-data/GSE157504_candidate_evidence_search_log.csv","--output","validation/public-data/GSE157504_candidate_evidence_handoff_validation.json"]
+    },
+    {
+      "run_id":"score-gse157504-evidence-readiness-diagnostic",
+      "script":"scripts/score_candidates.py",
+      "script_sha256":"a655a4def59e2757e1eab08d53fdbc48eead81c1499032d60c06b6e65a6d25dc",
+      "command":"python scripts/score_candidates.py validation/public-data/GSE157504_candidate_evidence_handoff.csv --output validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv --sensitivity-output validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
+      "inputs":["validation/public-data/GSE157504_candidate_evidence_handoff.csv"],
+      "outputs":["validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv","validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json"],
+      "status":"executed",
+      "command_argv":["python","scripts/score_candidates.py","validation/public-data/GSE157504_candidate_evidence_handoff.csv","--output","validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv","--sensitivity-output","validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json"]
+    }
+  ]
+}

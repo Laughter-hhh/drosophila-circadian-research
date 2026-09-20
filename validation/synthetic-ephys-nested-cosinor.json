@@ -1,0 +1,139 @@
+{
+  "status": "verified_exploratory_bundle_nested_cosinor",
+  "analysis_status": "executed_exploratory",
+  "input_gate": "verified_preanalysis_bundle",
+  "scientific_status": "exploratory_not_verified",
+  "formal_status": "blocked_requires_mixed_model",
+  "assay": "ephys",
+  "stage": "exploratory",
+  "time_system": "ZT",
+  "method": "fixed 24-hour cosinor on biological-unit × time means + within-unit time permutation + biological-unit cluster bootstrap",
+  "seed": 7,
+  "n_permutations": 100,
+  "n_bootstrap": 100,
+  "group_by": [
+    "cell_type",
+    "genotype"
+  ],
+  "metric_name": "resting_membrane_potential",
+  "value_unit": "mV",
+  "n_selected_measurements": 32,
+  "n_groups": 1,
+  "groups": [
+    {
+      "n_raw_observations": 32,
+      "experimental_unit": "fly",
+      "n_aggregated_biological_unit_time_means": 16,
+      "n_biological_replicates": 4,
+      "n_unique_time_points": 4,
+      "mean_subunits_per_biological_unit_time": 2.0,
+      "max_subunits_per_biological_unit_time": 2,
+      "status": "exploratory_nested_cosinor",
+      "period_hours": 24.0,
+      "observed_amplitude": 2.0,
+      "observed_phase_peak_hours": 0.0,
+      "observed_r_squared": 0.8648648648648649,
+      "p_amplitude_permutation": 0.009900990099009901,
+      "bootstrap_amplitude_ci95": [
+        2.0,
+        2.0
+      ],
+      "bootstrap_phase_ci95": [
+        0.0,
+        0.0
+      ],
+      "n_permutations": 100,
+      "n_bootstrap_success": 100,
+      "n_bootstrap_requested": 100,
+      "permutation_mode": "within_biological_unit_time_shuffle",
+      "inference_warning": "Biological-unit aggregation plus cluster bootstrap is exploratory; confirm with a pre-specified mixed-effects model before publication claims.",
+      "group": {
+        "cell_type": "s-LNv",
+        "genotype": "w1118"
+      },
+      "metric_name": "resting_membrane_potential",
+      "value_unit": "mV",
+      "q_amplitude_bh": 0.009900990099009901
+    }
+  ],
+  "warnings": [],
+  "bundle_gate": {
+    "status": "verified_preanalysis_bundle",
+    "assay": "ephys",
+    "stage": "exploratory",
+    "n_metadata_rows": 4,
+    "n_raw_records": 4,
+    "n_pass_raw_records": 4,
+    "n_measurement_rows": 32,
+    "n_measurement_record_ids": 4,
+    "orphan_measurement_record_ids": [],
+    "metadata_gate": {
+      "status": "verified_metadata",
+      "assay": "ephys",
+      "stage": "exploratory",
+      "required_fields": [
+        "species",
+        "genotype",
+        "sex",
+        "age_days",
+        "temperature_C",
+        "lighting",
+        "ZT_or_CT",
+        "experimental_unit",
+        "biological_replicate_id",
+        "batch_id",
+        "preparation",
+        "cell_type",
+        "recording_id",
+        "technical_replicate_id"
+      ],
+      "n_rows": 4,
+      "n_biological_replicates": 4,
+      "experimental_units": [
+        "fly"
+      ],
+      "issues": [],
+      "warnings": [],
+      "input_file_metadata": {
+        "path": "validation\\synthetic-ephys-nested-metadata.csv",
+        "size_bytes": 691,
+        "sha256": "c29acd5cfec21402ff44f9eeff90f94aedce53bc46a62b254442f9a037a925c1"
+      },
+      "inference_warning": "Metadata verification is a schema/QC result; it does not establish rhythm, causality, power, cell identity or source-data validity."
+    },
+    "raw_qc_gate": {
+      "status": "verified_raw_qc_provenance",
+      "assay": "ephys",
+      "n_rows": 4,
+      "n_records": 4,
+      "issues": [],
+      "warnings": [],
+      "input_file_metadata": {
+        "path": "validation\\synthetic-ephys-nested-raw-qc.csv",
+        "size_bytes": 1381,
+        "sha256": "0725a219080ac2de6e60b268acd374f4c4ca3ef1cfd71d67fd88388ad9116a8d"
+      },
+      "inference_warning": "Raw-file provenance/QC verification does not establish cell identity, channel selectivity, rhythm, causality or biological validity."
+    },
+    "issues": [],
+    "input_file_metadata": {
+      "metadata": {
+        "path": "validation\\synthetic-ephys-nested-metadata.csv",
+        "size_bytes": 691,
+        "sha256": "c29acd5cfec21402ff44f9eeff90f94aedce53bc46a62b254442f9a037a925c1"
+      },
+      "raw_qc": {
+        "path": "validation\\synthetic-ephys-nested-raw-qc.csv",
+        "size_bytes": 1381,
+        "sha256": "0725a219080ac2de6e60b268acd374f4c4ca3ef1cfd71d67fd88388ad9116a8d"
+      },
+      "measurements": {
+        "path": "validation\\synthetic-ephys-nested-derived.csv",
+        "size_bytes": 2093,
+        "sha256": "4593ec84b43cdb4d2cd1bf4dd61f5c307a4570b730a61f1ea766f5c65527262a"
+      }
+    },
+    "inference_warning": "Bundle verification establishes input linkage and provenance only; it does not establish rhythm, cell identity, channel selectivity, causality or statistical power."
+  },
+  "inference_warning": "Exploratory cluster permutation/bootstrap only; technical/subunit rows are aggregated within biological replicate × time. This does not replace a pre-specified mixed-effects model or establish causality."
+}

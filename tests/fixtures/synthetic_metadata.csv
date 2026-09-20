@@ -1,0 +1,4 @@
+species,genotype,sex,age_days,temperature_C,lighting,ZT_or_CT,experimental_unit,biological_replicate_id,batch_id,cell_id
+Drosophila melanogaster,w1118,female,5,25,LD 12:12,ZT0,fly,fly_01,batch_01,sLNv_01
+Drosophila melanogaster,w1118,female,5,25,LD 12:12,ZT4,fly,fly_01,batch_01,sLNv_02
+Drosophila melanogaster,w1118,male,5,25,LD 12:12,ZT8,fly,fly_02,batch_02,sLNv_03

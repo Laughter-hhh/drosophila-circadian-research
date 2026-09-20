@@ -1,0 +1,34 @@
+{
+  "status": "verified_metadata",
+  "assay": "ephys",
+  "stage": "exploratory",
+  "required_fields": [
+    "species",
+    "genotype",
+    "sex",
+    "age_days",
+    "temperature_C",
+    "lighting",
+    "ZT_or_CT",
+    "experimental_unit",
+    "biological_replicate_id",
+    "batch_id",
+    "preparation",
+    "cell_type",
+    "recording_id",
+    "technical_replicate_id"
+  ],
+  "n_rows": 4,
+  "n_biological_replicates": 4,
+  "experimental_units": [
+    "fly"
+  ],
+  "issues": [],
+  "warnings": [],
+  "input_file_metadata": {
+    "path": "validation/synthetic-ephys-trace-metadata.csv",
+    "size_bytes": 693,
+    "sha256": "4f0a0fd7ef9f93d4900ff3aa3875bb1dfab47086a5ebdf263ed298a88dbeac5e"
+  },
+  "inference_warning": "Metadata verification is a schema/QC result; it does not establish rhythm, causality, power, cell identity or source-data validity."
+}

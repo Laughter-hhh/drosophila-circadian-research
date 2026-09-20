@@ -1,0 +1,8 @@
+{
+  "status": "verified_information_gain_pilot",
+  "n_rows": 3,
+  "n_plans": 3,
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "Validation checks plan completeness and anti-guessing gates; it does not establish biological causality, drug selectivity, stock genotype, driver expression or statistical power."
+}

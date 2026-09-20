@@ -1,0 +1,55 @@
+{
+  "scenarios": [
+    "default",
+    "expression_ephys_priority",
+    "genetic_tools_priority"
+  ],
+  "rankings": {
+    "default": [
+      "Sh",
+      "Irk1",
+      "Ork1"
+    ],
+    "expression_ephys_priority": [
+      "Sh",
+      "Irk1",
+      "Ork1"
+    ],
+    "genetic_tools_priority": [
+      "Sh",
+      "Irk1",
+      "Ork1"
+    ]
+  },
+  "shortlist_gate_pass": {
+    "default": [
+      "Sh"
+    ],
+    "expression_ephys_priority": [
+      "Sh"
+    ],
+    "genetic_tools_priority": [
+      "Sh"
+    ]
+  },
+  "conditional_directness": {
+    "default": [
+      "Irk1"
+    ],
+    "expression_ephys_priority": [
+      "Irk1"
+    ],
+    "genetic_tools_priority": [
+      "Irk1"
+    ]
+  },
+  "top_candidates": {
+    "default": "Sh",
+    "expression_ephys_priority": "Sh",
+    "genetic_tools_priority": "Sh"
+  },
+  "top_candidate_stable": true,
+  "ranking_rule": "sort by directness gate/score first, then coverage_adjusted_score = raw_score * weighted_coverage, then coverage and raw_score",
+  "shortlist_gate_rule": "pass requires direct target-neuron evidence (direct label, target_cell_scope=direct_target_neuron, named assay, matched readout), coverage >= 0.5, and observed_dimensions >= 3; conditional near-direct candidates remain pilot-only",
+  "inference_warning": "Ranking is an evidence triage aid, not a biological conclusion; source support and reagent identity require independent audit."
+}

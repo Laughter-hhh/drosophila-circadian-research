@@ -1,0 +1,222 @@
+{
+  "status": "verified_raw_count_cell_detection_join",
+  "dataset_id": "GSE157504",
+  "join": {
+    "n_annotation_cells": 2615,
+    "n_unique_annotated_cells_matched_once": 2615,
+    "n_unmatched_annotation_cells": 0,
+    "unmatched_annotation_examples": [],
+    "n_raw_matrix_cell_columns": 8060,
+    "n_unannotated_raw_columns": 5445,
+    "n_raw_matrix_members": 84,
+    "join_complete": true,
+    "alias_rule": "strip one R-generated leading X; compare case-insensitively; for DD only, normalize annotation _ztNN_ to raw _CTNN_"
+  },
+  "annotation_time_grid": {
+    "expected_hours_per_replicate": [
+      2,
+      6,
+      10,
+      14,
+      18,
+      22
+    ],
+    "missing_replicate_timepoints": [],
+    "time_system_rule": "LD is reported as ZT; DD is reported as CT even where the author annotation ID token contains ztNN"
+  },
+  "candidate_feature_status": [
+    {
+      "candidate": "Sh",
+      "priority_class": "gated_Kv",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "2610",
+      "detection_fraction_all_annotated_cells": "0.9980879541",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "Shab",
+      "priority_class": "gated_Kv",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "1952",
+      "detection_fraction_all_annotated_cells": "0.7464627151",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "Shaw",
+      "priority_class": "gated_Kv",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "1926",
+      "detection_fraction_all_annotated_cells": "0.7365200765",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "Shal",
+      "priority_class": "gated_Kv",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "1641",
+      "detection_fraction_all_annotated_cells": "0.6275334608",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "para",
+      "priority_class": "gated_Na",
+      "raw_feature_status": "not_represented_in_raw_features_not_evaluable",
+      "n_raw_members_with_feature": "0",
+      "n_annotated_cells_with_feature_counts": "0",
+      "n_cells_detected": "0",
+      "detection_fraction_all_annotated_cells": "",
+      "interpretation_limit": "feature symbol not represented exactly in this matrix; unevaluable here, not evidence of biological absence"
+    },
+    {
+      "candidate": "cac",
+      "priority_class": "gated_Ca",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "2560",
+      "detection_fraction_all_annotated_cells": "0.9789674952",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "Ca-alpha1D",
+      "priority_class": "gated_Ca",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "2363",
+      "detection_fraction_all_annotated_cells": "0.9036328872",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "Ca-alpha1T",
+      "priority_class": "gated_Ca",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "2318",
+      "detection_fraction_all_annotated_cells": "0.8864244742",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "slo",
+      "priority_class": "gated_KCa",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "2590",
+      "detection_fraction_all_annotated_cells": "0.9904397706",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "sei",
+      "priority_class": "gated_Kv",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "633",
+      "detection_fraction_all_annotated_cells": "0.2420650096",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "eag",
+      "priority_class": "gated_Kv",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "2371",
+      "detection_fraction_all_annotated_cells": "0.9066921606",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "Irk1",
+      "priority_class": "leak_Kir",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "885",
+      "detection_fraction_all_annotated_cells": "0.3384321224",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "Irk2",
+      "priority_class": "leak_Kir",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "72",
+      "detection_fraction_all_annotated_cells": "0.0275334608",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "Ork1",
+      "priority_class": "leak_K2P_like",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "183",
+      "detection_fraction_all_annotated_cells": "0.06998087954",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    },
+    {
+      "candidate": "trpl",
+      "priority_class": "TRP_cation",
+      "raw_feature_status": "exact_feature_present",
+      "n_raw_members_with_feature": "84",
+      "n_annotated_cells_with_feature_counts": "2615",
+      "n_cells_detected": "41",
+      "detection_fraction_all_annotated_cells": "0.01567877629",
+      "interpretation_limit": "raw UMI cell detection only; not normalized abundance, rhythm, protein, current, or causality"
+    }
+  ],
+  "methodology_caution": "Detection is the fraction of annotated single cells with raw count > 0. Cells are nested within sample collections/experiments and are not independent fly-level replicates. This workflow does not normalize counts, test rhythmicity, compare LD with DD, or infer cell-level expression differences.",
+  "inference_warning": "Raw UMI detection is descriptive transcript evidence only. A zero may reflect dropout; an unrepresented symbol is unevaluable in this matrix. Neither supports claims about channel protein, current, membrane potential, or causal behavior control.",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
+  "inputs": {
+    "raw_counts": {
+      "path": "validation/public-data/GSE157504_RAW.tar",
+      "size_bytes": 27043840,
+      "sha256": "ad4e99a063214780d61346b54e79fdb751e1a9c64efbcb0705fd04d42594c2bf",
+      "integrity": "verified_sha256"
+    },
+    "annotation": {
+      "path": "validation/public-data/GSE157504_clock_neurons_annotation.csv",
+      "size_bytes": 195865,
+      "sha256": "acf34eb2c550febc40b1eb228fcd87ce59b9ecdb7f5cec8b5ebf3c29bdb2debe",
+      "integrity": "verified_sha256"
+    },
+    "candidate_list": {
+      "path": "validation/public-data/GSE22308_candidate_genes.csv",
+      "size_bytes": 251,
+      "sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+      "integrity": "verified_sha256"
+    }
+  },
+  "software": {
+    "python": "3.12.14"
+  },
+  "outputs": {
+    "sample": {
+      "path": "validation/public-data/GSE157504_candidate_raw_detection_by_sample.csv",
+      "size_bytes": 332041,
+      "sha256": "612e00fe006fb5ac44f5c7af48da89824c6000836429011437cb270af99a5245"
+    },
+    "group": {
+      "path": "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+      "size_bytes": 10677,
+      "sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857"
+    },
+    "feature": {
+      "path": "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+      "size_bytes": 2584,
+      "sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a"
+    }
+  }
+}

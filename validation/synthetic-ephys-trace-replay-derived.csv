@@ -1,0 +1,5 @@
+record_id,metadata_row_id,biological_replicate_id,time_hours,value,metric_name,value_unit,subunit_id,n_trace_samples,trace_duration_seconds,time_basis,time_bin_start_seconds
+rec01,meta01,fly01,0,12.15,resting_membrane_potential,mV,rec01,4,3,metadata_ZT_or_CT,
+rec02,meta02,fly02,6,10.15,resting_membrane_potential,mV,rec02,4,3,metadata_ZT_or_CT,
+rec03,meta03,fly03,12,8.15,resting_membrane_potential,mV,rec03,4,3,metadata_ZT_or_CT,
+rec04,meta04,fly04,18,10.15,resting_membrane_potential,mV,rec04,4,3,metadata_ZT_or_CT,

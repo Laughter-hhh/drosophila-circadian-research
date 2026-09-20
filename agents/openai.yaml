@@ -1,0 +1,4 @@
+interface:
+  display_name: "果蝇昼夜节律研究"
+  short_description: "检索证据并设计果蝇生物钟、电生理与离子通道研究"
+  default_prompt: "使用 $drosophila-circadian-research 核查证据、识别关键缺口，并为我的果蝇昼夜节律问题提出可执行且可复现的下一步。"

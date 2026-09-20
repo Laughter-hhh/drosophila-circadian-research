@@ -1,0 +1,30 @@
+# GEO 系列矩阵 dry-run 工作流
+
+## 解析顺序
+
+1. 保存 accession、下载日期、原始 URL 和文件哈希；
+2. 先解析 `!Series_*` 和 `!Sample_*` 注释；
+3. 检查 sample accession 顺序是否与表达矩阵列顺序一致；
+4. 统计探针/feature 行数、重复 ID、非数值和缺失值；
+5. 再核对平台 probe annotation、参考基因组/转录本版本和归一化方法；
+6. 只有 annotation 和 biological replicate 层级都明确时，才进入表达差异或节律分析。
+
+## 重要边界
+
+GEO series matrix 中的 `ID_REF` 通常是 probe 或 feature ID，不一定是 gene symbol。不能把 probe ID 直接当作离子通道基因，也不能把“某个细胞群的表达数据”写成该细胞的电生理或膜电位证据。
+
+若公开资料只提供 pooled sample、未提供 fly-level replicate、temperature 或批次，报告这些缺口；可以做结构性 dry-run 和探索性描述，但不能伪造样本量或正式机制结论。
+
+## 解析器输出
+
+`parse_geo_series_matrix.py` 输出：
+
+- `summary.json`：数据维度、样本对齐、重复 ID、非数值、注释字段和输入文件 SHA-256；
+- 可选的 `metadata.csv`：每个 sample 的 accession、标题、来源和结构化 characteristics；
+- 错误或未决字段不会被静默填补；样本列错位会输出 `blocked_geo_parse` 并以非零退出码结束。
+
+对已下载文件可用 `--expected-sha256 <64位摘要>` 核对精确文件版本；若不提供预期摘要，报告仍会记录观测到的 SHA-256，但标记为 `hash_recorded_not_verified`。
+
+## 直接表达节律入口
+
+如果仅需对已整理的表达长表做 descriptive fixed-period cosinor，运行 `scripts/analyze_expression_rhythm.py` 时必须显式提供 `--time-system ZT|CT`。脚本会核对每个 `time` token 的前缀；`CT6` 不会被静默重标为 `ZT6`。该入口只适合探索性描述，正式推断应使用 `scripts/analyze_cosinor_inference.py` 并提供 metadata 或明确的 experimental unit。

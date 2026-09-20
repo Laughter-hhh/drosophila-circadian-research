@@ -1,0 +1,4 @@
+candidate,score,coverage,coverage_adjusted_score,observed_dimensions,coverage_gate
+balanced,59.5959595959596,1.0,59.5959595959596,7,pass
+tools-led,50.505050505050505,1.0,50.505050505050505,7,pass
+expression-led,48.484848484848484,1.0,48.484848484848484,7,pass

@@ -1,0 +1,79 @@
+{
+  "scenarios": [
+    "default",
+    "expression_ephys_priority",
+    "genetic_tools_priority"
+  ],
+  "rankings": {
+    "default": [
+      "Sh",
+      "Shab",
+      "Shaw",
+      "Shal",
+      "cac",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "slo",
+      "sei",
+      "eag",
+      "Irk1",
+      "Irk2",
+      "Ork1",
+      "trpl",
+      "para"
+    ],
+    "expression_ephys_priority": [
+      "Sh",
+      "Shab",
+      "Shaw",
+      "Shal",
+      "cac",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "slo",
+      "sei",
+      "eag",
+      "Irk1",
+      "Irk2",
+      "Ork1",
+      "trpl",
+      "para"
+    ],
+    "genetic_tools_priority": [
+      "Sh",
+      "Shab",
+      "Shaw",
+      "Shal",
+      "cac",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "slo",
+      "sei",
+      "eag",
+      "Irk1",
+      "Irk2",
+      "Ork1",
+      "trpl",
+      "para"
+    ]
+  },
+  "shortlist_gate_pass": {
+    "default": [],
+    "expression_ephys_priority": [],
+    "genetic_tools_priority": []
+  },
+  "conditional_directness": {
+    "default": [],
+    "expression_ephys_priority": [],
+    "genetic_tools_priority": []
+  },
+  "top_candidates": {
+    "default": "Sh",
+    "expression_ephys_priority": "Sh",
+    "genetic_tools_priority": "Sh"
+  },
+  "top_candidate_stable": true,
+  "ranking_rule": "sort by directness gate/score first, then coverage_adjusted_score = raw_score * weighted_coverage, then coverage and raw_score",
+  "shortlist_gate_rule": "pass requires direct target-neuron evidence (direct label, target_cell_scope=direct_target_neuron, named assay, matched readout), coverage >= 0.5, and observed_dimensions >= 3; directness is specific to the matched readout: transcript/localization evidence is not channel-function evidence, and current/membrane-potential observations alone do not establish candidate-specific causality without perturbation and controls",
+  "inference_warning": "Ranking is an evidence triage aid, not a biological conclusion; source support and reagent identity require independent audit."
+}

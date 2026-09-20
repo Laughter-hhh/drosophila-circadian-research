@@ -1,0 +1,103 @@
+{
+  "status": "verified_ephys_trace_replay_manifest",
+  "manifest_id": "synthetic-ephys-trace-replay-20260908",
+  "n_files": 11,
+  "n_runs": 5,
+  "file_checks": [
+    {
+      "path": "validation/synthetic-raw/trace01.abf",
+      "expected_sha256": "6eacc77f2ed1ecb362eaa1fbaf5fcbe58d268e52967054736f6c575240c62f55",
+      "observed_sha256": "6eacc77f2ed1ecb362eaa1fbaf5fcbe58d268e52967054736f6c575240c62f55",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-raw/trace02.abf",
+      "expected_sha256": "2504df828e3c1ed68c711e6a6f8366430f27a438635f68c01f65c3ed5e8f2b46",
+      "observed_sha256": "2504df828e3c1ed68c711e6a6f8366430f27a438635f68c01f65c3ed5e8f2b46",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-traces.csv",
+      "expected_sha256": "1daeca0e7913b07346bfb80826d0fb55541ac77c372915f92e29937853bd7146",
+      "observed_sha256": "1daeca0e7913b07346bfb80826d0fb55541ac77c372915f92e29937853bd7146",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-metadata.csv",
+      "expected_sha256": "4f0a0fd7ef9f93d4900ff3aa3875bb1dfab47086a5ebdf263ed298a88dbeac5e",
+      "observed_sha256": "4f0a0fd7ef9f93d4900ff3aa3875bb1dfab47086a5ebdf263ed298a88dbeac5e",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-raw-qc.csv",
+      "expected_sha256": "93b61bd6f60ebb3cc64e6d2a5bd819d40a238afd901e93a225a9dcaae94a463e",
+      "observed_sha256": "93b61bd6f60ebb3cc64e6d2a5bd819d40a238afd901e93a225a9dcaae94a463e",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-metadata-validation.json",
+      "expected_sha256": "57cac4c673aeb0d3db3f388eabd3766bf908251c1c4168eb3187958d6d3475fe",
+      "observed_sha256": "57cac4c673aeb0d3db3f388eabd3766bf908251c1c4168eb3187958d6d3475fe",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-raw-qc-validation.json",
+      "expected_sha256": "991b98c20c8965b0ca3e74f26254df7337909866fa5fc8a88081ec2eacda1fd7",
+      "observed_sha256": "991b98c20c8965b0ca3e74f26254df7337909866fa5fc8a88081ec2eacda1fd7",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-derived.csv",
+      "expected_sha256": "af56526e90a906385da9d9352c04d54212ab7e68bf6583bb5eafbca76d4375a2",
+      "observed_sha256": "af56526e90a906385da9d9352c04d54212ab7e68bf6583bb5eafbca76d4375a2",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-derivation.json",
+      "expected_sha256": "d5d4276a906d593f6f3d5b5d88a2eb6bbfe2a8afe1b15c60ac1e6d7e03757fc1",
+      "observed_sha256": "d5d4276a906d593f6f3d5b5d88a2eb6bbfe2a8afe1b15c60ac1e6d7e03757fc1",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-bundle-validation.json",
+      "expected_sha256": "34c4203a637194aa71c9d556e97659a29b477e27cfbab6b0dc6f83a2428d939b",
+      "observed_sha256": "34c4203a637194aa71c9d556e97659a29b477e27cfbab6b0dc6f83a2428d939b",
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/synthetic-ephys-trace-replay-cosinor.json",
+      "expected_sha256": "a4582230d6d13c6b1a65d512287957102426d7623e992a5ac2fdad4603bd0597",
+      "observed_sha256": "a4582230d6d13c6b1a65d512287957102426d7623e992a5ac2fdad4603bd0597",
+      "status": "hash_verified"
+    }
+  ],
+  "run_checks": [
+    {
+      "run_id": "validate-metadata",
+      "script": "scripts/validate_experiment_metadata.py",
+      "status": "verified"
+    },
+    {
+      "run_id": "validate-raw-qc",
+      "script": "scripts/validate_raw_qc_provenance.py",
+      "status": "verified"
+    },
+    {
+      "run_id": "derive-trace-measurements",
+      "script": "scripts/derive_trace_measurements.py",
+      "status": "verified"
+    },
+    {
+      "run_id": "validate-preanalysis-bundle",
+      "script": "scripts/validate_preanalysis_bundle.py",
+      "status": "verified"
+    },
+    {
+      "run_id": "analyze-exploratory-cosinor",
+      "script": "scripts/analyze_preanalysis_cosinor.py",
+      "status": "verified"
+    }
+  ],
+  "issues": [],
+  "inference_warning": "This manifest gate establishes file linkage, portable raw-file references and replay metadata only; it does not establish cell identity, rhythm, statistical adequacy or causality."
+}
