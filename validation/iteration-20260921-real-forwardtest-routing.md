@@ -1,6 +1,6 @@
 # Real-task forward-test refinements — 2026-09-21
 
-Status: `executed`; candidate-scoring route independently verified, literature-reading post-edit rerun pending.
+Status: `executed`; candidate-scoring route independently verified; first fresh literature-reading rerun completed and a per-panel provenance failure was found; remediation is documented, with a post-remediation generative rerun still outstanding.
 
 ## Trigger and scope
 
@@ -14,13 +14,15 @@ The evaluators were given raw article access points or the candidate table/log, 
 ## Observed behavior
 
 - The literature workflow explained the paper bilingually for a novice and inventoried 23 caption-labeled panels across Figures 1–7. It correctly did **not** claim visual verification: the Bristol author-manuscript PDF was not readable in the available web reader (403), the Wiley page resolved to the abstract, and artwork/supplement details remained inaccessible. The report marked this as a partial, caption-based reading.
-- The QA found that access state and provenance were not sufficiently visible **per panel**, and that `n`/trial counts could not be mapped to the independent experimental unit from captions alone. These must remain `unknown` until the methods or supplement resolve them.
+- The initial Smith et al. reading QA found that access state and provenance were not sufficiently visible **per panel**, and that `n`/trial counts could not be mapped to the independent experimental unit from captions alone. These must remain `unknown` until the methods or supplement resolve them.
+- A fresh reading of Schellinger et al. (2022) completed as a bilingual caption-/text-limited review of all four main figures and 17 labeled panels. It correctly withheld image verification because the publisher/PMC artwork was not accessible, and kept unresolved supplemental labels unknown.
+- Manual conformance review found that the fresh reading repeated access status and provenance only at the Figure level, not on every panel row. The copyable row schema and final checklist have now been strengthened; this is a concrete instruction-following failure, not evidence that the repair has passed a fresh generative retest.
 - The candidate workflow reproduced target-specific evidence triage. The evaluator also tried a `.json` suffix for the CSV `--output` and had to rerun with `.csv`; the scored longlist included candidates that did not pass the Top gate. The scorer already documents these semantics, but the main workflow did not directly route users to `candidate-scoring.md` whenever they invoked the scorer.
 
 ## Skill changes
 
 - `SKILL.md` now routes `score_candidates.py` use to `references/candidate-scoring.md` as well as `candidate-ranking.md`; this exposes the output-format and gate-qualified Top interpretation at the point of use.
-- `references/deep-literature-reading.md` now specifies a bounded source fallback sequence and a stop condition; requires an overall coverage/access label plus per-panel image/caption status and source provenance; prohibits inventing artwork-only labels; and preserves `unknown` for `n`, trials, and experimental units until methods or supplements define them.
+- `references/deep-literature-reading.md` now specifies a bounded source fallback sequence and a stop condition; requires an overall coverage/access label plus a copyable table with image/caption status, per-panel source/version/page/link, caption-supported content, visual-only unknowns, `n`/experimental unit and caveat; prohibits substituting Figure-level labels or “same as above”; prohibits inventing artwork-only labels; and preserves `unknown` for `n`, trials, and experimental units until methods or supplements define them.
 
 No scorer implementation or serialization change was made. CSV raw longlists and JSON sensitivity reports are already documented choices; this iteration fixes the workflow routing so that guidance is loaded before invoking the scorer. A serialization change would require a separate compatibility migration because several public-data manifests hash the current scorer and its outputs.
 
@@ -40,7 +42,7 @@ No scorer implementation or serialization change was made. CSV raw longlists and
   python scripts/score_candidates.py data/candidate-evidence-real.csv --search-log data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell s-LNv --output ranking-s-LNv.csv --sensitivity-output sensitivity-s-LNv.json
   python scripts/score_candidates.py data/candidate-evidence-real.csv --search-log data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell l-LNv --output ranking-l-LNv.csv --sensitivity-output sensitivity-l-LNv.json
   ```
-- The fresh literature-reading rerun is still in progress. Do not promote the figure-reading changes to fully behavior-verified until that output is reviewed; the prior test remains partial because the source artwork was inaccessible.
+- The first fresh literature-reading rerun is complete and reviewed: 17 main panels were covered, but panel-specific status/provenance was missing. The doc-level fix is applied and whitespace/synthetic regression checks pass; however, no post-fix generative rerun has yet established behavioral compliance. The source-artwork limitation also remains, so no panel is image-verified.
 
 ## Evidence limits
 

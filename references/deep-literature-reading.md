@@ -61,11 +61,17 @@
 
 #### Figure X｜图 X
 
-在图题或文章摘要处醒目标明本次 Figure 覆盖状态：`image-verified｜已核查原图`、`caption-limited｜仅图注解读` 或 `source-unavailable｜来源不可访问`。每个 panel 单独记录访问状态与证据来源；一个可读图注不能使同图其他不可见 panel 自动变成已核查。
+在图题或文章摘要处醒目标明本次 Figure 覆盖状态：`image-verified｜已核查原图`、`caption-limited｜仅图注解读` 或 `source-unavailable｜来源不可访问`。这个整体标签不能代替 panel 级记录；不得写“同上”或默认整张图的状态适用于每个子图。
 
 1. **Figure question｜本图问题**：这张图想区分什么假说或获得什么信息。
 2. **Caption walkthrough｜图注逐项解读**：逐句解释图注中实验对象、干预、时间条件、颜色或线型、统计、误差线、n、比例尺和 panel 关系。用自己的话翻译和解释，不大段逐字复制受版权保护的图注。
-3. **Panel inventory｜子图清单**：主文及所需补充图的每个 panel、inset 和 representative trace 各占一行，记录 `panel_id`、caption/image 状态、所依据的版本/页面/直接链接、可见或可从图注核实的轴与单位/组别/符号、无法检查的视觉项目。可用 `unknown｜未知` 或 `unavailable｜不可访问`；不得用同图其他 panel 的信息填补。轴、颜色、线型、比例尺、代表性 trace 或图中文字若只能从图像判断，只有实际查看原图后才能描述。
+3. **Panel inventory｜子图清单**：主文及所需补充图的每个 panel、inset 和 representative trace 各占一行，并逐行填写以下必需字段；不得用图级总标签代替，也不得写“同上”。
+
+   | panel_id | image_status | caption_status | source/version/page/direct link | caption-supported labels, groups and readout | visual-only unknown/unavailable | n and experimental unit (or unknown) | interpretation/caveat |
+   |---|---|---|---|---|---|---|---|
+   | Fig. 1A | caption-limited | caption available; image unavailable | final article, Fig. 1 caption, DOI/URL | caption 明确支持的组别及读数；未提及则写 unknown | 颜色、轴标签或图中符号未核图，写 unknown | caption 未说明独立实验单位，写 unknown | 仅解释图注支持的内容，不推测 artwork |
+
+   每一行的 `image_status` 和 `caption_status` 都要分别写明；`source/version/page/direct link` 必须足以让读者定位该 panel 所依据的来源。可用 `unknown｜未知` 或 `unavailable｜不可访问`；不得用同图其他 panel 的信息填补。轴、颜色、线型、比例尺、代表性 trace 或图中文字若只能从图像判断，只有实际查看原图后才能描述。
 4. **Abbreviation and symbol glossary｜缩写与符号表**：
 
    | Abbreviation/symbol | Full English | 中文 | In this panel |
@@ -120,6 +126,7 @@
 - 是否区分观察、结论、推断、无证据和替代解释？
 - 是否核查作者团队背景与文章历史，而没有臆测作者动机？
 - 是否给出全文、图像或补充材料不可得时的明确限制？
-- 是否对每个 panel 标注图像/图注访问状态与逐项来源；若仅有图注，标题或摘要是否醒目标为 caption-limited，而非视觉核验？
+- 每个 panel 是否都有独立表格行，并逐行写明 `image_status`、`caption_status`、版本/页码/直接链接和未知视觉内容？仅在 Figure 标题标注 caption-limited 不算满足。
+- 若仅有图注，标题或摘要是否醒目标为 caption-limited，而非视觉核验？
 - 是否把 `n`、trial、recording 和独立 experimental unit 区分；方法未说明时是否保留 `unknown`？
 - 是否给出直接链接、Nature 风格参考文献和检索日期？
