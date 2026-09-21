@@ -7,21 +7,23 @@
   "target_cells_requested": [
     "s-LNv"
   ],
+  "readout_match_used": "membrane_potential_or_current",
+  "directness_source": "checked_evidence_search_log",
   "ranking_status": "scored_ranking_available",
   "rankings": {
     "default": [
       "Shaw",
       "Shal",
-      "Irk1",
-      "Ork1",
-      "slo",
       "na",
+      "Irk1",
       "para",
       "Sh",
+      "Ork1",
       "trpl",
       "Shab",
       "Ca-alpha1D",
       "Ca-alpha1T",
+      "slo",
       "Irk2",
       "cac",
       "sei"
@@ -29,16 +31,16 @@
     "expression_ephys_priority": [
       "Shaw",
       "Shal",
-      "Irk1",
-      "Ork1",
-      "slo",
       "na",
+      "Irk1",
       "para",
       "Sh",
+      "Ork1",
       "trpl",
       "Shab",
       "Ca-alpha1D",
       "Ca-alpha1T",
+      "slo",
       "Irk2",
       "cac",
       "sei"
@@ -46,16 +48,16 @@
     "genetic_tools_priority": [
       "Shaw",
       "Shal",
-      "Irk1",
-      "Ork1",
-      "slo",
       "na",
+      "Irk1",
       "para",
       "trpl",
       "Sh",
+      "Ork1",
       "Shab",
       "Ca-alpha1D",
       "Ca-alpha1T",
+      "slo",
       "Irk2",
       "cac",
       "sei"
@@ -76,15 +78,9 @@
     ]
   },
   "conditional_directness": {
-    "default": [
-      "Irk1"
-    ],
-    "expression_ephys_priority": [
-      "Irk1"
-    ],
-    "genetic_tools_priority": [
-      "Irk1"
-    ]
+    "default": [],
+    "expression_ephys_priority": [],
+    "genetic_tools_priority": []
   },
   "unscored_candidates": {
     "default": [],

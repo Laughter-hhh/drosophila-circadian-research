@@ -97,7 +97,7 @@ class EvidenceSearchLogTests(unittest.TestCase):
         path = ROOT / "validation" / "public-data" / "candidate-evidence-search-log.csv"
         result = validate(path)
         self.assertEqual(result["status"], "verified_evidence_search_log")
-        self.assertEqual(result["n_rows"], 17)
+        self.assertEqual(result["n_rows"], 19)
 
 
 if __name__ == "__main__":

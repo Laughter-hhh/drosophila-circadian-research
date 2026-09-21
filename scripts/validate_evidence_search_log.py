@@ -24,7 +24,10 @@ REQUIRED = {
 }
 SOURCE_TYPES = {"primary_paper", "preprint", "review", "FlyBase", "GEO", "stock_database", "other_database"}
 TARGET_SCOPES = {"direct_target_neuron", "nearby_clock_neuron", "indirect_or_unverified", "none_or_unverified"}
-READOUTS = {"membrane_potential_or_current", "expression_or_localization", "behavior_only", "none_or_unverified"}
+READOUTS = {
+    "membrane_potential_or_current", "expression_or_localization", "intracellular_ion_concentration",
+    "behavior_only", "none_or_unverified",
+}
 LABELS = {"direct", "near_direct", "indirect", "unverified"}
 CLAIMS = {"conclusion", "inference", "no_evidence"}
 SUPPORT = {"checked", "not_checked", "conflict", "unavailable"}
@@ -94,7 +97,7 @@ def validate(path: Path) -> dict[str, object]:
         decision = (row.get("decision") or "").strip()
         if decision not in DECISIONS:
             issues.append({"line": line_number, "record_id": record_id, "type": "invalid_decision", "value": decision})
-        if label == "direct" and (target != "direct_target_neuron" or readout not in {"membrane_potential_or_current", "expression_or_localization"} or not _present(row.get("assay"))):
+        if label == "direct" and (target != "direct_target_neuron" or readout not in {"membrane_potential_or_current", "expression_or_localization", "intracellular_ion_concentration"} or not _present(row.get("assay"))):
             issues.append({"line": line_number, "record_id": record_id, "type": "direct_label_without_target_assay_readout"})
         if label == "direct" and (not evidence_cells or evidence_cells == [UNVERIFIED_CELL]):
             issues.append({"line": line_number, "record_id": record_id, "type": "direct_label_without_evidence_target_cells"})

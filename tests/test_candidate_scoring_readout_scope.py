@@ -1,5 +1,6 @@
 import sys
 import unittest
+import csv
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,6 +52,24 @@ class CandidateScoringReadoutScopeTests(unittest.TestCase):
         }], target_cells=["s-LNv"])
         self.assertIn("transcript/localization evidence is not channel-function evidence", result["shortlist_gate_rule"])
         self.assertIn("perturbation and controls", result["shortlist_gate_rule"])
+
+    def test_real_irk1_cultured_cell_current_does_not_pass_native_lnv_ephys_gate(self):
+        table_path = ROOT / "validation" / "public-data" / "candidate-evidence-real.csv"
+        log_path = ROOT / "validation" / "public-data" / "candidate-evidence-search-log.csv"
+        with table_path.open(newline="", encoding="utf-8") as handle:
+            row = next(item for item in csv.DictReader(handle) if item["candidate"] == "Irk1")
+        with log_path.open(newline="", encoding="utf-8") as handle:
+            evidence_log = list(csv.DictReader(handle))
+        for target in ("s-LNv", "l-LNv"):
+            result = score_row(
+                row,
+                target_cells=[target],
+                evidence_log=evidence_log,
+                readout_match="membrane_potential_or_current",
+            )
+            self.assertEqual(result["directness_gate"], "needs_direct_evidence")
+            self.assertEqual(result["directness_source_records"], "")
+            self.assertEqual(result["target_cell_match_status"], "missing_evidence")
 
 
 if __name__ == "__main__":

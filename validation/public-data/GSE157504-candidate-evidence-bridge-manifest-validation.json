@@ -82,17 +82,17 @@
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv",
       "role": "derived",
-      "expected_sha256": "ffba519aef8661a54186e88fed5e617fdd9b01f9a604c1f8ff6457fa0b3e4bf8",
-      "observed_sha256": "ffba519aef8661a54186e88fed5e617fdd9b01f9a604c1f8ff6457fa0b3e4bf8",
-      "size_bytes": 27517,
+      "expected_sha256": "830a4336e5374823e9384c855ca92e6dd1a6b3c0e0bfe78357a315697e8369cb",
+      "observed_sha256": "830a4336e5374823e9384c855ca92e6dd1a6b3c0e0bfe78357a315697e8369cb",
+      "size_bytes": 27595,
       "status": "hash_verified"
     },
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
       "role": "derived",
-      "expected_sha256": "21388edc99992742e0f45bd7e4234a5728a1dbad494600d14522ebc561c87c26",
-      "observed_sha256": "21388edc99992742e0f45bd7e4234a5728a1dbad494600d14522ebc561c87c26",
-      "size_bytes": 3078,
+      "expected_sha256": "57c26848cd8aaa151f0f6693bd4fcb11b7a676c9dbe5f2c8f15d0fc9796d9ab1",
+      "observed_sha256": "57c26848cd8aaa151f0f6693bd4fcb11b7a676c9dbe5f2c8f15d0fc9796d9ab1",
+      "size_bytes": 3158,
       "status": "hash_verified"
     }
   ],

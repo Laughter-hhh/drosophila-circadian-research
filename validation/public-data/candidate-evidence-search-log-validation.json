@@ -1,7 +1,7 @@
 {
   "status": "verified_evidence_search_log",
-  "n_rows": 15,
-  "n_records": 15,
+  "n_rows": 19,
+  "n_records": 19,
   "issues": [],
   "inference_warning": "Schema validation does not prove that a source supports the claim; each primary source still requires online/full-text review."
 }

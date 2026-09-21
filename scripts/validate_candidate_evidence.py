@@ -62,7 +62,7 @@ def _base_validate(rows: list[dict[str, str]], fieldnames: set[str]) -> list[dic
         label = (row.get("evidence_label") or "").strip().lower()
         if _present(label) and label not in DIRECTNESS_LABELS:
             issues.append({"line": line_number, "candidate": candidate, "type": "invalid_evidence_label", "value": label})
-        if label == "direct" and (target != "direct_target_neuron" or not _present(row.get("assay")) or readout not in {"membrane_potential_or_current", "expression_or_localization"}):
+        if label == "direct" and (target != "direct_target_neuron" or not _present(row.get("assay")) or readout not in {"membrane_potential_or_current", "expression_or_localization", "intracellular_ion_concentration"}):
             issues.append({"line": line_number, "candidate": candidate, "type": "direct_label_without_target_assay_readout"})
         try:
             evidence_cells = parse_cell_tokens(row.get("evidence_target_cells"))
@@ -118,26 +118,52 @@ def _apply_search_log_gate(rows: list[dict[str, str]], search_log_path: Path, is
             checked = [log_row for log_row in candidate_logs if (log_row.get("source_support_status") or "").strip().lower() == "checked"]
             if not checked:
                 issues.append({"line": line_number, "candidate": candidate, "type": "label_requires_checked_search_log_source", "evidence_label": label})
-        if label == "direct":
-            try:
-                candidate_cells = set(parse_cell_tokens(row.get("evidence_target_cells")))
-            except ValueError:
-                candidate_cells = set()
-            matching = [
-                log_row for log_row in candidate_logs
-                if (log_row.get("evidence_label") or "").strip().lower() == "direct"
-                and (log_row.get("source_support_status") or "").strip().lower() == "checked"
-                and (log_row.get("target_cell_scope") or "").strip() == (row.get("target_cell_scope") or "").strip()
-                and (log_row.get("readout_match") or "").strip() == (row.get("readout_match") or "").strip()
-            ]
-            log_cells: set[str] = set()
-            for log_row in matching:
+        if label in {"direct", "near_direct", "indirect"}:
+            candidate_sources = _source_tokens(row.get("sources"))
+            candidate_readout = (row.get("readout_match") or "").strip()
+            candidate_scope = (row.get("target_cell_scope") or "").strip()
+            allowed_log_labels = {
+                "direct": {"direct"},
+                "near_direct": {"direct", "near_direct"},
+                "indirect": {"direct", "near_direct", "indirect"},
+            }[label]
+            matching = []
+            for log_row in candidate_logs:
+                log_sources = _source_tokens(log_row.get("source_id")) | _source_tokens(log_row.get("source_url_or_identifier"))
+                if (
+                    (log_row.get("source_support_status") or "").strip().lower() == "checked"
+                    and (log_row.get("readout_match") or "").strip() == candidate_readout
+                    and (log_row.get("target_cell_scope") or "").strip() == candidate_scope
+                    and (log_row.get("evidence_label") or "").strip().lower() in allowed_log_labels
+                    and candidate_sources.intersection(log_sources)
+                ):
+                    matching.append(log_row)
+            if not matching:
+                issues.append({
+                    "line": line_number,
+                    "candidate": candidate,
+                    "type": "candidate_readout_not_supported_by_linked_search_log",
+                    "readout_match": candidate_readout,
+                    "target_cell_scope": candidate_scope,
+                })
+            else:
                 try:
-                    log_cells.update(parse_cell_tokens(log_row.get("evidence_target_cells")))
+                    candidate_cells = set(parse_cell_tokens(row.get("evidence_target_cells")))
                 except ValueError:
-                    continue
-            if not matching or not candidate_cells or not candidate_cells.issubset(log_cells):
-                issues.append({"line": line_number, "candidate": candidate, "type": "direct_candidate_not_supported_by_matching_log_cells"})
+                    candidate_cells = set()
+                log_cells: set[str] = set()
+                for log_row in matching:
+                    try:
+                        log_cells.update(parse_cell_tokens(log_row.get("evidence_target_cells")))
+                    except ValueError:
+                        continue
+                if candidate_cells and candidate_cells != {UNVERIFIED_CELL} and not candidate_cells.issubset(log_cells):
+                    issue_type = {
+                        "direct": "direct_candidate_not_supported_by_matching_log_cells",
+                        "near_direct": "near_direct_candidate_not_supported_by_matching_log_cells",
+                        "indirect": "indirect_candidate_not_supported_by_matching_log_cells",
+                    }[label]
+                    issues.append({"line": line_number, "candidate": candidate, "type": issue_type})
     return log_result
 
 

@@ -25,7 +25,9 @@
 - `readout_match`：`membrane_potential_or_current`、`expression_or_localization`、`behavior_only` 或 `none_or_unverified`。
 - `evidence_label`：`direct`、`near_direct`、`indirect` 或 `unverified`。
 
-`directness_gate=pass` 只允许同时满足：`evidence_label=direct`、直接目标时钟神经元范围、具名 assay，以及匹配膜电位/电流或表达/定位 readout。`near_direct` 只能得到 `conditional_directness`，用于信息获取或 pilot，不得伪装成直接 Top 候选。`indirect` 与 `unverified` 保留在长名单中，但必须标成需要直接证据。
+`readout_match` 还可为 `intracellular_ion_concentration`，用于如 ClopHensor 的细胞内离子浓度测量；它不得被当作膜电位或离子通道电流。`directness_gate=pass` 只允许同时满足：`evidence_label=direct`、直接目标时钟神经元范围、具名 assay，以及与本次明确选择的 readout 相符的证据。`near_direct` 只能得到 `conditional_directness`，用于信息获取或 pilot，不得伪装成直接 Top 候选。`indirect` 与 `unverified` 保留在长名单中，但必须标成需要直接证据。
+
+真实候选排序必须把同一份经验证的 evidence-search log 与 `--readout-match` 一起传给 scorer；同时使用 `--target-cell` 明确细胞亚型。scorer 仅用同一 readout 域中、经核查的 source-log rows 计算目标直接性，不再把某篇论文的培养细胞电流、目标神经元表达和行为/分子钟 readouts 汇成一个 directness claim。若某 readout 没有同亚型的直接/近直接记录，应返回 `needs_direct_evidence` 或相应的 scope gate，即使候选在其他 readout 上有强证据。
 
 `directness_gate` 是**readout-specific**，不能跨 readout 解释：`expression_or_localization` 下的 `direct` 仅表示目标细胞中的转录本/表达/定位被直接测量，不等于通道电流、膜电位节律或功能因果证据；`membrane_potential_or_current` 也可能是观察性 readout，若要声称候选通道导致变化，必须核实候选特异扰动、相应对照和 readout。评分输出的 `readout_domain` 与 `directness_basis` 会明确列出当前直接性覆盖的 readout 域。`shortlist_gate` 是证据分流而非功能因果证明。
 
@@ -52,6 +54,8 @@
 同时报告 evidence coverage，防止只有少量维度的候选获得虚高分。排序先按 directness gate/score，再按 coverage-adjusted score；总分不能掩盖表达矛盾、药理工具非选择性、reagent 未核实、发育表型、背景效应或 readout 不匹配。
 
 ## 候选表与检索日志的联合门槛
+
+同一篇 primary paper 若包含多个实验/readout，必须为每个 readout 拆分 source-log 记录，并各自标明 assay、target-cell scope 和 evidence label。例如 s-LNv ClopHensor、S2-R+ 异源表达 patch clamp、LNv 行为周期结果不能合并成一条 s-LNv current 证据。联合校验会要求候选摘要连接到同来源、同 readout、同 scope 的 checked 记录，且具名目标细胞由这些记录覆盖。
 
 `scripts/validate_candidate_evidence.py` 默认做 schema 检查；真实候选进入排序前，使用：
 

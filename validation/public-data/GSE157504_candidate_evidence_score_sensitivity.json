@@ -10,6 +10,8 @@
     "LNd",
     "DN"
   ],
+  "readout_match_used": null,
+  "directness_source": "candidate_row_summary",
   "ranking_status": "insufficient_scored_evidence",
   "rankings": {
     "default": [],
