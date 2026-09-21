@@ -62,12 +62,12 @@
     {
       "path": "validation/public-data/GSE22308_candidate_expression_samples.csv",
       "role": "derived",
-      "sha256": "26f2067b391914a15fcc9834293d26127a2ce187d3aba7441f526249a02428fc"
+      "sha256": "eddf89be048f39c4feaf94f7041b562716c2ea4758ee2fac3a3ea8e8ba048cb5"
     },
     {
       "path": "validation/public-data/GSE22308_candidate_expression_summary.csv",
       "role": "derived",
-      "sha256": "7be9e0777186b47d2eec790bcee0f02e53136067293070a47fdc05b6649f242e"
+      "sha256": "44d1de237e35a7b73f6bf8bf7f17f19145910541d96a48dec8eb39de4f776316"
     },
     {
       "path": "validation/public-data/GSE22308_candidate_expression_rhythms.json",
@@ -121,7 +121,7 @@
     {
       "run_id": "extract-gse22308-candidate-expression",
       "script": "scripts/extract_gene_expression.py",
-      "script_sha256": "166699e3fec8eb86193e8d1a54f2b74588a7c9b636a4820c7378d49883319bf0",
+      "script_sha256": "c90bf2dfb9a3da91065c1d3040d83b18df1aada0074ef49cab662da6bf54038c",
       "command": "python scripts/extract_gene_expression.py validation/public-data/GSE22308_series_matrix.txt.gz validation/public-data/GPL1322.annot.gz validation/public-data/GSE22308_parsed_metadata.csv validation/public-data/GSE22308_candidate_genes.csv --summary-output validation/public-data/GSE22308_candidate_expression_summary.csv --sample-output validation/public-data/GSE22308_candidate_expression_samples.csv",
       "inputs": [
         "validation/public-data/GSE22308_series_matrix.txt.gz",

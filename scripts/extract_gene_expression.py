@@ -93,9 +93,14 @@ def read_metadata(path: Path) -> list[dict[str, str]]:
     out: list[dict[str, str]] = []
     for row in rows:
         chars = json.loads(row.get("characteristics_json") or "{}")
+        developmental_stage = chars.get(
+            "developmental stage",
+            chars.get("developmental_stage", chars.get("stage", "unknown")),
+        )
         out.append({
             "sample_id": (row.get("sample_id") or "").strip(),
             "cell_type": str(chars.get("cell type", chars.get("cell_type", "unknown"))),
+            "developmental_stage": str(developmental_stage or "unknown"),
             "time": str(chars.get("time", "unknown")),
             "background": str(chars.get("background", "unknown")),
         })
@@ -161,6 +166,7 @@ def summarize(matrix: Path, annotation: Path, metadata: Path, candidates: Path) 
                 "gene_symbol": symbol,
                 "sample_id": sample_id,
                 "cell_type": metadata_by_sample[sample_id]["cell_type"],
+                "developmental_stage": metadata_by_sample[sample_id]["developmental_stage"],
                 "time": metadata_by_sample[sample_id]["time"],
                 "background": metadata_by_sample[sample_id]["background"],
                 "probe_count": len(probe_values),
@@ -168,11 +174,17 @@ def summarize(matrix: Path, annotation: Path, metadata: Path, candidates: Path) 
                 "probe_ids": ";".join(probes),
             })
 
-    grouped: dict[tuple[str, str, str, str], list[float]] = defaultdict(list)
+    grouped: dict[tuple[str, str, str, str, str], list[float]] = defaultdict(list)
     probes_seen: dict[str, set[str]] = defaultdict(set)
     for row in sample_values:
         if row["expression"] is not None:
-            key = (str(row["gene_symbol"]), str(row["cell_type"]), str(row["time"]), str(row["background"]))
+            key = (
+                str(row["gene_symbol"]),
+                str(row["cell_type"]),
+                str(row["developmental_stage"]),
+                str(row["time"]),
+                str(row["background"]),
+            )
             grouped[key].append(float(row["expression"]))
             probes_seen[str(row["gene_symbol"])].update(filter(None, str(row["probe_ids"]).split(";")))
     summary: list[dict[str, object]] = []
@@ -187,8 +199,9 @@ def summarize(matrix: Path, annotation: Path, metadata: Path, candidates: Path) 
             summary.append({
                 "gene_symbol": key[0],
                 "cell_type": key[1],
-                "time": key[2],
-                "background": key[3],
+                "developmental_stage": key[2],
+                "time": key[3],
+                "background": key[4],
                 "n_samples": len(vals),
                 "mean_expression": mean,
                 "sd_expression": sd,
@@ -213,14 +226,14 @@ def main(argv: list[str]) -> int:
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
-    summary_fields = ["gene_symbol", "cell_type", "time", "background", "n_samples", "mean_expression", "sd_expression", "probe_count", "probe_ids", "status"]
+    summary_fields = ["gene_symbol", "cell_type", "developmental_stage", "time", "background", "n_samples", "mean_expression", "sd_expression", "probe_count", "probe_ids", "status"]
     with args.summary_output.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=summary_fields, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(summary)
     if args.sample_output:
         with args.sample_output.open("w", newline="", encoding="utf-8") as handle:
-            writer = csv.DictWriter(handle, fieldnames=["gene_symbol", "sample_id", "cell_type", "time", "background", "probe_count", "expression", "probe_ids"], extrasaction="ignore")
+            writer = csv.DictWriter(handle, fieldnames=["gene_symbol", "sample_id", "cell_type", "developmental_stage", "time", "background", "probe_count", "expression", "probe_ids"], extrasaction="ignore")
             writer.writeheader()
             writer.writerows(samples)
     return 0

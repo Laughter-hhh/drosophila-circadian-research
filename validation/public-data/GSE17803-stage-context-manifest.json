@@ -1,0 +1,121 @@
+{
+  "manifest_id": "GSE17803-stage-context-20260921",
+  "dataset_id": "GSE17803",
+  "accession": "GSE17803",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE17803",
+  "retrieved_at_utc": "2026-09-21T13:16:35Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-21T13:15:28Z",
+  "source_check_method": "web_open",
+  "source_observed_tokens": [
+    "GSE17803",
+    "Drosophila melanogaster",
+    "GPL1322",
+    "23 samples",
+    "manual sorting of GFP/YFP-positive cells",
+    "3 biological replicates except adult small PDF cells"
+  ],
+  "source_observation_note": "The official NCBI GEO accession page was opened and checked. It lists 23 samples, the GPL1322 Affymetrix platform, manual cell sorting, and three biological replicates except adult small-PDF samples. The series matrix was freshly fetched from the official NCBI GEO FTP endpoint at 2026-09-21T13:16:35Z; its SHA-256 exactly matched the retained local matrix.",
+  "analysis_context": {
+    "time_system": "unknown; sample metadata contain no collection time or ZT time course",
+    "experimental_unit": "GEO sample-level sorted-cell biological replicate; not a single-fly electrophysiology measurement",
+    "normalization_status": "Processed GEO GPL1322 series matrix; GEO matrix metadata reports GCRMA processing. No new normalization was performed. Candidate-level signal is the within-sample median across mapped probes.",
+    "biological_unit_limitations": "Cross-sectional cell-type expression profiles, not a time series or functional current/membrane-potential readout. Adult small-PDF has two samples. Fly-level pooling, sex, and other covariates are not consistently available."
+  },
+  "files": [
+    {
+      "path": "validation/public-data/GSE17803_series_matrix.txt.gz",
+      "role": "raw",
+      "sha256": "1e152aa1f40ec38add896ca31a932b929d207aba84deac8a84c2f356382beeeb"
+    },
+    {
+      "path": "validation/public-data/GPL1322.annot.gz",
+      "role": "annotation",
+      "sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52"
+    },
+    {
+      "path": "validation/public-data/GSE22308_candidate_genes.csv",
+      "role": "candidate_list",
+      "sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce"
+    },
+    {
+      "path": "validation/public-data/GSE17803_parsed_metadata.csv",
+      "role": "metadata",
+      "sha256": "3b0664467992425d72ce2bf69a39d89af31aa69e2136eb9035d1cad201028686"
+    },
+    {
+      "path": "validation/public-data/GSE17803_matrix_summary.json",
+      "role": "derived",
+      "sha256": "f855efcd7eb11e7154069d5084ecc19612a3f0e36409fdc3a66b69cbed92738b"
+    },
+    {
+      "path": "validation/public-data/GSE17803_candidate_expression_context-stratified_summary.csv",
+      "role": "derived",
+      "sha256": "7bd0f71ac96c67103b138747ee0e582a76535750a26b2c0007e097a64e208be9"
+    },
+    {
+      "path": "validation/public-data/GSE17803_candidate_expression_context-stratified_samples.csv",
+      "role": "derived",
+      "sha256": "7e40e8373c158b6787c108bbb06c01cf4cbab599e343cdc4bdb83e2666e05bda"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "parse-gse17803",
+      "script": "scripts/parse_geo_series_matrix.py",
+      "script_sha256": "347af977e4261c632ca1e33a4dffa86d08e4f79ec6a7ae75def332785971fdc3",
+      "command": "python scripts/parse_geo_series_matrix.py validation/public-data/GSE17803_series_matrix.txt.gz --expected-sha256 1e152aa1f40ec38add896ca31a932b929d207aba84deac8a84c2f356382beeeb --provenance-path validation/public-data/GSE17803_series_matrix.txt.gz --metadata-output validation/public-data/GSE17803_parsed_metadata.csv --summary-output validation/public-data/GSE17803_matrix_summary.json",
+      "inputs": [
+        "validation/public-data/GSE17803_series_matrix.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE17803_parsed_metadata.csv",
+        "validation/public-data/GSE17803_matrix_summary.json"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/parse_geo_series_matrix.py",
+        "validation/public-data/GSE17803_series_matrix.txt.gz",
+        "--expected-sha256",
+        "1e152aa1f40ec38add896ca31a932b929d207aba84deac8a84c2f356382beeeb",
+        "--provenance-path",
+        "validation/public-data/GSE17803_series_matrix.txt.gz",
+        "--metadata-output",
+        "validation/public-data/GSE17803_parsed_metadata.csv",
+        "--summary-output",
+        "validation/public-data/GSE17803_matrix_summary.json"
+      ]
+    },
+    {
+      "run_id": "extract-gse17803-candidate-expression-stratified",
+      "script": "scripts/extract_gene_expression.py",
+      "script_sha256": "c90bf2dfb9a3da91065c1d3040d83b18df1aada0074ef49cab662da6bf54038c",
+      "command": "python scripts/extract_gene_expression.py validation/public-data/GSE17803_series_matrix.txt.gz validation/public-data/GPL1322.annot.gz validation/public-data/GSE17803_parsed_metadata.csv validation/public-data/GSE22308_candidate_genes.csv --summary-output validation/public-data/GSE17803_candidate_expression_context-stratified_summary.csv --sample-output validation/public-data/GSE17803_candidate_expression_context-stratified_samples.csv",
+      "inputs": [
+        "validation/public-data/GSE17803_series_matrix.txt.gz",
+        "validation/public-data/GPL1322.annot.gz",
+        "validation/public-data/GSE17803_parsed_metadata.csv",
+        "validation/public-data/GSE22308_candidate_genes.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE17803_candidate_expression_context-stratified_summary.csv",
+        "validation/public-data/GSE17803_candidate_expression_context-stratified_samples.csv"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/extract_gene_expression.py",
+        "validation/public-data/GSE17803_series_matrix.txt.gz",
+        "validation/public-data/GPL1322.annot.gz",
+        "validation/public-data/GSE17803_parsed_metadata.csv",
+        "validation/public-data/GSE22308_candidate_genes.csv",
+        "--summary-output",
+        "validation/public-data/GSE17803_candidate_expression_context-stratified_summary.csv",
+        "--sample-output",
+        "validation/public-data/GSE17803_candidate_expression_context-stratified_samples.csv"
+      ]
+    }
+  ]
+}

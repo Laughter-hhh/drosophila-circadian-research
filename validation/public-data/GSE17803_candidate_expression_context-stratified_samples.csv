@@ -1,0 +1,346 @@
+gene_symbol,sample_id,cell_type,developmental_stage,time,background,probe_count,expression,probe_ids
+Sh,GSM444314,Elav-GAL4,larva,unknown,unknown,7,3.989,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444315,Elav-GAL4,larva,unknown,unknown,7,3.571,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444316,Elav-GAL4,larva,unknown,unknown,7,3.074,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444317,Tim-GAL4,larva,unknown,unknown,7,7.278,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444318,Tim-GAL4,larva,unknown,unknown,7,8.728,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444319,Tim-GAL4,larva,unknown,unknown,7,8.09,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444320,Pdf-GAL4,larva,unknown,unknown,7,7.88,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444321,Pdf-GAL4,larva,unknown,unknown,7,9.636,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444322,Pdf-GAL4,larva,unknown,unknown,7,9.049,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,7,6.682,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,7,9.163,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,7,4.006,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444326,n/a,adult,unknown,unknown,7,9.932,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444327,n/a,adult,unknown,unknown,7,8.673,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444328,n/a,adult,unknown,unknown,7,9.568,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444329,large Pdf-GAL4,adult,unknown,unknown,7,9.96,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444330,large Pdf-GAL4,adult,unknown,unknown,7,9.005,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444331,large Pdf-GAL4,adult,unknown,unknown,7,10.329,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444332,small Pdf-GAL4,adult,unknown,unknown,7,10.036,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444333,small Pdf-GAL4,adult,unknown,unknown,7,10.202,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444334,Elav-GAL4,adult,unknown,unknown,7,9.763,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444335,Elav-GAL4,adult,unknown,unknown,7,9.427,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Sh,GSM444336,Elav-GAL4,adult,unknown,unknown,7,10.158,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at
+Shab,GSM444314,Elav-GAL4,larva,unknown,unknown,2,2.7805,1633404_at;1638535_a_at
+Shab,GSM444315,Elav-GAL4,larva,unknown,unknown,2,2.725,1633404_at;1638535_a_at
+Shab,GSM444316,Elav-GAL4,larva,unknown,unknown,2,2.9320000000000004,1633404_at;1638535_a_at
+Shab,GSM444317,Tim-GAL4,larva,unknown,unknown,2,3.1155,1633404_at;1638535_a_at
+Shab,GSM444318,Tim-GAL4,larva,unknown,unknown,2,3.3615000000000004,1633404_at;1638535_a_at
+Shab,GSM444319,Tim-GAL4,larva,unknown,unknown,2,3.2584999999999997,1633404_at;1638535_a_at
+Shab,GSM444320,Pdf-GAL4,larva,unknown,unknown,2,3.4915000000000003,1633404_at;1638535_a_at
+Shab,GSM444321,Pdf-GAL4,larva,unknown,unknown,2,3.7439999999999998,1633404_at;1638535_a_at
+Shab,GSM444322,Pdf-GAL4,larva,unknown,unknown,2,3.9835000000000003,1633404_at;1638535_a_at
+Shab,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,3.3295,1633404_at;1638535_a_at
+Shab,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,3.3285,1633404_at;1638535_a_at
+Shab,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,3.16,1633404_at;1638535_a_at
+Shab,GSM444326,n/a,adult,unknown,unknown,2,3.3289999999999997,1633404_at;1638535_a_at
+Shab,GSM444327,n/a,adult,unknown,unknown,2,2.9619999999999997,1633404_at;1638535_a_at
+Shab,GSM444328,n/a,adult,unknown,unknown,2,3.3280000000000003,1633404_at;1638535_a_at
+Shab,GSM444329,large Pdf-GAL4,adult,unknown,unknown,2,4.6495,1633404_at;1638535_a_at
+Shab,GSM444330,large Pdf-GAL4,adult,unknown,unknown,2,4.895,1633404_at;1638535_a_at
+Shab,GSM444331,large Pdf-GAL4,adult,unknown,unknown,2,3.5060000000000002,1633404_at;1638535_a_at
+Shab,GSM444332,small Pdf-GAL4,adult,unknown,unknown,2,5.1370000000000005,1633404_at;1638535_a_at
+Shab,GSM444333,small Pdf-GAL4,adult,unknown,unknown,2,4.143,1633404_at;1638535_a_at
+Shab,GSM444334,Elav-GAL4,adult,unknown,unknown,2,5.2325,1633404_at;1638535_a_at
+Shab,GSM444335,Elav-GAL4,adult,unknown,unknown,2,6.4,1633404_at;1638535_a_at
+Shab,GSM444336,Elav-GAL4,adult,unknown,unknown,2,3.385,1633404_at;1638535_a_at
+Shaw,GSM444314,Elav-GAL4,larva,unknown,unknown,2,2.9355,1623070_a_at;1632961_at
+Shaw,GSM444315,Elav-GAL4,larva,unknown,unknown,2,2.62,1623070_a_at;1632961_at
+Shaw,GSM444316,Elav-GAL4,larva,unknown,unknown,2,2.642,1623070_a_at;1632961_at
+Shaw,GSM444317,Tim-GAL4,larva,unknown,unknown,2,4.279999999999999,1623070_a_at;1632961_at
+Shaw,GSM444318,Tim-GAL4,larva,unknown,unknown,2,4.748,1623070_a_at;1632961_at
+Shaw,GSM444319,Tim-GAL4,larva,unknown,unknown,2,4.605,1623070_a_at;1632961_at
+Shaw,GSM444320,Pdf-GAL4,larva,unknown,unknown,2,3.2569999999999997,1623070_a_at;1632961_at
+Shaw,GSM444321,Pdf-GAL4,larva,unknown,unknown,2,4.9875,1623070_a_at;1632961_at
+Shaw,GSM444322,Pdf-GAL4,larva,unknown,unknown,2,4.133,1623070_a_at;1632961_at
+Shaw,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,2.935,1623070_a_at;1632961_at
+Shaw,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,2.8055,1623070_a_at;1632961_at
+Shaw,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,2.5895,1623070_a_at;1632961_at
+Shaw,GSM444326,n/a,adult,unknown,unknown,2,4.2325,1623070_a_at;1632961_at
+Shaw,GSM444327,n/a,adult,unknown,unknown,2,3.2055,1623070_a_at;1632961_at
+Shaw,GSM444328,n/a,adult,unknown,unknown,2,2.8179999999999996,1623070_a_at;1632961_at
+Shaw,GSM444329,large Pdf-GAL4,adult,unknown,unknown,2,4.3225,1623070_a_at;1632961_at
+Shaw,GSM444330,large Pdf-GAL4,adult,unknown,unknown,2,4.641,1623070_a_at;1632961_at
+Shaw,GSM444331,large Pdf-GAL4,adult,unknown,unknown,2,4.572,1623070_a_at;1632961_at
+Shaw,GSM444332,small Pdf-GAL4,adult,unknown,unknown,2,7.7105,1623070_a_at;1632961_at
+Shaw,GSM444333,small Pdf-GAL4,adult,unknown,unknown,2,5.8004999999999995,1623070_a_at;1632961_at
+Shaw,GSM444334,Elav-GAL4,adult,unknown,unknown,2,6.6845,1623070_a_at;1632961_at
+Shaw,GSM444335,Elav-GAL4,adult,unknown,unknown,2,8.403,1623070_a_at;1632961_at
+Shaw,GSM444336,Elav-GAL4,adult,unknown,unknown,2,6.5385,1623070_a_at;1632961_at
+Shal,GSM444314,Elav-GAL4,larva,unknown,unknown,1,4.606,1638398_at
+Shal,GSM444315,Elav-GAL4,larva,unknown,unknown,1,2.786,1638398_at
+Shal,GSM444316,Elav-GAL4,larva,unknown,unknown,1,3.484,1638398_at
+Shal,GSM444317,Tim-GAL4,larva,unknown,unknown,1,5.109,1638398_at
+Shal,GSM444318,Tim-GAL4,larva,unknown,unknown,1,2.934,1638398_at
+Shal,GSM444319,Tim-GAL4,larva,unknown,unknown,1,3.157,1638398_at
+Shal,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,4.165,1638398_at
+Shal,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,5.717,1638398_at
+Shal,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,6.142,1638398_at
+Shal,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,7.113,1638398_at
+Shal,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,5.027,1638398_at
+Shal,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,3.552,1638398_at
+Shal,GSM444326,n/a,adult,unknown,unknown,1,8.899,1638398_at
+Shal,GSM444327,n/a,adult,unknown,unknown,1,8.709,1638398_at
+Shal,GSM444328,n/a,adult,unknown,unknown,1,7.989,1638398_at
+Shal,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,6.3,1638398_at
+Shal,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,7.348,1638398_at
+Shal,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,2.689,1638398_at
+Shal,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,7.096,1638398_at
+Shal,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,5.516,1638398_at
+Shal,GSM444334,Elav-GAL4,adult,unknown,unknown,1,8.967,1638398_at
+Shal,GSM444335,Elav-GAL4,adult,unknown,unknown,1,7.458,1638398_at
+Shal,GSM444336,Elav-GAL4,adult,unknown,unknown,1,4.312,1638398_at
+para,GSM444314,Elav-GAL4,larva,unknown,unknown,1,3.06,1627300_at
+para,GSM444315,Elav-GAL4,larva,unknown,unknown,1,2.994,1627300_at
+para,GSM444316,Elav-GAL4,larva,unknown,unknown,1,3.029,1627300_at
+para,GSM444317,Tim-GAL4,larva,unknown,unknown,1,5.768,1627300_at
+para,GSM444318,Tim-GAL4,larva,unknown,unknown,1,7.387,1627300_at
+para,GSM444319,Tim-GAL4,larva,unknown,unknown,1,5.887,1627300_at
+para,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,5.133,1627300_at
+para,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,7.24,1627300_at
+para,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,8.332,1627300_at
+para,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,4.832,1627300_at
+para,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,5.162,1627300_at
+para,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,4.148,1627300_at
+para,GSM444326,n/a,adult,unknown,unknown,1,8.026,1627300_at
+para,GSM444327,n/a,adult,unknown,unknown,1,6.537,1627300_at
+para,GSM444328,n/a,adult,unknown,unknown,1,4.454,1627300_at
+para,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,9.034,1627300_at
+para,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,8.216,1627300_at
+para,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,8.927,1627300_at
+para,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,8.728,1627300_at
+para,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,9.199,1627300_at
+para,GSM444334,Elav-GAL4,adult,unknown,unknown,1,9.942,1627300_at
+para,GSM444335,Elav-GAL4,adult,unknown,unknown,1,9.976,1627300_at
+para,GSM444336,Elav-GAL4,adult,unknown,unknown,1,10.147,1627300_at
+cac,GSM444314,Elav-GAL4,larva,unknown,unknown,2,5.183,1640033_at;1640614_at
+cac,GSM444315,Elav-GAL4,larva,unknown,unknown,2,4.254,1640033_at;1640614_at
+cac,GSM444316,Elav-GAL4,larva,unknown,unknown,2,5.624499999999999,1640033_at;1640614_at
+cac,GSM444317,Tim-GAL4,larva,unknown,unknown,2,6.0015,1640033_at;1640614_at
+cac,GSM444318,Tim-GAL4,larva,unknown,unknown,2,6.4375,1640033_at;1640614_at
+cac,GSM444319,Tim-GAL4,larva,unknown,unknown,2,6.0954999999999995,1640033_at;1640614_at
+cac,GSM444320,Pdf-GAL4,larva,unknown,unknown,2,6.085999999999999,1640033_at;1640614_at
+cac,GSM444321,Pdf-GAL4,larva,unknown,unknown,2,6.734,1640033_at;1640614_at
+cac,GSM444322,Pdf-GAL4,larva,unknown,unknown,2,6.648,1640033_at;1640614_at
+cac,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,5.881,1640033_at;1640614_at
+cac,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,6.2405,1640033_at;1640614_at
+cac,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,5.131,1640033_at;1640614_at
+cac,GSM444326,n/a,adult,unknown,unknown,2,6.797000000000001,1640033_at;1640614_at
+cac,GSM444327,n/a,adult,unknown,unknown,2,6.436,1640033_at;1640614_at
+cac,GSM444328,n/a,adult,unknown,unknown,2,6.4535,1640033_at;1640614_at
+cac,GSM444329,large Pdf-GAL4,adult,unknown,unknown,2,6.822,1640033_at;1640614_at
+cac,GSM444330,large Pdf-GAL4,adult,unknown,unknown,2,6.9535,1640033_at;1640614_at
+cac,GSM444331,large Pdf-GAL4,adult,unknown,unknown,2,6.661499999999999,1640033_at;1640614_at
+cac,GSM444332,small Pdf-GAL4,adult,unknown,unknown,2,6.5335,1640033_at;1640614_at
+cac,GSM444333,small Pdf-GAL4,adult,unknown,unknown,2,7.1725,1640033_at;1640614_at
+cac,GSM444334,Elav-GAL4,adult,unknown,unknown,2,6.6645,1640033_at;1640614_at
+cac,GSM444335,Elav-GAL4,adult,unknown,unknown,2,7.002000000000001,1640033_at;1640614_at
+cac,GSM444336,Elav-GAL4,adult,unknown,unknown,2,6.859500000000001,1640033_at;1640614_at
+Ca-alpha1D,GSM444314,Elav-GAL4,larva,unknown,unknown,1,2.891,1640092_a_at
+Ca-alpha1D,GSM444315,Elav-GAL4,larva,unknown,unknown,1,2.469,1640092_a_at
+Ca-alpha1D,GSM444316,Elav-GAL4,larva,unknown,unknown,1,2.561,1640092_a_at
+Ca-alpha1D,GSM444317,Tim-GAL4,larva,unknown,unknown,1,7.851,1640092_a_at
+Ca-alpha1D,GSM444318,Tim-GAL4,larva,unknown,unknown,1,9.247,1640092_a_at
+Ca-alpha1D,GSM444319,Tim-GAL4,larva,unknown,unknown,1,7.701,1640092_a_at
+Ca-alpha1D,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,7.878,1640092_a_at
+Ca-alpha1D,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,8.81,1640092_a_at
+Ca-alpha1D,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,9.921,1640092_a_at
+Ca-alpha1D,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,4.917,1640092_a_at
+Ca-alpha1D,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,6.945,1640092_a_at
+Ca-alpha1D,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,3.563,1640092_a_at
+Ca-alpha1D,GSM444326,n/a,adult,unknown,unknown,1,8.927,1640092_a_at
+Ca-alpha1D,GSM444327,n/a,adult,unknown,unknown,1,7.871,1640092_a_at
+Ca-alpha1D,GSM444328,n/a,adult,unknown,unknown,1,8.837,1640092_a_at
+Ca-alpha1D,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,9.902,1640092_a_at
+Ca-alpha1D,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,11.057,1640092_a_at
+Ca-alpha1D,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,10.132,1640092_a_at
+Ca-alpha1D,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,10.931,1640092_a_at
+Ca-alpha1D,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,10.812,1640092_a_at
+Ca-alpha1D,GSM444334,Elav-GAL4,adult,unknown,unknown,1,10.829,1640092_a_at
+Ca-alpha1D,GSM444335,Elav-GAL4,adult,unknown,unknown,1,10.933,1640092_a_at
+Ca-alpha1D,GSM444336,Elav-GAL4,adult,unknown,unknown,1,10.693,1640092_a_at
+Ca-alpha1T,GSM444314,Elav-GAL4,larva,unknown,unknown,1,3.411,1630042_at
+Ca-alpha1T,GSM444315,Elav-GAL4,larva,unknown,unknown,1,2.25,1630042_at
+Ca-alpha1T,GSM444316,Elav-GAL4,larva,unknown,unknown,1,2.263,1630042_at
+Ca-alpha1T,GSM444317,Tim-GAL4,larva,unknown,unknown,1,2.276,1630042_at
+Ca-alpha1T,GSM444318,Tim-GAL4,larva,unknown,unknown,1,3.68,1630042_at
+Ca-alpha1T,GSM444319,Tim-GAL4,larva,unknown,unknown,1,2.267,1630042_at
+Ca-alpha1T,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,2.191,1630042_at
+Ca-alpha1T,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,2.385,1630042_at
+Ca-alpha1T,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,2.273,1630042_at
+Ca-alpha1T,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.284,1630042_at
+Ca-alpha1T,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.281,1630042_at
+Ca-alpha1T,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.36,1630042_at
+Ca-alpha1T,GSM444326,n/a,adult,unknown,unknown,1,2.326,1630042_at
+Ca-alpha1T,GSM444327,n/a,adult,unknown,unknown,1,2.347,1630042_at
+Ca-alpha1T,GSM444328,n/a,adult,unknown,unknown,1,2.3,1630042_at
+Ca-alpha1T,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,5.464,1630042_at
+Ca-alpha1T,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,4.073,1630042_at
+Ca-alpha1T,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,5.136,1630042_at
+Ca-alpha1T,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,3.887,1630042_at
+Ca-alpha1T,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,2.304,1630042_at
+Ca-alpha1T,GSM444334,Elav-GAL4,adult,unknown,unknown,1,5.014,1630042_at
+Ca-alpha1T,GSM444335,Elav-GAL4,adult,unknown,unknown,1,5.21,1630042_at
+Ca-alpha1T,GSM444336,Elav-GAL4,adult,unknown,unknown,1,2.866,1630042_at
+slo,GSM444314,Elav-GAL4,larva,unknown,unknown,1,3.865,1637301_a_at
+slo,GSM444315,Elav-GAL4,larva,unknown,unknown,1,3.44,1637301_a_at
+slo,GSM444316,Elav-GAL4,larva,unknown,unknown,1,3.044,1637301_a_at
+slo,GSM444317,Tim-GAL4,larva,unknown,unknown,1,5.52,1637301_a_at
+slo,GSM444318,Tim-GAL4,larva,unknown,unknown,1,3.949,1637301_a_at
+slo,GSM444319,Tim-GAL4,larva,unknown,unknown,1,3.652,1637301_a_at
+slo,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,3.816,1637301_a_at
+slo,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,4.034,1637301_a_at
+slo,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,5.034,1637301_a_at
+slo,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,4.372,1637301_a_at
+slo,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,3.957,1637301_a_at
+slo,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,4.747,1637301_a_at
+slo,GSM444326,n/a,adult,unknown,unknown,1,6.551,1637301_a_at
+slo,GSM444327,n/a,adult,unknown,unknown,1,7.563,1637301_a_at
+slo,GSM444328,n/a,adult,unknown,unknown,1,6.238,1637301_a_at
+slo,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,7.516,1637301_a_at
+slo,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,5.021,1637301_a_at
+slo,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,5.582,1637301_a_at
+slo,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,7.001,1637301_a_at
+slo,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,5.911,1637301_a_at
+slo,GSM444334,Elav-GAL4,adult,unknown,unknown,1,6.93,1637301_a_at
+slo,GSM444335,Elav-GAL4,adult,unknown,unknown,1,7.979,1637301_a_at
+slo,GSM444336,Elav-GAL4,adult,unknown,unknown,1,6.694,1637301_a_at
+sei,GSM444314,Elav-GAL4,larva,unknown,unknown,1,7.378,1629418_s_at
+sei,GSM444315,Elav-GAL4,larva,unknown,unknown,1,6.61,1629418_s_at
+sei,GSM444316,Elav-GAL4,larva,unknown,unknown,1,7.983,1629418_s_at
+sei,GSM444317,Tim-GAL4,larva,unknown,unknown,1,8.391,1629418_s_at
+sei,GSM444318,Tim-GAL4,larva,unknown,unknown,1,7.375,1629418_s_at
+sei,GSM444319,Tim-GAL4,larva,unknown,unknown,1,8.116,1629418_s_at
+sei,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,7.278,1629418_s_at
+sei,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,8.212,1629418_s_at
+sei,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,8.948,1629418_s_at
+sei,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,5.539,1629418_s_at
+sei,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,7.054,1629418_s_at
+sei,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,3.106,1629418_s_at
+sei,GSM444326,n/a,adult,unknown,unknown,1,8.419,1629418_s_at
+sei,GSM444327,n/a,adult,unknown,unknown,1,7.593,1629418_s_at
+sei,GSM444328,n/a,adult,unknown,unknown,1,8.346,1629418_s_at
+sei,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,9.344,1629418_s_at
+sei,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,9.565,1629418_s_at
+sei,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,9.753,1629418_s_at
+sei,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,8.862,1629418_s_at
+sei,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,9.299,1629418_s_at
+sei,GSM444334,Elav-GAL4,adult,unknown,unknown,1,10.377,1629418_s_at
+sei,GSM444335,Elav-GAL4,adult,unknown,unknown,1,10.286,1629418_s_at
+sei,GSM444336,Elav-GAL4,adult,unknown,unknown,1,9.527,1629418_s_at
+eag,GSM444314,Elav-GAL4,larva,unknown,unknown,1,3.469,1635822_at
+eag,GSM444315,Elav-GAL4,larva,unknown,unknown,1,3.33,1635822_at
+eag,GSM444316,Elav-GAL4,larva,unknown,unknown,1,3.476,1635822_at
+eag,GSM444317,Tim-GAL4,larva,unknown,unknown,1,3.469,1635822_at
+eag,GSM444318,Tim-GAL4,larva,unknown,unknown,1,3.456,1635822_at
+eag,GSM444319,Tim-GAL4,larva,unknown,unknown,1,3.353,1635822_at
+eag,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,3.354,1635822_at
+eag,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,3.531,1635822_at
+eag,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,3.545,1635822_at
+eag,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,3.681,1635822_at
+eag,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,3.466,1635822_at
+eag,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,3.616,1635822_at
+eag,GSM444326,n/a,adult,unknown,unknown,1,3.638,1635822_at
+eag,GSM444327,n/a,adult,unknown,unknown,1,3.638,1635822_at
+eag,GSM444328,n/a,adult,unknown,unknown,1,3.505,1635822_at
+eag,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,3.716,1635822_at
+eag,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,3.484,1635822_at
+eag,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,3.613,1635822_at
+eag,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,3.715,1635822_at
+eag,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,3.49,1635822_at
+eag,GSM444334,Elav-GAL4,adult,unknown,unknown,1,3.49,1635822_at
+eag,GSM444335,Elav-GAL4,adult,unknown,unknown,1,3.475,1635822_at
+eag,GSM444336,Elav-GAL4,adult,unknown,unknown,1,3.684,1635822_at
+Irk1,GSM444314,Elav-GAL4,larva,unknown,unknown,2,2.822,1626256_at;1627795_at
+Irk1,GSM444315,Elav-GAL4,larva,unknown,unknown,2,2.7199999999999998,1626256_at;1627795_at
+Irk1,GSM444316,Elav-GAL4,larva,unknown,unknown,2,3.019,1626256_at;1627795_at
+Irk1,GSM444317,Tim-GAL4,larva,unknown,unknown,2,5.2745,1626256_at;1627795_at
+Irk1,GSM444318,Tim-GAL4,larva,unknown,unknown,2,4.9025,1626256_at;1627795_at
+Irk1,GSM444319,Tim-GAL4,larva,unknown,unknown,2,3.6455,1626256_at;1627795_at
+Irk1,GSM444320,Pdf-GAL4,larva,unknown,unknown,2,5.9825,1626256_at;1627795_at
+Irk1,GSM444321,Pdf-GAL4,larva,unknown,unknown,2,6.381,1626256_at;1627795_at
+Irk1,GSM444322,Pdf-GAL4,larva,unknown,unknown,2,6.8395,1626256_at;1627795_at
+Irk1,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,3.045,1626256_at;1627795_at
+Irk1,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,3.8475,1626256_at;1627795_at
+Irk1,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,2,2.8605,1626256_at;1627795_at
+Irk1,GSM444326,n/a,adult,unknown,unknown,2,3.722,1626256_at;1627795_at
+Irk1,GSM444327,n/a,adult,unknown,unknown,2,3.467,1626256_at;1627795_at
+Irk1,GSM444328,n/a,adult,unknown,unknown,2,4.1850000000000005,1626256_at;1627795_at
+Irk1,GSM444329,large Pdf-GAL4,adult,unknown,unknown,2,6.553000000000001,1626256_at;1627795_at
+Irk1,GSM444330,large Pdf-GAL4,adult,unknown,unknown,2,6.7145,1626256_at;1627795_at
+Irk1,GSM444331,large Pdf-GAL4,adult,unknown,unknown,2,6.949,1626256_at;1627795_at
+Irk1,GSM444332,small Pdf-GAL4,adult,unknown,unknown,2,7.5445,1626256_at;1627795_at
+Irk1,GSM444333,small Pdf-GAL4,adult,unknown,unknown,2,7.1975,1626256_at;1627795_at
+Irk1,GSM444334,Elav-GAL4,adult,unknown,unknown,2,4.226,1626256_at;1627795_at
+Irk1,GSM444335,Elav-GAL4,adult,unknown,unknown,2,2.8575,1626256_at;1627795_at
+Irk1,GSM444336,Elav-GAL4,adult,unknown,unknown,2,4.1240000000000006,1626256_at;1627795_at
+Irk2,GSM444314,Elav-GAL4,larva,unknown,unknown,1,3.407,1638466_a_at
+Irk2,GSM444315,Elav-GAL4,larva,unknown,unknown,1,3.027,1638466_a_at
+Irk2,GSM444316,Elav-GAL4,larva,unknown,unknown,1,2.764,1638466_a_at
+Irk2,GSM444317,Tim-GAL4,larva,unknown,unknown,1,3.571,1638466_a_at
+Irk2,GSM444318,Tim-GAL4,larva,unknown,unknown,1,4.856,1638466_a_at
+Irk2,GSM444319,Tim-GAL4,larva,unknown,unknown,1,6.811,1638466_a_at
+Irk2,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,4.058,1638466_a_at
+Irk2,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,6.833,1638466_a_at
+Irk2,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,9.601,1638466_a_at
+Irk2,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.954,1638466_a_at
+Irk2,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.748,1638466_a_at
+Irk2,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.906,1638466_a_at
+Irk2,GSM444326,n/a,adult,unknown,unknown,1,10.604,1638466_a_at
+Irk2,GSM444327,n/a,adult,unknown,unknown,1,10.173,1638466_a_at
+Irk2,GSM444328,n/a,adult,unknown,unknown,1,10.217,1638466_a_at
+Irk2,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,2.77,1638466_a_at
+Irk2,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,2.768,1638466_a_at
+Irk2,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,2.962,1638466_a_at
+Irk2,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,2.93,1638466_a_at
+Irk2,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,3.993,1638466_a_at
+Irk2,GSM444334,Elav-GAL4,adult,unknown,unknown,1,2.763,1638466_a_at
+Irk2,GSM444335,Elav-GAL4,adult,unknown,unknown,1,2.472,1638466_a_at
+Irk2,GSM444336,Elav-GAL4,adult,unknown,unknown,1,2.683,1638466_a_at
+Ork1,GSM444314,Elav-GAL4,larva,unknown,unknown,1,2.361,1635938_s_at
+Ork1,GSM444315,Elav-GAL4,larva,unknown,unknown,1,2.318,1635938_s_at
+Ork1,GSM444316,Elav-GAL4,larva,unknown,unknown,1,2.351,1635938_s_at
+Ork1,GSM444317,Tim-GAL4,larva,unknown,unknown,1,2.355,1635938_s_at
+Ork1,GSM444318,Tim-GAL4,larva,unknown,unknown,1,2.559,1635938_s_at
+Ork1,GSM444319,Tim-GAL4,larva,unknown,unknown,1,2.327,1635938_s_at
+Ork1,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,2.283,1635938_s_at
+Ork1,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,2.316,1635938_s_at
+Ork1,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,2.345,1635938_s_at
+Ork1,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.404,1635938_s_at
+Ork1,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.336,1635938_s_at
+Ork1,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.368,1635938_s_at
+Ork1,GSM444326,n/a,adult,unknown,unknown,1,2.397,1635938_s_at
+Ork1,GSM444327,n/a,adult,unknown,unknown,1,2.558,1635938_s_at
+Ork1,GSM444328,n/a,adult,unknown,unknown,1,2.573,1635938_s_at
+Ork1,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,2.395,1635938_s_at
+Ork1,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,2.368,1635938_s_at
+Ork1,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,2.388,1635938_s_at
+Ork1,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,2.382,1635938_s_at
+Ork1,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,2.358,1635938_s_at
+Ork1,GSM444334,Elav-GAL4,adult,unknown,unknown,1,2.368,1635938_s_at
+Ork1,GSM444335,Elav-GAL4,adult,unknown,unknown,1,2.336,1635938_s_at
+Ork1,GSM444336,Elav-GAL4,adult,unknown,unknown,1,2.323,1635938_s_at
+trpl,GSM444314,Elav-GAL4,larva,unknown,unknown,1,2.435,1633649_s_at
+trpl,GSM444315,Elav-GAL4,larva,unknown,unknown,1,2.323,1633649_s_at
+trpl,GSM444316,Elav-GAL4,larva,unknown,unknown,1,2.335,1633649_s_at
+trpl,GSM444317,Tim-GAL4,larva,unknown,unknown,1,2.357,1633649_s_at
+trpl,GSM444318,Tim-GAL4,larva,unknown,unknown,1,2.308,1633649_s_at
+trpl,GSM444319,Tim-GAL4,larva,unknown,unknown,1,2.417,1633649_s_at
+trpl,GSM444320,Pdf-GAL4,larva,unknown,unknown,1,2.382,1633649_s_at
+trpl,GSM444321,Pdf-GAL4,larva,unknown,unknown,1,2.419,1633649_s_at
+trpl,GSM444322,Pdf-GAL4,larva,unknown,unknown,1,2.575,1633649_s_at
+trpl,GSM444323,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,3.268,1633649_s_at
+trpl,GSM444324,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.428,1633649_s_at
+trpl,GSM444325,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,1,2.426,1633649_s_at
+trpl,GSM444326,n/a,adult,unknown,unknown,1,13.191,1633649_s_at
+trpl,GSM444327,n/a,adult,unknown,unknown,1,11.957,1633649_s_at
+trpl,GSM444328,n/a,adult,unknown,unknown,1,13.221,1633649_s_at
+trpl,GSM444329,large Pdf-GAL4,adult,unknown,unknown,1,2.384,1633649_s_at
+trpl,GSM444330,large Pdf-GAL4,adult,unknown,unknown,1,2.425,1633649_s_at
+trpl,GSM444331,large Pdf-GAL4,adult,unknown,unknown,1,2.382,1633649_s_at
+trpl,GSM444332,small Pdf-GAL4,adult,unknown,unknown,1,2.429,1633649_s_at
+trpl,GSM444333,small Pdf-GAL4,adult,unknown,unknown,1,2.368,1633649_s_at
+trpl,GSM444334,Elav-GAL4,adult,unknown,unknown,1,2.201,1633649_s_at
+trpl,GSM444335,Elav-GAL4,adult,unknown,unknown,1,2.375,1633649_s_at
+trpl,GSM444336,Elav-GAL4,adult,unknown,unknown,1,2.427,1633649_s_at

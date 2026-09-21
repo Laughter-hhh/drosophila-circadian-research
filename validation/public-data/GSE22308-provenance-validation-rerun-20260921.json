@@ -58,17 +58,17 @@
     {
       "path": "validation/public-data/GSE22308_candidate_expression_samples.csv",
       "role": "derived",
-      "expected_sha256": "26f2067b391914a15fcc9834293d26127a2ce187d3aba7441f526249a02428fc",
-      "observed_sha256": "26f2067b391914a15fcc9834293d26127a2ce187d3aba7441f526249a02428fc",
-      "size_bytes": 29934,
+      "expected_sha256": "eddf89be048f39c4feaf94f7041b562716c2ea4758ee2fac3a3ea8e8ba048cb5",
+      "observed_sha256": "eddf89be048f39c4feaf94f7041b562716c2ea4758ee2fac3a3ea8e8ba048cb5",
+      "size_bytes": 32114,
       "status": "hash_verified"
     },
     {
       "path": "validation/public-data/GSE22308_candidate_expression_summary.csv",
       "role": "derived",
-      "expected_sha256": "7be9e0777186b47d2eec790bcee0f02e53136067293070a47fdc05b6649f242e",
-      "observed_sha256": "7be9e0777186b47d2eec790bcee0f02e53136067293070a47fdc05b6649f242e",
-      "size_bytes": 19780,
+      "expected_sha256": "44d1de237e35a7b73f6bf8bf7f17f19145910541d96a48dec8eb39de4f776316",
+      "observed_sha256": "44d1de237e35a7b73f6bf8bf7f17f19145910541d96a48dec8eb39de4f776316",
+      "size_bytes": 20700,
       "status": "hash_verified"
     },
     {
