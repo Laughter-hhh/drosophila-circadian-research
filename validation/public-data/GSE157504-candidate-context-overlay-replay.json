@@ -42,9 +42,9 @@
       {
         "path": "scripts/build_candidate_evidence_context.py",
         "role": "config",
-        "expected_sha256": "e7946641b27ad2cd9427b0729f96ea0f8eac679b422e5d1f6dd6c55dfc213289",
-        "observed_sha256": "e7946641b27ad2cd9427b0729f96ea0f8eac679b422e5d1f6dd6c55dfc213289",
-        "size_bytes": 32862,
+        "expected_sha256": "64da7978c358f5b5c43ed4157331e46cefef43ffa0ebbd2adb50f1449d2ff4e0",
+        "observed_sha256": "64da7978c358f5b5c43ed4157331e46cefef43ffa0ebbd2adb50f1449d2ff4e0",
+        "size_bytes": 34801,
         "status": "hash_verified"
       },
       {

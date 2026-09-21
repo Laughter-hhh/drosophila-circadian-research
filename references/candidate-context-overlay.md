@@ -41,6 +41,7 @@ The builder stops if the candidate table or search log fails validation, the ups
 
 - There is one row per literature candidate × target group. `literature_class` and GSE `priority_class` are kept in separate columns because they are different classifications.
 - `LD` is reported as `ZT`; `DD` is reported as `CT`. Raw UMI counts/fractions are descriptive cell-level measurements, not independent-fly inference.
+- If a target group/condition has zero annotated cells, its count is zero but the detection fraction and per-cell mean are undefined and reported `NA`; this is not a biological non-detection. The builder rejects internally inconsistent zero-cell rows and prevents outputs from overwriting any supplied input or executable helper.
 - Zero detected cells are labelled dropout-sensitive, not biologically absent. A gene without an exact feature record (or a candidate not included in the upstream candidate audit) receives `NA` detection fields and an explicit not-evaluable status.
 - An absent author high-confidence (HC) call means “not listed under author criteria,” not proven arrhythmic. When the literature candidate was not in the upstream candidate audit, its rhythm status is also not evaluable.
 - `LN_ITP` calls stay in their own ambiguous field and are never assigned to pure s-LNv or LNd. DN calls retain exact author cluster names (for example, DN1p); a DN-subcluster call is not evidence for all DN.

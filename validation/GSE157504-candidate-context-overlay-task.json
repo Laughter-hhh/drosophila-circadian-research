@@ -55,6 +55,8 @@
     "Synthetic zero-UMI values are marked dropout-sensitive rather than absent; missing target HC calls are not called arrhythmic.",
     "Synthetic LN_ITP HC calls stay in the ambiguous field and are not assigned to s-LNv or LNd; DN1p retains exact cluster scope.",
     "Duplicate group-condition records and LD/ZT or DD/CT mismatches fail closed.",
+    "Zero annotated cells allow empty fraction/mean inputs and yield NA for undefined values; nonzero counts with zero cells fail closed.",
+    "Output path collisions with supplied inputs are rejected before writing, and input bytes remain unchanged.",
     "A feature not represented in the matrix and a candidate absent from the upstream candidate audit both remain explicitly not evaluable.",
     "Real data produce 15 literature candidates x four targets; candidate-set difference reports literature-only na and GSE-only eag instead of silently reconciling them.",
     "Shab LD s-LNv detection is 160/181 and DD is 97/142; its s-LNv LD/DD author HC calls remain listed; score and ephys gate remain unchanged.",
@@ -62,8 +64,9 @@
     "The context manifest hashes the builder and its transitive helper scripts; manifest validation and isolated replay verify all outputs."
   ],
   "verification": {
-    "full_test_suite": "269 tests passed",
-    "focused_context_and_allowlist_tests": "5 passed after dependency-manifest update",
+    "full_test_suite": "271 tests passed",
+    "focused_context_tests": "5 passed after zero-cell and output-path safety fixes",
+    "replay_allowlist_tests": "2 passed within the full suite",
     "real_overlay_rows": 60,
     "literature_candidate_count": 15,
     "target_groups": ["s-LNv", "l-LNv", "LNd", "DN"],

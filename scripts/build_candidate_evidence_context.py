@@ -224,15 +224,28 @@ def build_context_rows(
             raise ValueError(f"condition/time-system mismatch for {gene}/{group}/{condition}")
         try:
             total, detected = int(row["n_annotated_cells"]), int(row["n_cells_detected"])
-            fraction = _float(row["detection_fraction"], "detection_fraction")
-            _float(row["sum_raw_counts"], "sum_raw_counts")
-            _float(row["mean_raw_counts_per_cell"], "mean_raw_counts_per_cell")
+            sum_counts = _float(row["sum_raw_counts"], "sum_raw_counts")
         except (KeyError, ValueError) as exc:
             raise ValueError(f"invalid group-detection values for {gene}/{group}/{condition}: {exc}") from exc
-        if total < 0 or detected < 0 or detected > total or not 0 <= fraction <= 1:
+        if total < 0 or detected < 0 or detected > total or sum_counts < 0:
             raise ValueError(f"out-of-range group-detection values for {gene}/{group}/{condition}")
-        if total and not math.isclose(fraction, detected / total, rel_tol=0, abs_tol=1e-6):
-            raise ValueError(f"detection fraction disagrees with counts for {gene}/{group}/{condition}")
+        if total == 0:
+            if detected != 0 or sum_counts != 0:
+                raise ValueError(f"nonzero detection/counts with zero annotated cells for {gene}/{group}/{condition}")
+            if row["detection_fraction"].strip().upper() not in {"", "NA", "N/A"} or row["mean_raw_counts_per_cell"].strip().upper() not in {"", "NA", "N/A"}:
+                raise ValueError(f"fraction/mean must be missing when no cells are annotated for {gene}/{group}/{condition}")
+        else:
+            try:
+                fraction = _float(row["detection_fraction"], "detection_fraction")
+                mean = _float(row["mean_raw_counts_per_cell"], "mean_raw_counts_per_cell")
+            except (KeyError, ValueError) as exc:
+                raise ValueError(f"invalid fraction/mean for {gene}/{group}/{condition}: {exc}") from exc
+            if not 0 <= fraction <= 1 or mean < 0:
+                raise ValueError(f"out-of-range group-detection values for {gene}/{group}/{condition}")
+            if not math.isclose(fraction, detected / total, rel_tol=0, abs_tol=1e-6):
+                raise ValueError(f"detection fraction disagrees with counts for {gene}/{group}/{condition}")
+        if features[gene]["raw_feature_status"].strip() != "exact_feature_present" and (detected != 0 or sum_counts != 0):
+            raise ValueError(f"raw UMI counts conflict with non-evaluable feature status for {gene}/{group}/{condition}")
         key = (gene, group, condition)
         if key in detections:
             raise ValueError(f"duplicate group-detection row: {key}")
@@ -281,9 +294,9 @@ def build_context_rows(
                         "time_system": match["time_system"].strip(),
                         "n_annotated_cells": total,
                         "n_cells_detected": detected,
-                        "detection_fraction": _float(match["detection_fraction"], "detection_fraction"),
+                        "detection_fraction": "NA" if total == 0 else _float(match["detection_fraction"], "detection_fraction"),
                         "sum_raw_counts": _float(match["sum_raw_counts"], "sum_raw_counts"),
-                        "mean_raw_counts_per_cell": _float(match["mean_raw_counts_per_cell"], "mean_raw_counts_per_cell"),
+                        "mean_raw_counts_per_cell": "NA" if total == 0 else _float(match["mean_raw_counts_per_cell"], "mean_raw_counts_per_cell"),
                         "status": status,
                     }
                 group_values[condition] = values
@@ -364,6 +377,23 @@ def _normal_path(value: Path, root: Path) -> tuple[str, Path]:
     if not resolved.is_file() and relative not in {"validation/public-data/GSE157504_candidate_context_overlay.csv", "validation/public-data/GSE157504_candidate_context_overlay_report.json", "validation/public-data/GSE157504-candidate-context-overlay-manifest.json"}:
         raise ValueError(f"file does not exist: {relative}")
     return relative, resolved
+
+
+def _validate_output_paths(output_paths: tuple[Path, ...], input_paths: list[Path], root: Path) -> None:
+    root_resolved = root.resolve()
+    resolved_outputs = [path.resolve() for path in output_paths]
+    if len(set(resolved_outputs)) != len(resolved_outputs):
+        raise ValueError("context, report and manifest outputs must be distinct paths")
+    protected = {path.resolve() for path in input_paths}
+    protected.add(Path(__file__).resolve())
+    protected.update((root_resolved / path).resolve() for path in SCRIPT_DEPENDENCIES)
+    for output in resolved_outputs:
+        try:
+            output.relative_to(root_resolved)
+        except ValueError as exc:
+            raise ValueError(f"output must stay inside repository root: {output}") from exc
+        if output in protected:
+            raise ValueError(f"output would overwrite an input or executable script: {output}")
 
 
 def _manifest_payload(paths: dict[str, Path], context_path: Path, report_path: Path, manifest_path: Path, root: Path, argv: list[str], parent: dict[str, Any]) -> dict[str, Any]:
@@ -482,11 +512,8 @@ def run(args: argparse.Namespace, raw_argv: list[str]) -> dict[str, Any]:
     context_path = args.context_output if args.context_output.is_absolute() else root / args.context_output
     report_path = args.report_output if args.report_output.is_absolute() else root / args.report_output
     manifest_path = args.manifest_output if args.manifest_output.is_absolute() else root / args.manifest_output
-    for output_path in (context_path, report_path, manifest_path):
-        try:
-            output_path.resolve().relative_to(root)
-        except ValueError as exc:
-            raise ValueError(f"output must stay inside repository root: {output_path}") from exc
+    input_paths = [path if path.is_absolute() else root / path for path in paths.values()]
+    _validate_output_paths((context_path, report_path, manifest_path), input_paths, root)
 
     _csv_write(context_path, rows)
     review_candidates = sorted({row["candidate"] for row in rows if row["static_rationale_review_flag"]})

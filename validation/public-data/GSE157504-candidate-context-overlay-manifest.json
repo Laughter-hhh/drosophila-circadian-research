@@ -4,7 +4,7 @@
   "accession": "GSE157504",
   "species": "Drosophila melanogaster",
   "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
-  "retrieved_at_utc": "2026-09-21T03:18:03.046242Z",
+  "retrieved_at_utc": "2026-09-21T03:35:05.342510Z",
   "source_access_status": "content_checked",
   "source_checked_at_utc": "2026-09-20T06:30:43Z",
   "source_check_method": "web_open",
@@ -32,7 +32,7 @@
     {
       "path": "scripts/build_candidate_evidence_context.py",
       "role": "config",
-      "sha256": "e7946641b27ad2cd9427b0729f96ea0f8eac679b422e5d1f6dd6c55dfc213289"
+      "sha256": "64da7978c358f5b5c43ed4157331e46cefef43ffa0ebbd2adb50f1449d2ff4e0"
     },
     {
       "path": "scripts/build_gse157504_candidate_evidence.py",
@@ -129,7 +129,7 @@
     {
       "run_id": "build-gse157504-candidate-context-overlay",
       "script": "scripts/build_candidate_evidence_context.py",
-      "script_sha256": "e7946641b27ad2cd9427b0729f96ea0f8eac679b422e5d1f6dd6c55dfc213289",
+      "script_sha256": "64da7978c358f5b5c43ed4157331e46cefef43ffa0ebbd2adb50f1449d2ff4e0",
       "command": "python scripts/build_candidate_evidence_context.py --candidate-table validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --feature-status validation/public-data/GSE157504_candidate_raw_feature_status.csv --group-detection validation/public-data/GSE157504_candidate_raw_detection_by_group.csv --rhythm-details validation/public-data/GSE157504_candidate_rhythm_details.csv --rhythm-manifest validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json --rhythm-validation validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json --rhythm-replay validation/public-data/GSE157504-candidate-channel-rhythm-replay.json --target-score s-LNv=validation/public-data/candidate-target-cell-score-slnv.csv --target-score l-LNv=validation/public-data/candidate-target-cell-score-llnv.csv --target-score LNd=validation/public-data/candidate-target-cell-score-lnd.csv --target-score DN=validation/public-data/candidate-target-cell-score-dn.csv --context-output validation/public-data/GSE157504_candidate_context_overlay.csv --report-output validation/public-data/GSE157504_candidate_context_overlay_report.json --manifest-output validation/public-data/GSE157504-candidate-context-overlay-manifest.json",
       "command_argv": [
         "python",

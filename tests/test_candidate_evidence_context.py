@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from scripts.build_candidate_evidence_context import TARGET_GROUPS, build_context_rows, run
+from scripts.build_candidate_evidence_context import TARGET_GROUPS, _validate_output_paths, build_context_rows, run
 from scripts.score_candidates import score_row
 from scripts.validate_public_dataset_manifest import validate_file as validate_manifest
 
@@ -118,6 +118,31 @@ class CandidateEvidenceContextTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "condition/time-system mismatch"):
             build_context_rows(candidates, features, bad_groups, rhythms, scores, [])
 
+    def test_zero_annotated_cells_keep_undefined_fraction_and_mean_as_na(self):
+        candidates, features, groups, rhythms, scores = _synthetic_inputs()
+        adjusted = [dict(row) for row in groups]
+        row = next(item for item in adjusted if item["cell_group"] == "l-LNv" and item["condition"] == "LD")
+        row.update({
+            "n_annotated_cells": "0", "n_cells_detected": "0", "detection_fraction": "",
+            "sum_raw_counts": "0", "mean_raw_counts_per_cell": "",
+        })
+        output = build_context_rows(candidates, features, adjusted, rhythms, scores, [])
+        llnv = next(item for item in output if item["candidate"] == "Chan" and item["target_group"] == "l-LNv")
+        self.assertEqual(llnv["LD_detection_status"], "no_annotated_cells_no_detection_inference")
+        self.assertEqual(llnv["LD_n_annotated_cells"], 0)
+        self.assertEqual(llnv["LD_detection_fraction"], "NA")
+        self.assertEqual(llnv["LD_mean_raw_counts_per_cell"], "NA")
+
+    def test_output_collision_guard_preserves_all_inputs(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "source.csv"
+            source.write_text("keep me\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "overwrite an input"):
+                _validate_output_paths((source, root / "report.json", root / "manifest.json"), [source], root)
+            with self.assertRaisesRegex(ValueError, "distinct paths"):
+                _validate_output_paths((root / "same", root / "same", root / "manifest"), [], root)
+
     def test_real_public_inputs_generate_auditable_sixty_row_overlay(self):
         data = ROOT / "validation" / "public-data"
         names = {
@@ -186,6 +211,15 @@ class CandidateEvidenceContextTests(unittest.TestCase):
             self.assertEqual(by_key[("para", "s-LNv")]["LD_n_cells_detected"], "NA")
             validation = validate_manifest(ROOT / tmp / "manifest.json", ROOT)
             self.assertEqual(validation["status"], "verified_public_dataset_manifest")
+
+            protected_bytes = inputs["candidate_table"].read_bytes()
+            collision_args = argparse.Namespace(**vars(args))
+            collision_args.context_output = Path("validation/public-data/candidate-evidence-real.csv")
+            collision_args.report_output = Path(f"{tmp}/collision-report.json")
+            collision_args.manifest_output = Path(f"{tmp}/collision-manifest.json")
+            with self.assertRaisesRegex(ValueError, "overwrite an input"):
+                run(collision_args, raw_argv)
+            self.assertEqual(inputs["candidate_table"].read_bytes(), protected_bytes)
 
 
 if __name__ == "__main__":
