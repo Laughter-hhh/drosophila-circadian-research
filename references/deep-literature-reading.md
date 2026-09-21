@@ -74,6 +74,8 @@
    | Fig. 1A | linked_not_inspected（出版社提供原图链接，但本次未能打开） | available | Version of record, Fig. 1 caption: https://www.nature.com/articles/s42003-019-0497-0#Fig1 | caption 明确支持的组别及读数；未提及则写 unknown | 颜色、轴标签或图中符号未核图，写 unknown | caption 未说明独立实验单位，写 unknown | 仅解释图注支持的内容，不推测 artwork |
 
    每一行的 `image_status` 和 `caption_status` 都要分别写明，并使用上面的 panel 级状态；`source/version/page/direct link` 必须足以让读者定位该 panel 所依据的版本和图注。`unknown｜未知` 表示来源不足以判断；`unavailable｜不可访问` 表示已尝试但访问失败，须写清是图像、补充材料还是页面受阻。不得用同图其他 panel 的信息填补。轴、颜色、线型、比例尺、代表性 trace 或图中文字若只能从图像判断，只有实际查看原图后才能描述。
+
+   完成 panel inventory 后运行 `python scripts/validate_literature_panel_inventory.py path/to/reading-report.md`。该脚本检查表头、状态枚举、逐行来源链接、必填字段和 panel ID 唯一性；通过只表示结构合格，不表示链接可访问、证据支持准确或原图确已查看。
 4. **Abbreviation and symbol glossary｜缩写与符号表**：
 
    | Abbreviation/symbol | Full English | 中文 | In this panel |

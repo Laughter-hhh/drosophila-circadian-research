@@ -1,0 +1,8 @@
+{
+  "status": "verified_literature_panel_inventory",
+  "n_tables": 2,
+  "n_rows": 32,
+  "n_unique_panel_ids": 32,
+  "issues": [],
+  "scope_warning": "Structural validation only; source accessibility, claim support, biological accuracy, and actual visual inspection require manual review."
+}
