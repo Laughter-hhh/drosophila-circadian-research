@@ -197,9 +197,21 @@ class CosinorInferenceTests(unittest.TestCase):
         self.assertEqual(result["n_groups"], 76)
         self.assertEqual(statuses["exploratory_inferential_cosinor"], 19)
         self.assertEqual(statuses["insufficient_or_invalid_time_series"], 57)
-        testable = next(group for group in result["groups"] if group["status"] == "exploratory_inferential_cosinor")
-        self.assertEqual(testable["experimental_unit"], "pooled_cell_sample")
-        self.assertIn("not an animal-level effect estimate", testable["inference_warning"])
+        self.assertEqual(result["scientific_status"], "exploratory_not_verified")
+        self.assertEqual(result["formal_status"], "blocked_requires_mixed_model")
+        warning_types = {item["type"] for item in result["metadata_warnings"]}
+        self.assertIn("unknown_batch", warning_types)
+        self.assertIn("unknown_temperature", warning_types)
+
+        sh_large = next(group for group in result["groups"] if group["gene_symbol"] == "Sh" and group["cell_type"] == "large PDF circadian neurons" and group["background"] == "yw")
+        self.assertEqual(sh_large["n_unique_time_points"], 4)
+        self.assertEqual(sh_large["status"], "exploratory_inferential_cosinor")
+        self.assertEqual(sh_large["experimental_unit"], "pooled_cell_sample")
+        self.assertIn("not an animal-level effect estimate", sh_large["inference_warning"])
+
+        sh_small = next(group for group in result["groups"] if group["gene_symbol"] == "Sh" and group["cell_type"] == "small PDF circadian neurons" and group["background"] == "yw")
+        self.assertEqual(sh_small["n_unique_time_points"], 2)
+        self.assertEqual(sh_small["status"], "insufficient_or_invalid_time_series")
 
 
 if __name__ == "__main__":

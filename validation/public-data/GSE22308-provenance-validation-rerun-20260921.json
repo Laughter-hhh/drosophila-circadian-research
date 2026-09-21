@@ -1,0 +1,173 @@
+{
+  "status": "verified_public_dataset_manifest",
+  "formal_status": "online_source_content_verified",
+  "manifest_id": "GSE22308-channel-dry-run-provenance-20260908",
+  "dataset_id": "GSE22308",
+  "accession": "GSE22308",
+  "n_files": 12,
+  "n_runs": 5,
+  "file_checks": [
+    {
+      "path": "validation/public-data/GSE22308_series_matrix.txt.gz",
+      "role": "raw",
+      "expected_sha256": "ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7",
+      "observed_sha256": "ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7",
+      "size_bytes": 2580727,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GPL1322.annot.gz",
+      "role": "annotation",
+      "expected_sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52",
+      "observed_sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52",
+      "size_bytes": 1690903,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_candidate_genes.csv",
+      "role": "candidate_list",
+      "expected_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+      "observed_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+      "size_bytes": 251,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_matrix_summary.json",
+      "role": "derived",
+      "expected_sha256": "3c4afc3b41ddbb928839e4dc25bef48722e617a8e569f7e30099f5f95b9e94fb",
+      "observed_sha256": "3c4afc3b41ddbb928839e4dc25bef48722e617a8e569f7e30099f5f95b9e94fb",
+      "size_bytes": 2432,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_parsed_metadata.csv",
+      "role": "metadata",
+      "expected_sha256": "deb4de3e7715f216c418b593e3cc02864053b1d8c6a806bdaf4d2845f698db99",
+      "observed_sha256": "deb4de3e7715f216c418b593e3cc02864053b1d8c6a806bdaf4d2845f698db99",
+      "size_bytes": 8044,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_sample_metadata.csv",
+      "role": "metadata",
+      "expected_sha256": "b11120c62d262eaf6b326697778ac2c19f78bb839901997e0ddc612e8889c9dc",
+      "observed_sha256": "b11120c62d262eaf6b326697778ac2c19f78bb839901997e0ddc612e8889c9dc",
+      "size_bytes": 4099,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_candidate_expression_samples.csv",
+      "role": "derived",
+      "expected_sha256": "26f2067b391914a15fcc9834293d26127a2ce187d3aba7441f526249a02428fc",
+      "observed_sha256": "26f2067b391914a15fcc9834293d26127a2ce187d3aba7441f526249a02428fc",
+      "size_bytes": 29934,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_candidate_expression_summary.csv",
+      "role": "derived",
+      "expected_sha256": "7be9e0777186b47d2eec790bcee0f02e53136067293070a47fdc05b6649f242e",
+      "observed_sha256": "7be9e0777186b47d2eec790bcee0f02e53136067293070a47fdc05b6649f242e",
+      "size_bytes": 19780,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_candidate_expression_rhythms.json",
+      "role": "derived",
+      "expected_sha256": "96e9bff734d3fadd7c269acf2270a17c7d78b31fb5c961f6fc51b1b8fe8836a5",
+      "observed_sha256": "96e9bff734d3fadd7c269acf2270a17c7d78b31fb5c961f6fc51b1b8fe8836a5",
+      "size_bytes": 31277,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_candidate_expression_rhythms-duplicate-guard-rerun.json",
+      "role": "derived",
+      "expected_sha256": "96e9bff734d3fadd7c269acf2270a17c7d78b31fb5c961f6fc51b1b8fe8836a5",
+      "observed_sha256": "96e9bff734d3fadd7c269acf2270a17c7d78b31fb5c961f6fc51b1b8fe8836a5",
+      "size_bytes": 31277,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_channel_regulator_expression_samples.csv",
+      "role": "derived",
+      "expected_sha256": "0523da8ada7a6f72c7d6ae99c9587365850bc8095bf4b9959b4341f9301b2750",
+      "observed_sha256": "0523da8ada7a6f72c7d6ae99c9587365850bc8095bf4b9959b4341f9301b2750",
+      "size_bytes": 36925,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_channel_regulator_expression_inference.json",
+      "role": "derived",
+      "expected_sha256": "23311f1118b0972826acc2955321585b4e89e966906b17ba621f67e8d0c8d45a",
+      "observed_sha256": "23311f1118b0972826acc2955321585b4e89e966906b17ba621f67e8d0c8d45a",
+      "size_bytes": 51272,
+      "status": "hash_verified"
+    }
+  ],
+  "run_checks": [
+    {
+      "run_id": "parse-gse22308",
+      "script": "scripts/parse_geo_series_matrix.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE22308_series_matrix.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_parsed_metadata.csv",
+        "validation/public-data/GSE22308_matrix_summary.json"
+      ]
+    },
+    {
+      "run_id": "extract-gse22308-candidate-expression",
+      "script": "scripts/extract_gene_expression.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE22308_series_matrix.txt.gz",
+        "validation/public-data/GPL1322.annot.gz",
+        "validation/public-data/GSE22308_parsed_metadata.csv",
+        "validation/public-data/GSE22308_candidate_genes.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_candidate_expression_summary.csv",
+        "validation/public-data/GSE22308_candidate_expression_samples.csv"
+      ]
+    },
+    {
+      "run_id": "descriptive-gse22308-expression-rhythm",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE22308_candidate_expression_samples.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_candidate_expression_rhythms.json"
+      ]
+    },
+    {
+      "run_id": "duplicate-guard-regression-gse22308-expression-rhythm",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE22308_candidate_expression_samples.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_candidate_expression_rhythms-duplicate-guard-rerun.json"
+      ]
+    },
+    {
+      "run_id": "exploratory-gse22308-cosinor-inference",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE22308_channel_regulator_expression_samples.csv",
+        "validation/public-data/GSE22308_sample_metadata.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_channel_regulator_expression_inference.json"
+      ]
+    }
+  ],
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+}
