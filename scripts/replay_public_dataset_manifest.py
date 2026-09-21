@@ -39,6 +39,7 @@ ALLOWED_SCRIPTS = {
     "scripts/validate_evidence_search_log.py",
     "scripts/validate_candidate_evidence.py",
     "scripts/score_candidates.py",
+    "scripts/build_candidate_evidence_context.py",
 }
 
 

@@ -1,0 +1,194 @@
+{
+  "manifest_id": "GSE157504-candidate-context-overlay-20260921",
+  "dataset_id": "GSE157504",
+  "accession": "GSE157504",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
+  "retrieved_at_utc": "2026-09-21T03:18:03.046242Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-20T06:30:43Z",
+  "source_check_method": "web_open",
+  "source_observed_tokens": [
+    "GSE157504",
+    "A transcriptomic taxonomy of Drosophila circadian neurons around the clock",
+    "Drosophila melanogaster",
+    "single-cell RNA sequencing",
+    "17 clock neuron categories",
+    "2,615 clock neurons",
+    "light:dark (LD)",
+    "constant darkness (DD)",
+    "Ma et al., eLife 10:e63056 (2021)"
+  ],
+  "source_observation_note": "The source content check is inherited from the hash-verified GSE157504 parent manifest. This overlay only joins published raw-UMI detection and author-reported rhythm calls with the existing candidate list; it does not perform a new biological assay or infer channel function.",
+  "analysis_context": {
+    "time_system": "LD is ZT; DD is CT; source labels and reported phase are preserved.",
+    "experimental_unit": "Cells are nested within collection replicate; the overlay is descriptive and makes no fly-level inference.",
+    "normalization_status": "Raw UMI detection only; no normalization, differential-expression test, or rhythm refit.",
+    "biological_unit_limitations": "Zero UMI can reflect dropout; absent exact features are not evaluable; author-list omission is not proof of arrhythmicity; transcript does not establish protein, current, membrane potential, or behavior. LN_ITP remains ambiguous and DN rhythm evidence stays cluster-specific.",
+    "upstream_manifest_id": "GSE157504-ion-channel-candidate-audit-20260920",
+    "score_policy": "Literature scores and target-specific electrophysiology gates are recomputed only to verify parity with existing target score artifacts; transcript context never changes them."
+  },
+  "files": [
+    {
+      "path": "scripts/build_candidate_evidence_context.py",
+      "role": "config",
+      "sha256": "e7946641b27ad2cd9427b0729f96ea0f8eac679b422e5d1f6dd6c55dfc213289"
+    },
+    {
+      "path": "scripts/build_gse157504_candidate_evidence.py",
+      "role": "config",
+      "sha256": "69998de2002fc6a4c1a8b78e976a2fd83cc0079d5200e16695c0c444bc7a7783"
+    },
+    {
+      "path": "scripts/score_candidates.py",
+      "role": "config",
+      "sha256": "e8a0e9f8d0681f76dbe902320494d0a71436625d9792d6a04eab78225aac0753"
+    },
+    {
+      "path": "scripts/validate_candidate_evidence.py",
+      "role": "config",
+      "sha256": "1d0e59bbb8f88151603470ab0c61f99c639b8f45904fb467af14ce3b7b8fa234"
+    },
+    {
+      "path": "scripts/validate_evidence_search_log.py",
+      "role": "config",
+      "sha256": "15b2fe8c925ccf997ba953cccfa96ec2e7e1df8d6b539e84d6bffcba605b2714"
+    },
+    {
+      "path": "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json",
+      "role": "metadata",
+      "sha256": "889066d8c7e45ba77186fb0db9b1c5b7f03e2182cd232cc2e1f1896cd7766365"
+    },
+    {
+      "path": "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json",
+      "role": "metadata",
+      "sha256": "0403f4d79561bac7fe9e51e5277e9de3e36c71d8ac41c4db23f8266987df4ee5"
+    },
+    {
+      "path": "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json",
+      "role": "metadata",
+      "sha256": "ae88da7a77f98c25dbd29b28b20a99aa8981f89097b0aa3eddca91937dae1003"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_context_overlay.csv",
+      "role": "derived",
+      "sha256": "8377c21818586240a1a01adb8d395bef892bfb1b7a9ff25e32b4feccadc8219d"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_context_overlay_report.json",
+      "role": "derived",
+      "sha256": "03ac4a0ba8ba1b9131f1c19f407ded3525d5067833c73db4ecad65078e7d821b"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+      "role": "derived",
+      "sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+      "role": "derived",
+      "sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+      "role": "derived",
+      "sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1"
+    },
+    {
+      "path": "validation/public-data/candidate-evidence-real.csv",
+      "role": "candidate_list",
+      "sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c"
+    },
+    {
+      "path": "validation/public-data/candidate-evidence-search-log.csv",
+      "role": "metadata",
+      "sha256": "dbc0ce8efb48db48a2e572799064b96fcbf350d84ea1980d7a9006c978054300"
+    },
+    {
+      "path": "validation/public-data/candidate-target-cell-score-dn.csv",
+      "role": "derived",
+      "sha256": "045b1971c773d07e99a4f839f8dfefe94aff695dedffcee7b482e2b8140657a9"
+    },
+    {
+      "path": "validation/public-data/candidate-target-cell-score-llnv.csv",
+      "role": "derived",
+      "sha256": "f936f6456a5d04b0ec1c9332b1b9987590f49bbec66d6f45d6ea876c5df29553"
+    },
+    {
+      "path": "validation/public-data/candidate-target-cell-score-lnd.csv",
+      "role": "derived",
+      "sha256": "3b0fd0d8ddabc35c03fd3845fc50190fdf11d8dae83e22367b8d36a7eb3d5afd"
+    },
+    {
+      "path": "validation/public-data/candidate-target-cell-score-slnv.csv",
+      "role": "derived",
+      "sha256": "faf74a37dec12154429ea5be80700f5f0424e476d972f50a6115dbb1e7785682"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "build-gse157504-candidate-context-overlay",
+      "script": "scripts/build_candidate_evidence_context.py",
+      "script_sha256": "e7946641b27ad2cd9427b0729f96ea0f8eac679b422e5d1f6dd6c55dfc213289",
+      "command": "python scripts/build_candidate_evidence_context.py --candidate-table validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --feature-status validation/public-data/GSE157504_candidate_raw_feature_status.csv --group-detection validation/public-data/GSE157504_candidate_raw_detection_by_group.csv --rhythm-details validation/public-data/GSE157504_candidate_rhythm_details.csv --rhythm-manifest validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json --rhythm-validation validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json --rhythm-replay validation/public-data/GSE157504-candidate-channel-rhythm-replay.json --target-score s-LNv=validation/public-data/candidate-target-cell-score-slnv.csv --target-score l-LNv=validation/public-data/candidate-target-cell-score-llnv.csv --target-score LNd=validation/public-data/candidate-target-cell-score-lnd.csv --target-score DN=validation/public-data/candidate-target-cell-score-dn.csv --context-output validation/public-data/GSE157504_candidate_context_overlay.csv --report-output validation/public-data/GSE157504_candidate_context_overlay_report.json --manifest-output validation/public-data/GSE157504-candidate-context-overlay-manifest.json",
+      "command_argv": [
+        "python",
+        "scripts/build_candidate_evidence_context.py",
+        "--candidate-table",
+        "validation/public-data/candidate-evidence-real.csv",
+        "--search-log",
+        "validation/public-data/candidate-evidence-search-log.csv",
+        "--feature-status",
+        "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+        "--group-detection",
+        "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+        "--rhythm-details",
+        "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+        "--rhythm-manifest",
+        "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json",
+        "--rhythm-validation",
+        "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json",
+        "--rhythm-replay",
+        "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json",
+        "--target-score",
+        "s-LNv=validation/public-data/candidate-target-cell-score-slnv.csv",
+        "--target-score",
+        "l-LNv=validation/public-data/candidate-target-cell-score-llnv.csv",
+        "--target-score",
+        "LNd=validation/public-data/candidate-target-cell-score-lnd.csv",
+        "--target-score",
+        "DN=validation/public-data/candidate-target-cell-score-dn.csv",
+        "--context-output",
+        "validation/public-data/GSE157504_candidate_context_overlay.csv",
+        "--report-output",
+        "validation/public-data/GSE157504_candidate_context_overlay_report.json",
+        "--manifest-output",
+        "validation/public-data/GSE157504-candidate-context-overlay-manifest.json"
+      ],
+      "status": "verified",
+      "inputs": [
+        "scripts/build_candidate_evidence_context.py",
+        "scripts/build_gse157504_candidate_evidence.py",
+        "scripts/score_candidates.py",
+        "scripts/validate_candidate_evidence.py",
+        "scripts/validate_evidence_search_log.py",
+        "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json",
+        "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json",
+        "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json",
+        "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+        "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+        "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+        "validation/public-data/candidate-evidence-real.csv",
+        "validation/public-data/candidate-evidence-search-log.csv",
+        "validation/public-data/candidate-target-cell-score-dn.csv",
+        "validation/public-data/candidate-target-cell-score-llnv.csv",
+        "validation/public-data/candidate-target-cell-score-lnd.csv",
+        "validation/public-data/candidate-target-cell-score-slnv.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE157504_candidate_context_overlay.csv",
+        "validation/public-data/GSE157504_candidate_context_overlay_report.json"
+      ]
+    }
+  ]
+}

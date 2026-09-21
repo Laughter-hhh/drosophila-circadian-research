@@ -1,0 +1,63 @@
+{
+  "status": "verified_candidate_evidence_context_overlay",
+  "n_candidates": 15,
+  "target_groups": [
+    "s-LNv",
+    "l-LNv",
+    "LNd",
+    "DN"
+  ],
+  "n_rows": 60,
+  "candidate_set_difference": {
+    "literature_candidates_not_in_GSE_candidate_audit": [
+      "na"
+    ],
+    "GSE_candidates_not_in_literature_table": [
+      "eag"
+    ]
+  },
+  "row_unit": "one candidate x target group; not an independent biological replicate",
+  "candidate_table_validation": "verified_candidate_evidence_table",
+  "search_log_validation": "verified_evidence_search_log",
+  "parent_gse_chain": {
+    "manifest_id": "GSE157504-ion-channel-candidate-audit-20260920",
+    "manifest_status": "verified_public_dataset_manifest",
+    "replay_status": "verified_public_dataset_replay",
+    "input_sha256": {
+      "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857",
+      "validation/public-data/GSE157504_candidate_raw_feature_status.csv": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a",
+      "validation/public-data/GSE157504_candidate_rhythm_details.csv": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1"
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504"
+  },
+  "target_score_parity": "verified for score, coverage, directness score/gate, shortlist gate and readout",
+  "static_rationales_flagged_for_human_review": [
+    "Shab",
+    "cac"
+  ],
+  "interpretation_limits": [
+    "Raw UMI detection is descriptive; zero counts are dropout-sensitive and not evidence of biological absence.",
+    "A feature absent from the exact matrix symbol list is not evaluable, not biologically absent.",
+    "No author HC call means not listed under author criteria, not proven arrhythmic.",
+    "LN_ITP calls are kept separate from pure s-LNv and LNd; DN calls retain author cluster/subcluster labels.",
+    "Transcript detection or rhythmicity does not establish protein, current, membrane-potential rhythm, or causal behavior.",
+    "Candidate score and target-specific ephys gate are unchanged; review flags request human reconciliation only."
+  ],
+  "input_sha256": {
+    "validation/public-data/candidate-evidence-real.csv": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+    "validation/public-data/GSE157504_candidate_raw_feature_status.csv": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a",
+    "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857",
+    "validation/public-data/GSE157504_candidate_rhythm_details.csv": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1",
+    "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json": "0403f4d79561bac7fe9e51e5277e9de3e36c71d8ac41c4db23f8266987df4ee5",
+    "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json": "ae88da7a77f98c25dbd29b28b20a99aa8981f89097b0aa3eddca91937dae1003",
+    "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json": "889066d8c7e45ba77186fb0db9b1c5b7f03e2182cd232cc2e1f1896cd7766365",
+    "validation/public-data/candidate-target-cell-score-dn.csv": "045b1971c773d07e99a4f839f8dfefe94aff695dedffcee7b482e2b8140657a9",
+    "validation/public-data/candidate-target-cell-score-lnd.csv": "3b0fd0d8ddabc35c03fd3845fc50190fdf11d8dae83e22367b8d36a7eb3d5afd",
+    "validation/public-data/candidate-target-cell-score-llnv.csv": "f936f6456a5d04b0ec1c9332b1b9987590f49bbec66d6f45d6ea876c5df29553",
+    "validation/public-data/candidate-target-cell-score-slnv.csv": "faf74a37dec12154429ea5be80700f5f0424e476d972f50a6115dbb1e7785682",
+    "validation/public-data/candidate-evidence-search-log.csv": "dbc0ce8efb48db48a2e572799064b96fcbf350d84ea1980d7a9006c978054300"
+  },
+  "output_sha256": {
+    "validation/public-data/GSE157504_candidate_context_overlay.csv": "8377c21818586240a1a01adb8d395bef892bfb1b7a9ff25e32b4feccadc8219d"
+  }
+}

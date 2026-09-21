@@ -12,6 +12,7 @@ class GSE157504EvidenceBridgeReplayTests(unittest.TestCase):
     def test_bridge_validator_and_scorer_scripts_are_explicitly_allowlisted(self):
         scripts = (
             "scripts/build_gse157504_candidate_evidence.py",
+            "scripts/build_candidate_evidence_context.py",
             "scripts/validate_evidence_search_log.py",
             "scripts/validate_candidate_evidence.py",
             "scripts/score_candidates.py",

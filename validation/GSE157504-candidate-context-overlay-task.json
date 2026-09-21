@@ -1,0 +1,95 @@
+{
+  "task_id": "GSE157504-candidate-context-overlay-20260921",
+  "status": "verified",
+  "research_question": "Can verified GSE157504 raw-UMI detection and author-reported rhythm calls be shown alongside the current literature-scored candidate list without changing numeric candidate scores or electrophysiology directness gates?",
+  "hypothesis": "A hash-bound, target-scoped sidecar can expose transcript detection, author HC rhythm calls, and stale-rationale review flags while preserving the original literature score and readout-specific ephys gate.",
+  "alternative_hypotheses": [
+    "Zero raw UMI may reflect single-cell dropout rather than biological absence.",
+    "A missing exact feature or a candidate not included in the upstream candidate audit is not evaluable, not evidence of absent expression.",
+    "An author HC-list omission is not proof of arrhythmicity.",
+    "Transcript detection/rhythm does not establish channel protein, native current, membrane-potential rhythm, or causal behavior.",
+    "A mixed LN_ITP call or DN subcluster call may not generalize to a pure clock-neuron subtype or all DN neurons."
+  ],
+  "species": "Drosophila melanogaster",
+  "preparation": "Literature-scored candidate evidence table and checked source log joined to verified GSE157504 raw-UMI detection and author-reported rhythm output; no new wet-lab assay or rhythm refit.",
+  "cell_type": "s-LNv, l-LNv, LNd, and DN; LN_ITP is retained only as an ambiguous cluster and DN author calls retain cluster/subcluster labels.",
+  "experimental_unit": "Descriptive candidate-by-target-group rows; cells are nested observations and not independent flies.",
+  "primary_readout": "One transcript-context sidecar row per candidate and target group, with LD/ZT and DD/CT detection counts, author HC rhythm calls, and unchanged target-specific candidate score/ephys gate.",
+  "secondary_readouts": [
+    "Candidate-set difference between the literature shortlist and GSE candidate audit.",
+    "Static literature rationale flags for human review where transcript context may warrant wording reconciliation.",
+    "Manifest validation and isolated replay output-hash verification."
+  ],
+  "time_system": "LD is ZT; DD is CT; reported source phase is preserved.",
+  "input_files": [
+    "validation/public-data/candidate-evidence-real.csv",
+    "validation/public-data/candidate-evidence-search-log.csv",
+    "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+    "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+    "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+    "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json",
+    "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json",
+    "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json",
+    "validation/public-data/candidate-target-cell-score-slnv.csv",
+    "validation/public-data/candidate-target-cell-score-llnv.csv",
+    "validation/public-data/candidate-target-cell-score-lnd.csv",
+    "validation/public-data/candidate-target-cell-score-dn.csv"
+  ],
+  "required_metadata": [
+    "Candidate symbol and literature class, kept distinct from GSE priority class.",
+    "Exact raw-feature status; LD/DD time system; target group; annotated/detected cells; raw counts and fraction.",
+    "Author cluster, HC call, F24 score, reported phase, and JTK_BH q-value where listed.",
+    "Candidate/source-log validation, parent manifest ID/status, parent replay status, and SHA-256 hashes.",
+    "Existing target-specific score, coverage, directness score/gate, shortlist gate, and readout for parity."
+  ],
+  "analysis_plan": "Validate the literature candidate table and source log; verify the GSE-derived input hashes against the parent raw/rhythm manifest, manifest validation, and isolated replay; recompute each candidate's target score only as a parity check against the four existing score CSVs; build a sidecar with one row per literature candidate x target group; validate the new provenance manifest and replay the builder in an isolated mirror.",
+  "decision_gate": "Accept only if there are 60 unique candidate-by-target rows; all 15 candidate rows and four target score tables align; candidate scores, coverage, readout, and directness/shortlist gates match existing artifacts; uncertainty and subtype-scope semantics are preserved; and all declared output hashes match in isolated replay.",
+  "expected_outputs": [
+    "validation/public-data/GSE157504_candidate_context_overlay.csv",
+    "validation/public-data/GSE157504_candidate_context_overlay_report.json",
+    "validation/public-data/GSE157504-candidate-context-overlay-manifest.json",
+    "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json",
+    "validation/public-data/GSE157504-candidate-context-overlay-replay.json"
+  ],
+  "acceptance_tests": [
+    "Synthetic zero-UMI values are marked dropout-sensitive rather than absent; missing target HC calls are not called arrhythmic.",
+    "Synthetic LN_ITP HC calls stay in the ambiguous field and are not assigned to s-LNv or LNd; DN1p retains exact cluster scope.",
+    "Duplicate group-condition records and LD/ZT or DD/CT mismatches fail closed.",
+    "A feature not represented in the matrix and a candidate absent from the upstream candidate audit both remain explicitly not evaluable.",
+    "Real data produce 15 literature candidates x four targets; candidate-set difference reports literature-only na and GSE-only eag instead of silently reconciling them.",
+    "Shab LD s-LNv detection is 160/181 and DD is 97/142; its s-LNv LD/DD author HC calls remain listed; score and ephys gate remain unchanged.",
+    "All four target score CSVs match recomputed candidate score, coverage, directness score/gate, shortlist gate and scoring readout.",
+    "The context manifest hashes the builder and its transitive helper scripts; manifest validation and isolated replay verify all outputs."
+  ],
+  "verification": {
+    "full_test_suite": "269 tests passed",
+    "focused_context_and_allowlist_tests": "5 passed after dependency-manifest update",
+    "real_overlay_rows": 60,
+    "literature_candidate_count": 15,
+    "target_groups": ["s-LNv", "l-LNv", "LNd", "DN"],
+    "candidate_set_difference": {
+      "literature_candidates_not_in_GSE_candidate_audit": ["na"],
+      "GSE_candidates_not_in_literature_table": ["eag"]
+    },
+    "static_rationales_flagged_for_manual_review": ["Shab", "cac"],
+    "target_score_parity": "verified for score, coverage, directness score/gate, shortlist gate and readout across four targets",
+    "parent_gse_manifest_status": "verified_public_dataset_manifest",
+    "parent_gse_replay_status": "verified_public_dataset_replay",
+    "new_manifest_status": "verified_public_dataset_manifest; 19 files; 1 run; 0 issues",
+    "new_isolated_replay_status": "verified_public_dataset_replay; 1 run; 2 output hashes verified; 0 issues"
+  },
+  "result_summary": "Built a 60-row context sidecar for 15 literature candidates across s-LNv, l-LNv, LNd and DN. Shab's s-LNv raw UMI detection and author HC rhythm calls are shown alongside its original literature score and needs_direct_evidence gate; neither score nor gate is altered. The literature list contains na, which is absent from the upstream GSE candidate audit, while GSE-only eag is reported as a set difference. Static rationales for Shab and cac are flagged for human review only.",
+  "source_log": [
+    "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
+    "https://elifesciences.org/articles/63056"
+  ],
+  "limitations": [
+    "Single-cell raw UMI fractions are descriptive and cells are not independent biological replicates.",
+    "Zero counts are dropout-sensitive; exact feature absence and omission from the upstream candidate audit are not biological absence.",
+    "Author rhythm rows are transcribed, not refit; no author HC-list row is not proof of arrhythmicity.",
+    "LN_ITP is mixed/ambiguous; DN subgroup calls do not generalize to all DN.",
+    "No protein abundance, native channel current, membrane-potential rhythm, causal channel function, or behavioral result is measured by this overlay.",
+    "A review flag does not automatically revise the literature candidate rationale or ranking; human source review is required."
+  ]
+}
