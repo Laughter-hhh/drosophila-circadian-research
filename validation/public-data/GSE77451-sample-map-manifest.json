@@ -1,0 +1,106 @@
+{
+  "manifest_id": "GSE77451-sample-metadata-map-20260921",
+  "dataset_id": "GSE77451",
+  "accession": "GSE77451",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451",
+  "retrieved_at_utc": "2026-09-21T07:11:30Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-21T07:20:37Z",
+  "source_check_method": "automated_http",
+  "source_observed_tokens": [
+    "GSE77451: 48 GEO samples; processed LNv, LNd, DN1 and TH transcript-expression files",
+    "GEO family SOFT contains sample title, source name, type and timepoint characteristics",
+    "GSM2052232 title Ka_SEQ_37; source/type LNv; timepoint ZT2",
+    "GSM2052228 title KA_SEQ_63; source/type LNd; timepoint ZT10",
+    "GSM2052238 title PDF ZT2; source/type LNv; timepoint ZT2",
+    "DN1 family SOFT sample titles 3a/3b through 23a/23b, with ZT3 through ZT23 characteristics",
+    "Abruzzi et al. report two independent six-timepoint LD collections at four-hour intervals and approximately 50-100 manually isolated neurons per sample"
+  ],
+  "source_observation_note": "Downloaded the official NCBI GEO family SOFT file over HTTPS and parsed all 48 sample records. Independently checked representative GSM records in the GEO viewer and the primary Abruzzi et al. paper. An explicit mapping table connects all 36 columns in the LNv/LNd/DN1 processed matrices to unique GSM accessions; matrix aliases are checked against official SOFT titles, with case/punctuation normalization only. Course IDs are curator labels, not native GEO fields.",
+  "analysis_context": {
+    "time_system": "Official GEO sample characteristics map LNv/LNd to ZT2, 6, 10, 14, 18, 22 and DN1 to ZT3, 7, 11, 15, 19, 23, repeated across two curator-labelled six-point courses.",
+    "experimental_unit": "pooled_neuron_library; GEO sample accession is the record key, not an identified fly",
+    "normalization_status": "No expression values were read or transformed in this metadata audit; ESAT numeric scale remains unresolved.",
+    "biological_unit_limitations": "The paper reports two independent time-course collections and approximately 50-100 isolated neurons per library, but individual fly identity is unavailable. Course IDs are curator-assigned from sample-title blocks. Sex, age, genotype and temperature remain unreported. LNv/LNd/DN1 group boundaries do not resolve the requested individual subtypes."
+  },
+  "files": [
+    {
+      "path": "validation/public-data/GSE77451_family.soft.gz",
+      "role": "metadata",
+      "sha256": "657a7c09b65c19644f5821d6cf3bf14ba55cfb483486c25f67e88a102f6ead94",
+      "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE77nnn/GSE77451/soft/GSE77451_family.soft.gz"
+    },
+    {
+      "path": "validation/public-data/GSE77451_sample_map.csv",
+      "role": "config",
+      "sha256": "e1968fe485b63d202e6916bbe0c17dd3f5efe7252e9b42d3f803bb21204df38a"
+    },
+    {
+      "path": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE77451&file=GSE77451_LNv_gene_expression.txt.gz&format=file"
+    },
+    {
+      "path": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE77451&file=GSE77451_LNd_gene_expression.txt.gz&format=file"
+    },
+    {
+      "path": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE77451&file=GSE77451_DN1_gene_expression.txt.gz&format=file"
+    },
+    {
+      "path": "validation/public-data/GSE77451_sample-map-audit.json",
+      "role": "derived",
+      "sha256": "a5517c6fd0a4ad2ade4df394fb9f6fe7222ab282f320ab200b099561cc2e02c1"
+    },
+    {
+      "path": "validation/public-data/GSE77451_sample_metadata.csv",
+      "role": "metadata",
+      "sha256": "9b0546a5f8a09c5a8235d89edbc0d3d59a303cf6137acac229b912b754d4ec1a"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "audit-gse77451-sample-columns",
+      "script": "scripts/audit_geo_sample_map.py",
+      "script_sha256": "96c0f923f2768c75a98ac5bf0b01bc79760108c82a34085f60b18f7c42e97d9e",
+      "command": "python scripts/audit_geo_sample_map.py --family-soft validation/public-data/GSE77451_family.soft.gz --mapping validation/public-data/GSE77451_sample_map.csv --matrix LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz --matrix LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz --matrix DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz --output-report validation/public-data/GSE77451_sample-map-audit.json --output-metadata validation/public-data/GSE77451_sample_metadata.csv",
+      "command_argv": [
+        "python",
+        "scripts/audit_geo_sample_map.py",
+        "--family-soft",
+        "validation/public-data/GSE77451_family.soft.gz",
+        "--mapping",
+        "validation/public-data/GSE77451_sample_map.csv",
+        "--matrix",
+        "LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "--matrix",
+        "LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "--matrix",
+        "DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+        "--output-report",
+        "validation/public-data/GSE77451_sample-map-audit.json",
+        "--output-metadata",
+        "validation/public-data/GSE77451_sample_metadata.csv"
+      ],
+      "inputs": [
+        "validation/public-data/GSE77451_family.soft.gz",
+        "validation/public-data/GSE77451_sample_map.csv",
+        "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_DN1_gene_expression.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451_sample-map-audit.json",
+        "validation/public-data/GSE77451_sample_metadata.csv"
+      ],
+      "status": "verified"
+    }
+  ]
+}

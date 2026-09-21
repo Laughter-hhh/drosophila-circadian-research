@@ -1,0 +1,80 @@
+{
+  "task_id": "gse77451-sample-metadata-map-20260921",
+  "status": "verified",
+  "research_question": "Can every LNv, LNd and DN1 sample column in the GSE77451 processed ESAT matrices be mapped one-to-one to an official GEO sample, cell-group label and ZT timepoint, while preserving the two independent time-course groupings?",
+  "hypothesis": "The 36 columns in the three processed matrices map to 36 unique GSM records and form two complete six-timepoint collections per cell group.",
+  "alternative_hypotheses": [
+    "Some matrix columns may not have a unique official GEO sample/title match.",
+    "GEO type/source or ZT metadata may disagree with a matrix label or curator-provided mapping.",
+    "Time-course grouping inferred from GEO title blocks may not recover the study's intended independent series; if so, grouping must remain unresolved rather than silently inferred."
+  ],
+  "species": "Drosophila melanogaster",
+  "preparation": "Public processed ESAT transcript-level RNA-seq matrices and NCBI GEO family SOFT sample metadata; no new wet-lab measurements.",
+  "cell_type": "Source GEO groups LNv, LNd and DN1; LNv is a mixed PDF-positive s-/l-LNv pool, LNd includes the fifth PDF-negative s-LNv, and DN1 is a subset.",
+  "experimental_unit": "pooled_neuron_library; the GEO sample/library accession is the record key, not an identified individual fly",
+  "primary_readout": "One-to-one mapping count and consistency of matrix column, GSM accession, GEO title alias, source/type and ZT/CT timepoint.",
+  "secondary_readouts": [
+    "Completeness of each curator-labelled six-timepoint collection at four-hour intervals.",
+    "Presence of the full 48-sample series family SOFT while mapping only the three clock-neuron matrices (36 samples).",
+    "Preservation of unknown sex, age, genotype and temperature fields in the output metadata."
+  ],
+  "time_system": "ZT from official GEO sample characteristics: LNv/LNd ZT2, ZT6, ZT10, ZT14, ZT18, ZT22; DN1 ZT3, ZT7, ZT11, ZT15, ZT19, ZT23.",
+  "input_files": [
+    "validation/public-data/GSE77451_family.soft.gz",
+    "validation/public-data/GSE77451_sample_map.csv",
+    "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+    "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+    "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+    "scripts/audit_geo_sample_map.py"
+  ],
+  "required_metadata": [
+    "Processed matrix sample-column names and matrix path.",
+    "Explicit matrix-column alias, GSM accession and curator-assigned timecourse ID.",
+    "Official GEO family SOFT sample title, source name, type and timepoint characteristics.",
+    "Primary-paper sampling design: two independent six-timepoint collections, LD, approximately 50-100 isolated neurons per sample."
+  ],
+  "analysis_plan": "Parse sample records from the official NCBI GEO family SOFT file. Compare every explicit mapping row against matrix headers, normalize only punctuation/case for the declared matrix alias-to-GEO-title check, require exact GSM uniqueness and GEO source/type agreement, parse the official ZT/CT characteristic, and verify two curator-labelled six-point courses with the same complete four-hour time grid per matrix. Export a metadata CSV but do not read or analyze expression values. Run synthetic positive/negative tests, full unit suite, manifest validation and isolated replay.",
+  "decision_gate": "Verify only if all 36 processed-matrix columns map exactly once to unique GSM records; aliases match official GEO titles; all source/type labels and timepoints parse and agree; each of the two course groupings per matrix has six unique points at four-hour intervals with matching grids; synthetic swapped-GSM, missing-column and duplicate-timepoint cases are rejected; and isolated replay reproduces both output hashes.",
+  "expected_outputs": [
+    "validation/public-data/GSE77451_sample-map-audit.json",
+    "validation/public-data/GSE77451_sample_metadata.csv",
+    "validation/public-data/GSE77451-sample-map-manifest-validation.json",
+    "validation/public-data/GSE77451-sample-map-replay.json",
+    "validation/iteration-20260921-gse77451-sample-metadata-map.md"
+  ],
+  "acceptance_tests": [
+    "Synthetic valid mapping passes and emits metadata without promoting pooled libraries to individual flies.",
+    "Swapped GSM accessions are blocked by matrix alias versus official GEO title mismatch.",
+    "Any matrix column absent from the mapping CSV blocks the audit.",
+    "Duplicate timepoints within a six-point course block the audit.",
+    "All 36 real matrix columns match 36 unique GSM records from the official 48-sample family SOFT.",
+    "Each real LNv/LNd course maps ZT2-22 and each DN1 course maps ZT3-23 in four-hour steps.",
+    "The manifest validates and isolated replay verifies the audit JSON and metadata CSV hashes.",
+    "The complete unittest suite passes."
+  ],
+  "verification": {
+    "status": "verified",
+    "synthetic_tests": "4 passed",
+    "real_data_execution": "verified_geo_sample_mapping; 36 of 36 matrix columns mapped to unique GSM records",
+    "family_soft_records": "48 parsed; 36 used for the LNv/LNd/DN1 matrices",
+    "full_test_suite": "282 tests passed",
+    "manifest": "verified_public_dataset_manifest; 7 files; 1 run; zero issues",
+    "isolated_replay": "verified_public_dataset_replay; 1 run; 2 output hashes; zero issues",
+    "scientific_status": "metadata_alignment_only_no_expression_normalization_or_rhythm_inference"
+  },
+  "source_log": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451",
+    "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE77nnn/GSE77451/soft/GSE77451_family.soft.gz",
+    "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006613",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2052232",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2052228",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2052238"
+  ],
+  "limitations": [
+    "Course IDs are curator-assigned from the two-time-course design and GEO sample-title blocks; they are not native GEO characteristics.",
+    "The output experimental unit is a pooled neuron library; underlying fly identities/replication are not recoverable from these records.",
+    "Sex, age, genotype and temperature remain not reported in the sample records used by this mapping task.",
+    "This task establishes metadata alignment only; it does not resolve the ESAT expression scale, normalize expression, aggregate transcript isoforms, test rhythmicity, or establish ion-channel function.",
+    "The LNv group mixes s-LNv and l-LNv, LNd includes the fifth PDF-negative s-LNv, and DN1 represents a subset rather than all user-requested DN subtypes."
+  ]
+}

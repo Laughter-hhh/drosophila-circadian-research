@@ -31,6 +31,8 @@ ALLOWED_SCRIPTS = {
     "scripts/parse_geo_series_matrix.py",
     "scripts/extract_gene_expression.py",
     "scripts/audit_esat_candidate_sample_keys.py",
+    "scripts/audit_geo_sample_map.py",
+    "scripts/audit_published_cycle_candidates.py",
     "scripts/analyze_expression_rhythm.py",
     "scripts/analyze_cosinor_inference.py",
     "scripts/audit_public_behavior_metadata.py",

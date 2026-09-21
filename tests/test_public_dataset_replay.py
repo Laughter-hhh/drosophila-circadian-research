@@ -45,6 +45,17 @@ class PublicDatasetReplayTests(unittest.TestCase):
         self.assertEqual(argv, ["python", script, "--output", "validation/public-data/audit.json"])
         self.assertIsNone(issue)
 
+    def test_geo_sample_map_audit_is_allowlisted_with_safe_python_argv(self):
+        script = "scripts/audit_geo_sample_map.py"
+        self.assertIn(script, ALLOWED_SCRIPTS)
+        argv, issue = _safe_argv({
+            "run_id": "geo-sample-map-audit",
+            "script": script,
+            "command_argv": ["python", script, "--output-report", "validation/public-data/map.json"],
+        })
+        self.assertEqual(argv, ["python", script, "--output-report", "validation/public-data/map.json"])
+        self.assertIsNone(issue)
+
 
 if __name__ == "__main__":
     unittest.main()

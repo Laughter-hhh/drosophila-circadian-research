@@ -1,0 +1,37 @@
+matrix_path,matrix_column,matrix_alias,gsm_accession,timecourse_id
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,KA_SEQ_37_unique.bam,Ka_SEQ_37,GSM2052232,LNv_course_1
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,KA_SEQ_38_unique.bam,KA_SEQ_38,GSM2052233,LNv_course_1
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,KA_SEQ_39_unique.bam,KA_SEQ_39,GSM2052234,LNv_course_1
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,KA_SEQ_40_unique.bam,KA_SEQ_40,GSM2052235,LNv_course_1
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,KA_SEQ_41_unique.bam,KA_SEQ_41,GSM2052236,LNv_course_1
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,KA_SEQ_42_unique.bam,KA_SEQ_42,GSM2052237,LNv_course_1
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,ZT2_PDF_2_unique.bam,PDF ZT2,GSM2052238,LNv_course_2
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,ZT6_PDF_2_unique.bam,PDF ZT6,GSM2052239,LNv_course_2
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,ZT10_PDF_2_unique.bam,PDF ZT10,GSM2052240,LNv_course_2
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,ZT14_PDF_2_unique.bam,PDF ZT14,GSM2052241,LNv_course_2
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,ZT18_PDF_2_unique.bam,PDF ZT18,GSM2052242,LNv_course_2
+validation/public-data/GSE77451_LNv_gene_expression.txt.gz,ZT22_PDF_2_unique.bam,PDF ZT22,GSM2052243,LNv_course_2
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_49_unique.bam,KA_SEQ_49,GSM2052220,LNd_course_1
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_50_unique.bam,KA_SEQ_50,GSM2052221,LNd_course_1
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_51_unique.bam,KA_SEQ_51,GSM2052222,LNd_course_1
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_52_unique.bam,KA_SEQ_52,GSM2052223,LNd_course_1
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_53_unique.bam,KA_SEQ_53,GSM2052224,LNd_course_1
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_54_unique.bam,KA_SEQ_54,GSM2052225,LNd_course_1
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_61_unique.bam,KA_SEQ_61,GSM2052226,LNd_course_2
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_62_unique.bam,KA_SEQ_62,GSM2052227,LNd_course_2
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_63_unique.bam,KA_SEQ_63,GSM2052228,LNd_course_2
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_64_unique.bam,KA_SEQ_64,GSM2052229,LNd_course_2
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_65_unique.bam,KA_SEQ_65,GSM2052230,LNd_course_2
+validation/public-data/GSE77451_LNd_gene_expression.txt.gz,KA_SEQ_66_unique.bam,KA_SEQ_66,GSM2052231,LNd_course_2
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_3A,3a,GSM2052244,DN1_course_A
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_7A,7a,GSM2052246,DN1_course_A
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_11A,11a,GSM2052248,DN1_course_A
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_15A,15a,GSM2052250,DN1_course_A
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_19A,19a,GSM2052252,DN1_course_A
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_23A,23a,GSM2052254,DN1_course_A
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_3B,3b,GSM2052245,DN1_course_B
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_7B,7b,GSM2052247,DN1_course_B
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_11B,11b,GSM2052249,DN1_course_B
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_15B,15b,GSM2052251,DN1_course_B
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_19B,19b,GSM2052253,DN1_course_B
+validation/public-data/GSE77451_DN1_gene_expression.txt.gz,DN1_23B,23b,GSM2052255,DN1_course_B

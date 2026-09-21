@@ -1,0 +1,79 @@
+{
+  "task_id": "abruzzi2017-s3-channel-candidate-cycle-20260921",
+  "status": "verified",
+  "research_question": "Which of the current real ion-channel candidate symbols are listed as cycling transcripts in Abruzzi et al. (2017) S3 tables for LNv, LNd and DN1 groups?",
+  "hypothesis": "Some candidate channel genes may appear in the published group-specific transcript-cycling lists, but those calls cannot by themselves establish rhythmic channel protein, current, membrane-potential or behavioral function.",
+  "alternative_hypotheses": [
+    "A candidate may not have an exact-symbol entry in the selected S3 cycler tables, which does not establish that it is unexpressed or biologically arrhythmic.",
+    "A candidate may be listed only as a low-confidence cycler (LC), passing one author method but not both.",
+    "The cell-group labels may be broader than the requested subtypes and cannot resolve s-LNv from l-LNv, LNd from the fifth PDF-negative s-LNv, or individual DN subgroups.",
+    "The supplementary LNv HC total may differ from the manuscript narrative and should remain an unresolved source discrepancy unless the authors' record explains it."
+  ],
+  "species": "Drosophila melanogaster",
+  "preparation": "Read-only cross-check of a published supplementary XLSX containing author-reported transcript-cycling calls from isolated circadian-neuron libraries; no new wet-lab data and no expression reanalysis.",
+  "cell_type": "Target sheets are LNv (PDF-positive small and large LNvs mixed), LNd (includes the fifth PDF-negative s-LNv), and a DN1 subset. The TH sheet is a non-clock outgroup and is excluded from target-cell evidence.",
+  "experimental_unit": "Pooled isolated-neuron library in the source study; this audit's observation is an author-reported gene-symbol row, not an independent fly-level measurement.",
+  "primary_readout": "Exact-symbol presence and author-reported HC/LC classification in each target-group cycler worksheet.",
+  "secondary_readouts": [
+    "Author-reported F24 score/phase and JTK p-value/phase, retained without recomputing rhythm statistics.",
+    "Per-sheet HC and LC row counts, unique-symbol counts, duplicate-symbol classes, and F24/JTK flag consistency.",
+    "Manuscript narrative HC counts compared with supplement-derived unique HC symbol counts."
+  ],
+  "time_system": "Light:dark entrainment and source-reported ZT. LNv/LNd use ZT2, 6, 10, 14, 18, 22; DN1 uses ZT3, 7, 11, 15, 19, 23.",
+  "input_files": [
+    "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
+    "validation/public-data/candidate-evidence-real.csv",
+    "scripts/audit_published_cycle_candidates.py"
+  ],
+  "required_metadata": [
+    "PLOS article and S3 source identifiers, local SHA-256 and retrieval time.",
+    "Candidate source field and supplement worksheet symbol field.",
+    "Sheet-specific F24/JTK headers, author HC/LC flags, row numbers and time system.",
+    "Paper-reported HC counts, pooled-library boundaries and target cell-group limitations."
+  ],
+  "analysis_plan": "Parse the XLSX ZIP/XML with Python standard-library components. Resolve each worksheet's columns by its own header text, match candidate symbols case-sensitively and exactly, retain duplicate matching rows, record author calls and metrics, compare class labels with method flags, and surface manuscript-versus-supplement count differences. Do not re-normalize expression, refit rhythms, infer aliases, or treat a missing list entry as biological absence. Export one row per candidate-by-target-group and a JSON QC report; validate provenance and replay in an isolated mirror.",
+  "decision_gate": "Verify the audit only if all three target worksheets parse, every input candidate has exactly three target-group output rows when no source duplicate is present, sheet-specific headers are resolved safely, exact matches are not confused across related symbols, duplicates are retained, HC/LC calls and author flags are preserved, the LNv 249-versus-252 discrepancy is surfaced without automatic reconciliation, synthetic tests pass, all manifest hashes validate, and isolated replay reproduces both outputs.",
+  "expected_outputs": [
+    "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+    "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
+    "validation/public-data/Abruzzi2017-candidate-cycle-manifest.json",
+    "validation/public-data/Abruzzi2017-candidate-cycle-manifest-validation.json",
+    "validation/public-data/Abruzzi2017-candidate-cycle-replay.json",
+    "validation/iteration-20260921-abruzzi2017-s3-candidate-cycle-audit.md",
+    "references/published-cycle-table-workflow.md"
+  ],
+  "acceptance_tests": [
+    "Synthetic XLSX fixtures with LNv, LNd and DN1's different F24/JTK column orders are parsed correctly.",
+    "Exact full-symbol matching keeps Sh distinct from Shal and Shaw.",
+    "An absent symbol is reported as not listed in the source table, not as no expression or no rhythm.",
+    "Duplicate matching symbol rows are retained, and the source QC reports duplicate rows by HC/LC class.",
+    "The real audit returns 15 candidates x 3 target groups = 45 rows and finds six listed group-level entries across Sh, Shab, para, cac and sei.",
+    "The real source count check reports LNv 252 unique HC symbols versus 249 in the manuscript narrative, while LNd 303 and DN1 185 agree; it does not silently select a value.",
+    "All sheet HC/LC labels agree with their F24/JTK flags; duplicate CG40498 and Nopp140 rows are LC.",
+    "Public-dataset manifest validates and isolated replay reproduces both output hashes.",
+    "The full unittest suite passes."
+  ],
+  "verification": {
+    "status": "verified",
+    "synthetic_tests": "2 passed, covering dynamic worksheet header order, exact full-symbol matching, duplicate-row preservation, not-listed semantics, and ambiguous-header rejection.",
+    "real_data_execution": "15 candidates x 3 target groups produced 45 candidate-group rows; six listed entries across five candidate symbols: Sh (LNd, LC), Shab (LNv, HC; DN1, LC), para (LNv, LC), cac (LNd, LC), and sei (LNv, LC).",
+    "unlisted_candidates": "Shaw, Shal, Irk1, na, Ca-alpha1D, Ca-alpha1T, slo, Irk2, Ork1 and trpl were not listed under exact-symbol match in these three S3 target sheets; this is not evidence of absent expression or biological arrhythmicity.",
+    "source_qc": "LNv 252 HC rows/252 unique HC symbols versus 249 in paper narrative; LNd 303/303; DN1 185/185. No HC/LC-flag disagreements. LNd CG40498 appears twice and DN1 Nopp140 appears three times; all duplicate rows are LC.",
+    "manifest": "verified_public_dataset_manifest; 4 files, 1 run, zero issues.",
+    "isolated_replay": "verified_public_dataset_replay; 1 run, 2 output hashes, zero issues.",
+    "full_test_suite": "284 tests passed.",
+    "scientific_status": "Published transcript-level rhythmicity evidence only; no rhythm statistics recomputed, no current/protein inference, no causal inference; LNv source count discrepancy remains unresolved."
+  },
+  "source_log": [
+    "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006613",
+    "https://doi.org/10.1371/journal.pgen.1006613.s003",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451"
+  ],
+  "limitations": [
+    "S3 rows provide published symbol-level cycler calls, not transcript accessions; isoform identity cannot be resolved by this audit.",
+    "The pooled neuron libraries do not identify individual flies or support fly-level reanalysis from this table.",
+    "The reported LN cell groups do not separate s-LNv/l-LNv; LNd includes the fifth PDF-negative s-LNv; DN1 is a subset.",
+    "No exact list entry does not establish absent expression, lack of rhythmicity, or lack of channel function.",
+    "The paper narrative says 249 LNv HC cyclers while S3 contains 252 unique HC symbols; the discrepancy is unresolved."
+  ]
+}

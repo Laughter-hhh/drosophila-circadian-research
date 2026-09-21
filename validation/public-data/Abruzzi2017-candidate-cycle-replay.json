@@ -1,0 +1,94 @@
+{
+  "status": "verified_public_dataset_replay",
+  "n_runs": 1,
+  "n_output_checks": 2,
+  "runs": [
+    {
+      "run_id": "audit-abruzzi2017-s3-channel-candidates",
+      "returncode": 0,
+      "stdout_sha256": "c9bff076df3e4bbf167aa51e93a1cdfcd9e317497366f5b2fbc92d0185434731",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "{\"status\": \"executed_with_source_count_discrepancy\", \"candidate_count\": 15, \"candidate_group_rows\": 45}\n",
+      "stderr_preview": ""
+    }
+  ],
+  "output_checks": [
+    {
+      "run_id": "audit-abruzzi2017-s3-channel-candidates",
+      "path": "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+      "expected_sha256": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
+      "observed_sha256": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "audit-abruzzi2017-s3-channel-candidates",
+      "path": "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
+      "expected_sha256": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
+      "observed_sha256": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
+      "status": "replay_hash_verified"
+    }
+  ],
+  "issues": [],
+  "inference_warning": "Replay verifies deterministic execution and declared output hashes in an isolated temporary mirror; it does not establish biological validity, normalization suitability, statistical adequacy or causal conclusions.",
+  "manifest_validation": {
+    "status": "verified_public_dataset_manifest",
+    "formal_status": "online_source_content_verified",
+    "manifest_id": "abruzzi2017-s3-channel-candidate-cycle-20260921",
+    "dataset_id": "GSE77451_Abruzzi2017_S3_cyclers",
+    "accession": "GSE77451",
+    "n_files": 4,
+    "n_runs": 1,
+    "file_checks": [
+      {
+        "path": "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
+        "role": "raw",
+        "expected_sha256": "866043154d696160a4c2af943d92c16e5cff21dd3e6316b2b40b6b699a5142bd",
+        "observed_sha256": "866043154d696160a4c2af943d92c16e5cff21dd3e6316b2b40b6b699a5142bd",
+        "size_bytes": 5892736,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/candidate-evidence-real.csv",
+        "role": "candidate_list",
+        "expected_sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+        "observed_sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+        "size_bytes": 7734,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+        "role": "derived",
+        "expected_sha256": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
+        "observed_sha256": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
+        "size_bytes": 9587,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
+        "role": "derived",
+        "expected_sha256": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
+        "observed_sha256": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
+        "size_bytes": 9316,
+        "status": "hash_verified"
+      }
+    ],
+    "run_checks": [
+      {
+        "run_id": "audit-abruzzi2017-s3-channel-candidates",
+        "script": "scripts/audit_published_cycle_candidates.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
+          "validation/public-data/candidate-evidence-real.csv"
+        ],
+        "outputs": [
+          "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+          "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json"
+        ]
+      }
+    ],
+    "issues": [],
+    "warnings": [],
+    "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+  }
+}

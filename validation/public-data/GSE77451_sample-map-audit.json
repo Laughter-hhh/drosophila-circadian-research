@@ -1,0 +1,132 @@
+{
+  "status": "verified_geo_sample_mapping",
+  "scientific_status": "metadata_alignment_verified_not_expression_or_rhythm_analysis",
+  "n_geo_sample_records_in_family_soft": 48,
+  "n_matrix_files": 3,
+  "n_sample_columns": 36,
+  "n_unique_geo_samples": 36,
+  "matrix_audits": [
+    {
+      "matrix_path": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+      "cell_type": "LNv",
+      "n_matrix_columns": 12,
+      "n_mapped_samples": 12,
+      "timecourses": {
+        "LNv_course_1": {
+          "n_samples": 6,
+          "timepoints": [
+            2.0,
+            6.0,
+            10.0,
+            14.0,
+            18.0,
+            22.0
+          ]
+        },
+        "LNv_course_2": {
+          "n_samples": 6,
+          "timepoints": [
+            2.0,
+            6.0,
+            10.0,
+            14.0,
+            18.0,
+            22.0
+          ]
+        }
+      }
+    },
+    {
+      "matrix_path": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+      "cell_type": "LNd",
+      "n_matrix_columns": 12,
+      "n_mapped_samples": 12,
+      "timecourses": {
+        "LNd_course_1": {
+          "n_samples": 6,
+          "timepoints": [
+            2.0,
+            6.0,
+            10.0,
+            14.0,
+            18.0,
+            22.0
+          ]
+        },
+        "LNd_course_2": {
+          "n_samples": 6,
+          "timepoints": [
+            2.0,
+            6.0,
+            10.0,
+            14.0,
+            18.0,
+            22.0
+          ]
+        }
+      }
+    },
+    {
+      "matrix_path": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+      "cell_type": "DN1",
+      "n_matrix_columns": 12,
+      "n_mapped_samples": 12,
+      "timecourses": {
+        "DN1_course_A": {
+          "n_samples": 6,
+          "timepoints": [
+            3.0,
+            7.0,
+            11.0,
+            15.0,
+            19.0,
+            23.0
+          ]
+        },
+        "DN1_course_B": {
+          "n_samples": 6,
+          "timepoints": [
+            3.0,
+            7.0,
+            11.0,
+            15.0,
+            19.0,
+            23.0
+          ]
+        }
+      }
+    }
+  ],
+  "inputs": {
+    "family_soft": {
+      "path": "validation/public-data/GSE77451_family.soft.gz",
+      "sha256": "657a7c09b65c19644f5821d6cf3bf14ba55cfb483486c25f67e88a102f6ead94"
+    },
+    "mapping_csv": {
+      "path": "validation/public-data/GSE77451_sample_map.csv",
+      "sha256": "e1968fe485b63d202e6916bbe0c17dd3f5efe7252e9b42d3f803bb21204df38a"
+    },
+    "matrices": [
+      {
+        "path": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360"
+      },
+      {
+        "path": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221"
+      },
+      {
+        "path": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+        "sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7"
+      }
+    ]
+  },
+  "limitations": [
+    "timecourse_id labels are curator-assigned groupings based on the two time-course design and GEO sample-title blocks; they are not native GEO fields",
+    "the experimental unit represented in the metadata output is a pooled neuron library, not an identified individual fly",
+    "sex, age, genotype, temperature and individual-fly identifiers are not reported in the sample-level records used here",
+    "the source LNv pool combines PDF-positive small and large LNvs; the LNd group includes the fifth PDF-negative s-LNv; DN1 is a subset",
+    "this audit verifies metadata alignment only; it does not validate expression normalization or infer rhythmicity"
+  ],
+  "issues": []
+}

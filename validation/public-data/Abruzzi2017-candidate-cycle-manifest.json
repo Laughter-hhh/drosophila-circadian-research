@@ -1,0 +1,78 @@
+{
+  "manifest_id": "abruzzi2017-s3-channel-candidate-cycle-20260921",
+  "dataset_id": "GSE77451_Abruzzi2017_S3_cyclers",
+  "accession": "GSE77451",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://doi.org/10.1371/journal.pgen.1006613.s003",
+  "retrieved_at_utc": "2026-09-21T08:12:29Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-21T08:15:03Z",
+  "source_check_method": "web_open",
+  "source_observed_tokens": [
+    "PLOS article data-availability statement links the study to GEO accession GSE77451.",
+    "PLOS Supporting Information identifies S3 as an Excel file listing cycling transcripts in LNds, LNvs, DN1s and TH neurons.",
+    "The article reports two independent six-timepoint circadian RNA collections per group, sampled at four-hour intervals in light:dark conditions.",
+    "The article defines HC cyclers as passing both JTK_cycle and F24; it reports JTK p<0.05 and F24 score>0.5 plus amplitude and average-read filters.",
+    "The paper narrative reports 249 LNv, 303 LNd and 185 DN1 HC cyclers; S3 parsing finds 252, 303 and 185 unique HC symbols, respectively.",
+    "The paper describes LNv as mixed PDF-positive small and large cells, LNd as including the fifth PDF-negative s-LNv, and DN1 as a subset."
+  ],
+  "source_observation_note": "Opened the primary PLOS article, checked its Methods, cell-group descriptions, HC-count statement and S3 description, then downloaded and parsed the official S3 workbook. The exact-symbol audit preserves one unresolved LNv mismatch: 252 unique HC symbols in S3 versus 249 in the article narrative. It does not select or correct either source value.",
+  "analysis_context": {
+    "time_system": "LD entrainment with source-reported ZT. LNv/LNd timepoints are ZT2, 6, 10, 14, 18, 22; DN1 timepoints are ZT3, 7, 11, 15, 19, 23.",
+    "experimental_unit": "Pooled isolated-neuron library in the source study; the candidate audit operates on author-reported gene-symbol rows, not independent fly-level observations.",
+    "normalization_status": "No expression values or rhythm statistics were recomputed. The report preserves author-reported S3 calls and metrics; the paper describes ESAT normalization relative to the maximum signal within each six-timepoint set.",
+    "biological_unit_limitations": "The published sampling description gives approximately 50-100 isolated neurons per sample but does not identify individual flies in S3. The LNv group mixes s-/l-LNv, LNd includes the fifth PDF-negative s-LNv, and DN1 is a subset. Transcript cycling is not protein/current/membrane-potential or causal-behavior evidence."
+  },
+  "files": [
+    {
+      "path": "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
+      "role": "raw",
+      "sha256": "866043154d696160a4c2af943d92c16e5cff21dd3e6316b2b40b6b699a5142bd",
+      "source_url": "https://journals.plos.org/plosgenetics/article/file?id=10.1371/journal.pgen.1006613.s003&type=supplementary"
+    },
+    {
+      "path": "validation/public-data/candidate-evidence-real.csv",
+      "role": "candidate_list",
+      "sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c"
+    },
+    {
+      "path": "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+      "role": "derived",
+      "sha256": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337"
+    },
+    {
+      "path": "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
+      "role": "derived",
+      "sha256": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "audit-abruzzi2017-s3-channel-candidates",
+      "script": "scripts/audit_published_cycle_candidates.py",
+      "script_sha256": "a3de9f993776f0cac11c59d274adcabe768c46b3d770f5d31e6b912beb6bb1fa",
+      "command": "python scripts/audit_published_cycle_candidates.py --workbook validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx --candidates validation/public-data/candidate-evidence-real.csv --output-csv validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv --output-report validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
+      "command_argv": [
+        "python",
+        "scripts/audit_published_cycle_candidates.py",
+        "--workbook",
+        "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
+        "--candidates",
+        "validation/public-data/candidate-evidence-real.csv",
+        "--output-csv",
+        "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+        "--output-report",
+        "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json"
+      ],
+      "inputs": [
+        "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
+        "validation/public-data/candidate-evidence-real.csv"
+      ],
+      "outputs": [
+        "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+        "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json"
+      ],
+      "status": "verified"
+    }
+  ]
+}
