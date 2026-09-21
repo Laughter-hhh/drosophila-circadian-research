@@ -61,7 +61,9 @@
 
 #### Figure X｜图 X
 
-在图题或文章摘要处醒目标明本次 Figure 覆盖状态：`image-verified｜已核查原图`、`caption-limited｜仅图注解读` 或 `source-unavailable｜来源不可访问`。这个整体标签不能代替 panel 级记录；不得写“同上”或默认整张图的状态适用于每个子图。
+在图题或文章摘要处醒目标明本次 Figure 覆盖状态：`image-verified｜已核查原图`、`caption-limited｜仅图注解读` 或 `source-unavailable｜来源不可访问`。这是整图覆盖标签：只有所有需要解释的 panel 均实际查看原图，才可标 `image-verified`；有图注/正文可读但至少一个 panel 原图未核看时，标 `caption-limited`；来源中没有可用图像或图注/正文时标 `source-unavailable`。按最弱的覆盖情况汇总，不得让一个已查看的 panel 代表整张图。
+
+   Panel 行中的状态应更细，不要把整图标签复制进字段：`image_status` 用 `inspected｜已查看`、`linked_not_inspected｜有链接但未核看` 或 `unavailable｜不可访问`（注明原因）；`caption_status` 用 `available｜可读取`、`partial｜部分可读` 或 `unavailable｜不可用`。链接存在不等于已查看；`caption-limited` 是整图覆盖标签，不是 `image_status` 的值。
 
 1. **Figure question｜本图问题**：这张图想区分什么假说或获得什么信息。
 2. **Caption walkthrough｜图注逐项解读**：逐句解释图注中实验对象、干预、时间条件、颜色或线型、统计、误差线、n、比例尺和 panel 关系。用自己的话翻译和解释，不大段逐字复制受版权保护的图注。
@@ -69,9 +71,9 @@
 
    | panel_id | image_status | caption_status | source/version/page/direct link | caption-supported labels, groups and readout | visual-only unknown/unavailable | n and experimental unit (or unknown) | interpretation/caveat |
    |---|---|---|---|---|---|---|---|
-   | Fig. 1A | caption-limited | caption available; image unavailable | final article, Fig. 1 caption, DOI/URL | caption 明确支持的组别及读数；未提及则写 unknown | 颜色、轴标签或图中符号未核图，写 unknown | caption 未说明独立实验单位，写 unknown | 仅解释图注支持的内容，不推测 artwork |
+   | Fig. 1A | linked_not_inspected（出版社提供原图链接，但本次未能打开） | available | Version of record, Fig. 1 caption: https://www.nature.com/articles/s42003-019-0497-0#Fig1 | caption 明确支持的组别及读数；未提及则写 unknown | 颜色、轴标签或图中符号未核图，写 unknown | caption 未说明独立实验单位，写 unknown | 仅解释图注支持的内容，不推测 artwork |
 
-   每一行的 `image_status` 和 `caption_status` 都要分别写明；`source/version/page/direct link` 必须足以让读者定位该 panel 所依据的来源。可用 `unknown｜未知` 或 `unavailable｜不可访问`；不得用同图其他 panel 的信息填补。轴、颜色、线型、比例尺、代表性 trace 或图中文字若只能从图像判断，只有实际查看原图后才能描述。
+   每一行的 `image_status` 和 `caption_status` 都要分别写明，并使用上面的 panel 级状态；`source/version/page/direct link` 必须足以让读者定位该 panel 所依据的版本和图注。`unknown｜未知` 表示来源不足以判断；`unavailable｜不可访问` 表示已尝试但访问失败，须写清是图像、补充材料还是页面受阻。不得用同图其他 panel 的信息填补。轴、颜色、线型、比例尺、代表性 trace 或图中文字若只能从图像判断，只有实际查看原图后才能描述。
 4. **Abbreviation and symbol glossary｜缩写与符号表**：
 
    | Abbreviation/symbol | Full English | 中文 | In this panel |

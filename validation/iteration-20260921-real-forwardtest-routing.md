@@ -1,6 +1,6 @@
 # Real-task forward-test refinements — 2026-09-21
 
-Status: `executed`; candidate-scoring route independently verified; first fresh literature-reading rerun completed and a per-panel provenance failure was found; remediation is documented, with a post-remediation generative rerun still outstanding.
+Status: `executed`; candidate-scoring route independently verified; the post-fix literature schema has a self-forward-test with a structural pass, while an independent blind retest and source-artwork review remain outstanding.
 
 ## Trigger and scope
 
@@ -42,7 +42,7 @@ No scorer implementation or serialization change was made. CSV raw longlists and
   python scripts/score_candidates.py data/candidate-evidence-real.csv --search-log data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell s-LNv --output ranking-s-LNv.csv --sensitivity-output sensitivity-s-LNv.json
   python scripts/score_candidates.py data/candidate-evidence-real.csv --search-log data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell l-LNv --output ranking-l-LNv.csv --sensitivity-output sensitivity-l-LNv.json
   ```
-- The first fresh literature-reading rerun is complete and reviewed: 17 main panels were covered, but panel-specific status/provenance was missing. The doc-level fix is applied and whitespace/synthetic regression checks pass; however, no post-fix generative rerun has yet established behavioral compliance. The source-artwork limitation also remains, so no panel is image-verified.
+- A post-fix self-forward reading of Roessingh et al. (2019) is recorded in `validation/iteration-20260921-panel-status-forwardtest.md`: 15 lettered main panels plus 17 caption-described subviews/insets, each with repeated status and source fields. The 32-row structural audit and 296-test synthetic regression suite pass. This is not a blind/independent retest; all publisher figure images and supplementary files remain uninspected after cache misses and a Windows sandbox ACL error, so no image is verified and the complete reading workflow is not yet independently behavior-verified.
 
 ## Evidence limits
 
