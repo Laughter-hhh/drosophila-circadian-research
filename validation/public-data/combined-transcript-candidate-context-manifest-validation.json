@@ -1,10 +1,10 @@
 {
   "status": "verified_public_dataset_manifest",
   "formal_status": "online_source_content_verified",
-  "manifest_id": "GSE157504-candidate-context-overlay-20260921",
-  "dataset_id": "GSE157504",
-  "accession": "GSE157504",
-  "n_files": 19,
+  "manifest_id": "GSE157504-Abruzzi2017-S3-candidate-context-20260921",
+  "dataset_id": "GSE157504-plus-Abruzzi2017-S3-candidate-context",
+  "accession": "GSE157504; GSE77451; PLOS DOI 10.1371/journal.pgen.1006613.s003",
+  "n_files": 33,
   "n_runs": 1,
   "file_checks": [
     {
@@ -21,6 +21,22 @@
       "expected_sha256": "69998de2002fc6a4c1a8b78e976a2fd83cc0079d5200e16695c0c444bc7a7783",
       "observed_sha256": "69998de2002fc6a4c1a8b78e976a2fd83cc0079d5200e16695c0c444bc7a7783",
       "size_bytes": 25456,
+      "status": "hash_verified"
+    },
+    {
+      "path": "scripts/build_published_cycle_candidate_context.py",
+      "role": "config",
+      "expected_sha256": "7a9f437f62ee87f63894c1f3408fb17c5edb54b3a0f8029dcdf5371ddc219439",
+      "observed_sha256": "7a9f437f62ee87f63894c1f3408fb17c5edb54b3a0f8029dcdf5371ddc219439",
+      "size_bytes": 40646,
+      "status": "hash_verified"
+    },
+    {
+      "path": "scripts/replay_public_dataset_manifest.py",
+      "role": "config",
+      "expected_sha256": "8bdb0f1879882b726e3455c3759c7247f27a96ce43f1386eeda3a6cac59517f9",
+      "observed_sha256": "8bdb0f1879882b726e3455c3759c7247f27a96ce43f1386eeda3a6cac59517f9",
+      "size_bytes": 10650,
       "status": "hash_verified"
     },
     {
@@ -48,6 +64,62 @@
       "status": "hash_verified"
     },
     {
+      "path": "scripts/validate_public_dataset_manifest.py",
+      "role": "config",
+      "expected_sha256": "30b3f7a77e547fd30850c8bec15696d3dcaecad678e39464ee4fa3e41a90295d",
+      "observed_sha256": "30b3f7a77e547fd30850c8bec15696d3dcaecad678e39464ee4fa3e41a90295d",
+      "size_bytes": 13943,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/Abruzzi2017-candidate-cycle-manifest-validation.json",
+      "role": "metadata",
+      "expected_sha256": "2b8c05b9e78f2f3853bdae433314f2e8207dad24fa375a4bf1d5e4b863e8d221",
+      "observed_sha256": "2b8c05b9e78f2f3853bdae433314f2e8207dad24fa375a4bf1d5e4b863e8d221",
+      "size_bytes": 2645,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/Abruzzi2017-candidate-cycle-manifest.json",
+      "role": "metadata",
+      "expected_sha256": "55c752b882a9d6595db9fd7fc6f601defa32d1374e4e14dfb966a72912dcba30",
+      "observed_sha256": "55c752b882a9d6595db9fd7fc6f601defa32d1374e4e14dfb966a72912dcba30",
+      "size_bytes": 5094,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/Abruzzi2017-candidate-cycle-replay.json",
+      "role": "metadata",
+      "expected_sha256": "fe1617d98c21d4cdfdebc879433958a9e96417437477561645fd1b4de9687920",
+      "observed_sha256": "fe1617d98c21d4cdfdebc879433958a9e96417437477561645fd1b4de9687920",
+      "size_bytes": 4424,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
+      "role": "raw",
+      "expected_sha256": "866043154d696160a4c2af943d92c16e5cff21dd3e6316b2b40b6b699a5142bd",
+      "observed_sha256": "866043154d696160a4c2af943d92c16e5cff21dd3e6316b2b40b6b699a5142bd",
+      "size_bytes": 5892736,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
+      "role": "derived",
+      "expected_sha256": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
+      "observed_sha256": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
+      "size_bytes": 9316,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+      "role": "derived",
+      "expected_sha256": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
+      "observed_sha256": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
+      "size_bytes": 9587,
+      "status": "hash_verified"
+    },
+    {
       "path": "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json",
       "role": "metadata",
       "expected_sha256": "889066d8c7e45ba77186fb0db9b1c5b7f03e2182cd232cc2e1f1896cd7766365",
@@ -69,6 +141,30 @@
       "expected_sha256": "ae88da7a77f98c25dbd29b28b20a99aa8981f89097b0aa3eddca91937dae1003",
       "observed_sha256": "ae88da7a77f98c25dbd29b28b20a99aa8981f89097b0aa3eddca91937dae1003",
       "size_bytes": 10350,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json",
+      "role": "metadata",
+      "expected_sha256": "db2de950a49623a7aa764682f22e9cc24261287bca23b8c35e342ba6d57f8920",
+      "observed_sha256": "db2de950a49623a7aa764682f22e9cc24261287bca23b8c35e342ba6d57f8920",
+      "size_bytes": 9133,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504-candidate-context-overlay-manifest.json",
+      "role": "metadata",
+      "expected_sha256": "be15d9301b4ff12ce366448de2ecc18f5aaef75b1bbc77d501b01b305d809965",
+      "observed_sha256": "be15d9301b4ff12ce366448de2ecc18f5aaef75b1bbc77d501b01b305d809965",
+      "size_bytes": 10658,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504-candidate-context-overlay-replay.json",
+      "role": "metadata",
+      "expected_sha256": "f10dee868c8253cbcdf7cef57176d35f332953c42ef900bbe886d447ce3a580d",
+      "observed_sha256": "f10dee868c8253cbcdf7cef57176d35f332953c42ef900bbe886d447ce3a580d",
+      "size_bytes": 12110,
       "status": "hash_verified"
     },
     {
@@ -158,22 +254,52 @@
       "observed_sha256": "faf74a37dec12154429ea5be80700f5f0424e476d972f50a6115dbb1e7785682",
       "size_bytes": 12829,
       "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/combined-transcript-candidate-context-report.json",
+      "role": "derived",
+      "expected_sha256": "8cefdd6e33e42845efab2f292c80d358bf76690ad4171fb50b25ca5e0ab12e94",
+      "observed_sha256": "8cefdd6e33e42845efab2f292c80d358bf76690ad4171fb50b25ca5e0ab12e94",
+      "size_bytes": 10545,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/combined-transcript-candidate-context.csv",
+      "role": "derived",
+      "expected_sha256": "bfe84de07b2169a168017aa231831e72bfdde3229681b2585d2b47bf66e97568",
+      "observed_sha256": "bfe84de07b2169a168017aa231831e72bfdde3229681b2585d2b47bf66e97568",
+      "size_bytes": 61050,
+      "status": "hash_verified"
     }
   ],
   "run_checks": [
     {
-      "run_id": "build-gse157504-candidate-context-overlay",
-      "script": "scripts/build_candidate_evidence_context.py",
+      "run_id": "join-verified-gse-and-abruzzi2017-cycle-context",
+      "script": "scripts/build_published_cycle_candidate_context.py",
       "status": "verified",
       "inputs": [
         "scripts/build_candidate_evidence_context.py",
         "scripts/build_gse157504_candidate_evidence.py",
+        "scripts/build_published_cycle_candidate_context.py",
+        "scripts/replay_public_dataset_manifest.py",
         "scripts/score_candidates.py",
         "scripts/validate_candidate_evidence.py",
         "scripts/validate_evidence_search_log.py",
+        "scripts/validate_public_dataset_manifest.py",
+        "validation/public-data/Abruzzi2017-candidate-cycle-manifest-validation.json",
+        "validation/public-data/Abruzzi2017-candidate-cycle-manifest.json",
+        "validation/public-data/Abruzzi2017-candidate-cycle-replay.json",
+        "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
+        "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
+        "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
         "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json",
         "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json",
         "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json",
+        "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json",
+        "validation/public-data/GSE157504-candidate-context-overlay-manifest.json",
+        "validation/public-data/GSE157504-candidate-context-overlay-replay.json",
+        "validation/public-data/GSE157504_candidate_context_overlay.csv",
+        "validation/public-data/GSE157504_candidate_context_overlay_report.json",
         "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
         "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
         "validation/public-data/GSE157504_candidate_rhythm_details.csv",
@@ -185,8 +311,8 @@
         "validation/public-data/candidate-target-cell-score-slnv.csv"
       ],
       "outputs": [
-        "validation/public-data/GSE157504_candidate_context_overlay.csv",
-        "validation/public-data/GSE157504_candidate_context_overlay_report.json"
+        "validation/public-data/combined-transcript-candidate-context.csv",
+        "validation/public-data/combined-transcript-candidate-context-report.json"
       ]
     }
   ],

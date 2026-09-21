@@ -1,0 +1,97 @@
+{
+  "task_id": "candidate-scoring-source-log-fail-closed-20260921",
+  "status": "verified",
+  "research_question": "Does candidate scoring fail closed when a scored/native-current table lacks its checked source log, and does it reject summaries that conflict with source-level evidence while preserving the all-NA transcript-context diagnostic?",
+  "hypothesis": "Requiring joint candidate-table/search-log validation at the scorer boundary prevents stale or unsupported summary fields from producing target-specific rankings, while an all-NA non-current transcript handoff remains an unranked diagnostic.",
+  "species": "Drosophila melanogaster",
+  "preparation": "Reanalysis of a curated 15-candidate evidence table and its 19-record source log, with a separate GSE157504 transcript-only all-NA diagnostic; no new biological measurements.",
+  "cell_type": "Independent target runs for s-LNv, l-LNv, LNd and DN.",
+  "experimental_unit": "Curated source-level evidence record; no animal-level or biological-replicate inference.",
+  "primary_readout": "Fail-closed behavior of candidate scoring for membrane_potential_or_current and target-scoped directness gates.",
+  "secondary_readouts": [
+    "Preservation of the all-NA, non-current transcript-context diagnostic with no ranking or Top.",
+    "Target-specific sensitivity rankings and source-log directness classifications.",
+    "Manifest validation and isolated replay of all generated outputs."
+  ],
+  "time_system": "No new time-course analysis; no ZT/CT or LD/DD inference.",
+  "input_files": [
+    "validation/public-data/candidate-evidence-real.csv",
+    "validation/public-data/candidate-evidence-search-log.csv",
+    "validation/public-data/GSE157504_candidate_evidence_handoff.csv",
+    "validation/public-data/GSE157504-candidate-evidence-bridge-manifest.json",
+    "validation/public-data/GSE157504-candidate-evidence-bridge-manifest-validation.json",
+    "validation/public-data/GSE157504-candidate-evidence-bridge-replay.json",
+    "scripts/score_candidates.py",
+    "scripts/validate_candidate_evidence.py",
+    "scripts/validate_evidence_search_log.py",
+    "tests/test_candidate_search_log_gate.py"
+  ],
+  "required_metadata": [
+    "Candidate ID and scored summary fields, preserving NA distinctly from zero.",
+    "Source-log ID, checked source, assay, evidence label, target-cell scope and evidence_target_cells.",
+    "Requested target neuron group, selected readout domain, directness/shortlist gate, coverage and score status.",
+    "Synthetic invalid-input case, expected rejection point, and whether a ranking output was created.",
+    "Manifest and isolated-replay status with output hashes."
+  ],
+  "analysis_plan": "Validate the 15-row candidate table jointly against its 19-record checked search log. Run score_candidates.py independently for each requested target with readout_match=membrane_potential_or_current. Exercise missing-log, all-NA-current, and candidate-summary/source-log mismatch cases synthetically and require failure before output creation. Preserve a GSE157504 all-NA non-current no-log diagnostic as a negative control. Validate and isolated-replay the public-data manifest. Conduct a separate blind forward test from the skill instructions and raw evidence inputs without consulting historical task reports.",
+  "decision_gate": "Verify only if candidate/log validation passes; scored/current tables cannot be ranked without the paired log and readout; a source-log mismatch is rejected before writing scores; the all-NA transcript diagnostic has no ranked candidates or Top; target-specific results respect directness gates; the full test suite and isolated manifest replay pass.",
+  "expected_outputs": [
+    "validation/public-data/candidate-scoring-source-log-guard-validation.json",
+    "validation/public-data/candidate-scoring-source-log-guard-score-slnv.csv",
+    "validation/public-data/candidate-scoring-source-log-guard-score-llnv.csv",
+    "validation/public-data/candidate-scoring-source-log-guard-score-lnd.csv",
+    "validation/public-data/candidate-scoring-source-log-guard-score-dn.csv",
+    "validation/public-data/candidate-scoring-source-log-guard-sensitivity-slnv.json",
+    "validation/public-data/candidate-scoring-source-log-guard-sensitivity-llnv.json",
+    "validation/public-data/candidate-scoring-source-log-guard-sensitivity-lnd.json",
+    "validation/public-data/candidate-scoring-source-log-guard-sensitivity-dn.json",
+    "validation/public-data/candidate-scoring-source-log-guard-GSE157504-diagnostic.csv",
+    "validation/public-data/candidate-scoring-source-log-guard-GSE157504-sensitivity.json",
+    "validation/public-data/candidate-scoring-source-log-guard-manifest.json",
+    "validation/public-data/candidate-scoring-source-log-guard-manifest-validation.json",
+    "validation/public-data/candidate-scoring-source-log-guard-replay.json",
+    "validation/iteration-20260921-candidate-scoring-source-log-fail-closed.md"
+  ],
+  "acceptance_tests": [
+    "The candidate table validates as 15 candidates and its checked search log as 19 records with zero schema/linkage issues.",
+    "Scored evidence, including non-current scored GSE context, cannot be ranked without --search-log and --readout-match; current all-NA tables cannot use the exception.",
+    "The scorer jointly revalidates the candidate table against the supplied log and rejects a deliberately misleading Irk1 summary before creating output.",
+    "The all-NA GSE157504 non-current diagnostic remains unranked, with empty rankings and no Top.",
+    "Native-current evidence gates return Shaw/Shal for s-LNv, na/Shaw/Shal for l-LNv, and no direct Top for LNd or broad DN; Irk1 remains needs_direct_evidence for s-/l-LNv native current.",
+    "Independent blind forward test reproduces the four target outcomes and identifies raw-ranking versus gate-qualified Top interpretation explicitly.",
+    "The public-data manifest validates and isolated replay reproduces all declared run outputs; the complete unittest suite passes."
+  ],
+  "verification": {
+    "candidate_and_log_validation": "verified_candidate_evidence_table; 15 candidates; 19 source-log records; zero issues.",
+    "synthetic_fail_closed_tests": "5 new regression cases cover omitted logs, current all-NA input, candidate/log inconsistency before output, and the narrow all-NA diagnostic exception.",
+    "real_target_results": {
+      "s-LNv": "Shaw and Shal pass the native-current evidence gate as a tied Top set; no unique winner.",
+      "l-LNv": "na is the unique evidence-score Top; Shaw and Shal also pass the directness gate.",
+      "LNd": "No target-scoped direct Top.",
+      "DN": "No broad-target direct Top."
+    },
+    "Irk1_interpretation": "The checked S2-R+ culture patch-clamp record is not native clock-neuron current; s-LNv ClopHensor measures intracellular chloride; period/genetic and expression/localization records are different readouts. Irk1 is needs_direct_evidence for s-/l-LNv native current.",
+    "transcript_negative_control": "GSE157504 all-NA diagnostic reports insufficient_scored_evidence with empty rankings and no Top.",
+    "independent_blind_forward_test": "Separate evaluator used the current skill and raw candidate/log inputs, without historical reports. It independently reproduced s-LNv Shaw/Shal tie, l-LNv na with Shaw/Shal also passing, no LNd/broad-DN Top, and Irk1 exclusion; it noted DN1p-only na evidence is partial coverage, not broad-DN support.",
+    "manifest": "verified_public_dataset_manifest; 21 files; 6 runs; zero issues.",
+    "isolated_replay": "verified_public_dataset_replay; 6 runs; 11 output hashes reproduced; zero issues.",
+    "full_test_suite": "296 tests passed.",
+    "related_manifest_chains": "GSE157504 context overlay, GSE157504 evidence bridge, and combined transcript context manifests and isolated replays revalidated after scorer changes.",
+    "interpretation": "Curated evidence triage and tool-behavior validation only; not biological proof or candidate-specific causal evidence."
+  },
+  "source_log": [
+    "validation/public-data/candidate-evidence-search-log.csv",
+    "https://pubmed.ncbi.nlm.nih.gov/31612994/",
+    "https://pubmed.ncbi.nlm.nih.gov/35303418/",
+    "https://pubmed.ncbi.nlm.nih.gov/26276633/",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
+    "https://elifesciences.org/articles/63056"
+  ],
+  "limitations": [
+    "Source-log schema and linkage validation do not independently prove that each paper supports its recorded claim; this iteration did not freshly audit every full text.",
+    "Scores and shortlist gates prioritize evidence review; they do not establish ion-channel causality or predict outcomes of native patch clamp.",
+    "The blind forward test was independently executed against the current local evidence files but did not perform a new web/full-text audit.",
+    "Formal electrophysiology design still requires user-specified sex, age, temperature, lighting history/time system, cell-identification method, biological-unit/power basis, reagent identity/specificity, and QC/exclusion criteria.",
+    "The scorer CSV contains the full ranked longlist, which may include gate-failing candidates; only the gate-qualified Top fields in the sensitivity JSON should be described as eligible Top results."
+  ]
+}

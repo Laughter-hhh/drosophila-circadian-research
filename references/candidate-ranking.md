@@ -27,7 +27,9 @@
 
 `readout_match` 还可为 `intracellular_ion_concentration`，用于如 ClopHensor 的细胞内离子浓度测量；它不得被当作膜电位或离子通道电流。`directness_gate=pass` 只允许同时满足：`evidence_label=direct`、直接目标时钟神经元范围、具名 assay，以及与本次明确选择的 readout 相符的证据。`near_direct` 只能得到 `conditional_directness`，用于信息获取或 pilot，不得伪装成直接 Top 候选。`indirect` 与 `unverified` 保留在长名单中，但必须标成需要直接证据。
 
-真实候选排序必须把同一份经验证的 evidence-search log 与 `--readout-match` 一起传给 scorer；同时使用 `--target-cell` 明确细胞亚型。scorer 仅用同一 readout 域中、经核查的 source-log rows 计算目标直接性，不再把某篇论文的培养细胞电流、目标神经元表达和行为/分子钟 readouts 汇成一个 directness claim。若某 readout 没有同亚型的直接/近直接记录，应返回 `needs_direct_evidence` 或相应的 scope gate，即使候选在其他 readout 上有强证据。
+真实候选排序必须把同一份经验证的 evidence-search log 与 `--readout-match` 一起传给 scorer；同时使用 `--target-cell` 明确细胞亚型。CLI 会在评分前联合验证候选表与 source log；不能只验证 log schema，也不能用候选表中的汇总字段代替 source-level 支持。缺少 log 或候选表/log 不一致时停止写出排名。scorer 仅用同一 readout 域中、经核查的 source-log rows 计算目标直接性，不再把某篇论文的培养细胞电流、目标神经元表达和行为/分子钟 readouts 汇成一个 directness claim。若某 readout 没有同亚型的直接/近直接记录，应返回 `needs_direct_evidence` 或相应的 scope gate，即使候选在其他 readout 上有强证据。
+
+命令行不允许对带数值评分或 `membrane_potential_or_current` 声明的候选表省略 `--search-log` 和 `--readout-match`。唯一例外是所有评分维度均为 `NA` 且非 current/membrane-potential 的探索性上下文诊断（如转录组 handoff）；此类运行必须保持空排名/无 Top，不能作为候选排序。
 
 `directness_gate` 是**readout-specific**，不能跨 readout 解释：`expression_or_localization` 下的 `direct` 仅表示目标细胞中的转录本/表达/定位被直接测量，不等于通道电流、膜电位节律或功能因果证据；`membrane_potential_or_current` 也可能是观察性 readout，若要声称候选通道导致变化，必须核实候选特异扰动、相应对照和 readout。评分输出的 `readout_domain` 与 `directness_basis` 会明确列出当前直接性覆盖的 readout 域。`shortlist_gate` 是证据分流而非功能因果证明。
 
@@ -65,7 +67,7 @@ python scripts/validate_candidate_evidence.py candidates.csv `
   --output candidate-evidence-validation.json
 ```
 
-`--search-log` 会先验证 evidence-search log，然后要求每个候选出现在 log 中、候选表的 `sources` 至少与 log 的 `source_id` 或 `source_url_or_identifier` 共享一个标识，并对 `direct`/`near_direct`/`indirect` 标签要求至少一个 `source_support_status=checked` 记录。`direct` 还必须有匹配的 target scope 和 readout。这个门槛证明的是可追溯性和声明的一致性，不替代在线打开原文、数据库记录或核对 reagent 当前状态。
+`--search-log` 会验证 evidence-search log，并联合验证候选表：每个候选必须出现在 log 中；候选表的 `sources` 至少与 log 的 `source_id` 或 `source_url_or_identifier` 共享一个标识；`direct`/`near_direct`/`indirect` 声明必须由同来源、同 readout、同 target scope 且具备 `checked` 状态的记录支持；具名细胞必须被这些匹配记录覆盖。`score_candidates.py` 在 CLI 内重复执行这一 gate，避免调用者跳过单独验证步骤。这个门槛证明的是可追溯性和声明的一致性，不替代在线打开原文、数据库记录或核对 reagent 当前状态。
 
 合成夹具可以继续只做 schema 验证；若要模拟正式证据链，必须同时提供结构化 search log，并在报告中保留检索日期、查询、来源类型和纳入/降级决定。
 

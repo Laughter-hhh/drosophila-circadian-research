@@ -10,7 +10,11 @@ CSV 必须有 `candidate`，其余可使用以下维度（评分 0–3，缺失�
 
 `expression`, `electrophysiology`, `genetic_tools`, `class_match`, `rhythmic_evidence`, `fly_causal`, `cross_species`
 
-运行时必须通过一个或多个 `--target-cell` 显式声明本次目标细胞；输出会独立标示细胞证据是否 exact、partial、broad-parent 或 mismatch。所有评分维度均为 `NA` 时不得生成 Top 排名；并列候选完整报告。
+真实的有分数候选表运行时必须同时提供同一份 checked source log、`--readout-match` 和一个或多个 `--target-cell`。CLI 会联合验证候选表与 log；缺少 log 或 source/readout/scope/cell 声明不一致时 fail closed，不会写出排名。即使 source log 有效，仍需独立核查原文是否支持记录中的 assay 与 claim。
+
+仅当表格所有评分维度均为 `NA` 且 readout 不是 `membrane_potential_or_current` 时，允许不带 source log 运行探索性上下文诊断（例如转录组 handoff）。这种运行必须保持空排名、无 Top，不能解释为候选排序。所有评分维度均为 `NA` 时不得生成 Top；并列候选完整报告。
+
+`--output` 写出的是 CSV（即使文件名误用 `.json` 后缀，内容仍是 CSV）；JSON 敏感性结果应另存到 `--sensitivity-output`。CSV/raw rankings 是用于完整长名单比较的排序，其中可包含未通过 gate 的候选；只有敏感性 JSON 的 gate-qualified `top_candidates` / `top_candidate_ties` 可作为该目标的 Top 结果，且须同时报告 gate 与 readout 范围。
 
 默认权重与 `candidate-ranking.md` 一致：4、4、3、2、2、1、0.5。`NA` 不计为 0，也不进入 raw score 的该候选分母；同时输出加权 coverage。
 

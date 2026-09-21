@@ -174,7 +174,7 @@
     {
       "run_id": "score-gse157504-evidence-readiness-diagnostic",
       "script": "scripts/score_candidates.py",
-      "script_sha256": "0600cf17134199fccfb786aeec7736a8e0d2bfb00f2deb0ccac582f313c3ee34",
+      "script_sha256": "df168ce0573bdd245d99091e2ccedcc2160af89bcd387ba4893b2cb8cd0153b2",
       "command": "python scripts/score_candidates.py validation/public-data/GSE157504_candidate_evidence_handoff.csv --target-cell s-LNv --target-cell l-LNv --target-cell LNd --target-cell DN --output validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv --sensitivity-output validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
       "inputs": [
         "validation/public-data/GSE157504_candidate_evidence_handoff.csv"

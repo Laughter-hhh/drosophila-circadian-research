@@ -56,6 +56,17 @@ class PublicDatasetReplayTests(unittest.TestCase):
         self.assertEqual(argv, ["python", script, "--output-report", "validation/public-data/map.json"])
         self.assertIsNone(issue)
 
+    def test_published_cycle_context_builder_is_allowlisted_with_safe_python_argv(self):
+        script = "scripts/build_published_cycle_candidate_context.py"
+        self.assertIn(script, ALLOWED_SCRIPTS)
+        argv, issue = _safe_argv({
+            "run_id": "published-cycle-context",
+            "script": script,
+            "command_argv": ["python", script, "--output-csv", "validation/public-data/context.csv"],
+        })
+        self.assertEqual(argv, ["python", script, "--output-csv", "validation/public-data/context.csv"])
+        self.assertIsNone(issue)
+
 
 if __name__ == "__main__":
     unittest.main()

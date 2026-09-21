@@ -564,13 +564,31 @@ def main(argv: list[str]) -> int:
             raise ValueError("--target-cell is required when using --search-log")
         with args.input.open(newline="", encoding="utf-8") as handle:
             rows = list(csv.DictReader(handle))
+        needs_source_log = any(
+            any(_rating(row.get(dimension, "NA")) is not None for dimension in DIMENSIONS)
+            or (row.get("readout_match") or "").strip() == "membrane_potential_or_current"
+            for row in rows
+        )
+        if needs_source_log and not args.search_log:
+            raise ValueError(
+                "--search-log and --readout-match are required for scored evidence or membrane_potential_or_current "
+                "candidate tables; candidate-row summaries alone cannot support a real target-specific ranking. "
+                "The no-log diagnostic path is restricted to all-NA, non-current context tables."
+            )
         evidence_log = None
         if args.search_log:
             from scripts.validate_evidence_search_log import validate as validate_search_log
+            from scripts.validate_candidate_evidence import validate as validate_candidate_table
 
             validation = validate_search_log(args.search_log)
             if validation.get("status") != "verified_evidence_search_log":
                 raise ValueError(f"search log failed validation: {validation.get('issues', [])}")
+            candidate_validation = validate_candidate_table(args.input, args.search_log)
+            if candidate_validation.get("status") != "verified_candidate_evidence_table":
+                raise ValueError(
+                    "candidate table and search log failed joint validation: "
+                    f"{candidate_validation.get('issues', [])}"
+                )
             with args.search_log.open(newline="", encoding="utf-8") as handle:
                 evidence_log = list(csv.DictReader(handle))
         ranked = rank_rows(rows, target_cells=args.target_cell, evidence_log=evidence_log, readout_match=args.readout_match)

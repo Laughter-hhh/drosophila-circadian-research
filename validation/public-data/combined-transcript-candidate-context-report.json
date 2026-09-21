@@ -1,0 +1,273 @@
+{
+  "status": "executed_published_cycle_candidate_context_overlay",
+  "n_input_context_rows": 60,
+  "n_output_rows": 60,
+  "row_unit": "candidate x target-group context row; not a biological replicate",
+  "candidate_set_difference": {
+    "gse_context_candidates_not_in_published_cycle_audit": [],
+    "published_cycle_audit_candidates_not_in_gse_context": []
+  },
+  "base_gse_candidate_set_difference": {
+    "literature_candidates_not_in_GSE_candidate_audit": [
+      "na"
+    ],
+    "GSE_candidates_not_in_literature_table": [
+      "eag"
+    ]
+  },
+  "published_cycle_candidate_audit_shape": {
+    "n_candidates": 15,
+    "n_candidate_group_rows": 45,
+    "source_scope_notes": {
+      "LNv_PDF_positive_small_and_large_mixed": "The paper profiles PDF-positive LNvs as a mixed s-LNv/l-LNv group; this table cannot resolve those subtypes.",
+      "LNd_plus_fifth_PDF_negative_s_LNv": "The paper's LNd group includes the fifth PDF-negative s-LNv; this table is not LNd-only.",
+      "DN1_subset": "The paper profiles a subset of DN1 neurons, not all dorsal clock neurons."
+    },
+    "candidate_symbols": [
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "Irk1",
+      "Irk2",
+      "Ork1",
+      "Sh",
+      "Shab",
+      "Shal",
+      "Shaw",
+      "cac",
+      "na",
+      "para",
+      "sei",
+      "slo",
+      "trpl"
+    ]
+  },
+  "target_source_group_crosswalk": {
+    "s-LNv": {
+      "source_group": "LNv_PDF_positive_small_and_large_mixed",
+      "target_scope_relation": "pooled_LNv_does_not_resolve_s_LNv",
+      "scope_note": "The paper profiles PDF-positive LNvs as a mixed s-LNv/l-LNv group; this table cannot resolve those subtypes."
+    },
+    "l-LNv": {
+      "source_group": "LNv_PDF_positive_small_and_large_mixed",
+      "target_scope_relation": "pooled_LNv_does_not_resolve_l_LNv",
+      "scope_note": "The paper profiles PDF-positive LNvs as a mixed s-LNv/l-LNv group; this table cannot resolve those subtypes."
+    },
+    "LNd": {
+      "source_group": "LNd_plus_fifth_PDF_negative_s_LNv",
+      "target_scope_relation": "LNd_group_also_includes_fifth_PDF_negative_s_LNv",
+      "scope_note": "The paper's LNd group includes the fifth PDF-negative s-LNv; this table is not LNd-only."
+    },
+    "DN": {
+      "source_group": "DN1_subset",
+      "target_scope_relation": "DN1_subset_not_all_dorsal_neurons",
+      "scope_note": "The paper profiles a subset of DN1 neurons, not all dorsal clock neurons."
+    }
+  },
+  "record_status_counts": {
+    "listed_as_published_cycler": 9,
+    "not_listed_in_published_cycler_supplement": 51
+  },
+  "author_class_counts": {
+    "HC": 2,
+    "LC": 7,
+    "not_listed": 51
+  },
+  "n_listed_HC_target_rows": 2,
+  "n_listed_LC_target_rows": 7,
+  "n_not_listed_target_rows": 51,
+  "n_not_evaluable_or_conflicting_target_rows": 0,
+  "distinct_published_source_calls": {
+    "candidate_group_pairs": 6,
+    "source_records": 6,
+    "candidate_symbols": [
+      "Sh",
+      "Shab",
+      "cac",
+      "para",
+      "sei"
+    ],
+    "HC_candidate_group_pairs": 1,
+    "LC_candidate_group_pairs": 5,
+    "conflicting_candidate_group_pairs": 0,
+    "note": "A pooled LNv source call is shown on both s-LNv and l-LNv context rows; target-row counts are not independent source calls."
+  },
+  "listed_candidate_target_calls": [
+    {
+      "candidate": "Sh",
+      "target_group": "LNd",
+      "author_class": "LC",
+      "source_group": "LNd_plus_fifth_PDF_negative_s_LNv",
+      "source_rows": [
+        824
+      ]
+    },
+    {
+      "candidate": "Shab",
+      "target_group": "s-LNv",
+      "author_class": "HC",
+      "source_group": "LNv_PDF_positive_small_and_large_mixed",
+      "source_rows": [
+        67
+      ]
+    },
+    {
+      "candidate": "Shab",
+      "target_group": "l-LNv",
+      "author_class": "HC",
+      "source_group": "LNv_PDF_positive_small_and_large_mixed",
+      "source_rows": [
+        67
+      ]
+    },
+    {
+      "candidate": "Shab",
+      "target_group": "DN",
+      "author_class": "LC",
+      "source_group": "DN1_subset",
+      "source_rows": [
+        726
+      ]
+    },
+    {
+      "candidate": "para",
+      "target_group": "s-LNv",
+      "author_class": "LC",
+      "source_group": "LNv_PDF_positive_small_and_large_mixed",
+      "source_rows": [
+        416
+      ]
+    },
+    {
+      "candidate": "para",
+      "target_group": "l-LNv",
+      "author_class": "LC",
+      "source_group": "LNv_PDF_positive_small_and_large_mixed",
+      "source_rows": [
+        416
+      ]
+    },
+    {
+      "candidate": "cac",
+      "target_group": "LNd",
+      "author_class": "LC",
+      "source_group": "LNd_plus_fifth_PDF_negative_s_LNv",
+      "source_rows": [
+        337
+      ]
+    },
+    {
+      "candidate": "sei",
+      "target_group": "s-LNv",
+      "author_class": "LC",
+      "source_group": "LNv_PDF_positive_small_and_large_mixed",
+      "source_rows": [
+        803
+      ]
+    },
+    {
+      "candidate": "sei",
+      "target_group": "l-LNv",
+      "author_class": "LC",
+      "source_group": "LNv_PDF_positive_small_and_large_mixed",
+      "source_rows": [
+        803
+      ]
+    }
+  ],
+  "score_and_gate_invariants": {
+    "preserved_context_columns": [
+      "candidate",
+      "literature_class",
+      "priority_class",
+      "target_group",
+      "raw_feature_status",
+      "transcript_evaluable",
+      "LD_time_system",
+      "LD_n_annotated_cells",
+      "LD_n_cells_detected",
+      "LD_detection_fraction",
+      "LD_sum_raw_counts",
+      "LD_mean_raw_counts_per_cell",
+      "LD_detection_status",
+      "DD_time_system",
+      "DD_n_annotated_cells",
+      "DD_n_cells_detected",
+      "DD_detection_fraction",
+      "DD_sum_raw_counts",
+      "DD_mean_raw_counts_per_cell",
+      "DD_detection_status",
+      "target_author_rhythm_status",
+      "target_author_rhythm_calls",
+      "ambiguous_LN_ITP_rhythm_calls",
+      "DN_subcluster_scope_note",
+      "static_rationale_review_flag",
+      "static_rationale_review_note",
+      "literature_score",
+      "literature_coverage",
+      "ephys_directness_score",
+      "ephys_directness_gate",
+      "shortlist_gate",
+      "scoring_readout_match"
+    ],
+    "score_and_gate_columns": [
+      "literature_score",
+      "literature_coverage",
+      "ephys_directness_score",
+      "ephys_directness_gate",
+      "shortlist_gate",
+      "scoring_readout_match"
+    ],
+    "all_input_context_values_copied_verbatim": true,
+    "scores_recomputed": false,
+    "ephys_gate_recomputed": false
+  },
+  "parent_gse_context": {
+    "manifest_id": "GSE157504-candidate-context-overlay-20260921",
+    "status": "verified_parent_manifest_and_replay",
+    "verified_outputs": {
+      "validation/public-data/GSE157504_candidate_context_overlay.csv": "8377c21818586240a1a01adb8d395bef892bfb1b7a9ff25e32b4feccadc8219d",
+      "validation/public-data/GSE157504_candidate_context_overlay_report.json": "03ac4a0ba8ba1b9131f1c19f407ded3525d5067833c73db4ecad65078e7d821b"
+    }
+  },
+  "parent_published_cycle_audit": {
+    "manifest_id": "abruzzi2017-s3-channel-candidate-cycle-20260921",
+    "status": "verified_parent_manifest_and_replay",
+    "verified_outputs": {
+      "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
+      "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3"
+    },
+    "source_discrepancies": [
+      {
+        "sheet": "LNv_cyclers",
+        "paper_reported_HC_n": 249,
+        "supplement_HC_row_count": 252,
+        "supplement_unique_symbol_HC_count": 252,
+        "note": "The manuscript narrative and unique S3 HC symbol count do not agree; both values are preserved without an inferred reconciliation."
+      }
+    ]
+  },
+  "interpretation_limits": [
+    "PLOS S3 calls are author-reported transcript-cycling classifications; this workflow does not refit rhythm statistics.",
+    "No exact-symbol row in a selected sheet means not listed under the author criteria, not unexpressed or arrhythmic.",
+    "LNv calls are mapped to both s-LNv and l-LNv context rows only as pooled-group context; they do not resolve subtype.",
+    "The paper's LNd group includes the fifth PDF-negative s-LNv, and its DN1 sample is a subset rather than all DN.",
+    "Transcript-level evidence does not establish channel protein, current, membrane-potential rhythm, or causal behavior.",
+    "The GSE scores, shortlist decisions, and electrophysiology gates are copied without recalculation or update.",
+    "The LNv manuscript-versus-S3 HC count discrepancy is carried forward unresolved."
+  ],
+  "input_sha256": {
+    "validation/public-data/Abruzzi2017-candidate-cycle-manifest-validation.json": "2b8c05b9e78f2f3853bdae433314f2e8207dad24fa375a4bf1d5e4b863e8d221",
+    "validation/public-data/Abruzzi2017-candidate-cycle-manifest.json": "55c752b882a9d6595db9fd7fc6f601defa32d1374e4e14dfb966a72912dcba30",
+    "validation/public-data/Abruzzi2017-candidate-cycle-replay.json": "fe1617d98c21d4cdfdebc879433958a9e96417437477561645fd1b4de9687920",
+    "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
+    "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
+    "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json": "db2de950a49623a7aa764682f22e9cc24261287bca23b8c35e342ba6d57f8920",
+    "validation/public-data/GSE157504-candidate-context-overlay-manifest.json": "be15d9301b4ff12ce366448de2ecc18f5aaef75b1bbc77d501b01b305d809965",
+    "validation/public-data/GSE157504-candidate-context-overlay-replay.json": "f10dee868c8253cbcdf7cef57176d35f332953c42ef900bbe886d447ce3a580d",
+    "validation/public-data/GSE157504_candidate_context_overlay.csv": "8377c21818586240a1a01adb8d395bef892bfb1b7a9ff25e32b4feccadc8219d",
+    "validation/public-data/GSE157504_candidate_context_overlay_report.json": "03ac4a0ba8ba1b9131f1c19f407ded3525d5067833c73db4ecad65078e7d821b"
+  },
+  "output_sha256": {
+    "validation/public-data/combined-transcript-candidate-context.csv": "bfe84de07b2169a168017aa231831e72bfdde3229681b2585d2b47bf66e97568"
+  }
+}

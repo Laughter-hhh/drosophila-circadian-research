@@ -1,0 +1,100 @@
+{
+  "manifest_id": "candidate-scoring-source-log-guard-20260921",
+  "dataset_id": "curated-drosophila-candidate-channel-evidence-v1",
+  "accession": "curated candidate table; 15 candidate genes and 19 evidence-log records",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/31612994/",
+  "retrieved_at_utc": "2026-09-21T09:46:33Z",
+  "source_access_status": "identifier_checked",
+  "analysis_context": {
+    "time_system": "No new temporal or circadian inference; time labels remain as recorded in source-level evidence.",
+    "experimental_unit": "Curated candidate-by-source evidence record; not a biological replicate.",
+    "normalization_status": "not_applicable_curated_literature_evidence",
+    "biological_unit_limitations": "This software validation analyzes no new flies, brains, cells, libraries, traces, or images; scores are evidence-triage summaries and not biological measurements."
+  },
+  "files": [
+    {"path": "validation/public-data/candidate-evidence-real.csv", "role": "candidate_list", "sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c"},
+    {"path": "validation/public-data/candidate-evidence-search-log.csv", "role": "metadata", "sha256": "dbc0ce8efb48db48a2e572799064b96fcbf350d84ea1980d7a9006c978054300"},
+    {"path": "validation/public-data/GSE157504_candidate_evidence_handoff.csv", "role": "candidate_list", "sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4"},
+    {"path": "validation/public-data/GSE157504-candidate-evidence-bridge-manifest.json", "role": "metadata", "sha256": "67f7fc732212007626f00d15d51e3580fefa53b34406f81153667d1698b0699b"},
+    {"path": "validation/public-data/GSE157504-candidate-evidence-bridge-manifest-validation.json", "role": "metadata", "sha256": "a36d2b45f71a574201dda89d5eab1db5b92aa90bc95dc0cfa530d122cd8ba3ca"},
+    {"path": "validation/public-data/GSE157504-candidate-evidence-bridge-replay.json", "role": "metadata", "sha256": "a56fa8db7e5a0a0bc83786e40db1541b6bc4004f9c2d4238aa94ef4d81812d81"},
+    {"path": "scripts/score_candidates.py", "role": "config", "sha256": "df168ce0573bdd245d99091e2ccedcc2160af89bcd387ba4893b2cb8cd0153b2"},
+    {"path": "scripts/validate_candidate_evidence.py", "role": "config", "sha256": "1d0e59bbb8f88151603470ab0c61f99c639b8f45904fb467af14ce3b7b8fa234"},
+    {"path": "scripts/validate_evidence_search_log.py", "role": "config", "sha256": "15b2fe8c925ccf997ba953cccfa96ec2e7e1df8d6b539e84d6bffcba605b2714"},
+    {"path": "tests/test_candidate_search_log_gate.py", "role": "config", "sha256": "928f02ba1bceef1c52f9d71606d63911611a1f7890adcb5901650b46a85ccc81"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-validation.json", "role": "derived", "sha256": "1a0237aced6212d9b9603d4035e1e44ae638dfd79f492b8abca53465f7eece6e"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-score-slnv.csv", "role": "derived", "sha256": "faf74a37dec12154429ea5be80700f5f0424e476d972f50a6115dbb1e7785682"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-sensitivity-slnv.json", "role": "derived", "sha256": "18b95f0cd9c0968e9e5bf5a9e5b33f3972eaa85bd145dd2d7411b5853bac0d01"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-score-llnv.csv", "role": "derived", "sha256": "f936f6456a5d04b0ec1c9332b1b9987590f49bbec66d6f45d6ea876c5df29553"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-sensitivity-llnv.json", "role": "derived", "sha256": "ef76483bf4c34e37069fb8445b0173afe25ad926be4adf24a3915daf8a7bbf27"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-score-lnd.csv", "role": "derived", "sha256": "3b0fd0d8ddabc35c03fd3845fc50190fdf11d8dae83e22367b8d36a7eb3d5afd"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-sensitivity-lnd.json", "role": "derived", "sha256": "1ac6544cf585340a0ecb645e9ea3b0026f21dccc8c4881fb215a87ded468b9ff"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-score-dn.csv", "role": "derived", "sha256": "045b1971c773d07e99a4f839f8dfefe94aff695dedffcee7b482e2b8140657a9"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-sensitivity-dn.json", "role": "derived", "sha256": "e78d69f14771fedb39adb2acbb3d9230f2d12dd76ca99eb4534ec5cc19087039"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-GSE157504-diagnostic.csv", "role": "derived", "sha256": "830a4336e5374823e9384c855ca92e6dd1a6b3c0e0bfe78357a315697e8369cb"},
+    {"path": "validation/public-data/candidate-scoring-source-log-guard-GSE157504-sensitivity.json", "role": "derived", "sha256": "527e770f46557403ddeeb17655f3eb22e6719b2b2a86fd64126e18fbd6c738d3"}
+  ],
+  "runs": [
+    {
+      "run_id": "validate-candidate-table-and-search-log",
+      "script": "scripts/validate_candidate_evidence.py",
+      "script_sha256": "1d0e59bbb8f88151603470ab0c61f99c639b8f45904fb467af14ce3b7b8fa234",
+      "command": "python scripts/validate_candidate_evidence.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --output validation/public-data/candidate-scoring-source-log-guard-validation.json",
+      "command_argv": ["python", "scripts/validate_candidate_evidence.py", "validation/public-data/candidate-evidence-real.csv", "--search-log", "validation/public-data/candidate-evidence-search-log.csv", "--output", "validation/public-data/candidate-scoring-source-log-guard-validation.json"],
+      "inputs": ["validation/public-data/candidate-evidence-real.csv", "validation/public-data/candidate-evidence-search-log.csv"],
+      "outputs": ["validation/public-data/candidate-scoring-source-log-guard-validation.json"],
+      "status": "executed"
+    },
+    {
+      "run_id": "score-native-current-slnv",
+      "script": "scripts/score_candidates.py",
+      "script_sha256": "df168ce0573bdd245d99091e2ccedcc2160af89bcd387ba4893b2cb8cd0153b2",
+      "command": "python scripts/score_candidates.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell s-LNv --output validation/public-data/candidate-scoring-source-log-guard-score-slnv.csv --sensitivity-output validation/public-data/candidate-scoring-source-log-guard-sensitivity-slnv.json",
+      "command_argv": ["python", "scripts/score_candidates.py", "validation/public-data/candidate-evidence-real.csv", "--search-log", "validation/public-data/candidate-evidence-search-log.csv", "--readout-match", "membrane_potential_or_current", "--target-cell", "s-LNv", "--output", "validation/public-data/candidate-scoring-source-log-guard-score-slnv.csv", "--sensitivity-output", "validation/public-data/candidate-scoring-source-log-guard-sensitivity-slnv.json"],
+      "inputs": ["validation/public-data/candidate-evidence-real.csv", "validation/public-data/candidate-evidence-search-log.csv"],
+      "outputs": ["validation/public-data/candidate-scoring-source-log-guard-score-slnv.csv", "validation/public-data/candidate-scoring-source-log-guard-sensitivity-slnv.json"],
+      "status": "executed"
+    },
+    {
+      "run_id": "score-native-current-llnv",
+      "script": "scripts/score_candidates.py",
+      "script_sha256": "df168ce0573bdd245d99091e2ccedcc2160af89bcd387ba4893b2cb8cd0153b2",
+      "command": "python scripts/score_candidates.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell l-LNv --output validation/public-data/candidate-scoring-source-log-guard-score-llnv.csv --sensitivity-output validation/public-data/candidate-scoring-source-log-guard-sensitivity-llnv.json",
+      "command_argv": ["python", "scripts/score_candidates.py", "validation/public-data/candidate-evidence-real.csv", "--search-log", "validation/public-data/candidate-evidence-search-log.csv", "--readout-match", "membrane_potential_or_current", "--target-cell", "l-LNv", "--output", "validation/public-data/candidate-scoring-source-log-guard-score-llnv.csv", "--sensitivity-output", "validation/public-data/candidate-scoring-source-log-guard-sensitivity-llnv.json"],
+      "inputs": ["validation/public-data/candidate-evidence-real.csv", "validation/public-data/candidate-evidence-search-log.csv"],
+      "outputs": ["validation/public-data/candidate-scoring-source-log-guard-score-llnv.csv", "validation/public-data/candidate-scoring-source-log-guard-sensitivity-llnv.json"],
+      "status": "executed"
+    },
+    {
+      "run_id": "score-native-current-lnd",
+      "script": "scripts/score_candidates.py",
+      "script_sha256": "df168ce0573bdd245d99091e2ccedcc2160af89bcd387ba4893b2cb8cd0153b2",
+      "command": "python scripts/score_candidates.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell LNd --output validation/public-data/candidate-scoring-source-log-guard-score-lnd.csv --sensitivity-output validation/public-data/candidate-scoring-source-log-guard-sensitivity-lnd.json",
+      "command_argv": ["python", "scripts/score_candidates.py", "validation/public-data/candidate-evidence-real.csv", "--search-log", "validation/public-data/candidate-evidence-search-log.csv", "--readout-match", "membrane_potential_or_current", "--target-cell", "LNd", "--output", "validation/public-data/candidate-scoring-source-log-guard-score-lnd.csv", "--sensitivity-output", "validation/public-data/candidate-scoring-source-log-guard-sensitivity-lnd.json"],
+      "inputs": ["validation/public-data/candidate-evidence-real.csv", "validation/public-data/candidate-evidence-search-log.csv"],
+      "outputs": ["validation/public-data/candidate-scoring-source-log-guard-score-lnd.csv", "validation/public-data/candidate-scoring-source-log-guard-sensitivity-lnd.json"],
+      "status": "executed"
+    },
+    {
+      "run_id": "score-native-current-dn",
+      "script": "scripts/score_candidates.py",
+      "script_sha256": "df168ce0573bdd245d99091e2ccedcc2160af89bcd387ba4893b2cb8cd0153b2",
+      "command": "python scripts/score_candidates.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell DN --output validation/public-data/candidate-scoring-source-log-guard-score-dn.csv --sensitivity-output validation/public-data/candidate-scoring-source-log-guard-sensitivity-dn.json",
+      "command_argv": ["python", "scripts/score_candidates.py", "validation/public-data/candidate-evidence-real.csv", "--search-log", "validation/public-data/candidate-evidence-search-log.csv", "--readout-match", "membrane_potential_or_current", "--target-cell", "DN", "--output", "validation/public-data/candidate-scoring-source-log-guard-score-dn.csv", "--sensitivity-output", "validation/public-data/candidate-scoring-source-log-guard-sensitivity-dn.json"],
+      "inputs": ["validation/public-data/candidate-evidence-real.csv", "validation/public-data/candidate-evidence-search-log.csv"],
+      "outputs": ["validation/public-data/candidate-scoring-source-log-guard-score-dn.csv", "validation/public-data/candidate-scoring-source-log-guard-sensitivity-dn.json"],
+      "status": "executed"
+    },
+    {
+      "run_id": "diagnose-transcript-only-gse157504-all-na",
+      "script": "scripts/score_candidates.py",
+      "script_sha256": "df168ce0573bdd245d99091e2ccedcc2160af89bcd387ba4893b2cb8cd0153b2",
+      "command": "python scripts/score_candidates.py validation/public-data/GSE157504_candidate_evidence_handoff.csv --target-cell s-LNv --target-cell l-LNv --target-cell LNd --target-cell DN --output validation/public-data/candidate-scoring-source-log-guard-GSE157504-diagnostic.csv --sensitivity-output validation/public-data/candidate-scoring-source-log-guard-GSE157504-sensitivity.json",
+      "command_argv": ["python", "scripts/score_candidates.py", "validation/public-data/GSE157504_candidate_evidence_handoff.csv", "--target-cell", "s-LNv", "--target-cell", "l-LNv", "--target-cell", "LNd", "--target-cell", "DN", "--output", "validation/public-data/candidate-scoring-source-log-guard-GSE157504-diagnostic.csv", "--sensitivity-output", "validation/public-data/candidate-scoring-source-log-guard-GSE157504-sensitivity.json"],
+      "inputs": ["validation/public-data/GSE157504_candidate_evidence_handoff.csv"],
+      "outputs": ["validation/public-data/candidate-scoring-source-log-guard-GSE157504-diagnostic.csv", "validation/public-data/candidate-scoring-source-log-guard-GSE157504-sensitivity.json"],
+      "status": "executed"
+    }
+  ]
+}

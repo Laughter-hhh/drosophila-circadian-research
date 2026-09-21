@@ -43,6 +43,7 @@ ALLOWED_SCRIPTS = {
     "scripts/validate_candidate_evidence.py",
     "scripts/score_candidates.py",
     "scripts/build_candidate_evidence_context.py",
+    "scripts/build_published_cycle_candidate_context.py",
 }
 
 

@@ -42,7 +42,7 @@
     {
       "path": "scripts/score_candidates.py",
       "role": "config",
-      "sha256": "0600cf17134199fccfb786aeec7736a8e0d2bfb00f2deb0ccac582f313c3ee34"
+      "sha256": "df168ce0573bdd245d99091e2ccedcc2160af89bcd387ba4893b2cb8cd0153b2"
     },
     {
       "path": "scripts/validate_candidate_evidence.py",

@@ -1,0 +1,91 @@
+{
+  "task_id": "combined-gse157504-abruzzi2017-transcript-context-20260921",
+  "status": "verified",
+  "research_question": "How do the verified GSE157504 transcript context and Abruzzi et al. (2017) S3 author-reported cycler calls align with the current candidate channels across s-LNv, l-LNv, LNd and DN, without changing candidate scores or electrophysiology gates?",
+  "hypothesis": "A source-scoped sidecar can make published transcript-cycling context visible alongside the existing GSE detection/rhythm and literature/electrophysiology evidence while retaining pooled-cell scope and score invariants.",
+  "alternative_hypotheses": [
+    "The PLOS S3 candidate set may differ from the existing GSE context candidate set; non-overlapping candidates must remain explicit rather than being silently added or dropped.",
+    "PLOS LNv, LNd and DN1 groups may not resolve the requested subtype-level targets and therefore cannot be assigned as direct subtype-specific transcript evidence.",
+    "Some candidates may not be listed under the authors' HC/LC criteria; list omission is not evidence of absent expression or biological arrhythmicity.",
+    "Published transcript-cycling calls may not predict channel protein abundance, native channel current, membrane-potential rhythm, or causal behavioral function."
+  ],
+  "species": "Drosophila melanogaster",
+  "preparation": "Read-only join of an already verified GSE157504 transcript-context sidecar and an already verified Abruzzi et al. (2017) S3 published cycler audit; no new assay, normalization or rhythm fit.",
+  "cell_type": "s-LNv, l-LNv, LNd and DN targets cross-referenced to pooled PDF-positive LNv, LNd plus fifth PDF-negative s-LNv, and a DN1 subset.",
+  "experimental_unit": "Candidate-by-target context row; not a biological replicate. Source GSE cells remain nested within source samples, and published S3 records derive from pooled neuron libraries.",
+  "primary_readout": "Source-scoped author-reported HC/LC/not-listed status and exact S3 row references appended to each existing candidate-by-target context row.",
+  "secondary_readouts": [
+    "Candidate-set differences between the GSE context and published-cycle audit.",
+    "Verbatim preservation of all existing GSE context columns, including literature scores and electrophysiology/shortlist gates.",
+    "Current validation and isolated replay of both source chains and the combined sidecar."
+  ],
+  "time_system": "GSE157504 labels remain LD/ZT or DD/CT; Abruzzi et al. S3 calls are from LD time courses with author-reported ZT. No conversion or new rhythm analysis is performed.",
+  "input_files": [
+    "validation/public-data/GSE157504_candidate_context_overlay.csv",
+    "validation/public-data/GSE157504_candidate_context_overlay_report.json",
+    "validation/public-data/GSE157504-candidate-context-overlay-manifest.json",
+    "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json",
+    "validation/public-data/GSE157504-candidate-context-overlay-replay.json",
+    "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv",
+    "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
+    "validation/public-data/Abruzzi2017-candidate-cycle-manifest.json",
+    "validation/public-data/Abruzzi2017-candidate-cycle-manifest-validation.json",
+    "validation/public-data/Abruzzi2017-candidate-cycle-replay.json",
+    "scripts/build_published_cycle_candidate_context.py",
+    "scripts/validate_public_dataset_manifest.py",
+    "scripts/replay_public_dataset_manifest.py",
+    "tests/test_published_cycle_candidate_context.py",
+    "tests/test_public_dataset_replay.py"
+  ],
+  "required_metadata": [
+    "Candidate symbol and target group from the base context table.",
+    "Current parent-manifest validation and isolated-replay status, manifest IDs and SHA-256 values for both source chains.",
+    "Exact candidate symbol, source worksheet group, HC/LC flags and source row numbers from the S3 audit.",
+    "Source group scope mapping and the distinction between not listed, absent from the audit candidate set, and unmapped target group.",
+    "Base literature score, score coverage, ephys-directness score/gate, shortlist gate and readout, preserved verbatim."
+  ],
+  "analysis_plan": "Revalidate both parent public-data manifests against current files and require their stored isolated replays to verify the exact required output hashes. Cross-check the PLOS audit CSV against its candidate_summary and HC/LC flag classes. Apply only the explicit source-group crosswalk: pooled LNv to both s-LNv/l-LNv context rows without subtype resolution; LNd-plus-fifth-PDF-negative-s-LNv to LNd with the mixed scope note; DN1 subset to DN with the subset limit. Append source-call status and row provenance without recomputing or modifying any base context field. Validate the new composite manifest and replay it in an isolated mirror.",
+  "decision_gate": "Verify only if the parent chains currently pass, the PLOS table and report agree row-for-row, each input candidate/target key remains unique, all original context columns are byte-value equivalent in the output, the expected scope limits and missing/not-listed distinctions remain explicit, synthetic invalid cases fail closed, and manifest validation plus isolated replay reproduce both outputs.",
+  "expected_outputs": [
+    "validation/public-data/combined-transcript-candidate-context.csv",
+    "validation/public-data/combined-transcript-candidate-context-report.json",
+    "validation/public-data/combined-transcript-candidate-context-manifest.json",
+    "validation/public-data/combined-transcript-candidate-context-manifest-validation.json",
+    "validation/public-data/combined-transcript-candidate-context-replay.json",
+    "validation/iteration-20260921-combined-transcript-candidate-context.md"
+  ],
+  "acceptance_tests": [
+    "Synthetic crosswalk tests map mixed LNv calls to both LNv target rows while explicitly leaving subtype unresolved, preserve LNd and DN1 scope limits, and distinguish HC, LC, not-listed, absent-from-audit, and unmapped statuses.",
+    "Synthetic conflicting duplicate source rows are not silently collapsed into a single HC or LC call.",
+    "An unverified parent manifest/replay, mismatched audit CSV/report, duplicate context key, or output/input collision is rejected.",
+    "Real output retains one row per existing candidate-by-target row and copies every base context field, score, and gate unchanged.",
+    "The real PLOS LNv 249-versus-252 manuscript/S3 discrepancy is carried forward, not reconciled by the join.",
+    "The composite manifest validates, and isolated replay reproduces the context CSV and report hashes.",
+    "The complete unittest suite passes."
+  ],
+  "verification": {
+    "status": "verified",
+    "focused_tests": "6 published-cycle context tests and 5 replay-gate tests passed, including synthetic crosswalk/missingness/conflict cases, parent replay blocking, collision safety, duplicate-context-key rejection and a real-data replay.",
+    "real_data_join": "15 candidates x 4 target groups produced 60 rows. Six distinct candidate-by-source-group PLOS calls (six source rows across five candidates) expanded to nine target-row annotations because the pooled LNv calls appear on both s-LNv and l-LNv rows; 2 mapped HC target rows, 7 LC target rows and 51 not-listed target rows.",
+    "score_invariants": "All 32 base context fields, including every literature score, coverage, ephys-directness field, shortlist gate and readout, were copied verbatim; no score or ephys gate was recomputed.",
+    "candidate_set_difference": "The GSE context and PLOS audit each cover the same 15 literature candidates. The base GSE context's existing literature-only na and GSE-only eag difference remains unchanged.",
+    "source_scope_and_discrepancy": "PLOS LNv remains pooled s-/l-LNv, LNd includes the fifth PDF-negative s-LNv, and DN1 is a subset. The manuscript LNv HC total 249 versus S3 252 discrepancy remains unresolved.",
+    "parent_chains": "Both source manifests were revalidated against current hashes; each parent's stored isolated replay verified the exact CSV and report outputs.",
+    "manifest": "verified_public_dataset_manifest; 33 files; 1 run; zero issues.",
+    "isolated_replay": "verified_public_dataset_replay; 1 run; both context CSV and JSON report hashes reproduced; zero issues.",
+    "full_test_suite": "291 tests passed.",
+    "scientific_status": "Verified as a source-scoped, deterministic descriptive transcript-context join only; it is not evidence of channel protein/current rhythm or causal behavioral function."
+  },
+  "source_log": [
+    "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006613",
+    "https://doi.org/10.1371/journal.pgen.1006613.s003",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504"
+  ],
+  "limitations": [
+    "The PLOS publication profiles mixed LNv, mixed LNd-plus-fifth-PDF-negative-s-LNv, and a DN1 subset; these data do not distinguish requested target subtypes or cover all DN.",
+    "The source lists are transcript-level author classifications. No new expression normalization, rhythm fit, current measurement, protein assay or behavior experiment is conducted.",
+    "No exact symbol entry under the author criteria means not listed in the selected supplement, not absent or arrhythmic.",
+    "The PLOS manuscript-versus-S3 LNv HC-count discrepancy remains unresolved and is carried forward unchanged.",
+    "The composite join is descriptive context only and cannot change the candidate ranking or establish channel-mediated membrane-potential rhythms."
+  ]
+}
