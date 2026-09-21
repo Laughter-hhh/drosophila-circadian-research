@@ -1,0 +1,156 @@
+{
+  "manifest_id": "GSE77451-esat-candidate-inference-20260922",
+  "manifest_stage": "verified",
+  "dataset_id": "GSE77451",
+  "accession": "GSE77451",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451",
+  "retrieved_at_utc": "2026-09-21T07:11:30Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-21T07:20:37Z",
+  "source_check_method": "automated_http",
+  "source_observed_tokens": [
+    "GSE77451 processed ESAT matrices and sample metadata reused from the previously audited local provenance record",
+    "Curator-mapped LNv data contain two six-point ZT time courses; course labels do not identify individual-fly replicates",
+    "Published samples are pooled neuron libraries; these outputs are exploratory and cannot establish animal-level effects"
+  ],
+  "source_observation_note": "This inference manifest reuses the online source checks and audited sample mapping recorded in GSE77451-esat-candidate-expression-provenance-manifest.json. It does not redownload or renormalize source data.",
+  "analysis_context": {
+    "time_system": "ZT, from audited GEO metadata; timecourse_id is retained as a separate inference stratum.",
+    "experimental_unit": "pooled_neuron_library; sample_id/GSM denotes a library record, not an identified individual fly.",
+    "normalization_status": "No additional normalization; three transcript-to-gene aggregation scenarios (sum, median, max) are analyzed separately. Source expression scale remains unresolved.",
+    "biological_unit_limitations": "LNv/LNd/DN1 labels do not resolve s-LNv/l-LNv or DN subtypes. Courses are curator-defined collection sequences, not biological replicate identifiers. Pooled libraries cannot support fly-level sample size or animal-level inference; results are exploratory and non-causal."
+  },
+  "files": [
+    {
+      "path": "validation/public-data/GSE77451_sample_metadata.csv",
+      "role": "metadata",
+      "sha256": "9b0546a5f8a09c5a8235d89edbc0d3d59a303cf6137acac229b912b754d4ec1a"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+      "role": "derived",
+      "sha256": "a3f1391b4e62a58d20402c9e315a5944bd850a5e1b4b19120315a9e84f9c853b"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-inference-sum-20260922.json",
+      "role": "derived",
+      "sha256": "c3f9d20478aa89585bd132578307b271c6f1c310b83fa94f62363e207985d87f"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+      "role": "derived",
+      "sha256": "dd46a035ca5d63d67acbc2b2592a7e7e6fe72d9e1552bcb469bd6ae7176ebd61"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-inference-median-20260922.json",
+      "role": "derived",
+      "sha256": "50ea8ee86382368c4220696b6a5ffb60abc9496524f691743e22a4b41b34e5bc"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+      "role": "derived",
+      "sha256": "bfa5f9438a39e09590934f90f61894b98f8076cc3b466d8ed44305295e200858"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-inference-max-20260922.json",
+      "role": "derived",
+      "sha256": "1763b77e83556b99c27c1d24d90b1489b9435d88bfcaf6bc17d32e4bc3de27a8"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "gse77451-course-aware-cosinor-sum",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "script_sha256": "e01e3be42879ba48a8d2d9b564753280aad1f99d3852c2369fc0e796c7763033",
+      "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv --metadata validation/public-data/GSE77451_sample_metadata.csv --time-system ZT --n-permutations 100 --n-bootstrap 100 --seed 20260922 --output validation/public-data/GSE77451-esat-candidate-inference-sum-20260922.json",
+      "command_argv": [
+        "python",
+        "scripts/analyze_cosinor_inference.py",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+        "--metadata",
+        "validation/public-data/GSE77451_sample_metadata.csv",
+        "--time-system",
+        "ZT",
+        "--n-permutations",
+        "100",
+        "--n-bootstrap",
+        "100",
+        "--seed",
+        "20260922",
+        "--output",
+        "validation/public-data/GSE77451-esat-candidate-inference-sum-20260922.json"
+      ],
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+        "validation/public-data/GSE77451_sample_metadata.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-inference-sum-20260922.json"
+      ],
+      "status": "verified"
+    },
+    {
+      "run_id": "gse77451-course-aware-cosinor-median",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "script_sha256": "e01e3be42879ba48a8d2d9b564753280aad1f99d3852c2369fc0e796c7763033",
+      "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv --metadata validation/public-data/GSE77451_sample_metadata.csv --time-system ZT --n-permutations 100 --n-bootstrap 100 --seed 20260922 --output validation/public-data/GSE77451-esat-candidate-inference-median-20260922.json",
+      "command_argv": [
+        "python",
+        "scripts/analyze_cosinor_inference.py",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+        "--metadata",
+        "validation/public-data/GSE77451_sample_metadata.csv",
+        "--time-system",
+        "ZT",
+        "--n-permutations",
+        "100",
+        "--n-bootstrap",
+        "100",
+        "--seed",
+        "20260922",
+        "--output",
+        "validation/public-data/GSE77451-esat-candidate-inference-median-20260922.json"
+      ],
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+        "validation/public-data/GSE77451_sample_metadata.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-inference-median-20260922.json"
+      ],
+      "status": "verified"
+    },
+    {
+      "run_id": "gse77451-course-aware-cosinor-max",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "script_sha256": "e01e3be42879ba48a8d2d9b564753280aad1f99d3852c2369fc0e796c7763033",
+      "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv --metadata validation/public-data/GSE77451_sample_metadata.csv --time-system ZT --n-permutations 100 --n-bootstrap 100 --seed 20260922 --output validation/public-data/GSE77451-esat-candidate-inference-max-20260922.json",
+      "command_argv": [
+        "python",
+        "scripts/analyze_cosinor_inference.py",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+        "--metadata",
+        "validation/public-data/GSE77451_sample_metadata.csv",
+        "--time-system",
+        "ZT",
+        "--n-permutations",
+        "100",
+        "--n-bootstrap",
+        "100",
+        "--seed",
+        "20260922",
+        "--output",
+        "validation/public-data/GSE77451-esat-candidate-inference-max-20260922.json"
+      ],
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+        "validation/public-data/GSE77451_sample_metadata.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-inference-max-20260922.json"
+      ],
+      "status": "verified"
+    }
+  ]
+}

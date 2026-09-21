@@ -22,7 +22,7 @@ class CosinorInferenceTests(unittest.TestCase):
 
     def _write_expression(self, rows):
         handle = tempfile.NamedTemporaryFile("w", newline="", suffix=".csv", delete=False, encoding="utf-8")
-        writer = csv.DictWriter(handle, fieldnames=["sample_id", "time", "expression", "gene_symbol", "cell_type", "background", "developmental_stage", "sex", "gender"])
+        writer = csv.DictWriter(handle, fieldnames=["sample_id", "time", "expression", "gene_symbol", "cell_type", "background", "developmental_stage", "sex", "gender", "timecourse_id"])
         writer.writeheader()
         writer.writerows(rows)
         handle.close()
@@ -30,7 +30,7 @@ class CosinorInferenceTests(unittest.TestCase):
 
     def _write_metadata(self, rows):
         handle = tempfile.NamedTemporaryFile("w", newline="", suffix=".csv", delete=False, encoding="utf-8")
-        fields = ["sample_id", "ZT_or_CT", "experimental_unit", "biological_replicate_id", "batch_id", "temperature_C", "developmental_stage", "sex", "gender"]
+        fields = ["sample_id", "ZT_or_CT", "experimental_unit", "biological_replicate_id", "batch_id", "temperature_C", "developmental_stage", "sex", "gender", "timecourse_id"]
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
         writer.writerows(rows)
@@ -155,6 +155,7 @@ class CosinorInferenceTests(unittest.TestCase):
         self.assertTrue(result["metadata_joined"])
         self.assertEqual(group["experimental_unit"], "fly")
         self.assertEqual(group["n_biological_replicates"], 4)
+        self.assertEqual(group["n_sample_units"], 4)
         self.assertEqual(group["status"], "exploratory_inferential_cosinor")
         self.assertEqual(len(result["metadata_file_metadata"]["sha256"]), 64)
 
@@ -210,10 +211,138 @@ class CosinorInferenceTests(unittest.TestCase):
         self.assertEqual(sh_large["status"], "exploratory_inferential_cosinor")
         self.assertEqual(sh_large["experimental_unit"], "pooled_cell_sample")
         self.assertIn("not an animal-level effect estimate", sh_large["inference_warning"])
+        self.assertIsNone(sh_large["n_biological_replicates"])
+        self.assertGreater(sh_large["n_sample_units"], 0)
 
         sh_small = next(group for group in result["groups"] if group["gene_symbol"] == "Sh" and group["cell_type"] == "small PDF circadian neurons" and group["background"] == "yw")
         self.assertEqual(sh_small["n_unique_time_points"], 2)
         self.assertEqual(sh_small["status"], "insufficient_or_invalid_time_series")
+
+    def test_timecourse_strata_are_separate_and_pooled_units_are_not_animal_n(self):
+        data_rows = []
+        metadata_rows = []
+        for course, offset in (("course_A", 0.0), ("course_B", 10.0)):
+            for index, time in enumerate((0, 4, 8, 12, 16, 20)):
+                sample_id = f"{course}_{index}"
+                data_rows.append({
+                    "sample_id": sample_id,
+                    "time": f"ZT{time}",
+                    "expression": offset + 5.0 + 3.0 * math.cos(2.0 * math.pi * time / 24.0),
+                    "gene_symbol": "Sh",
+                    "cell_type": "LNv",
+                    "background": "unknown",
+                    "timecourse_id": course,
+                })
+                metadata_rows.append({
+                    "sample_id": sample_id,
+                    "ZT_or_CT": f"ZT{time}",
+                    "experimental_unit": "pooled_neuron_library",
+                    "biological_replicate_id": "pooled_material_not_animal",
+                    "batch_id": course,
+                    "temperature_C": "",
+                    "timecourse_id": course,
+                })
+        data_path = self._write_expression(data_rows)
+        metadata_path = self._write_metadata(metadata_rows)
+        try:
+            result = analyze_file(
+                data_path, n_permutations=20, n_bootstrap=20, seed=19,
+                metadata_path=metadata_path, time_system="ZT",
+            )
+        finally:
+            data_path.unlink(missing_ok=True)
+            metadata_path.unlink(missing_ok=True)
+
+        self.assertEqual(result["n_groups"], 2)
+        self.assertEqual({row["timecourse_id"] for row in result["groups"]}, {"course_A", "course_B"})
+        self.assertTrue(all(row["n_observations"] == 6 for row in result["groups"]))
+        self.assertTrue(all(row["n_sample_units"] == 6 for row in result["groups"]))
+        self.assertTrue(all(row["n_biological_replicates"] is None for row in result["groups"]))
+        self.assertTrue(all("not an individual-fly effect estimate" in row["inference_warning"] for row in result["groups"]))
+
+    def test_expression_timecourse_must_match_joined_metadata(self):
+        data_path = self._write_expression([{
+            "sample_id": "sample0", "time": "ZT0", "expression": "1",
+            "gene_symbol": "Sh", "cell_type": "LNv", "background": "yw",
+            "timecourse_id": "course_data",
+        }])
+        metadata_path = self._write_metadata([{
+            "sample_id": "sample0", "ZT_or_CT": "ZT0", "experimental_unit": "fly",
+            "biological_replicate_id": "sample0", "batch_id": "batch1",
+            "temperature_C": "25", "timecourse_id": "course_metadata",
+        }])
+        try:
+            with self.assertRaisesRegex(ValueError, "timecourse_id mismatch"):
+                analyze_file(data_path, metadata_path=metadata_path, time_system="ZT")
+        finally:
+            data_path.unlink(missing_ok=True)
+            metadata_path.unlink(missing_ok=True)
+
+    def test_partial_timecourse_mapping_is_blocked(self):
+        data_rows = [
+            {
+                "sample_id": "sample0", "time": "ZT0", "expression": "1",
+                "gene_symbol": "Sh", "cell_type": "LNv", "background": "yw",
+                "timecourse_id": "course_A",
+            },
+            {
+                "sample_id": "sample6", "time": "ZT6", "expression": "2",
+                "gene_symbol": "Sh", "cell_type": "LNv", "background": "yw",
+                "timecourse_id": "",
+            },
+        ]
+        data_path = self._write_expression(data_rows)
+        try:
+            with self.assertRaisesRegex(ValueError, "timecourse_id is present for some samples"):
+                analyze_file(data_path, n_permutations=20, n_bootstrap=20, experimental_unit="fly", time_system="ZT")
+        finally:
+            data_path.unlink(missing_ok=True)
+
+    def test_all_missing_candidate_rows_are_reported_not_silently_dropped(self):
+        data_rows = [{
+            "sample_id": f"sample{time}", "time": f"ZT{time}", "expression": "",
+            "gene_symbol": "Ork1", "cell_type": "LNv", "background": "unknown",
+            "timecourse_id": "course_A",
+        } for time in (0, 4, 8, 12, 16, 20)]
+        metadata_rows = [{
+            "sample_id": f"sample{time}", "ZT_or_CT": f"ZT{time}",
+            "experimental_unit": "pooled_neuron_library", "biological_replicate_id": f"sample{time}",
+            "batch_id": "course_A", "timecourse_id": "course_A",
+        } for time in (0, 4, 8, 12, 16, 20)]
+        data_path = self._write_expression(data_rows)
+        metadata_path = self._write_metadata(metadata_rows)
+        try:
+            result = analyze_file(
+                data_path, n_permutations=20, n_bootstrap=20, seed=7,
+                metadata_path=metadata_path, time_system="ZT",
+            )
+        finally:
+            data_path.unlink(missing_ok=True)
+            metadata_path.unlink(missing_ok=True)
+
+        group = result["groups"][0]
+        self.assertEqual(group["status"], "no_numeric_expression")
+        self.assertEqual(group["n_observations"], 0)
+        self.assertEqual(group["n_missing_expression_rows"], 6)
+        self.assertNotIn("p_amplitude_permutation", group)
+
+    def test_gse77451_inference_preserves_courses_and_nonrepresented_candidate(self):
+        data_path = ROOT / "validation" / "public-data" / "GSE77451-esat-candidate-expression-20260922-sum.csv"
+        metadata_path = ROOT / "validation" / "public-data" / "GSE77451_sample_metadata.csv"
+        result = analyze_file(
+            data_path, n_permutations=20, n_bootstrap=20, seed=20260922,
+            metadata_path=metadata_path, time_system="ZT",
+        )
+
+        self.assertEqual(result["n_groups"], 90)
+        shaw_lnv = [row for row in result["groups"] if row["gene_symbol"] == "Shaw" and row["cell_type"] == "LNv"]
+        self.assertEqual(len(shaw_lnv), 2)
+        self.assertEqual({row["timecourse_id"] for row in shaw_lnv}, {"LNv_course_1", "LNv_course_2"})
+        self.assertTrue(all(row["n_observations"] == 6 for row in shaw_lnv))
+        ork1_lnv = [row for row in result["groups"] if row["gene_symbol"] == "Ork1" and row["cell_type"] == "LNv"]
+        self.assertEqual(len(ork1_lnv), 2)
+        self.assertTrue(all(row["status"] == "no_numeric_expression" for row in ork1_lnv))
+        self.assertTrue(all(row["n_missing_expression_rows"] == 6 for row in ork1_lnv))
 
 
     def test_expression_context_strata_are_not_collapsed(self):

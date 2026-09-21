@@ -12,7 +12,9 @@
 
 ## GEO expression grouping
 
-表达输入按 gene_symbol × cell_type × background × developmental_stage × sex 分组；缺失 stage/sex 以 unknown 独立分组，避免与已知标签合并。metadata 可补充表达表中缺失的 stage/sex；若两者都提供，标签必须匹配（比较时忽略大小写并将下划线视为空格），否则阻断。输出仍保留样本表的原始标签。
+表达输入按 gene_symbol × cell_type × background × developmental_stage × sex × timecourse_id 分组；缺失 stage/sex 以 unknown 独立分组，避免与已知标签合并。若 timecourse_id 在任一样本中已知，则所有样本都必须有已解析的 timecourse_id，否则阻断，避免把无法归属的采样序列混入已知 course。metadata 可补充表达表中缺失的 stage/sex/timecourse_id；若两者都提供，标签必须匹配（比较时忽略大小写并将下划线视为空格），否则阻断。输出仍保留样本表的原始标签。不同 timecourse 分开推断，不将重复采样序列当作额外的独立生物学重复。
+
+空白表达行不会被静默丢弃：若某候选在一个分层组的全部样本中均无数值，输出 `no_numeric_expression` 和缺失行数，不尝试拟合，也不把矩阵未表示解释为生物学缺失或无表达。对于 pooled/library experimental unit，`n_sample_units` 表示输入中的样本/文库数；`n_subjects` 和 `n_biological_replicates` 留空，因为文库数不是个体动物数。任何以 pooled material 为单位的振幅和不确定性都只能视为样本级探索性结果。
 
 ## 输出解释
 

@@ -148,7 +148,7 @@ def _joined_context(data_row: dict[str, str], metadata_row: dict[str, str], labe
     return data_value if data_value != "unknown" else metadata_value
 
 
-def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: str | None = None, time_system: str = "ZT") -> tuple[dict[tuple[str, str, str, str, str], list[dict[str, object]]], list[dict[str, str]], bool]:
+def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: str | None = None, time_system: str = "ZT") -> tuple[dict[tuple[str, str, str, str, str, str], list[dict[str, object]]], list[dict[str, str]], bool]:
     metadata = _load_metadata(metadata_path, time_system) if metadata_path else {}
     metadata_warnings: list[dict[str, str]] = []
     warning_counts: dict[str, int] = defaultdict(int)
@@ -164,21 +164,23 @@ def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: s
             mode = "expression"
         else:
             raise ValueError("input needs subject_id,time_hours,value or sample_id,time,expression columns")
-        groups: dict[tuple[str, str, str, str, str], list[dict[str, object]]] = defaultdict(list)
+        groups: dict[tuple[str, str, str, str, str, str], list[dict[str, object]]] = defaultdict(list)
         context_by_sample: dict[str, tuple[str, str]] = {}
+        timecourse_by_sample: dict[str, str] = {}
         for row_index, row in enumerate(reader, start=2):
-            if mode == "expression" and not (row.get("expression") or "").strip():
-                continue
             try:
                 if mode == "direct":
                     sample_or_subject = str(row["subject_id"])
                     time_hours = float(row["time_hours"])
                     value = float(row["value"])
+                    missing_expression = False
                 else:
                     sample_or_subject = str(row["sample_id"])
                     time_hours = _time_hours(row["time"], time_system)
-                    value = float(row["expression"])
-                if not math.isfinite(time_hours) or not math.isfinite(value):
+                    expression_token = (row.get("expression") or "").strip()
+                    missing_expression = not expression_token
+                    value = None if missing_expression else float(expression_token)
+                if not math.isfinite(time_hours) or (value is not None and not math.isfinite(value)):
                     raise ValueError("time_hours/value must be finite")
             except (KeyError, TypeError, ValueError) as exc:
                 raise ValueError(f"invalid numeric/time row {row_index}: {row}") from exc
@@ -199,7 +201,15 @@ def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: s
                 unit = (metadata_row.get("experimental_unit") or "").strip() or unit
                 if not _present(unit):
                     unit = ""
-                subject_id = (metadata_row.get("biological_replicate_id") or "").strip() or sample_or_subject
+                unit_token = unit.lower().replace(" ", "_")
+                # A pooled/library row is a sample unit, not an identified
+                # animal or biological replicate. Keep its library accession
+                # for exploratory row-level resampling and never promote the
+                # metadata's biological_replicate_id to animal n.
+                if "pool" in unit_token or "library" in unit_token:
+                    subject_id = sample_or_subject
+                else:
+                    subject_id = (metadata_row.get("biological_replicate_id") or "").strip() or sample_or_subject
                 if not _present(metadata_row.get("experimental_unit")):
                     warning_counts["missing_experimental_unit"] += 1
                 if not _present(metadata_row.get("batch_id")):
@@ -211,6 +221,7 @@ def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: s
                 ("developmental_stage", "developmental stage", "stage"),
             )
             sex = _joined_context(row, metadata_row, "sex", ("sex", "gender"))
+            timecourse_id = _joined_context(row, metadata_row, "timecourse_id", ("timecourse_id", "timecourse"))
             sample_context = (developmental_stage, sex)
             previous_context = context_by_sample.setdefault(sample_or_subject, sample_context)
             if previous_context != sample_context:
@@ -218,19 +229,30 @@ def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: s
                     f"conflicting sex/developmental_stage metadata for sample_id {sample_or_subject}: "
                     f"{previous_context} vs {sample_context}"
                 )
+            previous_course = timecourse_by_sample.setdefault(sample_or_subject, timecourse_id)
+            if previous_course != timecourse_id:
+                raise ValueError(
+                    f"conflicting timecourse_id metadata for sample_id {sample_or_subject}: "
+                    f"{previous_course!r} vs {timecourse_id!r}"
+                )
             key = (
                 (row.get("gene_symbol") or "").strip(),
                 (row.get("cell_type") or "").strip(),
                 (row.get("background") or "").strip(),
                 developmental_stage,
                 sex,
+                timecourse_id,
             )
             groups[key].append({
                 "subject_id": subject_id,
+                "sample_unit_id": sample_or_subject,
                 "time_hours": time_hours,
                 "value": value,
                 "experimental_unit": unit,
             })
+    observed_courses = {value for value in timecourse_by_sample.values() if value != "unknown"}
+    if observed_courses and any(value == "unknown" for value in timecourse_by_sample.values()):
+        raise ValueError("timecourse_id is present for some samples but missing for others; resolve the mapping before inference")
     metadata_warnings = [{"type": key, "n_rows": str(value)} for key, value in sorted(warning_counts.items())]
     return dict(groups), metadata_warnings, bool(metadata_path)
 
@@ -246,13 +268,26 @@ def _fit(rows: list[dict[str, object]], time_system: str) -> dict[str, object]:
 def _analyze_group(rows: list[dict[str, object]], rng: random.Random, n_permutations: int, n_bootstrap: int, time_system: str) -> dict[str, object]:
     units = {str(row.get("experimental_unit") or "").strip() for row in rows}
     unit = next(iter(units)) if len(units) == 1 else "mixed"
+    fit_rows = [row for row in rows if row.get("value") is not None]
+    unit_token = unit.lower().replace(" ", "_")
+    pooled_sample_unit = "pool" in unit_token or "library" in unit_token
+    n_sample_units = len({str(row.get("sample_unit_id", row["subject_id"])) for row in rows})
+    n_subjects = len({str(row["subject_id"]) for row in rows})
     base = {
-        "n_observations": len(rows),
-        "n_subjects": len({str(row["subject_id"]) for row in rows}),
-        "n_biological_replicates": len({str(row["subject_id"]) for row in rows}),
-        "n_unique_time_points": len({float(row["time_hours"]) for row in rows}),
+        "n_observations": len(fit_rows),
+        "n_missing_expression_rows": len(rows) - len(fit_rows),
+        "n_sample_units": n_sample_units,
+        "n_subjects": None if pooled_sample_unit else n_subjects,
+        "n_biological_replicates": None if pooled_sample_unit else n_subjects,
+        "n_unique_time_points": len({float(row["time_hours"]) for row in fit_rows}),
         "experimental_unit": unit or "unspecified",
     }
+    if not fit_rows:
+        base.update({
+            "status": "no_numeric_expression",
+            "inference_warning": "All mapped rows lack numeric expression; no rhythm fit was attempted, and matrix nonrepresentation is not proof of biological absence.",
+        })
+        return base
     if unit == "mixed":
         base.update({"status": "blocked_mixed_experimental_units", "inference_warning": "A group contains more than one experimental_unit label; resolve metadata before inference."})
         return base
@@ -266,6 +301,7 @@ def _analyze_group(rows: list[dict[str, object]], rng: random.Random, n_permutat
         base.update({"status": "insufficient_or_invalid_time_series", "inference_warning": "No rhythm inference; at least four observations and three unique time points are required."})
         return base
     counts: dict[str, int] = defaultdict(int)
+    rows = fit_rows
     for row in rows:
         counts[str(row["subject_id"])] += 1
     repeated = sorted(subject for subject, count in counts.items() if count > 1)
@@ -292,8 +328,10 @@ def _analyze_group(rows: list[dict[str, object]], rng: random.Random, n_permutat
         bootstrap_amplitudes.append(float(fit["amplitude"]))
         bootstrap_phases.append(float(fit["phase_peak_hours"]))
     warning = "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims."
-    if unit.lower().replace(" ", "_") == "pooled_cell_sample":
+    if unit_token == "pooled_cell_sample":
         warning += " This is a pooled cell sample; the result is not an animal-level effect estimate."
+    elif pooled_sample_unit:
+        warning += " This is a pooled/library sample unit; it is not an individual-fly effect estimate."
     base.update({
         "status": "exploratory_inferential_cosinor",
         "period_hours": 24.0,
@@ -342,6 +380,8 @@ def analyze_file(path: Path, n_permutations: int = 1000, n_bootstrap: int = 1000
     for index, key in enumerate(sorted(groups)):
         result = _analyze_group(groups[key], random.Random(seed + index), n_permutations, n_bootstrap, normalized_time_system)
         result.update({"gene_symbol": key[0], "cell_type": key[1], "background": key[2], "developmental_stage": key[3], "sex": key[4]})
+        if key[5] != "unknown":
+            result["timecourse_id"] = key[5]
         results.append(result)
         if result.get("status") == "exploratory_inferential_cosinor":
             inferential_indices.append(len(results) - 1)

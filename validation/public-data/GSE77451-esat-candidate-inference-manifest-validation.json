@@ -1,0 +1,111 @@
+{
+  "status": "verified_public_dataset_manifest",
+  "manifest_stage": "verified",
+  "formal_status": "online_source_content_verified",
+  "manifest_id": "GSE77451-esat-candidate-inference-20260922",
+  "dataset_id": "GSE77451",
+  "accession": "GSE77451",
+  "n_files": 7,
+  "n_runs": 3,
+  "n_planned_runs": 0,
+  "planned_run_checks": [],
+  "file_checks": [
+    {
+      "path": "validation/public-data/GSE77451_sample_metadata.csv",
+      "role": "metadata",
+      "expected_sha256": "9b0546a5f8a09c5a8235d89edbc0d3d59a303cf6137acac229b912b754d4ec1a",
+      "observed_sha256": "9b0546a5f8a09c5a8235d89edbc0d3d59a303cf6137acac229b912b754d4ec1a",
+      "size_bytes": 15367,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+      "role": "derived",
+      "expected_sha256": "a3f1391b4e62a58d20402c9e315a5944bd850a5e1b4b19120315a9e84f9c853b",
+      "observed_sha256": "a3f1391b4e62a58d20402c9e315a5944bd850a5e1b4b19120315a9e84f9c853b",
+      "size_bytes": 214471,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-inference-sum-20260922.json",
+      "role": "derived",
+      "expected_sha256": "c3f9d20478aa89585bd132578307b271c6f1c310b83fa94f62363e207985d87f",
+      "observed_sha256": "c3f9d20478aa89585bd132578307b271c6f1c310b83fa94f62363e207985d87f",
+      "size_bytes": 123288,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+      "role": "derived",
+      "expected_sha256": "dd46a035ca5d63d67acbc2b2592a7e7e6fe72d9e1552bcb469bd6ae7176ebd61",
+      "observed_sha256": "dd46a035ca5d63d67acbc2b2592a7e7e6fe72d9e1552bcb469bd6ae7176ebd61",
+      "size_bytes": 215668,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-inference-median-20260922.json",
+      "role": "derived",
+      "expected_sha256": "50ea8ee86382368c4220696b6a5ffb60abc9496524f691743e22a4b41b34e5bc",
+      "observed_sha256": "50ea8ee86382368c4220696b6a5ffb60abc9496524f691743e22a4b41b34e5bc",
+      "size_bytes": 123087,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+      "role": "derived",
+      "expected_sha256": "bfa5f9438a39e09590934f90f61894b98f8076cc3b466d8ed44305295e200858",
+      "observed_sha256": "bfa5f9438a39e09590934f90f61894b98f8076cc3b466d8ed44305295e200858",
+      "size_bytes": 214050,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-inference-max-20260922.json",
+      "role": "derived",
+      "expected_sha256": "1763b77e83556b99c27c1d24d90b1489b9435d88bfcaf6bc17d32e4bc3de27a8",
+      "observed_sha256": "1763b77e83556b99c27c1d24d90b1489b9435d88bfcaf6bc17d32e4bc3de27a8",
+      "size_bytes": 123116,
+      "status": "hash_verified"
+    }
+  ],
+  "run_checks": [
+    {
+      "run_id": "gse77451-course-aware-cosinor-sum",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+        "validation/public-data/GSE77451_sample_metadata.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-inference-sum-20260922.json"
+      ]
+    },
+    {
+      "run_id": "gse77451-course-aware-cosinor-median",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+        "validation/public-data/GSE77451_sample_metadata.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-inference-median-20260922.json"
+      ]
+    },
+    {
+      "run_id": "gse77451-course-aware-cosinor-max",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+        "validation/public-data/GSE77451_sample_metadata.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-inference-max-20260922.json"
+      ]
+    }
+  ],
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+}

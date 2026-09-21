@@ -29,7 +29,9 @@ GEO series matrix 中的 `ID_REF` 通常是 probe 或 feature ID，不一定是 
 
 ## 直接表达节律入口
 
-进入 cosinor 前，长表必须对 gene_symbol × cell_type × background × developmental_stage × sex × sample_id 唯一；每个分组中的 sample ID 只对应一个时间点。analyze_expression_rhythm.py 与 analyze_cosinor_inference.py 按 gene、cell type、background、developmental stage 和 sex 分组；缺失 stage/sex 标记为 unknown，不会与已知标签混合。若表达表与 metadata 同时提供 stage/sex，则标签必须一致；比较时忽略大小写并将空格与下划线视作等价，但输出保留来源原值，不一致时阻断。一个样本有多个 microarray probes 或 RNA-seq transcript/isoform 行时，不得把 feature 行当作重复观测；应预先规定并说明 gene-level aggregation，或将各 transcript 作为独立特征分析。analyze_expression_rhythm.py 会阻断重复或空白 sample ID，不会替用户猜测求和、平均或取中位数。可用 audit_esat_candidate_sample_keys.py 对 ESAT transcript-level GEO 文件先做结构性审计；该审计不归一化表达量，也不检验节律。
+进入 cosinor 前，长表必须对 gene_symbol × cell_type × background × developmental_stage × sex × timecourse_id × sample_id 唯一；每个分组中的 sample ID 只对应一个时间点。`analyze_expression_rhythm.py` 按 gene、cell type、background、developmental stage 和 sex 进行描述性分组；`analyze_cosinor_inference.py` 还会按 `timecourse_id` 分开推断，不把不同采集序列合并。缺失 stage/sex 标记为 unknown，不会与已知标签混合；若任何样本有已知 timecourse，所有样本都必须能归入 timecourse，否则推断入口会阻断。若表达表与 metadata 同时提供 stage/sex/timecourse，则标签必须一致；比较时忽略大小写并将空格与下划线视作等价，但输出保留来源原值，不一致时阻断。一个样本有多个 microarray probes 或 RNA-seq transcript/isoform 行时，不得把 feature 行当作重复观测；应预先规定并说明 gene-level aggregation，或将各 transcript 作为独立特征分析。`analyze_expression_rhythm.py` 会阻断重复或空白 sample ID，不会替用户猜测求和、平均或取中位数。可用 `audit_esat_candidate_sample_keys.py` 对 ESAT transcript-level GEO 文件先做结构性审计；该审计不归一化表达量，也不检验节律。
+
+`analyze_cosinor_inference.py` 保留全空表达候选行并标记为 `no_numeric_expression`；不把矩阵未表示误当成无表达或生物学缺失。若 `experimental_unit` 是 pooled sample/library，`n_sample_units` 是文库/样本数而非个体数，`n_subjects` 与 `n_biological_replicates` 不报告为该数字。此类结果不得作动物级推断。
 
 如果仅需对已整理的表达长表做 descriptive fixed-period cosinor，运行 `scripts/analyze_expression_rhythm.py` 时必须显式提供 `--time-system ZT|CT`。脚本会核对每个 `time` token 的前缀；`CT6` 不会被静默重标为 `ZT6`。该入口只适合探索性描述，正式推断应使用 `scripts/analyze_cosinor_inference.py` 并提供 metadata 或明确的 experimental unit。
 

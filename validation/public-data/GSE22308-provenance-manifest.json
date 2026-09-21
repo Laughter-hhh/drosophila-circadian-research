@@ -89,7 +89,7 @@
     {
       "path": "validation/public-data/GSE22308_channel_regulator_expression_inference.json",
       "role": "derived",
-      "sha256": "aedc17c7f0ad0f7fc5d26b870aa5277028345688fc10585130c8ab6efda00944"
+      "sha256": "7c5d89201ac21cc85edf422e2e1ab0ee714be25d366c303c3cb6451aec160eef"
     },
     {
       "path": "validation/public-data/GSE_circadian_channel_regulator_genes.csv",
@@ -109,7 +109,7 @@
     {
       "path": "validation/public-data/GSE22308_channel_regulator_expression_inference-rerun.json",
       "role": "derived",
-      "sha256": "aedc17c7f0ad0f7fc5d26b870aa5277028345688fc10585130c8ab6efda00944"
+      "sha256": "7c5d89201ac21cc85edf422e2e1ab0ee714be25d366c303c3cb6451aec160eef"
     }
   ],
   "runs": [
@@ -268,7 +268,7 @@
     {
       "run_id": "exploratory-gse22308-cosinor-inference",
       "script": "scripts/analyze_cosinor_inference.py",
-      "script_sha256": "ad51f124c79c26a9f1eba83f4b89a394cd7c61f0a39a30e4d6b55c8eb3ba5f0c",
+      "script_sha256": "e01e3be42879ba48a8d2d9b564753280aad1f99d3852c2369fc0e796c7763033",
       "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE22308_channel_regulator_expression_samples.csv --metadata validation/public-data/GSE22308_sample_metadata.csv --time-system ZT --n-permutations 1000 --n-bootstrap 1000 --seed 20260906 --output validation/public-data/GSE22308_channel_regulator_expression_inference.json",
       "inputs": [
         "validation/public-data/GSE22308_channel_regulator_expression_samples.csv",
@@ -299,7 +299,7 @@
     {
       "run_id": "exploratory-gse22308-cosinor-inference-rerun",
       "script": "scripts/analyze_cosinor_inference.py",
-      "script_sha256": "ad51f124c79c26a9f1eba83f4b89a394cd7c61f0a39a30e4d6b55c8eb3ba5f0c",
+      "script_sha256": "e01e3be42879ba48a8d2d9b564753280aad1f99d3852c2369fc0e796c7763033",
       "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE22308_channel_regulator_expression_samples.csv --metadata validation/public-data/GSE22308_sample_metadata.csv --time-system ZT --n-permutations 1000 --n-bootstrap 1000 --seed 20260906 --output validation/public-data/GSE22308_channel_regulator_expression_inference-rerun.json",
       "inputs": [
         "validation/public-data/GSE22308_channel_regulator_expression_samples.csv",

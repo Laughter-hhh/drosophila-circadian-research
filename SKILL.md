@@ -59,7 +59,7 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 - 将已验证的 GSE157504 转录检出/作者节律数据并列叠加到文献候选长名单，且不更改评分或电生理 gate：读取 `references/candidate-context-overlay.md`，先核实上游 manifest/replay，再运行 `scripts/build_candidate_evidence_context.py`；输出必须保留候选集差异、零 UMI/dropout、未评估候选、`LN_ITP` 模糊亚群、DN 子群范围及静态淘汰理由的人工复核标记。
 - 将已验证的 GSE157504 候选 context 与 Abruzzi2017 S3 author cycler calls 合并成 score-neutral transcript sidecar：读取 `references/combined-transcript-candidate-context.md`，先重新验证双方 parent manifest/replay，再运行 `scripts/build_published_cycle_candidate_context.py`；保留 s-/l-LNv 混合组、LNd+第五个 PDF-negative s-LNv、DN1 subset 的范围，不将 HC/LC 或未列出结果升级为膜电流/膜电位因果证据，也不更改候选分数或电生理 gate。
 - 处理公开果蝇行为数据、Ethoscope 元数据或体量很大的原始录像归档：读取 `references/public-behavior-metadata.md`，先运行 `scripts/audit_public_behavior_metadata.py`，再用 `references/public-dataset-manifest.md` 的 manifest gate 和 `scripts/replay_public_dataset_manifest.py` 做隔离重放；元数据审计通过不等于已经获得行为节律证据，缺少 genotype/sex/age/temperature/LD-DD、个体标识或 raw checksums 时必须保持 blocked。
-- 对满足时间点要求的表达数据做探索性置换/bootstrap cosinor：读取 `references/cosinor-inference.md`，运行 `scripts/analyze_cosinor_inference.py`；必须提供 `--metadata` 或明确的 `--experimental-unit`，脚本会核对 sample/time、biological replicate 和重复观测，缺失或混用实验单位时阻断；不得把探索性 p/q 值当作论文级 mixed-model 结论。
+- 对满足时间点要求的表达数据做探索性置换/bootstrap cosinor：读取 `references/cosinor-inference.md`，运行 `scripts/analyze_cosinor_inference.py`；必须提供 `--metadata` 或明确的 `--experimental-unit`，脚本会核对 sample/time、biological replicate 和重复观测，按 `timecourse_id` 分层，course 映射部分缺失时阻断；pooled/library 的样本数不得写作个体动物 n，全空候选必须保留为 `no_numeric_expression` 而不能解释为无表达；不得把探索性 p/q 值当作论文级 mixed-model 结论。
 - 对包含多个 cell/ROI/trace 的嵌套数据做 biological-unit 聚合与 cluster bootstrap：读取 `references/nested-cosinor.md`，运行 `scripts/analyze_nested_cosinor.py`；先按 `biological_replicate_id × time` 聚合，不得把下层观测当成独立动物，输出仍需标注为探索性且不替代 mixed-effects model。
 - 准备 formal mixed-effects handoff：读取 `references/mixed-model-handoff.md`，运行 `scripts/prepare_mixed_model_input.py`；仅当 manifest 为 `ready_for_mixed_model` 时运行 `scripts/emit_mixed_model_templates.py`，并在有可用统计运行时后再拟合，缺失运行时必须标记 `blocked`。
 - 检查 formal mixed-effects runtime：运行 `scripts/check_mixed_model_runtime.py`；该检查不安装依赖、不修改环境，只报告可用后端，所有拟合前仍需 ready manifest、收敛诊断和预先定义的 contrasts。
@@ -81,7 +81,7 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 - 需要可复现代码、运行日志、数据溯源或论文级产物：读取 `references/reproducibility-and-provenance.md` 和 `references/manuscript-claims.md`。
 - 一项任务跨越多个工作流时，只读取直接相关的参考文件。
 
-- GEO 表达节律的描述性 cosinor 按 gene/cell/background/developmental_stage/sex 分组；若输入提供 timecourse_id，也将其作为独立分组键，绝不跨 course 合并。缺失 strata 标记为 unknown，表达表与 metadata 的 stage/sex 冲突时必须阻断。输出中的 sample/observation 数不自动等于独立 fly 数。
+- GEO 表达节律的描述性 cosinor 按 gene/cell/background/developmental_stage/sex 分组；若输入提供 timecourse_id，也将其作为独立分组键，绝不跨 course 合并。推断性 cosinor 同样按 course 分层，并阻断只对部分样本提供的 course 标记。缺失 strata 标记为 unknown，表达表与 metadata 的 stage/sex/timecourse 冲突时必须阻断。pooled/library 的 sample 数不自动等于独立 fly 数；全空候选不解释为生物学未表达。
 
 ## 证据与推理纪律
 
