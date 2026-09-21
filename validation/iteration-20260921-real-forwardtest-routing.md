@@ -28,9 +28,19 @@ No scorer implementation or serialization change was made. CSV raw longlists and
 
 ## Verification
 
-- Synthetic regression suite: `python -m unittest discover -s tests` — 296 tests passed after the instruction edits.
+- Synthetic regression suite: `python -m unittest discover -s tests` — 304 tests passed after adding the panel-provenance validator, including real-report parsing and invalid-schema cases.
 - Public-data manifest: `candidate-scoring-source-log-guard-manifest.json` — `verified_public_dataset_manifest`, 21 files and 6 runs, zero blocking issues; formal status remains `conditional_online_source_access`.
 - Isolated replay: `verified_public_dataset_replay`, 6 runs and 11 output-hash checks passed. Reports were written outside the repository at `E:\skill\.verify-dd28ff0f7b9d45448a8c108ba625a134\`.
+- Public GEO rerun: the official NCBI record identifies GSE157504 as public `Drosophila melanogaster` single-cell circadian-neuron expression profiling sampled across time in LD and DD ([GEO GSE157504](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504)). The current manifest check verified 11 input/output files and 2 declared runs with zero issues; isolated replay reran both scripts and matched all 7 output hashes. Fresh JSON records: `validation/public-data/GSE157504-candidate-channel-rhythm-validation-rerun-20260921.json` and `validation/public-data/GSE157504-candidate-channel-rhythm-replay-rerun-20260921.json`.
+
+  Reproduction commands:
+
+  ```powershell
+  python scripts/validate_public_dataset_manifest.py validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json --root . --output validation/public-data/GSE157504-candidate-channel-rhythm-validation-rerun-20260921.json
+  python scripts/replay_public_dataset_manifest.py validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json --root . --timeout-seconds 120 --output validation/public-data/GSE157504-candidate-channel-rhythm-replay-rerun-20260921.json
+  ```
+
+  Replay stdout reports 15 candidate genes and 21 candidate×cluster-condition rows in the published rhythmic-call extraction, plus 2,615 annotated cells matched exactly once and 14 candidates with exact features in the raw-count audit. These are pipeline counters, not gene-expression or rhythm-effect conclusions. The manifest limits remain decisive: raw outputs are descriptive UMI counts; cells are nested within source collection/experiment, not fly-level independent units; the published TP10K high-confidence calls are transcribed rather than re-fit; this does not show channel protein/current, voltage, or causal behavior effects.
 - `skill-creator/scripts/quick_validate.py` could not start because the available Python runtime lacks `PyYAML` (`ModuleNotFoundError: yaml`). The skill frontmatter was unchanged; its required `name` and `description`, reference paths, and diff whitespace were manually checked.
 - Fresh candidate-scoring route rerun read the references selected by the revised skill routing. Candidate-table and source-log validators passed (15 candidates; 19 log records); both requested targets produced 15-row CSV longlists and parseable JSON sensitivity reports in `E:\skill\candidate-ranking-eval-2b61b6e660be44278f5f26bf40e1b9d8\`. The s-LNv output reports a Shaw/Shal tie (91.67; coverage 0.970) across all three weight scenarios; l-LNv reports `na` as the unique Top (92.93; coverage 1.00), with Shaw/Shal tied next. The evaluator used copies of the three scripts that were byte-identical to the repository versions. These are evidence-triage outputs, not causal conclusions.
 
