@@ -22,7 +22,7 @@ class CosinorInferenceTests(unittest.TestCase):
 
     def _write_expression(self, rows):
         handle = tempfile.NamedTemporaryFile("w", newline="", suffix=".csv", delete=False, encoding="utf-8")
-        writer = csv.DictWriter(handle, fieldnames=["sample_id", "time", "expression", "gene_symbol", "cell_type", "background"])
+        writer = csv.DictWriter(handle, fieldnames=["sample_id", "time", "expression", "gene_symbol", "cell_type", "background", "developmental_stage", "sex", "gender"])
         writer.writeheader()
         writer.writerows(rows)
         handle.close()
@@ -30,7 +30,7 @@ class CosinorInferenceTests(unittest.TestCase):
 
     def _write_metadata(self, rows):
         handle = tempfile.NamedTemporaryFile("w", newline="", suffix=".csv", delete=False, encoding="utf-8")
-        fields = ["sample_id", "ZT_or_CT", "experimental_unit", "biological_replicate_id", "batch_id", "temperature_C"]
+        fields = ["sample_id", "ZT_or_CT", "experimental_unit", "biological_replicate_id", "batch_id", "temperature_C", "developmental_stage", "sex", "gender"]
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
         writer.writerows(rows)
@@ -205,6 +205,8 @@ class CosinorInferenceTests(unittest.TestCase):
 
         sh_large = next(group for group in result["groups"] if group["gene_symbol"] == "Sh" and group["cell_type"] == "large PDF circadian neurons" and group["background"] == "yw")
         self.assertEqual(sh_large["n_unique_time_points"], 4)
+        self.assertEqual(sh_large["developmental_stage"], "adult")
+        self.assertEqual(sh_large["sex"], "male and female")
         self.assertEqual(sh_large["status"], "exploratory_inferential_cosinor")
         self.assertEqual(sh_large["experimental_unit"], "pooled_cell_sample")
         self.assertIn("not an animal-level effect estimate", sh_large["inference_warning"])
@@ -212,6 +214,92 @@ class CosinorInferenceTests(unittest.TestCase):
         sh_small = next(group for group in result["groups"] if group["gene_symbol"] == "Sh" and group["cell_type"] == "small PDF circadian neurons" and group["background"] == "yw")
         self.assertEqual(sh_small["n_unique_time_points"], 2)
         self.assertEqual(sh_small["status"], "insufficient_or_invalid_time_series")
+
+
+    def test_expression_context_strata_are_not_collapsed(self):
+        rows = []
+        for stage in ("adult", "larva"):
+            for sex in ("female", "male"):
+                for time in (0, 6, 12, 18):
+                    rows.append({
+                        "sample_id": f"{stage}_{sex}_{time}",
+                        "time": f"ZT{time}",
+                        "expression": str(10 + time),
+                        "gene_symbol": "Sh",
+                        "cell_type": "LNd",
+                        "background": "yw",
+                        "developmental_stage": stage,
+                        "sex": sex,
+                    })
+        path = self._write_expression(rows)
+        try:
+            result = analyze_file(path, n_permutations=20, n_bootstrap=20, seed=11, experimental_unit="pooled_cell_sample", time_system="ZT")
+        finally:
+            path.unlink(missing_ok=True)
+        self.assertEqual(result["n_groups"], 4)
+        self.assertEqual(
+            {(row["sex"], row["developmental_stage"]) for row in result["groups"]},
+            {(sex, stage) for sex in ("female", "male") for stage in ("adult", "larva")},
+        )
+        self.assertTrue(all(row["n_observations"] == 4 for row in result["groups"]))
+
+    def test_context_can_be_supplied_by_metadata_when_absent_from_expression_rows(self):
+        data_rows = [{
+            "sample_id": f"s{time}",
+            "time": f"ZT{time}",
+            "expression": str(10 + time),
+            "gene_symbol": "Sh",
+            "cell_type": "LNd",
+            "background": "yw",
+        } for time in (0, 6, 12, 18)]
+        metadata_rows = [{
+            "sample_id": f"s{time}",
+            "ZT_or_CT": f"ZT{time}",
+            "experimental_unit": "fly",
+            "biological_replicate_id": f"s{time}",
+            "batch_id": "batch1",
+            "temperature_C": "25",
+            "developmental_stage": "adult",
+            "gender": "female",
+        } for time in (0, 6, 12, 18)]
+        data_path = self._write_expression(data_rows)
+        metadata_path = self._write_metadata(metadata_rows)
+        try:
+            result = analyze_file(data_path, n_permutations=20, n_bootstrap=20, seed=12, metadata_path=metadata_path, time_system="ZT")
+        finally:
+            data_path.unlink(missing_ok=True)
+            metadata_path.unlink(missing_ok=True)
+        self.assertEqual(result["n_groups"], 1)
+        self.assertEqual(result["groups"][0]["developmental_stage"], "adult")
+        self.assertEqual(result["groups"][0]["sex"], "female")
+
+    def test_metadata_context_conflict_is_blocked(self):
+        data_path = self._write_expression([{
+            "sample_id": "sample0",
+            "time": "ZT0",
+            "expression": "1",
+            "gene_symbol": "Sh",
+            "cell_type": "LNd",
+            "background": "yw",
+            "developmental_stage": "adult",
+            "sex": "male",
+        }])
+        metadata_path = self._write_metadata([{
+            "sample_id": "sample0",
+            "ZT_or_CT": "ZT0",
+            "experimental_unit": "fly",
+            "biological_replicate_id": "sample0",
+            "batch_id": "batch1",
+            "temperature_C": "25",
+            "developmental_stage": "adult",
+            "gender": "female",
+        }])
+        try:
+            with self.assertRaisesRegex(ValueError, "sex mismatch between expression data and metadata"):
+                analyze_file(data_path, metadata_path=metadata_path, time_system="ZT")
+        finally:
+            data_path.unlink(missing_ok=True)
+            metadata_path.unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

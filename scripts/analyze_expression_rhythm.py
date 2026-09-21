@@ -43,6 +43,17 @@ def _time_hours(token: str, expected_system: str) -> float:
     return float(match.group(2)) % 24.0
 
 
+_MISSING_CONTEXT = {"", "NA", "N/A", "NAN", "NULL", "UNKNOWN", "NOT_REPORTED", "NOT SPECIFIED", "NOT_AVAILABLE", "NOT AVAILABLE", "NOT APPLICABLE", "NONE REPORTED", "."}
+
+
+def _context_value(row: dict[str, str], names: tuple[str, ...]) -> str:
+    for name in names:
+        value = (row.get(name) or "").strip()
+        if value and value.upper() not in _MISSING_CONTEXT:
+            return value
+    return "unknown"
+
+
 def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list[dict[str, object]]:
     normalized_time_system = _normalize_time_system(time_system)
     with path.open(newline="", encoding="utf-8") as handle:
@@ -50,18 +61,36 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
     required = {"gene_symbol", "sample_id", "cell_type", "time", "background", "expression"}
     if rows and not required.issubset(rows[0]):
         raise ValueError(f"sample expression CSV missing columns: {', '.join(sorted(required - set(rows[0])))}")
-    rows_by_group: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
+    rows_by_group: dict[tuple[str, str, str, str, str], list[dict[str, str]]] = defaultdict(list)
+    context_by_sample: dict[str, tuple[str, str]] = {}
     for row in rows:
-        key = (row.get("gene_symbol", ""), row.get("cell_type", ""), row.get("background", ""))
+        sample_id = (row.get("sample_id") or "").strip()
+        developmental_stage = _context_value(row, ("developmental_stage", "developmental stage", "stage"))
+        sex = _context_value(row, ("sex", "gender"))
+        if sample_id:
+            sample_context = (developmental_stage, sex)
+            previous_context = context_by_sample.setdefault(sample_id, sample_context)
+            if previous_context != sample_context:
+                raise ValueError(
+                    f"conflicting sex/developmental_stage metadata for sample_id {sample_id}: "
+                    f"{previous_context} vs {sample_context}"
+                )
+        key = (
+            row.get("gene_symbol", ""),
+            row.get("cell_type", ""),
+            row.get("background", ""),
+            developmental_stage,
+            sex,
+        )
         rows_by_group[key].append(row)
     output: list[dict[str, object]] = []
     for key in sorted(rows_by_group):
-        gene, cell_type, background = key
+        gene, cell_type, background, developmental_stage, sex = key
         all_group_rows = rows_by_group[key]
         sample_ids = [(row.get("sample_id") or "").strip() for row in all_group_rows]
         if any(not sample_id for sample_id in sample_ids):
             raise ValueError(
-                f"blank sample_id in gene/cell/background group {key}; "
+                f"blank sample_id in gene/cell/background/stage/sex group {key}; "
                 "each gene-level sample measurement needs a stable sample_id"
             )
         duplicate_sample_ids = sorted(
@@ -70,21 +99,38 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
         if duplicate_sample_ids:
             preview = ", ".join(duplicate_sample_ids[:5])
             raise ValueError(
-                f"duplicate sample_id within gene/cell/background group {key}: {preview}; "
+                f"duplicate sample_id within gene/cell/background/stage/sex group {key}: {preview}; "
                 "aggregate probes/transcripts within each sample using an explicit "
                 "gene-level rule before fitting; do not treat feature rows as replicates"
             )
         group = [row for row in all_group_rows if (row.get("expression") or "").strip()]
         if not group:
-            output.append({"gene_symbol": gene, "cell_type": cell_type, "background": background, "status": "no_numeric_expression"})
+            output.append({
+                "gene_symbol": gene,
+                "cell_type": cell_type,
+                "background": background,
+                "developmental_stage": developmental_stage,
+                "sex": sex,
+                "status": "no_numeric_expression",
+            })
             continue
         try:
             analysis_rows = [
-                {"subject_id": row["sample_id"].strip(), "time_hours": str(_time_hours(row["time"], normalized_time_system)), "value": row["expression"]}
+                {
+                    "subject_id": row["sample_id"].strip(),
+                    "time_hours": str(_time_hours(row["time"], normalized_time_system)),
+                    "value": row["expression"],
+                }
                 for row in group
             ]
             result = analyze_rows(analysis_rows, period_hours=24.0, time_system=normalized_time_system)
-            result.update({"gene_symbol": gene, "cell_type": cell_type, "background": background})
+            result.update({
+                "gene_symbol": gene,
+                "cell_type": cell_type,
+                "background": background,
+                "developmental_stage": developmental_stage,
+                "sex": sex,
+            })
             output.append(result)
         except ValueError as exc:
             if "time system mismatch" in str(exc):
@@ -93,6 +139,8 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
                 "gene_symbol": gene,
                 "cell_type": cell_type,
                 "background": background,
+                "developmental_stage": developmental_stage,
+                "sex": sex,
                 "status": "insufficient_or_invalid_time_series",
                 "reason": str(exc),
                 "n_observations": len(group),

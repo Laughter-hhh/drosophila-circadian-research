@@ -30,7 +30,7 @@ from scripts.analyze_circadian_timeseries import analyze_rows
 TIME_RE = re.compile(r"\b(ZT|CT)\s*([+-]?\d+(?:\.\d+)?)\b", re.IGNORECASE)
 DIRECT_REQUIRED = {"subject_id", "time_hours", "value"}
 EXPRESSION_REQUIRED = {"sample_id", "time", "expression"}
-MISSING = {"", "NA", "N/A", "NAN", "NULL", "UNKNOWN", "NOT_REPORTED", "NOT SPECIFIED", "NOT_AVAILABLE", "NOT APPLICABLE", "NONE REPORTED", "."}
+MISSING = {"", "NA", "N/A", "NAN", "NULL", "UNKNOWN", "NOT_REPORTED", "NOT SPECIFIED", "NOT_AVAILABLE", "NOT AVAILABLE", "NOT APPLICABLE", "NONE REPORTED", "."}
 
 
 def _present(value: str | None) -> bool:
@@ -124,7 +124,31 @@ def _load_metadata(path: Path, time_system: str) -> dict[str, dict[str, str]]:
     return metadata
 
 
-def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: str | None = None, time_system: str = "ZT") -> tuple[dict[tuple[str, str, str], list[dict[str, object]]], list[dict[str, str]], bool]:
+def _context_value(row: dict[str, str], aliases: tuple[str, ...]) -> str:
+    for name in aliases:
+        value = (row.get(name) or "").strip()
+        if _present(value):
+            return value
+    return "unknown"
+
+
+def _context_match_key(value: str) -> str:
+    return " ".join(value.casefold().replace("_", " ").split())
+
+
+def _joined_context(data_row: dict[str, str], metadata_row: dict[str, str], label: str, aliases: tuple[str, ...]) -> str:
+    data_value = _context_value(data_row, aliases)
+    metadata_value = _context_value(metadata_row, aliases)
+    if data_value != "unknown" and metadata_value != "unknown" and _context_match_key(data_value) != _context_match_key(metadata_value):
+        sample_id = (data_row.get("sample_id") or data_row.get("subject_id") or "").strip()
+        raise ValueError(
+            f"{label} mismatch between expression data and metadata for sample_id "
+            f"{sample_id}: {data_value!r} vs {metadata_value!r}"
+        )
+    return data_value if data_value != "unknown" else metadata_value
+
+
+def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: str | None = None, time_system: str = "ZT") -> tuple[dict[tuple[str, str, str, str, str], list[dict[str, object]]], list[dict[str, str]], bool]:
     metadata = _load_metadata(metadata_path, time_system) if metadata_path else {}
     metadata_warnings: list[dict[str, str]] = []
     warning_counts: dict[str, int] = defaultdict(int)
@@ -140,7 +164,8 @@ def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: s
             mode = "expression"
         else:
             raise ValueError("input needs subject_id,time_hours,value or sample_id,time,expression columns")
-        groups: dict[tuple[str, str, str], list[dict[str, object]]] = defaultdict(list)
+        groups: dict[tuple[str, str, str, str, str], list[dict[str, object]]] = defaultdict(list)
+        context_by_sample: dict[str, tuple[str, str]] = {}
         for row_index, row in enumerate(reader, start=2):
             if mode == "expression" and not (row.get("expression") or "").strip():
                 continue
@@ -161,9 +186,10 @@ def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: s
             unit = (row.get("experimental_unit") or "").strip() or declared_unit_clean
             if not _present(unit):
                 unit = ""
+            metadata_row: dict[str, str] = {}
             if metadata_path:
-                metadata_row = metadata.get(sample_or_subject)
-                if metadata_row is None:
+                metadata_row = metadata.get(sample_or_subject) or {}
+                if not metadata_row:
                     raise ValueError(f"sample_id missing from metadata: {sample_or_subject}")
                 metadata_time = (metadata_row.get("ZT_or_CT") or metadata_row.get("time") or "").strip()
                 if metadata_time:
@@ -180,8 +206,31 @@ def _load_groups(path: Path, metadata_path: Path | None = None, declared_unit: s
                     warning_counts["unknown_batch"] += 1
                 if not _present(metadata_row.get("temperature_C")):
                     warning_counts["unknown_temperature"] += 1
-            key = ((row.get("gene_symbol") or "").strip(), (row.get("cell_type") or "").strip(), (row.get("background") or "").strip())
-            groups[key].append({"subject_id": subject_id, "time_hours": time_hours, "value": value, "experimental_unit": unit})
+            developmental_stage = _joined_context(
+                row, metadata_row, "developmental_stage",
+                ("developmental_stage", "developmental stage", "stage"),
+            )
+            sex = _joined_context(row, metadata_row, "sex", ("sex", "gender"))
+            sample_context = (developmental_stage, sex)
+            previous_context = context_by_sample.setdefault(sample_or_subject, sample_context)
+            if previous_context != sample_context:
+                raise ValueError(
+                    f"conflicting sex/developmental_stage metadata for sample_id {sample_or_subject}: "
+                    f"{previous_context} vs {sample_context}"
+                )
+            key = (
+                (row.get("gene_symbol") or "").strip(),
+                (row.get("cell_type") or "").strip(),
+                (row.get("background") or "").strip(),
+                developmental_stage,
+                sex,
+            )
+            groups[key].append({
+                "subject_id": subject_id,
+                "time_hours": time_hours,
+                "value": value,
+                "experimental_unit": unit,
+            })
     metadata_warnings = [{"type": key, "n_rows": str(value)} for key, value in sorted(warning_counts.items())]
     return dict(groups), metadata_warnings, bool(metadata_path)
 
@@ -292,7 +341,7 @@ def analyze_file(path: Path, n_permutations: int = 1000, n_bootstrap: int = 1000
     p_values: list[float] = []
     for index, key in enumerate(sorted(groups)):
         result = _analyze_group(groups[key], random.Random(seed + index), n_permutations, n_bootstrap, normalized_time_system)
-        result.update({"gene_symbol": key[0], "cell_type": key[1], "background": key[2]})
+        result.update({"gene_symbol": key[0], "cell_type": key[1], "background": key[2], "developmental_stage": key[3], "sex": key[4]})
         results.append(result)
         if result.get("status") == "exploratory_inferential_cosinor":
             inferential_indices.append(len(results) - 1)

@@ -43,7 +43,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ca-alpha1D",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -55,7 +57,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ca-alpha1D",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -85,6 +89,8 @@
       "gene_symbol": "Ca-alpha1D",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.8868353868353869
     },
     {
@@ -97,7 +103,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ca-alpha1D",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -109,7 +117,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ca-alpha1T",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -121,7 +131,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ca-alpha1T",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -151,6 +163,8 @@
       "gene_symbol": "Ca-alpha1T",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.14235764235764237
     },
     {
@@ -163,7 +177,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ca-alpha1T",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -175,7 +191,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Irk1",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -187,7 +205,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Irk1",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -217,6 +237,8 @@
       "gene_symbol": "Irk1",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.1993006993006993
     },
     {
@@ -229,7 +251,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Irk1",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -241,7 +265,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ncc69",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -253,7 +279,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ncc69",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -283,6 +311,8 @@
       "gene_symbol": "Ncc69",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.33928571428571425
     },
     {
@@ -295,7 +325,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ncc69",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -307,7 +339,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ork1",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -319,7 +353,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ork1",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -349,6 +385,8 @@
       "gene_symbol": "Ork1",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.33928571428571425
     },
     {
@@ -361,7 +399,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Ork1",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -373,7 +413,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Sh",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -385,7 +427,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Sh",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -415,6 +459,8 @@
       "gene_symbol": "Sh",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.5057085771371486
     },
     {
@@ -427,7 +473,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Sh",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -439,7 +487,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shab",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -451,7 +501,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shab",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -481,6 +533,8 @@
       "gene_symbol": "Shab",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.5057085771371486
     },
     {
@@ -493,7 +547,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shab",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -505,7 +561,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shal",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -517,7 +575,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shal",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -547,6 +607,8 @@
       "gene_symbol": "Shal",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.5057085771371486
     },
     {
@@ -559,7 +621,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shal",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -571,7 +635,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shaw",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -583,7 +649,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shaw",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -613,6 +681,8 @@
       "gene_symbol": "Shaw",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.5057085771371486
     },
     {
@@ -625,7 +695,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shaw",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -637,7 +709,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Wnk",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -649,7 +723,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Wnk",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -679,6 +755,8 @@
       "gene_symbol": "Wnk",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.8868353868353869
     },
     {
@@ -691,7 +769,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Wnk",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -703,7 +783,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "cac",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -715,7 +797,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "cac",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -745,6 +829,8 @@
       "gene_symbol": "cac",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.5057085771371486
     },
     {
@@ -757,7 +843,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "cac",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -769,7 +857,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "eag",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -781,7 +871,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "eag",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -811,6 +903,8 @@
       "gene_symbol": "eag",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.1834831834831835
     },
     {
@@ -823,7 +917,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "eag",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -835,7 +931,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "fray",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -847,7 +945,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "fray",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -877,6 +977,8 @@
       "gene_symbol": "fray",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.8868353868353869
     },
     {
@@ -889,7 +991,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "fray",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -901,7 +1005,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "na",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -913,7 +1019,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "na",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -943,6 +1051,8 @@
       "gene_symbol": "na",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.5057085771371486
     },
     {
@@ -955,7 +1065,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "na",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -967,7 +1079,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "para",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -979,7 +1093,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "para",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -1009,6 +1125,8 @@
       "gene_symbol": "para",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.33928571428571425
     },
     {
@@ -1021,7 +1139,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "para",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -1033,7 +1153,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "qsm",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -1045,7 +1167,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "qsm",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -1075,6 +1199,8 @@
       "gene_symbol": "qsm",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.26953046953046955
     },
     {
@@ -1087,7 +1213,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "qsm",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -1099,7 +1227,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "sei",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -1111,7 +1241,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "sei",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -1141,6 +1273,8 @@
       "gene_symbol": "sei",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.14235764235764237
     },
     {
@@ -1153,7 +1287,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "sei",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -1165,7 +1301,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "slo",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -1177,7 +1315,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "slo",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -1207,6 +1347,8 @@
       "gene_symbol": "slo",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.9400599400599401
     },
     {
@@ -1219,7 +1361,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "slo",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 6,
@@ -1231,7 +1375,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "trpl",
       "cell_type": "ELAV neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     },
     {
       "n_observations": 4,
@@ -1243,7 +1389,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "trpl",
       "cell_type": "large PDF circadian neurons",
-      "background": "per01"
+      "background": "per01",
+      "developmental_stage": "adult",
+      "sex": "male"
     },
     {
       "n_observations": 10,
@@ -1273,6 +1421,8 @@
       "gene_symbol": "trpl",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female",
       "q_amplitude_bh": 0.8868353868353869
     },
     {
@@ -1285,7 +1435,9 @@
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "trpl",
       "cell_type": "small PDF circadian neurons",
-      "background": "yw"
+      "background": "yw",
+      "developmental_stage": "adult",
+      "sex": "male and female"
     }
   ],
   "inference_warning": "This output is exploratory and does not replace a biological-unit-aware mixed model or pre-registered analysis."

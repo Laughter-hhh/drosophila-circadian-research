@@ -10,6 +10,10 @@
 
 每个 subject/biological replicate 默认只能有一行。发现重复 ID 时，脚本返回 `blocked_repeated_subjects`，要求改用预先定义的 hierarchical/mixed model，避免把技术重复当作独立动物。`pooled_cell_sample` 允许做探索性 sample-level 分析，但结果明确不是 animal-level effect estimate。
 
+## GEO expression grouping
+
+表达输入按 gene_symbol × cell_type × background × developmental_stage × sex 分组；缺失 stage/sex 以 unknown 独立分组，避免与已知标签合并。metadata 可补充表达表中缺失的 stage/sex；若两者都提供，标签必须匹配（比较时忽略大小写并将下划线视为空格），否则阻断。输出仍保留样本表的原始标签。
+
 ## 输出解释
 
 - `p_amplitude_permutation`：将 time label 全局打乱后的经验尾部概率；是探索性 QC，不是正式推断。

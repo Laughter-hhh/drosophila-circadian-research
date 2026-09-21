@@ -1,0 +1,222 @@
+{
+  "status": "verified_public_dataset_replay",
+  "n_runs": 4,
+  "n_output_checks": 6,
+  "runs": [
+    {
+      "run_id": "parse-gse22308-context-forward",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "",
+      "stderr_preview": ""
+    },
+    {
+      "run_id": "extract-gse22308-context-forward",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "",
+      "stderr_preview": ""
+    },
+    {
+      "run_id": "descriptive-gse22308-context-forward-rhythm",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "",
+      "stderr_preview": ""
+    },
+    {
+      "run_id": "exploratory-gse22308-context-forward-cosinor",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "",
+      "stderr_preview": ""
+    }
+  ],
+  "output_checks": [
+    {
+      "run_id": "parse-gse22308-context-forward",
+      "path": "validation/public-data/GSE22308_blind_context_stratified_metadata.csv",
+      "expected_sha256": "deb4de3e7715f216c418b593e3cc02864053b1d8c6a806bdaf4d2845f698db99",
+      "observed_sha256": "deb4de3e7715f216c418b593e3cc02864053b1d8c6a806bdaf4d2845f698db99",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "parse-gse22308-context-forward",
+      "path": "validation/public-data/GSE22308_blind_context_stratified_matrix_summary.json",
+      "expected_sha256": "3c4afc3b41ddbb928839e4dc25bef48722e617a8e569f7e30099f5f95b9e94fb",
+      "observed_sha256": "3c4afc3b41ddbb928839e4dc25bef48722e617a8e569f7e30099f5f95b9e94fb",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "extract-gse22308-context-forward",
+      "path": "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_summary.csv",
+      "expected_sha256": "36121ae761b3b7bb0ab9b49d7406eec6188bc271b6f8c678a1dcc9f94d3d75fe",
+      "observed_sha256": "36121ae761b3b7bb0ab9b49d7406eec6188bc271b6f8c678a1dcc9f94d3d75fe",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "extract-gse22308-context-forward",
+      "path": "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv",
+      "expected_sha256": "f176dadfee315d9b58eeaad3dcf83a7af996c0ef39d7914786bc44d76bd8d6fd",
+      "observed_sha256": "f176dadfee315d9b58eeaad3dcf83a7af996c0ef39d7914786bc44d76bd8d6fd",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "descriptive-gse22308-context-forward-rhythm",
+      "path": "validation/public-data/GSE22308_blind_context_stratified_expression_rhythms.json",
+      "expected_sha256": "7c575ffaab4624c6e18a71773226c7c178a696f523203eda56b451ad92a70c35",
+      "observed_sha256": "7c575ffaab4624c6e18a71773226c7c178a696f523203eda56b451ad92a70c35",
+      "status": "replay_hash_verified"
+    },
+    {
+      "run_id": "exploratory-gse22308-context-forward-cosinor",
+      "path": "validation/public-data/GSE22308_blind_context_stratified_cosinor_inference.json",
+      "expected_sha256": "d345997e8b3a03485d694eeac84b9645bb6b6524e03acb80fe037dc41befa4b1",
+      "observed_sha256": "d345997e8b3a03485d694eeac84b9645bb6b6524e03acb80fe037dc41befa4b1",
+      "status": "replay_hash_verified"
+    }
+  ],
+  "issues": [],
+  "inference_warning": "Replay verifies deterministic execution and declared output hashes in an isolated temporary mirror; it does not establish biological validity, normalization suitability, statistical adequacy or causal conclusions.",
+  "manifest_validation": {
+    "status": "verified_public_dataset_manifest",
+    "formal_status": "online_source_content_verified",
+    "manifest_id": "GSE22308-blind-forward-context-stratified-20260921",
+    "dataset_id": "GSE22308",
+    "accession": "GSE22308",
+    "n_files": 9,
+    "n_runs": 4,
+    "file_checks": [
+      {
+        "path": "validation/public-data/GSE22308_series_matrix.txt.gz",
+        "role": "raw",
+        "expected_sha256": "ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7",
+        "observed_sha256": "ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7",
+        "size_bytes": 2580727,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GPL1322.annot.gz",
+        "role": "annotation",
+        "expected_sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52",
+        "observed_sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52",
+        "size_bytes": 1690903,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE22308_candidate_genes.csv",
+        "role": "candidate_list",
+        "expected_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+        "observed_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+        "size_bytes": 251,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE22308_blind_context_stratified_metadata.csv",
+        "role": "metadata",
+        "expected_sha256": "deb4de3e7715f216c418b593e3cc02864053b1d8c6a806bdaf4d2845f698db99",
+        "observed_sha256": "deb4de3e7715f216c418b593e3cc02864053b1d8c6a806bdaf4d2845f698db99",
+        "size_bytes": 8044,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE22308_blind_context_stratified_matrix_summary.json",
+        "role": "derived",
+        "expected_sha256": "3c4afc3b41ddbb928839e4dc25bef48722e617a8e569f7e30099f5f95b9e94fb",
+        "observed_sha256": "3c4afc3b41ddbb928839e4dc25bef48722e617a8e569f7e30099f5f95b9e94fb",
+        "size_bytes": 2432,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv",
+        "role": "derived",
+        "expected_sha256": "f176dadfee315d9b58eeaad3dcf83a7af996c0ef39d7914786bc44d76bd8d6fd",
+        "observed_sha256": "f176dadfee315d9b58eeaad3dcf83a7af996c0ef39d7914786bc44d76bd8d6fd",
+        "size_bytes": 37218,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_summary.csv",
+        "role": "derived",
+        "expected_sha256": "36121ae761b3b7bb0ab9b49d7406eec6188bc271b6f8c678a1dcc9f94d3d75fe",
+        "observed_sha256": "36121ae761b3b7bb0ab9b49d7406eec6188bc271b6f8c678a1dcc9f94d3d75fe",
+        "size_bytes": 22774,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE22308_blind_context_stratified_expression_rhythms.json",
+        "role": "derived",
+        "expected_sha256": "7c575ffaab4624c6e18a71773226c7c178a696f523203eda56b451ad92a70c35",
+        "observed_sha256": "7c575ffaab4624c6e18a71773226c7c178a696f523203eda56b451ad92a70c35",
+        "size_bytes": 35432,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE22308_blind_context_stratified_cosinor_inference.json",
+        "role": "derived",
+        "expected_sha256": "d345997e8b3a03485d694eeac84b9645bb6b6524e03acb80fe037dc41befa4b1",
+        "observed_sha256": "d345997e8b3a03485d694eeac84b9645bb6b6524e03acb80fe037dc41befa4b1",
+        "size_bytes": 44583,
+        "status": "hash_verified"
+      }
+    ],
+    "run_checks": [
+      {
+        "run_id": "parse-gse22308-context-forward",
+        "script": "scripts/parse_geo_series_matrix.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/GSE22308_series_matrix.txt.gz"
+        ],
+        "outputs": [
+          "validation/public-data/GSE22308_blind_context_stratified_metadata.csv",
+          "validation/public-data/GSE22308_blind_context_stratified_matrix_summary.json"
+        ]
+      },
+      {
+        "run_id": "extract-gse22308-context-forward",
+        "script": "scripts/extract_gene_expression.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/GSE22308_series_matrix.txt.gz",
+          "validation/public-data/GPL1322.annot.gz",
+          "validation/public-data/GSE22308_blind_context_stratified_metadata.csv",
+          "validation/public-data/GSE22308_candidate_genes.csv"
+        ],
+        "outputs": [
+          "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_summary.csv",
+          "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv"
+        ]
+      },
+      {
+        "run_id": "descriptive-gse22308-context-forward-rhythm",
+        "script": "scripts/analyze_expression_rhythm.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv"
+        ],
+        "outputs": [
+          "validation/public-data/GSE22308_blind_context_stratified_expression_rhythms.json"
+        ]
+      },
+      {
+        "run_id": "exploratory-gse22308-context-forward-cosinor",
+        "script": "scripts/analyze_cosinor_inference.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv"
+        ],
+        "outputs": [
+          "validation/public-data/GSE22308_blind_context_stratified_cosinor_inference.json"
+        ]
+      }
+    ],
+    "issues": [],
+    "warnings": [],
+    "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+  }
+}

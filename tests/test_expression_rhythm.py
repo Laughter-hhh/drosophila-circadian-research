@@ -16,7 +16,7 @@ class ExpressionRhythmTests(unittest.TestCase):
         fd, name = tempfile.mkstemp(suffix=".csv")
         os.close(fd)
         path = Path(name)
-        fields = ["gene_symbol", "sample_id", "cell_type", "time", "background", "expression"]
+        fields = ["gene_symbol", "sample_id", "cell_type", "time", "background", "developmental_stage", "sex", "gender", "expression"]
         with path.open("w", newline="", encoding="utf-8") as handle:
             writer = csv.DictWriter(handle, fieldnames=fields)
             writer.writeheader()
@@ -88,6 +88,64 @@ class ExpressionRhythmTests(unittest.TestCase):
             path.unlink(missing_ok=True)
         self.assertEqual(len(result), 2)
         self.assertTrue(all(row["status"] == "exploratory_fixed_period_cosinor" for row in result))
+
+
+    def test_sex_and_developmental_stage_strata_are_not_collapsed(self):
+        rows = []
+        for stage in ("adult", "larva"):
+            for sex in ("female", "male"):
+                for index, time in enumerate((0, 6, 12, 18)):
+                    row = {
+                        "gene_symbol": "Sh",
+                        "sample_id": f"{stage}_{sex}_{time}",
+                        "cell_type": "LNd",
+                        "time": f"ZT{time}",
+                        "background": "yw",
+                        "developmental_stage": stage,
+                        "expression": str(10 + index),
+                    }
+                    row["sex" if sex == "female" else "gender"] = sex
+                    rows.append(row)
+        path = self._write(rows)
+        try:
+            result = analyze_expression_samples(path, time_system="ZT")
+        finally:
+            path.unlink(missing_ok=True)
+
+        self.assertEqual(len(result), 4)
+        self.assertEqual(
+            {(row["sex"], row["developmental_stage"]) for row in result},
+            {(sex, stage) for sex in ("female", "male") for stage in ("adult", "larva")},
+        )
+        self.assertTrue(all(row["status"] == "exploratory_fixed_period_cosinor" for row in result))
+
+    def test_conflicting_context_for_same_sample_id_is_blocked(self):
+        path = self._write([
+            {"gene_symbol": "Sh", "sample_id": "same", "cell_type": "LNd", "time": "ZT0", "background": "yw", "sex": "female", "developmental_stage": "adult", "expression": "1"},
+            {"gene_symbol": "Sh", "sample_id": "same", "cell_type": "LNd", "time": "ZT0", "background": "yw", "gender": "male", "developmental_stage": "adult", "expression": "1"},
+        ])
+        try:
+            with self.assertRaisesRegex(ValueError, "conflicting sex/developmental_stage metadata"):
+                analyze_expression_samples(path, time_system="ZT")
+        finally:
+            path.unlink(missing_ok=True)
+
+
+    def test_gse22308_output_retains_stage_and_sex_strata(self):
+        public_data = ROOT / "validation" / "public-data"
+        result = analyze_expression_samples(
+            public_data / "GSE22308_candidate_expression_samples.csv",
+            time_system="ZT",
+        )
+        sh_large = [
+            row for row in result
+            if row.get("gene_symbol") == "Sh"
+            and row.get("cell_type") == "large PDF circadian neurons"
+            and row.get("background") == "yw"
+        ]
+        self.assertEqual(len(sh_large), 1)
+        self.assertEqual(sh_large[0]["developmental_stage"], "adult")
+        self.assertEqual(sh_large[0]["sex"], "male and female")
 
 
 if __name__ == "__main__":

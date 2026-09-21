@@ -81,6 +81,8 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 - 需要可复现代码、运行日志、数据溯源或论文级产物：读取 `references/reproducibility-and-provenance.md` 和 `references/manuscript-claims.md`。
 - 一项任务跨越多个工作流时，只读取直接相关的参考文件。
 
+- GEO 表达节律的两个 cosinor 脚本按 gene/cell/background/developmental_stage/sex 分组；缺失 strata 标记为 unknown，表达表与 metadata 的 stage/sex 冲突时必须阻断。
+
 ## 证据与推理纪律
 
 候选排序工作流的详细边界见 `references/candidate-ranking.md`：真实候选必须以已验证 search log、明确的 `--readout-match` 和逐个 `--target-cell` 运行来源级评分；仅用候选表摘要的结果只能作为探索性长名单，不得报告为来源级 directness shortlist。
