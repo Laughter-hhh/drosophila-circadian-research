@@ -11,6 +11,7 @@
 - S3 工作表列出 LNv、LNd、DN1 与 TH 组的作者 cycler calls；只把前三个 clock-neuron sheet 映射到本任务候选。TH 是 non-clock outgroup，不作时钟神经元候选证据。
 - 作者报告在 LD 下采集两组独立六时点 time course、每四小时一次；LNv/LNd 为 ZT2–22，DN1 为 ZT3–23。作者将同时通过 JTK_cycle 和 F24 的 transcript 定义为 high-confidence (HC)，只通过其中一个的定义为 low-confidence (LC)。文章所述 cutoffs 包括 JTK p<0.05、F24 score>0.5、振幅>2-fold、平均 reads>5。审计保留 S3 已发布统计量，不从这些字段重新筛选或拟合。
 - 候选键是候选表的 `candidate` 与 supplement 的 `symbol`。仅做大小写敏感的完整符号匹配；不自动展开别名、不做模糊匹配、不把 `Sh` 变成 `Shal` 或 `Shaw`。如需别名，应先创建带 FlyBase FBgn/FBtr、来源和审阅状态的显式映射表。
+- 审计 CLI 默认读取候选 CSV 的 `candidate` 列；若原始表使用 `gene_symbol` 等列名，传入 `--candidate-column gene_symbol` 选择精确列，不要为了适配工具而复制或改写原始候选表。该选项只选列，不做 symbol synonym/alias 转换。
 - 每个 worksheet 独立按表头解析 F24/JTK flag，因为不同 sheet 的两列顺序不同。重复 symbol 行逐行保留，并输出源行号；不得悄悄合并 transcript/feature 记录。
 - 未在目标 cycler sheet 中找到精确 symbol 时标为 `not_listed_in_published_cycler_supplement`。这不等于未表达、无节律或没有离子通道作用。
 
@@ -34,6 +35,7 @@
 python scripts/audit_published_cycle_candidates.py `
   --workbook validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx `
   --candidates validation/public-data/candidate-evidence-real.csv `
+  --candidate-column candidate `
   --output-csv validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv `
   --output-report validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json
 

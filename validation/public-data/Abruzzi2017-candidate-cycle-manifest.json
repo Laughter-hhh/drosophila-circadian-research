@@ -50,7 +50,7 @@
     {
       "run_id": "audit-abruzzi2017-s3-channel-candidates",
       "script": "scripts/audit_published_cycle_candidates.py",
-      "script_sha256": "a3de9f993776f0cac11c59d274adcabe768c46b3d770f5d31e6b912beb6bb1fa",
+      "script_sha256": "dd593eeb28592e245f4b95268e425bbbe97d4650b0254e26db8fbd8b8fd89393",
       "command": "python scripts/audit_published_cycle_candidates.py --workbook validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx --candidates validation/public-data/candidate-evidence-real.csv --output-csv validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv --output-report validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json",
       "command_argv": [
         "python",

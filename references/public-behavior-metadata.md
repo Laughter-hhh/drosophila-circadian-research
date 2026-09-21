@@ -4,8 +4,9 @@
 
 ## 工作流
 
-1. 从官方记录页和直接文件链接记录 accession、source URL、核查时间、观察到的物种/文件名/字段 token；不要只保存一个不可回溯的 URL。
-2. 下载元数据表后运行：
+1. 从官方记录页和直接文件链接记录 accession、source URL、核查时间、观察到的物种/文件名/字段 token；下载后保存输入文件 SHA-256，不要只保存一个不可回溯的 URL。
+2. 在 `planning` manifest 中登记 accession/source/context、已存在的元数据输入及哈希、`audit_public_behavior_metadata.py` 脚本及哈希，以及审计命令的 `command_argv` 和尚不存在的 JSON 输出路径；运行 `validate_public_dataset_manifest.py` 做 planning preflight。只有预检通过后才运行下面的审计命令。
+3. 运行元数据审计：
 
    ```powershell
    python scripts/audit_public_behavior_metadata.py validation/public-data/zenodo-18214640-20lux-main-dataset.csv `
@@ -15,9 +16,9 @@
      --output validation/public-data/zenodo-18214640-20lux-metadata-audit.json
    ```
 
-3. `verified_public_behavior_metadata_audit` 只表示文件哈希、字段布局、唯一键和基础数值格式通过。它不表示有足够信息做行为节律、神经活动或因果分析。
-4. 只要 genotype/strain、sex、age、temperature、LD/DD 或 ZT/CT 定义、个体 fly 标识、raw recording checksums 仍缺失，`analysis_readiness` 必须保持 `blocked_metadata_insufficient_for_behavior_analysis`。这时应优先设计信息获取实验或联系数据作者，而不是把 condition/lux/baseline_days 当成完整实验设计。
-5. 将输入 CSV、审计 JSON 和运行脚本写入 public-data manifest，运行 `scripts/validate_public_dataset_manifest.py`，再运行 `scripts/replay_public_dataset_manifest.py`。只接受逐项 hash 重现的回放结果作为计算可复现证据。
+4. 将真实审计 JSON 及其 SHA-256 写回 manifest，把阶段设为 `executed`，运行 manifest validator 与隔离 replay；二者通过后将 manifest 和 run 状态改为 `verified`，再运行 validator 与 replay。`planning` 阶段不 replay。只接受逐项 hash 重现的回放结果作为计算可复现证据。
+5. `verified_public_behavior_metadata_audit` 只表示文件哈希、字段布局、唯一键和基础数值格式通过。它不表示有足够信息做行为节律、神经活动或因果分析。
+6. 只要 genotype/strain、sex、age、temperature、LD/DD 或 ZT/CT 定义、个体 fly 标识、raw recording checksums 仍缺失，`analysis_readiness` 必须保持 `blocked_metadata_insufficient_for_behavior_analysis`。这时应优先设计信息获取实验或联系数据作者，而不是把 condition/lux/baseline_days 当成完整实验设计。
 
 ## 证据层级
 
@@ -28,4 +29,3 @@
 ## 当前 Zenodo 示例
 
 Zenodo 记录 `10.5281/zenodo.18214640` 的官方页面列出了 `20lux_main.dataset.csv` 和大型 Ethoscope 原始归档。skill 仅保留小型元数据文件用于审计；不要把“下载了元数据”写成“已分析行为原始数据”。当前示例的本地审计结果是 190 行、condition A/B/C 各 50 行、D 40 行；由于缺失关键研究元数据，行为分析 readiness 仍为 blocked。
-

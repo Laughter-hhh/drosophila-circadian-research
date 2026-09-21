@@ -1,3 +1,4 @@
+import csv
 import sys
 import tempfile
 import unittest
@@ -10,6 +11,7 @@ sys.path.insert(0, str(ROOT))
 
 from scripts.audit_published_cycle_candidates import (  # noqa: E402
     TARGET_SHEETS,
+    audit_published_cycle_candidates,
     build_output_rows,
     read_published_cyclers,
 )
@@ -134,6 +136,29 @@ def _write_fixture(path):
 
 
 class PublishedCycleCandidateAuditTests(unittest.TestCase):
+    def test_gene_symbol_input_column_is_read_without_rewriting_source_csv(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            workbook = Path(tmp) / "published.xlsx"
+            candidate_path = Path(tmp) / "candidates.csv"
+            _write_fixture(workbook)
+            with candidate_path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=["gene_symbol", "source_note"])
+                writer.writeheader()
+                writer.writerows([
+                    {"gene_symbol": "Sh", "source_note": "original candidate list"},
+                    {"gene_symbol": "Shal", "source_note": "original candidate list"},
+                    {"gene_symbol": "Shaw", "source_note": "original candidate list"},
+                ])
+
+            report, rows = audit_published_cycle_candidates(workbook, candidate_path, "gene_symbol")
+            with candidate_path.open("r", encoding="utf-8", newline="") as handle:
+                original_header = next(csv.reader(handle))
+
+        self.assertEqual(original_header, ["gene_symbol", "source_note"])
+        self.assertEqual(report["matching"]["input_key"], "candidate CSV 'gene_symbol' field")
+        self.assertEqual(report["matching"]["candidate_count"], 3)
+        self.assertEqual(len(rows), 10)
+
     def test_sheet_specific_header_order_and_exact_symbol_matching(self):
         with tempfile.TemporaryDirectory() as tmp:
             workbook = Path(tmp) / "published.xlsx"

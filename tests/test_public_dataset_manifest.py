@@ -1,6 +1,7 @@
 import copy
 import json
 import sys
+import tempfile
 import unittest
 import uuid
 from pathlib import Path
@@ -8,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from scripts.validate_public_dataset_manifest import validate_file, validate_payload
+from scripts.validate_public_dataset_manifest import main, validate_file, validate_payload
 
 
 class PublicDatasetManifestTests(unittest.TestCase):
@@ -108,6 +109,26 @@ class PublicDatasetManifestTests(unittest.TestCase):
         self.assertEqual(result["n_planned_runs"], 1)
         self.assertEqual(result["planned_run_checks"][0]["status"], "planning")
         self.assertFalse(any(record["path"] == output_path for record in payload["files"]))
+        self.assertFalse((ROOT / output_path).exists())
+
+    def test_cli_emits_a_successful_planning_preflight_report(self):
+        payload, output_path = self._planning_payload()
+        with tempfile.TemporaryDirectory(prefix="drosophila-planning-cli-") as directory:
+            manifest_path = Path(directory) / "planning-manifest.json"
+            report_path = Path(directory) / "planning-report.json"
+            manifest_path.write_text(json.dumps(payload), encoding="utf-8")
+            exit_code = main([
+                "validate_public_dataset_manifest.py",
+                str(manifest_path),
+                "--root", str(ROOT),
+                "--output", str(report_path),
+            ])
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(report["status"], "planning_public_dataset_manifest")
+        self.assertEqual(report["n_planned_runs"], 1)
+        self.assertEqual(report["planned_run_checks"][0]["status"], "planning")
         self.assertFalse((ROOT / output_path).exists())
 
     def test_planning_output_must_be_new_and_safe(self):

@@ -307,14 +307,14 @@ def read_published_cyclers(
     return candidates_by_sheet, sheet_qc
 
 
-def read_candidates(path: Path) -> list[str]:
+def read_candidates(path: Path, candidate_column: str = "candidate") -> list[str]:
     if not path.is_file():
         raise ValueError(f"candidate CSV does not exist: {path}")
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
-        if not reader.fieldnames or "candidate" not in reader.fieldnames:
-            raise ValueError("candidate CSV must include a 'candidate' column")
-        symbols = [str(row.get("candidate") or "").strip() for row in reader]
+        if not reader.fieldnames or candidate_column not in reader.fieldnames:
+            raise ValueError(f"candidate CSV must include a {candidate_column!r} column")
+        symbols = [str(row.get(candidate_column) or "").strip() for row in reader]
     if any(not value for value in symbols):
         raise ValueError("candidate CSV contains a blank candidate symbol")
     duplicates = sorted(symbol for symbol in set(symbols) if symbols.count(symbol) > 1)
@@ -366,9 +366,9 @@ def build_output_rows(
 
 
 def audit_published_cycle_candidates(
-    workbook_path: Path, candidate_path: Path,
+    workbook_path: Path, candidate_path: Path, candidate_column: str = "candidate",
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    candidates = read_candidates(candidate_path)
+    candidates = read_candidates(candidate_path, candidate_column)
     matches, sheet_qc = read_published_cyclers(workbook_path, set(candidates))
     rows = build_output_rows(candidates, matches)
     summaries = []
@@ -407,7 +407,7 @@ def audit_published_cycle_candidates(
             "candidate_list_sha256": _sha256(candidate_path),
         },
         "matching": {
-            "input_key": "candidate CSV 'candidate' field",
+            "input_key": f"candidate CSV {candidate_column!r} field",
             "source_key": "S3 worksheet symbol column",
             "rule": "case-sensitive exact full-symbol match after trimming surrounding whitespace; no fuzzy matching, capitalization changes or inferred synonyms",
             "candidate_count": len(candidates),
@@ -439,11 +439,12 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workbook", type=Path, required=True)
     parser.add_argument("--candidates", type=Path, required=True)
+    parser.add_argument("--candidate-column", default="candidate", help="Exact input CSV header containing gene symbols (default: candidate).")
     parser.add_argument("--output-csv", type=Path, required=True)
     parser.add_argument("--output-report", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
-        report, rows = audit_published_cycle_candidates(args.workbook, args.candidates)
+        report, rows = audit_published_cycle_candidates(args.workbook, args.candidates, args.candidate_column)
         args.output_csv.parent.mkdir(parents=True, exist_ok=True)
         with args.output_csv.open("w", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS, lineterminator="\n")
