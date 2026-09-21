@@ -1,0 +1,94 @@
+{
+  "manifest_id": "GSE77451-candidate-channel-transcript-key-audit-20260921",
+  "dataset_id": "GSE77451",
+  "accession": "GSE77451",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451",
+  "retrieved_at_utc": "2026-09-21T06:29:47Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-21T06:42:16Z",
+  "source_check_method": "automated_http",
+  "source_observed_tokens": [
+    "GSE77451",
+    "RNA-seq analysis of Drosophila clock and non-clock neurons reveals neuron-specific cycling and novel candidate neuropeptides",
+    "Drosophila melanogaster",
+    "48 GEO samples",
+    "LNv, LNd, DN1 and TH cell-group processed expression files",
+    "processed ESAT gene-expression quantification by transcript ID",
+    "GSM2052232: LNv, ZT2",
+    "two independent six-timepoint collections in LD",
+    "approximately 50-100 manually isolated neurons per sample",
+    "PLOS Genetics 13:e1006613 (2017)"
+  ],
+  "source_observation_note": "The NCBI GEO series and GSM2052232 records and the primary Abruzzi et al. paper were inspected. The three official processed matrix files were retrieved from the GEO download endpoint over HTTPS, checked as gzip streams, decompressed for TSV structure checks, and hashed. The paper describes mixed LNv samples (s-LNv plus l-LNv), LNd samples that include the fifth PDF-negative s-LNv, and a DN1 subset. This audit does not join the matrix columns to GEO sample-time metadata and performs no rhythm analysis.",
+  "analysis_context": {
+    "time_system": "The source paper reports LD collection at ZT2-ZT22 for LNv/LNd and ZT3-ZT23 for DN1. This structural audit does not map the processed matrix column labels to those timepoints.",
+    "experimental_unit": "A GEO processed sample/library column and its transcript-level expression features; no animal-level inference is made.",
+    "normalization_status": "The GEO files are processed ESAT transcript-level expression quantifications. This audit does not determine the numeric scale, normalize, aggregate, or compare expression values.",
+    "biological_unit_limitations": "The paper reports two independent six-timepoint collections and approximately 50-100 isolated neurons per sample, but the files used here do not identify individual flies. LNv, LNd and DN1 source groups do not map one-to-one to s-LNv, l-LNv, all LNd or all DN subtypes."
+  },
+  "files": [
+    {
+      "path": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE77451&file=GSE77451_LNv_gene_expression.txt.gz&format=file"
+    },
+    {
+      "path": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE77451&file=GSE77451_LNd_gene_expression.txt.gz&format=file"
+    },
+    {
+      "path": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE77451&file=GSE77451_DN1_gene_expression.txt.gz&format=file"
+    },
+    {
+      "path": "validation/public-data/candidate-evidence-real.csv",
+      "role": "candidate_list",
+      "sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c"
+    },
+    {
+      "path": "validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json",
+      "role": "derived",
+      "sha256": "926f25851572713b66a9797f981210e4e27db08e2c30ffbde4ee9e29839c796f"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "audit-candidate-transcript-sample-keys",
+      "script": "scripts/audit_esat_candidate_sample_keys.py",
+      "script_sha256": "a182592b623ab1f4fec4c1eaed1774f3c439969fa9bcd7152213c4f91cc6f651",
+      "command": "python scripts/audit_esat_candidate_sample_keys.py --candidate-list validation/public-data/candidate-evidence-real.csv --candidate-column candidate --matrix LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz --matrix LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz --matrix DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz --output validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json",
+      "inputs": [
+        "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+        "validation/public-data/candidate-evidence-real.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/audit_esat_candidate_sample_keys.py",
+        "--candidate-list",
+        "validation/public-data/candidate-evidence-real.csv",
+        "--candidate-column",
+        "candidate",
+        "--matrix",
+        "LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "--matrix",
+        "LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "--matrix",
+        "DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+        "--output",
+        "validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json"
+      ]
+    }
+  ]
+}

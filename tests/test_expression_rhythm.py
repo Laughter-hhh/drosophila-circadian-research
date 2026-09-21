@@ -59,6 +59,36 @@ class ExpressionRhythmTests(unittest.TestCase):
         finally:
             path.unlink(missing_ok=True)
 
+    def test_duplicate_sample_id_is_rejected_even_if_one_row_has_no_expression(self):
+        rows = [
+            {"gene_symbol": "Sh", "sample_id": "s0", "cell_type": "s-LNv", "time": "ZT0", "background": "yw", "expression": "1"},
+            {"gene_symbol": "Sh", "sample_id": "s0", "cell_type": "s-LNv", "time": "ZT0", "background": "yw", "expression": ""},
+            *[
+                {"gene_symbol": "Sh", "sample_id": f"s{idx}", "cell_type": "s-LNv", "time": f"ZT{time}", "background": "yw", "expression": str(idx + 1)}
+                for idx, time in enumerate((6, 12, 18), start=1)
+            ],
+        ]
+        path = self._write(rows)
+        try:
+            with self.assertRaisesRegex(ValueError, "duplicate sample_id.*aggregate probes/transcripts"):
+                analyze_expression_samples(path, time_system="ZT")
+        finally:
+            path.unlink(missing_ok=True)
+
+    def test_same_sample_id_in_distinct_backgrounds_is_allowed(self):
+        rows = [
+            {"gene_symbol": "Sh", "sample_id": f"s{idx}", "cell_type": "s-LNv", "time": f"ZT{time}", "background": background, "expression": str(idx + 1)}
+            for background in ("yw", "per01")
+            for idx, time in enumerate((0, 6, 12, 18))
+        ]
+        path = self._write(rows)
+        try:
+            result = analyze_expression_samples(path, time_system="ZT")
+        finally:
+            path.unlink(missing_ok=True)
+        self.assertEqual(len(result), 2)
+        self.assertTrue(all(row["status"] == "exploratory_fixed_period_cosinor" for row in result))
+
 
 if __name__ == "__main__":
     unittest.main()

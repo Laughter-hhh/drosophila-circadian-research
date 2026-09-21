@@ -30,6 +30,7 @@ except ModuleNotFoundError:  # direct execution as ``python scripts/replay_publi
 ALLOWED_SCRIPTS = {
     "scripts/parse_geo_series_matrix.py",
     "scripts/extract_gene_expression.py",
+    "scripts/audit_esat_candidate_sample_keys.py",
     "scripts/analyze_expression_rhythm.py",
     "scripts/analyze_cosinor_inference.py",
     "scripts/audit_public_behavior_metadata.py",

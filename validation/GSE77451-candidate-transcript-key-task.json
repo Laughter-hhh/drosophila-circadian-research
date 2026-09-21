@@ -1,0 +1,90 @@
+{
+  "task_id": "gse77451-candidate-transcript-sample-key-audit-20260921",
+  "status": "verified",
+  "research_question": "Do processed GSE77451 transcript-level expression matrices contain repeated candidate-gene-by-sample keys that could be mistaken for replicate rows in a gene-level rhythm fit?",
+  "hypothesis": "Several candidate symbols map to multiple transcript rows in a sample, so passing the transcript rows directly to a gene-level rhythm helper can overweight samples and inflate observation counts.",
+  "alternative_hypotheses": [
+    "Some candidates may map to one transcript row or not appear under the exact current gene symbol.",
+    "A missing symbol row may reflect annotation or alias differences and is not evidence of biological absence.",
+    "Transcript-level rows may be analyzed as separate features if transcript identity is retained, but they must not be described as independent gene-level biological replicates."
+  ],
+  "species": "Drosophila melanogaster",
+  "preparation": "Public processed ESAT RNA-seq expression tables from manually sorted neuronal populations; no new wet-lab measurements.",
+  "cell_type": "Source labels LNv, LNd and DN1; LNv is a mixed s-/l-LNv pool, LNd includes a fifth PDF-negative s-LNv, and DN1 covers a subset rather than all DN subtypes.",
+  "experimental_unit": "GEO sample/library column for structural row-key auditing only; the analysis does not infer fly-level biological n.",
+  "primary_readout": "Per-candidate transcript-row count and number of candidate-symbol-by-sample keys with multiple feature rows.",
+  "secondary_readouts": [
+    "Number of sample columns and exact-symbol candidate coverage per matrix.",
+    "Missing or invalid numeric field counts for candidate rows; values are not normalized or interpreted.",
+    "Regression check that the existing GSE22308 public expression-rhythm result remains byte-identical when the input has unique sample keys."
+  ],
+  "time_system": "The source experiment used LD and reports ZT sampling, but this structural audit does not join sample columns to timepoints or fit rhythms.",
+  "input_files": [
+    "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+    "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+    "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+    "validation/public-data/candidate-evidence-real.csv",
+    "scripts/audit_esat_candidate_sample_keys.py",
+    "scripts/analyze_expression_rhythm.py",
+    "validation/public-data/GSE22308_candidate_expression_samples.csv"
+  ],
+  "required_metadata": [
+    "GEO accession and source URL for each processed matrix.",
+    "Transcript identifier, exact source gene-symbol field, and sample-column labels.",
+    "Requested candidate gene-symbol list and the matching rule.",
+    "Source neuron-group limitations, time design, processed-data scale status, and experimental-unit limitation."
+  ],
+  "analysis_plan": "Run the ESAT structure audit on the official LNv, LNd and DN1 matrices, matching candidate symbols case-insensitively but without synonym expansion. Count transcript rows per candidate and repeated candidate-symbol-by-sample keys; do not aggregate expression, infer absent genes, map ZT labels, or test rhythms. Separately run the current exploratory rhythm helper on the existing GSE22308 derived sample table and compare its output byte-for-byte with the checked baseline. Run the targeted and full test suites, validate both public-data manifests, and isolated-replay each declared analysis.",
+  "decision_gate": "Accept the input guard only if synthetic duplicate sample IDs are rejected even when a duplicated row has blank expression, IDs can be reused across separate backgrounds, GSE77451 produces explicit transcript multiplicity without expression/rhythm claims, and the unique-key GSE22308 analysis remains byte-identical and replays successfully.",
+  "expected_outputs": [
+    "validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json",
+    "validation/public-data/GSE77451-candidate-transcript-key-manifest-validation.json",
+    "validation/public-data/GSE77451-candidate-transcript-key-replay.json",
+    "validation/public-data/GSE22308_candidate_expression_rhythms-duplicate-guard-rerun.json",
+    "validation/public-data/GSE22308-duplicate-guard-manifest-validation.json",
+    "validation/public-data/GSE22308-duplicate-guard-replay.json",
+    "validation/iteration-20260921-transcript-sample-key-guard.md"
+  ],
+  "acceptance_tests": [
+    "GSE77451 LNv, LNd and DN1 processed files each pass gzip and TSV structure checks and contain 12 sample columns.",
+    "Candidate matching uses exact symbol text after case folding and makes no claim that missing symbols are not expressed.",
+    "The audit reports candidate transcript rows and repeated gene-sample keys without using transcript rows as independent replicates.",
+    "Synthetic duplicate sample IDs within the same gene/cell/background group block the cosinor helper even if a duplicate row has no expression value.",
+    "Reusing a sample ID in a distinct background group remains allowed.",
+    "The new audit script is on the public-data replay allowlist with safe python command_argv.",
+    "The current GSE22308 rhythm result is byte-identical to its previous output and the updated GSE22308 manifest validates and replays.",
+    "The GSE77451 manifest validates and its audit output hash passes isolated replay.",
+    "The complete unittest suite passes."
+  ],
+  "verification": {
+    "python": "3.12.14",
+    "focused_tests": {
+      "expression_rhythm": "5 passed",
+      "esat_candidate_sample_keys": "3 passed"
+    },
+    "full_test_suite": "277 tests passed",
+    "gse22308_byte_identical_regression": {
+      "status": "verified",
+      "sha256_before_and_after": "96e9bff734d3fadd7c269acf2270a17c7d78b31fb5c961f6fc51b1b8fe8836a",
+      "byte_identical": true
+    },
+    "gse77451_manifest": "verified_public_dataset_manifest; 5 files; 1 run; zero issues",
+    "gse77451_isolated_replay": "verified_public_dataset_replay; 1 run; 1 output hash; zero issues",
+    "gse22308_manifest": "verified_public_dataset_manifest; 12 files; 5 runs; zero issues",
+    "gse22308_isolated_replay": "verified_public_dataset_replay; 5 runs; 7 output hashes; zero issues"
+  },
+  "source_log": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2052232",
+    "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE77451&file=GSE77451_LNv_gene_expression.txt.gz&format=file",
+    "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006613",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22308"
+  ],
+  "limitations": [
+    "This task audits feature-to-sample key multiplicity only; it does not establish candidate expression, rhythmic expression, channel protein, electrophysiological function, or behavioral causality.",
+    "Exact gene-symbol matching does not resolve synonyms or genome-build changes.",
+    "The source LNv, LNd and DN1 pools do not isolate all user-requested neuronal subtypes, and individual fly identity is not a unit in this audit.",
+    "The ESAT processed files are transcript-level; no normalized scale or gene-level aggregation is inferred.",
+    "A candidate absent from a processed matrix under exact symbol matching is reported as not found, not biologically absent."
+  ]
+}

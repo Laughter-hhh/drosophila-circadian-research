@@ -27,4 +27,6 @@ GEO series matrix 中的 `ID_REF` 通常是 probe 或 feature ID，不一定是 
 
 ## 直接表达节律入口
 
+进入 cosinor 前，长表必须对 gene_symbol × cell_type × background × sample_id 唯一，且同一 sample ID 在一个分组内只对应一个时间点。一个样本有多个 microarray probes 或 RNA-seq transcript/isoform 行时，不得把 feature 行当作重复观测；应预先规定并说明 gene-level aggregation，或将各 transcript 作为独立特征分析。analyze_expression_rhythm.py 会阻断重复或空白 sample ID，不会替用户猜测求和、平均或取中位数。可用 audit_esat_candidate_sample_keys.py 对 ESAT transcript-level GEO 文件先做结构性审计；该审计不归一化表达量，也不检验节律。
+
 如果仅需对已整理的表达长表做 descriptive fixed-period cosinor，运行 `scripts/analyze_expression_rhythm.py` 时必须显式提供 `--time-system ZT|CT`。脚本会核对每个 `time` token 的前缀；`CT6` 不会被静默重标为 `ZT6`。该入口只适合探索性描述，正式推断应使用 `scripts/analyze_cosinor_inference.py` 并提供 metadata 或明确的 experimental unit。

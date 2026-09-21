@@ -22,8 +22,8 @@ class PublicDatasetManifestTests(unittest.TestCase):
         )
         self.assertEqual(result["status"], "verified_public_dataset_manifest")
         self.assertEqual(result["formal_status"], "online_source_content_verified")
-        self.assertEqual(result["n_files"], 11)
-        self.assertEqual(result["n_runs"], 4)
+        self.assertEqual(result["n_files"], 12)
+        self.assertEqual(result["n_runs"], 5)
         self.assertEqual(result["warnings"], [])
 
     def test_content_checked_requires_observation_provenance(self):
@@ -72,6 +72,5 @@ class PublicDatasetManifestTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
 
 

@@ -13,7 +13,7 @@ import csv
 import json
 import re
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,26 +50,37 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
     required = {"gene_symbol", "sample_id", "cell_type", "time", "background", "expression"}
     if rows and not required.issubset(rows[0]):
         raise ValueError(f"sample expression CSV missing columns: {', '.join(sorted(required - set(rows[0])))}")
-    grouped: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
+    rows_by_group: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     for row in rows:
-        if not (row.get("expression") or "").strip():
-            continue
         key = (row.get("gene_symbol", ""), row.get("cell_type", ""), row.get("background", ""))
-        grouped[key].append(row)
+        rows_by_group[key].append(row)
     output: list[dict[str, object]] = []
-    all_keys = sorted({
-        (row.get("gene_symbol", ""), row.get("cell_type", ""), row.get("background", ""))
-        for row in rows
-    })
-    for key in all_keys:
+    for key in sorted(rows_by_group):
         gene, cell_type, background = key
-        group = grouped.get(key, [])
+        all_group_rows = rows_by_group[key]
+        sample_ids = [(row.get("sample_id") or "").strip() for row in all_group_rows]
+        if any(not sample_id for sample_id in sample_ids):
+            raise ValueError(
+                f"blank sample_id in gene/cell/background group {key}; "
+                "each gene-level sample measurement needs a stable sample_id"
+            )
+        duplicate_sample_ids = sorted(
+            sample_id for sample_id, count in Counter(sample_ids).items() if count > 1
+        )
+        if duplicate_sample_ids:
+            preview = ", ".join(duplicate_sample_ids[:5])
+            raise ValueError(
+                f"duplicate sample_id within gene/cell/background group {key}: {preview}; "
+                "aggregate probes/transcripts within each sample using an explicit "
+                "gene-level rule before fitting; do not treat feature rows as replicates"
+            )
+        group = [row for row in all_group_rows if (row.get("expression") or "").strip()]
         if not group:
             output.append({"gene_symbol": gene, "cell_type": cell_type, "background": background, "status": "no_numeric_expression"})
             continue
         try:
             analysis_rows = [
-                {"subject_id": row["sample_id"], "time_hours": str(_time_hours(row["time"], normalized_time_system)), "value": row["expression"]}
+                {"subject_id": row["sample_id"].strip(), "time_hours": str(_time_hours(row["time"], normalized_time_system)), "value": row["expression"]}
                 for row in group
             ]
             result = analyze_rows(analysis_rows, period_hours=24.0, time_system=normalized_time_system)
