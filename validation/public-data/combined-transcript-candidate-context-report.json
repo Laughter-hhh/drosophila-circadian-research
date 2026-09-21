@@ -261,9 +261,9 @@
     "validation/public-data/Abruzzi2017-candidate-cycle-replay.json": "fe1617d98c21d4cdfdebc879433958a9e96417437477561645fd1b4de9687920",
     "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
     "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
-    "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json": "db2de950a49623a7aa764682f22e9cc24261287bca23b8c35e342ba6d57f8920",
-    "validation/public-data/GSE157504-candidate-context-overlay-manifest.json": "be15d9301b4ff12ce366448de2ecc18f5aaef75b1bbc77d501b01b305d809965",
-    "validation/public-data/GSE157504-candidate-context-overlay-replay.json": "f10dee868c8253cbcdf7cef57176d35f332953c42ef900bbe886d447ce3a580d",
+    "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json": "4a6c1872d8bbaa33903978e77a6052be5e4bed74a447f786071ae45f42a42bb5",
+    "validation/public-data/GSE157504-candidate-context-overlay-manifest.json": "fa7ea0229ef200571b3190dbb92e50da81f423aaee134712c8b4f2ae7b91e076",
+    "validation/public-data/GSE157504-candidate-context-overlay-replay.json": "8f0192b63f2a0bd8e7a5880e67164ad5265de572bdc9618d4155b36246812d7a",
     "validation/public-data/GSE157504_candidate_context_overlay.csv": "8377c21818586240a1a01adb8d395bef892bfb1b7a9ff25e32b4feccadc8219d",
     "validation/public-data/GSE157504_candidate_context_overlay_report.json": "03ac4a0ba8ba1b9131f1c19f407ded3525d5067833c73db4ecad65078e7d821b"
   },

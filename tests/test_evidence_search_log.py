@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from scripts.validate_evidence_search_log import validate
+from scripts.validate_evidence_search_log import parse_cell_tokens, validate
 
 
 FIELDS = [
@@ -92,6 +92,15 @@ class EvidenceSearchLogTests(unittest.TestCase):
             path.unlink(missing_ok=True)
         self.assertEqual(result["status"], "invalid_evidence_search_log")
         self.assertTrue(any(issue["type"] == "thesis_source_not_allowed" for issue in result["issues"]))
+
+    def test_parse_cell_tokens_canonicalizes_aliases(self):
+        self.assertEqual(parse_cell_tokens("ln(v);DN1p;ln_itp"), ["LNv", "DN1p", "LN_ITP_ambiguous"])
+
+    def test_parse_cell_tokens_rejects_unknown_and_mixed_unknown(self):
+        with self.assertRaises(ValueError):
+            parse_cell_tokens("LNv;DN1x")
+        with self.assertRaises(ValueError):
+            parse_cell_tokens("unverified;s-LNv")
 
     def test_public_candidate_search_log_is_verified(self):
         path = ROOT / "validation" / "public-data" / "candidate-evidence-search-log.csv"

@@ -20,8 +20,15 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.score_candidates import DIMENSIONS, DIRECTNESS_LABELS, MISSING, READOUT_MATCHES, TARGET_SCOPES, UNVERIFIED_CELL, _rating, parse_cell_tokens
-from scripts.validate_evidence_search_log import validate as validate_search_log
+from scripts.score_candidates import DIMENSIONS, MISSING, _rating
+from scripts.validate_evidence_search_log import (
+    LABELS as DIRECTNESS_LABELS,
+    READOUTS as READOUT_MATCHES,
+    TARGET_SCOPES,
+    UNVERIFIED_CELL,
+    parse_cell_tokens,
+    validate as validate_search_log,
+)
 
 
 REQUIRED = {

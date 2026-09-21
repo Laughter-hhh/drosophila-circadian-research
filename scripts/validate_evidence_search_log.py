@@ -7,6 +7,7 @@ import argparse
 import csv
 import datetime as dt
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -14,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.score_candidates import UNVERIFIED_CELL, parse_cell_tokens
+
 
 
 REQUIRED = {
@@ -29,6 +30,28 @@ READOUTS = {
     "behavior_only", "none_or_unverified",
 }
 LABELS = {"direct", "near_direct", "indirect", "unverified"}
+UNVERIFIED_CELL = "unverified"
+TARGET_CELL_TYPES = (
+    "clock_neurons", "LNv", "s-LNv", "l-LNv", "LNd", "DN", "DN1", "DN1p", "DN1a", "DN2", "DN3", "LN_ITP_ambiguous",
+)
+_CELL_ALIASES = {"ln_itp": "LN_ITP_ambiguous", "ln(v)": "LNv", "lnvs": "LNv"}
+_CELL_BY_CASEFOLD = {token.casefold(): token for token in (*TARGET_CELL_TYPES, UNVERIFIED_CELL)}
+_CELL_ORDER = {token: index for index, token in enumerate((*TARGET_CELL_TYPES, UNVERIFIED_CELL))}
+
+
+def parse_cell_tokens(value: str | None, *, field: str = "evidence_target_cells") -> list[str]:
+    """Parse canonical clock-neuron tokens as part of the evidence-log schema."""
+    tokens = [token.strip() for token in re.split(r"[;,|]", value or "") if token.strip()]
+    normalized: set[str] = set()
+    for token in tokens:
+        folded = token.casefold()
+        canonical = _CELL_ALIASES.get(folded) or _CELL_BY_CASEFOLD.get(folded)
+        if canonical is None:
+            raise ValueError(f"{field} contains an unknown cell-group token: {token}")
+        normalized.add(canonical)
+    if UNVERIFIED_CELL in normalized and len(normalized) > 1:
+        raise ValueError(f"{field} cannot mix {UNVERIFIED_CELL} with named cell groups")
+    return sorted(normalized, key=lambda token: _CELL_ORDER[token])
 CLAIMS = {"conclusion", "inference", "no_evidence"}
 SUPPORT = {"checked", "not_checked", "conflict", "unavailable"}
 DECISIONS = {"include", "conditional", "exclude_from_direct_shortlist"}
