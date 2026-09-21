@@ -26,7 +26,8 @@
     "time_system": "ZT",
     "experimental_unit": "pooled_cell_sample",
     "normalization_status": "processed GEO series matrix; raw CEL normalization was not rerun",
-    "biological_unit_limitations": "Each sample is a pooled cell preparation; individual fly identity, fly-level replication, temperature and batch are not fully available."
+    "biological_unit_limitations": "Each sample is a pooled cell preparation; individual fly identity, fly-level replication, temperature and batch are not fully available.",
+    "sample_context_retained": "The current extractor carries GEO sex/gender labels into a normalized sex field and groups summaries by that field. Mixed-source labels such as 'male and female' remain pooled annotations and are not treated as sex-specific replicates."
   },
   "files": [
     {
@@ -62,12 +63,12 @@
     {
       "path": "validation/public-data/GSE22308_candidate_expression_samples.csv",
       "role": "derived",
-      "sha256": "eddf89be048f39c4feaf94f7041b562716c2ea4758ee2fac3a3ea8e8ba048cb5"
+      "sha256": "f176dadfee315d9b58eeaad3dcf83a7af996c0ef39d7914786bc44d76bd8d6fd"
     },
     {
       "path": "validation/public-data/GSE22308_candidate_expression_summary.csv",
       "role": "derived",
-      "sha256": "44d1de237e35a7b73f6bf8bf7f17f19145910541d96a48dec8eb39de4f776316"
+      "sha256": "36121ae761b3b7bb0ab9b49d7406eec6188bc271b6f8c678a1dcc9f94d3d75fe"
     },
     {
       "path": "validation/public-data/GSE22308_candidate_expression_rhythms.json",
@@ -82,12 +83,32 @@
     {
       "path": "validation/public-data/GSE22308_channel_regulator_expression_samples.csv",
       "role": "derived",
-      "sha256": "0523da8ada7a6f72c7d6ae99c9587365850bc8095bf4b9959b4341f9301b2750"
+      "sha256": "e5a79b074a13316f7fc098577aa39edcbf22f57ae5938bde44f6838783f5dd8b"
     },
     {
       "path": "validation/public-data/GSE22308_channel_regulator_expression_inference.json",
       "role": "derived",
-      "sha256": "23311f1118b0972826acc2955321585b4e89e966906b17ba621f67e8d0c8d45a"
+      "sha256": "341a0be9169e8ac4a7afc7cb45b2a4d3b5381525286c42debc73c3057c8031c2"
+    },
+    {
+      "path": "validation/public-data/GSE_circadian_channel_regulator_genes.csv",
+      "role": "candidate_list",
+      "sha256": "31a54beabb13ceba990c645b671b69c527b1f9d0ffc34b830df8f0b664be47ae"
+    },
+    {
+      "path": "validation/public-data/GSE22308_channel_regulator_expression_summary.csv",
+      "role": "derived",
+      "sha256": "d292a37468f5a953db3b6d98abcf81de926117dc23674d41d0b895d8c1cc5cf2"
+    },
+    {
+      "path": "validation/public-data/GSE22308_channel_regulator_expression_rhythms.json",
+      "role": "derived",
+      "sha256": "f83a207ed3c834cffe82992a29137df2daea0e4f898c938dddff06ffecb22c00"
+    },
+    {
+      "path": "validation/public-data/GSE22308_channel_regulator_expression_inference-rerun.json",
+      "role": "derived",
+      "sha256": "341a0be9169e8ac4a7afc7cb45b2a4d3b5381525286c42debc73c3057c8031c2"
     }
   ],
   "runs": [
@@ -121,7 +142,7 @@
     {
       "run_id": "extract-gse22308-candidate-expression",
       "script": "scripts/extract_gene_expression.py",
-      "script_sha256": "c90bf2dfb9a3da91065c1d3040d83b18df1aada0074ef49cab662da6bf54038c",
+      "script_sha256": "d1b4017eecfcfb619786f3de5cc392f9e7a248362dd2917352cca8e8905041d9",
       "command": "python scripts/extract_gene_expression.py validation/public-data/GSE22308_series_matrix.txt.gz validation/public-data/GPL1322.annot.gz validation/public-data/GSE22308_parsed_metadata.csv validation/public-data/GSE22308_candidate_genes.csv --summary-output validation/public-data/GSE22308_candidate_expression_summary.csv --sample-output validation/public-data/GSE22308_candidate_expression_samples.csv",
       "inputs": [
         "validation/public-data/GSE22308_series_matrix.txt.gz",
@@ -193,6 +214,57 @@
       ]
     },
     {
+      "run_id": "extract-gse22308-channel-regulator-expression",
+      "script": "scripts/extract_gene_expression.py",
+      "script_sha256": "d1b4017eecfcfb619786f3de5cc392f9e7a248362dd2917352cca8e8905041d9",
+      "command": "python scripts/extract_gene_expression.py validation/public-data/GSE22308_series_matrix.txt.gz validation/public-data/GPL1322.annot.gz validation/public-data/GSE22308_parsed_metadata.csv validation/public-data/GSE_circadian_channel_regulator_genes.csv --summary-output validation/public-data/GSE22308_channel_regulator_expression_summary.csv --sample-output validation/public-data/GSE22308_channel_regulator_expression_samples.csv",
+      "inputs": [
+        "validation/public-data/GSE22308_series_matrix.txt.gz",
+        "validation/public-data/GPL1322.annot.gz",
+        "validation/public-data/GSE22308_parsed_metadata.csv",
+        "validation/public-data/GSE_circadian_channel_regulator_genes.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_channel_regulator_expression_summary.csv",
+        "validation/public-data/GSE22308_channel_regulator_expression_samples.csv"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/extract_gene_expression.py",
+        "validation/public-data/GSE22308_series_matrix.txt.gz",
+        "validation/public-data/GPL1322.annot.gz",
+        "validation/public-data/GSE22308_parsed_metadata.csv",
+        "validation/public-data/GSE_circadian_channel_regulator_genes.csv",
+        "--summary-output",
+        "validation/public-data/GSE22308_channel_regulator_expression_summary.csv",
+        "--sample-output",
+        "validation/public-data/GSE22308_channel_regulator_expression_samples.csv"
+      ]
+    },
+    {
+      "run_id": "descriptive-gse22308-channel-regulator-expression-rhythm",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "script_sha256": "6e0651e1556773905795a274cc0844856464c796e72d0a9dccd9b619e58347cc",
+      "command": "python scripts/analyze_expression_rhythm.py validation/public-data/GSE22308_channel_regulator_expression_samples.csv --time-system ZT --output validation/public-data/GSE22308_channel_regulator_expression_rhythms.json",
+      "inputs": [
+        "validation/public-data/GSE22308_channel_regulator_expression_samples.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_channel_regulator_expression_rhythms.json"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/analyze_expression_rhythm.py",
+        "validation/public-data/GSE22308_channel_regulator_expression_samples.csv",
+        "--time-system",
+        "ZT",
+        "--output",
+        "validation/public-data/GSE22308_channel_regulator_expression_rhythms.json"
+      ]
+    },
+    {
       "run_id": "exploratory-gse22308-cosinor-inference",
       "script": "scripts/analyze_cosinor_inference.py",
       "script_sha256": "561b5bc22203a2c9224d860a0ca2459fb7a2068c81b84621948fcf77d4a0ee2c",
@@ -221,6 +293,37 @@
         "20260906",
         "--output",
         "validation/public-data/GSE22308_channel_regulator_expression_inference.json"
+      ]
+    },
+    {
+      "run_id": "exploratory-gse22308-cosinor-inference-rerun",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "script_sha256": "561b5bc22203a2c9224d860a0ca2459fb7a2068c81b84621948fcf77d4a0ee2c",
+      "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE22308_channel_regulator_expression_samples.csv --metadata validation/public-data/GSE22308_sample_metadata.csv --time-system ZT --n-permutations 1000 --n-bootstrap 1000 --seed 20260906 --output validation/public-data/GSE22308_channel_regulator_expression_inference-rerun.json",
+      "inputs": [
+        "validation/public-data/GSE22308_channel_regulator_expression_samples.csv",
+        "validation/public-data/GSE22308_sample_metadata.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_channel_regulator_expression_inference-rerun.json"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/analyze_cosinor_inference.py",
+        "validation/public-data/GSE22308_channel_regulator_expression_samples.csv",
+        "--metadata",
+        "validation/public-data/GSE22308_sample_metadata.csv",
+        "--time-system",
+        "ZT",
+        "--n-permutations",
+        "1000",
+        "--n-bootstrap",
+        "1000",
+        "--seed",
+        "20260906",
+        "--output",
+        "validation/public-data/GSE22308_channel_regulator_expression_inference-rerun.json"
       ]
     }
   ]

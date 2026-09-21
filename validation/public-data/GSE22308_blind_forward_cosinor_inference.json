@@ -5,33 +5,20 @@
   "formal_status": "blocked_requires_mixed_model",
   "time_system": "ZT",
   "method": "fixed 24-hour cosinor + global time-label permutation + row bootstrap",
-  "seed": 20260906,
+  "seed": 20260921,
   "n_permutations": 1000,
   "n_bootstrap": 1000,
   "input_file_metadata": {
-    "path": "validation\\public-data\\GSE22308_channel_regulator_expression_samples.csv",
-    "size_bytes": 46145,
-    "sha256": "e5a79b074a13316f7fc098577aa39edcbf22f57ae5938bde44f6838783f5dd8b"
+    "path": "validation\\public-data\\GSE22308_blind_forward_candidate_expression_samples.csv",
+    "size_bytes": 37218,
+    "sha256": "f176dadfee315d9b58eeaad3dcf83a7af996c0ef39d7914786bc44d76bd8d6fd"
   },
-  "metadata_joined": true,
-  "metadata_source": "validation\\public-data\\GSE22308_sample_metadata.csv",
-  "metadata_file_metadata": {
-    "path": "validation\\public-data\\GSE22308_sample_metadata.csv",
-    "size_bytes": 4099,
-    "sha256": "b11120c62d262eaf6b326697778ac2c19f78bb839901997e0ddc612e8889c9dc"
-  },
-  "metadata_warnings": [
-    {
-      "type": "unknown_batch",
-      "n_rows": "456"
-    },
-    {
-      "type": "unknown_temperature",
-      "n_rows": "456"
-    }
-  ],
+  "metadata_joined": false,
+  "metadata_source": null,
+  "metadata_file_metadata": null,
+  "metadata_warnings": [],
   "multiple_testing_scope": "Benjamini-Hochberg across testable groups in this run",
-  "n_groups": 76,
+  "n_groups": 60,
   "groups": [
     {
       "n_observations": 6,
@@ -69,23 +56,23 @@
       "observed_amplitude": 0.11939324244762883,
       "observed_phase_peak_hours": 19.965526914027265,
       "observed_r_squared": 0.0398533035151295,
-      "p_amplitude_permutation": 0.8131868131868132,
+      "p_amplitude_permutation": 0.8401598401598401,
       "bootstrap_amplitude_ci95": [
-        0.04375689381722912,
-        0.534636588565902
+        0.04417689446712373,
+        0.5120771088331497
       ],
       "bootstrap_phase_ci95": [
-        0.4157985032123613,
-        23.45118325971594
+        0.36662583278844557,
+        23.540512086378662
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 986,
+      "n_bootstrap_success": 992,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "Ca-alpha1D",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.8868353868353869
+      "q_amplitude_bh": 0.9001712573141144
     },
     {
       "n_observations": 4,
@@ -135,23 +122,23 @@
       "observed_amplitude": 0.9805202238269793,
       "observed_phase_peak_hours": 9.282770610262352,
       "observed_r_squared": 0.812789177409218,
-      "p_amplitude_permutation": 0.014985014985014986,
+      "p_amplitude_permutation": 0.02197802197802198,
       "bootstrap_amplitude_ci95": [
-        0.669217359667164,
-        1.4724775136280874
+        0.6522293555544181,
+        1.4826903424471554
       ],
       "bootstrap_phase_ci95": [
-        7.699554011192342,
-        12.180078275338616
+        7.859494107271265,
+        11.959757833574788
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 995,
+      "n_bootstrap_success": 993,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "Ca-alpha1T",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.14235764235764237
+      "q_amplitude_bh": 0.16483516483516486
     },
     {
       "n_observations": 4,
@@ -201,23 +188,23 @@
       "observed_amplitude": 1.566348527447892,
       "observed_phase_peak_hours": 13.358050982773072,
       "observed_r_squared": 0.7546694094266735,
-      "p_amplitude_permutation": 0.04195804195804196,
+      "p_amplitude_permutation": 0.053946053946053944,
       "bootstrap_amplitude_ci95": [
-        0.8647194429537641,
-        2.469282217494884
+        0.942876816115387,
+        2.4801133675968323
       ],
       "bootstrap_phase_ci95": [
-        10.283016218150976,
-        15.784867448421299
+        10.223595321596447,
+        15.521965881648491
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 980,
+      "n_bootstrap_success": 990,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "Irk1",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.1993006993006993
+      "q_amplitude_bh": 0.2022977022977023
     },
     {
       "n_observations": 4,
@@ -239,7 +226,7 @@
       "experimental_unit": "pooled_cell_sample",
       "status": "insufficient_or_invalid_time_series",
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "Ncc69",
+      "gene_symbol": "Irk2",
       "cell_type": "ELAV neurons",
       "background": "yw"
     },
@@ -251,7 +238,7 @@
       "experimental_unit": "pooled_cell_sample",
       "status": "insufficient_or_invalid_time_series",
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "Ncc69",
+      "gene_symbol": "Irk2",
       "cell_type": "large PDF circadian neurons",
       "background": "per01"
     },
@@ -264,26 +251,26 @@
       "status": "exploratory_inferential_cosinor",
       "period_hours": 24.0,
       "time_system": "ZT",
-      "observed_amplitude": 0.1993862188615342,
-      "observed_phase_peak_hours": 14.481785549988988,
-      "observed_r_squared": 0.5214266032397172,
-      "p_amplitude_permutation": 0.12887112887112886,
+      "observed_amplitude": 0.3448609977971859,
+      "observed_phase_peak_hours": 1.023508783802678,
+      "observed_r_squared": 0.14565421389120714,
+      "p_amplitude_permutation": 0.7772227772227772,
       "bootstrap_amplitude_ci95": [
-        0.10963473144065201,
-        0.3508524683233812
+        0.046057227856627456,
+        1.177697968261257
       ],
       "bootstrap_phase_ci95": [
-        12.581764182601777,
-        17.818448364856465
+        0.1574824302065134,
+        23.91402057194579
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 988,
+      "n_bootstrap_success": 985,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
-      "gene_symbol": "Ncc69",
+      "gene_symbol": "Irk2",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.33928571428571425
+      "q_amplitude_bh": 0.8967955121801275
     },
     {
       "n_observations": 4,
@@ -293,7 +280,7 @@
       "experimental_unit": "pooled_cell_sample",
       "status": "insufficient_or_invalid_time_series",
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "Ncc69",
+      "gene_symbol": "Irk2",
       "cell_type": "small PDF circadian neurons",
       "background": "yw"
     },
@@ -333,23 +320,23 @@
       "observed_amplitude": 0.050117108430471694,
       "observed_phase_peak_hours": 17.769211225016456,
       "observed_r_squared": 0.3288707485995729,
-      "p_amplitude_permutation": 0.14285714285714285,
+      "p_amplitude_permutation": 0.16083916083916083,
       "bootstrap_amplitude_ci95": [
-        0.012521510805853606,
-        0.14208356975236877
+        0.009550052670945879,
+        0.13434561120716748
       ],
       "bootstrap_phase_ci95": [
-        5.5950094296885595,
-        21.652430656776474
+        5.336165713942614,
+        21.215664412402276
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 995,
+      "n_bootstrap_success": 994,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "Ork1",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.33928571428571425
+      "q_amplitude_bh": 0.4020979020979021
     },
     {
       "n_observations": 4,
@@ -399,14 +386,14 @@
       "observed_amplitude": 0.3373464862154903,
       "observed_phase_peak_hours": 2.628097285796159,
       "observed_r_squared": 0.2869894128332179,
-      "p_amplitude_permutation": 0.34165834165834164,
+      "p_amplitude_permutation": 0.33966033966033965,
       "bootstrap_amplitude_ci95": [
-        0.1479923299424199,
-        0.852470695143327
+        0.14611369084809353,
+        0.8629676310658478
       ],
       "bootstrap_phase_ci95": [
-        0.47878877945314496,
-        22.668710146107777
+        0.5477563443352145,
+        22.692891996974843
       ],
       "n_permutations": 1000,
       "n_bootstrap_success": 991,
@@ -415,7 +402,7 @@
       "gene_symbol": "Sh",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.5057085771371486
+      "q_amplitude_bh": 0.5394605394605394
     },
     {
       "n_observations": 4,
@@ -465,14 +452,14 @@
       "observed_amplitude": 0.5071707602355102,
       "observed_phase_peak_hours": 6.973802527873708,
       "observed_r_squared": 0.30935926353192267,
-      "p_amplitude_permutation": 0.2547452547452547,
+      "p_amplitude_permutation": 0.23576423576423577,
       "bootstrap_amplitude_ci95": [
-        0.12849205616924245,
-        1.0074417263479771
+        0.1116440709081403,
+        1.0700789203615642
       ],
       "bootstrap_phase_ci95": [
-        3.010611413835247,
-        17.229768170013052
+        2.6481848841147215,
+        17.100267417494784
       ],
       "n_permutations": 1000,
       "n_bootstrap_success": 991,
@@ -481,7 +468,7 @@
       "gene_symbol": "Shab",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.5057085771371486
+      "q_amplitude_bh": 0.5052090766376481
     },
     {
       "n_observations": 4,
@@ -531,23 +518,23 @@
       "observed_amplitude": 1.0397966720787672,
       "observed_phase_peak_hours": 9.97867611367153,
       "observed_r_squared": 0.2957544423545797,
-      "p_amplitude_permutation": 0.3546453546453546,
+      "p_amplitude_permutation": 0.3596403596403596,
       "bootstrap_amplitude_ci95": [
-        0.3471062586814825,
-        2.431512630106208
+        0.32664017744102203,
+        2.4201244907103794
       ],
       "bootstrap_phase_ci95": [
-        2.1050638686575844,
-        15.747220467202293
+        3.4114767004746254,
+        15.493853830730389
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 990,
+      "n_bootstrap_success": 994,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "Shal",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.5057085771371486
+      "q_amplitude_bh": 0.5394605394605394
     },
     {
       "n_observations": 4,
@@ -597,23 +584,23 @@
       "observed_amplitude": 0.40875209615268976,
       "observed_phase_peak_hours": 20.594222685001046,
       "observed_r_squared": 0.22522973114951972,
-      "p_amplitude_permutation": 0.3726273726273726,
+      "p_amplitude_permutation": 0.41358641358641357,
       "bootstrap_amplitude_ci95": [
-        0.1417796541129742,
-        1.410547762869063
+        0.12921840677029162,
+        1.388331254383007
       ],
       "bootstrap_phase_ci95": [
-        0.7839311920583142,
-        23.534656636746092
+        0.8959727641247346,
+        23.55626612275386
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 993,
+      "n_bootstrap_success": 988,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "Shaw",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.5057085771371486
+      "q_amplitude_bh": 0.5639814730723821
     },
     {
       "n_observations": 4,
@@ -624,72 +611,6 @@
       "status": "insufficient_or_invalid_time_series",
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "Shaw",
-      "cell_type": "small PDF circadian neurons",
-      "background": "yw"
-    },
-    {
-      "n_observations": 6,
-      "n_subjects": 6,
-      "n_biological_replicates": 6,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "Wnk",
-      "cell_type": "ELAV neurons",
-      "background": "yw"
-    },
-    {
-      "n_observations": 4,
-      "n_subjects": 4,
-      "n_biological_replicates": 4,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "Wnk",
-      "cell_type": "large PDF circadian neurons",
-      "background": "per01"
-    },
-    {
-      "n_observations": 10,
-      "n_subjects": 10,
-      "n_biological_replicates": 10,
-      "n_unique_time_points": 4,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "exploratory_inferential_cosinor",
-      "period_hours": 24.0,
-      "time_system": "ZT",
-      "observed_amplitude": 0.2577368453431828,
-      "observed_phase_peak_hours": 7.533529086998391,
-      "observed_r_squared": 0.03566872082511674,
-      "p_amplitude_permutation": 0.8401598401598401,
-      "bootstrap_amplitude_ci95": [
-        0.14457265765779612,
-        1.8990915156720811
-      ],
-      "bootstrap_phase_ci95": [
-        1.2385175194011144,
-        21.885117887650495
-      ],
-      "n_permutations": 1000,
-      "n_bootstrap_success": 992,
-      "n_bootstrap_requested": 1000,
-      "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
-      "gene_symbol": "Wnk",
-      "cell_type": "large PDF circadian neurons",
-      "background": "yw",
-      "q_amplitude_bh": 0.8868353868353869
-    },
-    {
-      "n_observations": 4,
-      "n_subjects": 4,
-      "n_biological_replicates": 4,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "Wnk",
       "cell_type": "small PDF circadian neurons",
       "background": "yw"
     },
@@ -729,14 +650,14 @@
       "observed_amplitude": 0.12444122437037743,
       "observed_phase_peak_hours": 11.359341887564714,
       "observed_r_squared": 0.2900246373901394,
-      "p_amplitude_permutation": 0.3596403596403596,
+      "p_amplitude_permutation": 0.35264735264735264,
       "bootstrap_amplitude_ci95": [
-        0.02503408607372078,
-        0.33056470665599313
+        0.027429209900966603,
+        0.3474388984298033
       ],
       "bootstrap_phase_ci95": [
-        3.372065521595296,
-        17.776402971990905
+        5.5828253383489646,
+        17.226234142674162
       ],
       "n_permutations": 1000,
       "n_bootstrap_success": 989,
@@ -745,7 +666,7 @@
       "gene_symbol": "cac",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.5057085771371486
+      "q_amplitude_bh": 0.5394605394605394
     },
     {
       "n_observations": 4,
@@ -795,23 +716,23 @@
       "observed_amplitude": 0.19508652290235715,
       "observed_phase_peak_hours": 17.406123987758697,
       "observed_r_squared": 0.5417044435494434,
-      "p_amplitude_permutation": 0.028971028971028972,
+      "p_amplitude_permutation": 0.04195804195804196,
       "bootstrap_amplitude_ci95": [
-        0.061230648438893046,
-        0.3990509488671047
+        0.06139485676056336,
+        0.40060445067612976
       ],
       "bootstrap_phase_ci95": [
-        14.350583801583802,
-        19.827815418011767
+        14.327794977985754,
+        19.658389113797558
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 995,
+      "n_bootstrap_success": 990,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "eag",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.1834831834831835
+      "q_amplitude_bh": 0.2022977022977023
     },
     {
       "n_observations": 4,
@@ -822,138 +743,6 @@
       "status": "insufficient_or_invalid_time_series",
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "eag",
-      "cell_type": "small PDF circadian neurons",
-      "background": "yw"
-    },
-    {
-      "n_observations": 6,
-      "n_subjects": 6,
-      "n_biological_replicates": 6,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "fray",
-      "cell_type": "ELAV neurons",
-      "background": "yw"
-    },
-    {
-      "n_observations": 4,
-      "n_subjects": 4,
-      "n_biological_replicates": 4,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "fray",
-      "cell_type": "large PDF circadian neurons",
-      "background": "per01"
-    },
-    {
-      "n_observations": 10,
-      "n_subjects": 10,
-      "n_biological_replicates": 10,
-      "n_unique_time_points": 4,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "exploratory_inferential_cosinor",
-      "period_hours": 24.0,
-      "time_system": "ZT",
-      "observed_amplitude": 0.25058725799896664,
-      "observed_phase_peak_hours": 4.924661681567224,
-      "observed_r_squared": 0.06368533278781663,
-      "p_amplitude_permutation": 0.7492507492507493,
-      "bootstrap_amplitude_ci95": [
-        0.10647234307627387,
-        1.1118746091832068
-      ],
-      "bootstrap_phase_ci95": [
-        0.42527131087142267,
-        23.311563641830162
-      ],
-      "n_permutations": 1000,
-      "n_bootstrap_success": 992,
-      "n_bootstrap_requested": 1000,
-      "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
-      "gene_symbol": "fray",
-      "cell_type": "large PDF circadian neurons",
-      "background": "yw",
-      "q_amplitude_bh": 0.8868353868353869
-    },
-    {
-      "n_observations": 4,
-      "n_subjects": 4,
-      "n_biological_replicates": 4,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "fray",
-      "cell_type": "small PDF circadian neurons",
-      "background": "yw"
-    },
-    {
-      "n_observations": 6,
-      "n_subjects": 6,
-      "n_biological_replicates": 6,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "na",
-      "cell_type": "ELAV neurons",
-      "background": "yw"
-    },
-    {
-      "n_observations": 4,
-      "n_subjects": 4,
-      "n_biological_replicates": 4,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "na",
-      "cell_type": "large PDF circadian neurons",
-      "background": "per01"
-    },
-    {
-      "n_observations": 10,
-      "n_subjects": 10,
-      "n_biological_replicates": 10,
-      "n_unique_time_points": 4,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "exploratory_inferential_cosinor",
-      "period_hours": 24.0,
-      "time_system": "ZT",
-      "observed_amplitude": 0.6454847928877585,
-      "observed_phase_peak_hours": 13.550905033002582,
-      "observed_r_squared": 0.3303948908639023,
-      "p_amplitude_permutation": 0.32167832167832167,
-      "bootstrap_amplitude_ci95": [
-        0.21316191611086263,
-        1.3636279957037076
-      ],
-      "bootstrap_phase_ci95": [
-        7.928629901364987,
-        17.614556674550194
-      ],
-      "n_permutations": 1000,
-      "n_bootstrap_success": 989,
-      "n_bootstrap_requested": 1000,
-      "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
-      "gene_symbol": "na",
-      "cell_type": "large PDF circadian neurons",
-      "background": "yw",
-      "q_amplitude_bh": 0.5057085771371486
-    },
-    {
-      "n_observations": 4,
-      "n_subjects": 4,
-      "n_biological_replicates": 4,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "na",
       "cell_type": "small PDF circadian neurons",
       "background": "yw"
     },
@@ -993,23 +782,23 @@
       "observed_amplitude": 0.6260567900054927,
       "observed_phase_peak_hours": 8.967191331470838,
       "observed_r_squared": 0.47925159489194513,
-      "p_amplitude_permutation": 0.10989010989010989,
+      "p_amplitude_permutation": 0.12487512487512488,
       "bootstrap_amplitude_ci95": [
-        0.2593169192577451,
-        1.1362555868431654
+        0.2563678097419825,
+        1.1769911923709282
       ],
       "bootstrap_phase_ci95": [
-        6.947899920719774,
-        15.13382857701451
+        7.055847651359363,
+        14.945097632673972
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 994,
+      "n_bootstrap_success": 991,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "para",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.33928571428571425
+      "q_amplitude_bh": 0.3746253746253746
     },
     {
       "n_observations": 4,
@@ -1020,72 +809,6 @@
       "status": "insufficient_or_invalid_time_series",
       "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
       "gene_symbol": "para",
-      "cell_type": "small PDF circadian neurons",
-      "background": "yw"
-    },
-    {
-      "n_observations": 6,
-      "n_subjects": 6,
-      "n_biological_replicates": 6,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "qsm",
-      "cell_type": "ELAV neurons",
-      "background": "yw"
-    },
-    {
-      "n_observations": 4,
-      "n_subjects": 4,
-      "n_biological_replicates": 4,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "qsm",
-      "cell_type": "large PDF circadian neurons",
-      "background": "per01"
-    },
-    {
-      "n_observations": 10,
-      "n_subjects": 10,
-      "n_biological_replicates": 10,
-      "n_unique_time_points": 4,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "exploratory_inferential_cosinor",
-      "period_hours": 24.0,
-      "time_system": "ZT",
-      "observed_amplitude": 1.514470413851242,
-      "observed_phase_peak_hours": 23.603424336828397,
-      "observed_r_squared": 0.6197684064621535,
-      "p_amplitude_permutation": 0.07092907092907093,
-      "bootstrap_amplitude_ci95": [
-        0.5252856144455108,
-        2.782274808406371
-      ],
-      "bootstrap_phase_ci95": [
-        0.12090719883161616,
-        23.9405076483912
-      ],
-      "n_permutations": 1000,
-      "n_bootstrap_success": 990,
-      "n_bootstrap_requested": 1000,
-      "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
-      "gene_symbol": "qsm",
-      "cell_type": "large PDF circadian neurons",
-      "background": "yw",
-      "q_amplitude_bh": 0.26953046953046955
-    },
-    {
-      "n_observations": 4,
-      "n_subjects": 4,
-      "n_biological_replicates": 4,
-      "n_unique_time_points": 2,
-      "experimental_unit": "pooled_cell_sample",
-      "status": "insufficient_or_invalid_time_series",
-      "inference_warning": "No rhythm inference; at least four observations and three unique time points are required.",
-      "gene_symbol": "qsm",
       "cell_type": "small PDF circadian neurons",
       "background": "yw"
     },
@@ -1125,23 +848,23 @@
       "observed_amplitude": 0.48215706878892567,
       "observed_phase_peak_hours": 18.253543055209427,
       "observed_r_squared": 0.7192924069597617,
-      "p_amplitude_permutation": 0.007992007992007992,
+      "p_amplitude_permutation": 0.005994005994005994,
       "bootstrap_amplitude_ci95": [
-        0.23319565112614327,
-        0.6995121034306047
+        0.20592952012533663,
+        0.7135698583192787
       ],
       "bootstrap_phase_ci95": [
-        16.55334239625289,
-        20.058512509077808
+        16.485370435961208,
+        19.97965365890382
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 988,
+      "n_bootstrap_success": 986,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "sei",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.14235764235764237
+      "q_amplitude_bh": 0.0899100899100899
     },
     {
       "n_observations": 4,
@@ -1191,23 +914,23 @@
       "observed_amplitude": 0.11299580090592139,
       "observed_phase_peak_hours": 10.248149554722549,
       "observed_r_squared": 0.02588673378230899,
-      "p_amplitude_permutation": 0.9400599400599401,
+      "p_amplitude_permutation": 0.9120879120879121,
       "bootstrap_amplitude_ci95": [
-        0.07865680522199262,
-        0.7902312074753505
+        0.07451894772011716,
+        0.7881848920640531
       ],
       "bootstrap_phase_ci95": [
-        1.0320811093731388,
-        21.463186955924627
+        1.139415560234336,
+        22.47077856870912
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 990,
+      "n_bootstrap_success": 993,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "slo",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.9400599400599401
+      "q_amplitude_bh": 0.9120879120879121
     },
     {
       "n_observations": 4,
@@ -1257,23 +980,23 @@
       "observed_amplitude": 0.04390341145821115,
       "observed_phase_peak_hours": 18.06525338464967,
       "observed_r_squared": 0.059553105104455106,
-      "p_amplitude_permutation": 0.7462537462537463,
+      "p_amplitude_permutation": 0.7272727272727273,
       "bootstrap_amplitude_ci95": [
-        0.01158826945889249,
-        0.3189649170752115
+        0.014131280077163461,
+        0.29714193475049794
       ],
       "bootstrap_phase_ci95": [
-        1.981253165876976,
-        22.576743660982746
+        1.2904757804638316,
+        22.289618926750308
       ],
       "n_permutations": 1000,
-      "n_bootstrap_success": 992,
+      "n_bootstrap_success": 994,
       "n_bootstrap_requested": 1000,
       "inference_warning": "Exploratory permutation/bootstrap only; confirm metadata, batch structure and a publication-grade mixed model before inferential claims. This is a pooled cell sample; the result is not an animal-level effect estimate.",
       "gene_symbol": "trpl",
       "cell_type": "large PDF circadian neurons",
       "background": "yw",
-      "q_amplitude_bh": 0.8868353868353869
+      "q_amplitude_bh": 0.8967955121801275
     },
     {
       "n_observations": 4,

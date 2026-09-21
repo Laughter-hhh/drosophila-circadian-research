@@ -1,0 +1,191 @@
+{
+  "manifest_id": "GSE22308-blind-forward-sex-aware-20260921",
+  "dataset_id": "GSE22308",
+  "accession": "GSE22308",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22308",
+  "retrieved_at_utc": "2026-09-21T13:35:09Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-21T13:35:15Z",
+  "source_check_method": "web_open",
+  "source_observed_tokens": [
+    "GSE22308",
+    "Circadian expression profiling of purified clock neurons in adult Drosophila",
+    "Drosophila melanogaster",
+    "GPL1322",
+    "24 samples",
+    "GSM555213",
+    "GSM555236",
+    "ZT0",
+    "ZT6",
+    "ZT12",
+    "ZT18",
+    "GCRMA",
+    "male and female",
+    "male"
+  ],
+  "source_observation_note": "The official NCBI GEO accession page and the downloaded official series matrix were checked. The retained series matrix was freshly retrieved from NCBI GEO FTP at 2026-09-21T13:35:09Z and matched SHA-256 ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7. The GEO metadata records sex/gender as 'male and female' for yw samples and 'male' for per01 samples.",
+  "analysis_context": {
+    "time_system": "ZT under LD; these are zeitgeber-time expression profiles and do not separate endogenous circadian timing from light-driven effects.",
+    "experimental_unit": "pooled cell preparation / GEO sample; the samples are not individual-fly electrophysiology measurements.",
+    "normalization_status": "Processed GEO series matrix; its metadata reports GCRMA processing. CEL files were not renormalized. Candidate expression is the within-sample median across probes mapped by GPL1322.",
+    "biological_unit_limitations": "The 24 GEO samples comprise different cell populations and backgrounds; sex metadata are retained verbatim but mixed male/female pools cannot be split into sex-specific replicates. Individual fly identity, fly-level replication, temperature and batch are not fully available. Only the l-PDF/yw series spans four ZT bins; two-point series remain insufficient for rhythm estimation. Any cosinor output is exploratory and formal inference is blocked pending an appropriate mixed model and design-level replicate information."
+  },
+  "files": [
+    {
+      "path": "validation/public-data/GSE22308_series_matrix.txt.gz",
+      "role": "raw",
+      "sha256": "ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7"
+    },
+    {
+      "path": "validation/public-data/GPL1322.annot.gz",
+      "role": "annotation",
+      "sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52"
+    },
+    {
+      "path": "validation/public-data/GSE22308_candidate_genes.csv",
+      "role": "candidate_list",
+      "sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce"
+    },
+    {
+      "path": "validation/public-data/GSE22308_blind_forward_metadata.csv",
+      "role": "metadata",
+      "sha256": "deb4de3e7715f216c418b593e3cc02864053b1d8c6a806bdaf4d2845f698db99"
+    },
+    {
+      "path": "validation/public-data/GSE22308_blind_forward_matrix_summary.json",
+      "role": "derived",
+      "sha256": "3c4afc3b41ddbb928839e4dc25bef48722e617a8e569f7e30099f5f95b9e94fb"
+    },
+    {
+      "path": "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv",
+      "role": "derived",
+      "sha256": "f176dadfee315d9b58eeaad3dcf83a7af996c0ef39d7914786bc44d76bd8d6fd"
+    },
+    {
+      "path": "validation/public-data/GSE22308_blind_forward_candidate_expression_summary.csv",
+      "role": "derived",
+      "sha256": "36121ae761b3b7bb0ab9b49d7406eec6188bc271b6f8c678a1dcc9f94d3d75fe"
+    },
+    {
+      "path": "validation/public-data/GSE22308_blind_forward_expression_rhythms.json",
+      "role": "derived",
+      "sha256": "96e9bff734d3fadd7c269acf2270a17c7d78b31fb5c961f6fc51b1b8fe8836a5"
+    },
+    {
+      "path": "validation/public-data/GSE22308_blind_forward_cosinor_inference.json",
+      "role": "derived",
+      "sha256": "a52104deb99ad3cede886afd5e79dd1d937ac5500ae5daa975a74a3c08286d36"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "parse-gse22308-blind-forward",
+      "script": "scripts/parse_geo_series_matrix.py",
+      "script_sha256": "347af977e4261c632ca1e33a4dffa86d08e4f79ec6a7ae75def332785971fdc3",
+      "command": "python scripts/parse_geo_series_matrix.py validation/public-data/GSE22308_series_matrix.txt.gz --expected-sha256 ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7 --provenance-path validation/public-data/GSE22308_series_matrix.txt.gz --metadata-output validation/public-data/GSE22308_blind_forward_metadata.csv --summary-output validation/public-data/GSE22308_blind_forward_matrix_summary.json",
+      "inputs": [
+        "validation/public-data/GSE22308_series_matrix.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_blind_forward_metadata.csv",
+        "validation/public-data/GSE22308_blind_forward_matrix_summary.json"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/parse_geo_series_matrix.py",
+        "validation/public-data/GSE22308_series_matrix.txt.gz",
+        "--expected-sha256",
+        "ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7",
+        "--provenance-path",
+        "validation/public-data/GSE22308_series_matrix.txt.gz",
+        "--metadata-output",
+        "validation/public-data/GSE22308_blind_forward_metadata.csv",
+        "--summary-output",
+        "validation/public-data/GSE22308_blind_forward_matrix_summary.json"
+      ]
+    },
+    {
+      "run_id": "extract-gse22308-candidate-expression-sex-aware",
+      "script": "scripts/extract_gene_expression.py",
+      "script_sha256": "d1b4017eecfcfb619786f3de5cc392f9e7a248362dd2917352cca8e8905041d9",
+      "command": "python scripts/extract_gene_expression.py validation/public-data/GSE22308_series_matrix.txt.gz validation/public-data/GPL1322.annot.gz validation/public-data/GSE22308_blind_forward_metadata.csv validation/public-data/GSE22308_candidate_genes.csv --summary-output validation/public-data/GSE22308_blind_forward_candidate_expression_summary.csv --sample-output validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv",
+      "inputs": [
+        "validation/public-data/GSE22308_series_matrix.txt.gz",
+        "validation/public-data/GPL1322.annot.gz",
+        "validation/public-data/GSE22308_blind_forward_metadata.csv",
+        "validation/public-data/GSE22308_candidate_genes.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_blind_forward_candidate_expression_summary.csv",
+        "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/extract_gene_expression.py",
+        "validation/public-data/GSE22308_series_matrix.txt.gz",
+        "validation/public-data/GPL1322.annot.gz",
+        "validation/public-data/GSE22308_blind_forward_metadata.csv",
+        "validation/public-data/GSE22308_candidate_genes.csv",
+        "--summary-output",
+        "validation/public-data/GSE22308_blind_forward_candidate_expression_summary.csv",
+        "--sample-output",
+        "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv"
+      ]
+    },
+    {
+      "run_id": "descriptive-gse22308-blind-forward-rhythm",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "script_sha256": "6e0651e1556773905795a274cc0844856464c796e72d0a9dccd9b619e58347cc",
+      "command": "python scripts/analyze_expression_rhythm.py validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv --time-system ZT --output validation/public-data/GSE22308_blind_forward_expression_rhythms.json",
+      "inputs": [
+        "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_blind_forward_expression_rhythms.json"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/analyze_expression_rhythm.py",
+        "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv",
+        "--time-system",
+        "ZT",
+        "--output",
+        "validation/public-data/GSE22308_blind_forward_expression_rhythms.json"
+      ]
+    },
+    {
+      "run_id": "exploratory-gse22308-blind-forward-cosinor",
+      "script": "scripts/analyze_cosinor_inference.py",
+      "script_sha256": "561b5bc22203a2c9224d860a0ca2459fb7a2068c81b84621948fcf77d4a0ee2c",
+      "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv --experimental-unit pooled_cell_sample --time-system ZT --n-permutations 1000 --n-bootstrap 1000 --seed 20260921 --output validation/public-data/GSE22308_blind_forward_cosinor_inference.json",
+      "inputs": [
+        "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE22308_blind_forward_cosinor_inference.json"
+      ],
+      "status": "verified",
+      "command_argv": [
+        "python",
+        "scripts/analyze_cosinor_inference.py",
+        "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv",
+        "--experimental-unit",
+        "pooled_cell_sample",
+        "--time-system",
+        "ZT",
+        "--n-permutations",
+        "1000",
+        "--n-bootstrap",
+        "1000",
+        "--seed",
+        "20260921",
+        "--output",
+        "validation/public-data/GSE22308_blind_forward_cosinor_inference.json"
+      ]
+    }
+  ]
+}

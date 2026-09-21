@@ -107,5 +107,58 @@ class GeneExpressionTests(unittest.TestCase):
         self.assertEqual((small_pdf[0]["developmental_stage"], small_pdf[0]["n_samples"]), ("adult", 2))
         self.assertEqual({row["time"] for row in samples}, {"unknown"})
 
+    def test_sex_and_gender_aliases_are_preserved_and_stratified(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            annotation = root / "annotation.txt"
+            annotation.write_text("ID\tGene symbol\np1\tSh\n", encoding="utf-8")
+            matrix = root / "matrix.txt"
+            matrix.write_text(
+                "!series_matrix_table_begin\n"
+                '"ID_REF"\t"S_female"\t"S_male"\n'
+                '"p1"\t1\t9\n'
+                "!series_matrix_table_end\n",
+                encoding="utf-8",
+            )
+            metadata = root / "metadata.csv"
+            with metadata.open("w", newline="", encoding="utf-8") as handle:
+                writer = csv.DictWriter(handle, fieldnames=["sample_id", "characteristics_json"])
+                writer.writeheader()
+                writer.writerow({"sample_id": "S_female", "characteristics_json": json.dumps({"cell type": "LNd", "time": "ZT0", "background": "yw", "sex": "female"})})
+                writer.writerow({"sample_id": "S_male", "characteristics_json": json.dumps({"cell type": "LNd", "time": "ZT0", "background": "yw", "gender": "male"})})
+            candidates = root / "candidates.csv"
+            candidates.write_text("gene_symbol\nSh\n", encoding="utf-8")
+
+            summary, samples = summarize(matrix, annotation, metadata, candidates)
+
+        self.assertEqual({row["sex"] for row in samples}, {"female", "male"})
+        self.assertEqual({(row["sex"], row["n_samples"]) for row in summary}, {("female", 1), ("male", 1)})
+
+    def test_gse22308_retains_mixed_and_male_gender_context(self):
+        public_data = Path(__file__).resolve().parents[1] / "validation" / "public-data"
+        summary, samples = summarize(
+            public_data / "GSE22308_series_matrix.txt.gz",
+            public_data / "GPL1322.annot.gz",
+            public_data / "GSE22308_parsed_metadata.csv",
+            public_data / "GSE22308_candidate_genes.csv",
+        )
+
+        large_pdf = [
+            row for row in samples
+            if row.get("gene_symbol") == "Sh" and row.get("cell_type") == "large PDF circadian neurons"
+        ]
+        self.assertEqual(
+            {row["sex"] for row in large_pdf if row["background"] == "yw"},
+            {"male and female"},
+        )
+        self.assertEqual(
+            {row["sex"] for row in large_pdf if row["background"] == "per01"},
+            {"male"},
+        )
+        self.assertEqual(
+            {(row["background"], row["sex"]) for row in summary if row.get("gene_symbol") == "Sh" and row.get("cell_type") == "large PDF circadian neurons"},
+            {("yw", "male and female"), ("per01", "male")},
+        )
+
 if __name__ == "__main__":
     unittest.main()

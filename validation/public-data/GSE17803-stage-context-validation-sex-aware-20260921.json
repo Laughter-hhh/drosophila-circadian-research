@@ -1,0 +1,99 @@
+{
+  "status": "verified_public_dataset_manifest",
+  "formal_status": "online_source_content_verified",
+  "manifest_id": "GSE17803-stage-context-20260921",
+  "dataset_id": "GSE17803",
+  "accession": "GSE17803",
+  "n_files": 7,
+  "n_runs": 2,
+  "file_checks": [
+    {
+      "path": "validation/public-data/GSE17803_series_matrix.txt.gz",
+      "role": "raw",
+      "expected_sha256": "1e152aa1f40ec38add896ca31a932b929d207aba84deac8a84c2f356382beeeb",
+      "observed_sha256": "1e152aa1f40ec38add896ca31a932b929d207aba84deac8a84c2f356382beeeb",
+      "size_bytes": 1029882,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GPL1322.annot.gz",
+      "role": "annotation",
+      "expected_sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52",
+      "observed_sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52",
+      "size_bytes": 1690903,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE22308_candidate_genes.csv",
+      "role": "candidate_list",
+      "expected_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+      "observed_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+      "size_bytes": 251,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE17803_parsed_metadata.csv",
+      "role": "metadata",
+      "expected_sha256": "3b0664467992425d72ce2bf69a39d89af31aa69e2136eb9035d1cad201028686",
+      "observed_sha256": "3b0664467992425d72ce2bf69a39d89af31aa69e2136eb9035d1cad201028686",
+      "size_bytes": 5537,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE17803_matrix_summary.json",
+      "role": "derived",
+      "expected_sha256": "f855efcd7eb11e7154069d5084ecc19612a3f0e36409fdc3a66b69cbed92738b",
+      "observed_sha256": "f855efcd7eb11e7154069d5084ecc19612a3f0e36409fdc3a66b69cbed92738b",
+      "size_bytes": 2346,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE17803_candidate_expression_context-stratified_summary.csv",
+      "role": "derived",
+      "expected_sha256": "4fc001eb82cfaf57fc759ff8451988c41f04b1ff71f454e5ca9b9a59715ecfc4",
+      "observed_sha256": "4fc001eb82cfaf57fc759ff8451988c41f04b1ff71f454e5ca9b9a59715ecfc4",
+      "size_bytes": 16938,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE17803_candidate_expression_context-stratified_samples.csv",
+      "role": "derived",
+      "expected_sha256": "cd60cf0c692bfbba3d67533c22a8f03e579899afda56c15ad6e69b83fb03cd4c",
+      "observed_sha256": "cd60cf0c692bfbba3d67533c22a8f03e579899afda56c15ad6e69b83fb03cd4c",
+      "size_bytes": 30113,
+      "status": "hash_verified"
+    }
+  ],
+  "run_checks": [
+    {
+      "run_id": "parse-gse17803",
+      "script": "scripts/parse_geo_series_matrix.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE17803_series_matrix.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE17803_parsed_metadata.csv",
+        "validation/public-data/GSE17803_matrix_summary.json"
+      ]
+    },
+    {
+      "run_id": "extract-gse17803-candidate-expression-stratified",
+      "script": "scripts/extract_gene_expression.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE17803_series_matrix.txt.gz",
+        "validation/public-data/GPL1322.annot.gz",
+        "validation/public-data/GSE17803_parsed_metadata.csv",
+        "validation/public-data/GSE22308_candidate_genes.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE17803_candidate_expression_context-stratified_summary.csv",
+        "validation/public-data/GSE17803_candidate_expression_context-stratified_samples.csv"
+      ]
+    }
+  ],
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+}

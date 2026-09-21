@@ -22,8 +22,10 @@ class PublicDatasetReplayTests(unittest.TestCase):
             timeout_seconds=120,
         )
         self.assertEqual(result["status"], "verified_public_dataset_replay")
-        self.assertEqual(result["n_runs"], 5)
-        self.assertEqual(result["n_output_checks"], 7)
+        manifest = self._payload()
+        self.assertEqual(result["n_runs"], len(manifest["runs"]))
+        expected_outputs = sum(len(run["outputs"]) for run in manifest["runs"])
+        self.assertEqual(result["n_output_checks"], expected_outputs)
         self.assertTrue(all(check["status"] == "replay_hash_verified" for check in result["output_checks"]))
 
     def test_non_python_launcher_is_rejected_before_execution(self):

@@ -9,7 +9,7 @@
 5. 再核对平台 probe annotation、参考基因组/转录本版本和归一化方法；
 6. 只有 annotation 和 biological replicate 层级都明确时，才进入表达差异或节律分析。
 
-表达汇总必须保留会改变生物学解释的样本上下文。提取器至少保留 `developmental_stage` 并按该字段分层；相同 cell-type label 的 larval 与 adult samples 不得合并。其他已记录的 genotype、sex、treatment、lighting 或 collection context 也应在分析前分层或显式建模。缺失字段写 `unknown`，不能用 sample title 的相似性推断补齐。
+表达汇总必须保留会改变生物学解释的样本上下文。提取器至少保留 `developmental_stage`、`background` 和 `sex`（兼容 GEO characteristics 中的 `sex`/`gender` 键），并按这些字段分层；相同 cell-type label 的 larval 与 adult samples 不得合并。性别标签按来源元数据原样保留（例如 `male and female` 是混合来源注释，不能据此拆成性别重复）。其他已记录的 genotype、treatment、lighting 或 collection context 也应在分析前分层或显式建模。缺失字段写 `unknown`，不能用 sample title 的相似性推断补齐。
 
 ## 重要边界
 

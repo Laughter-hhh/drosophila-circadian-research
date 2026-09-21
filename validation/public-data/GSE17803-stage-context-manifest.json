@@ -52,12 +52,12 @@
     {
       "path": "validation/public-data/GSE17803_candidate_expression_context-stratified_summary.csv",
       "role": "derived",
-      "sha256": "7bd0f71ac96c67103b138747ee0e582a76535750a26b2c0007e097a64e208be9"
+      "sha256": "4fc001eb82cfaf57fc759ff8451988c41f04b1ff71f454e5ca9b9a59715ecfc4"
     },
     {
       "path": "validation/public-data/GSE17803_candidate_expression_context-stratified_samples.csv",
       "role": "derived",
-      "sha256": "7e40e8373c158b6787c108bbb06c01cf4cbab599e343cdc4bdb83e2666e05bda"
+      "sha256": "cd60cf0c692bfbba3d67533c22a8f03e579899afda56c15ad6e69b83fb03cd4c"
     }
   ],
   "runs": [
@@ -91,7 +91,7 @@
     {
       "run_id": "extract-gse17803-candidate-expression-stratified",
       "script": "scripts/extract_gene_expression.py",
-      "script_sha256": "c90bf2dfb9a3da91065c1d3040d83b18df1aada0074ef49cab662da6bf54038c",
+      "script_sha256": "d1b4017eecfcfb619786f3de5cc392f9e7a248362dd2917352cca8e8905041d9",
       "command": "python scripts/extract_gene_expression.py validation/public-data/GSE17803_series_matrix.txt.gz validation/public-data/GPL1322.annot.gz validation/public-data/GSE17803_parsed_metadata.csv validation/public-data/GSE22308_candidate_genes.csv --summary-output validation/public-data/GSE17803_candidate_expression_context-stratified_summary.csv --sample-output validation/public-data/GSE17803_candidate_expression_context-stratified_samples.csv",
       "inputs": [
         "validation/public-data/GSE17803_series_matrix.txt.gz",

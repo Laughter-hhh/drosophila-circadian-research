@@ -1,121 +1,121 @@
-gene_symbol,cell_type,developmental_stage,time,background,n_samples,mean_expression,sd_expression,probe_count,probe_ids,status
-Sh,Elav-GAL4,adult,unknown,unknown,3,9.782666666666666,0.36589661563525466,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,Elav-GAL4,larva,unknown,unknown,3,3.5446666666666666,0.45806804443590404,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,Pdf-GAL4,larva,unknown,unknown,3,8.854999999999999,0.8939300867517546,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,Tim-GAL4,larva,unknown,unknown,3,8.032,0.7267379169962168,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,6.617,2.579114382884171,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,large Pdf-GAL4,adult,unknown,unknown,3,9.764666666666669,0.6832717858461106,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,n/a,adult,unknown,unknown,3,9.391,0.6478942814996904,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,small Pdf-GAL4,adult,unknown,unknown,2,10.119,0.11737972567696715,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Shab,Elav-GAL4,adult,unknown,unknown,3,5.005833333333333,1.5202268196993942,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,Elav-GAL4,larva,unknown,unknown,3,2.8125,0.1071459285274062,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,Pdf-GAL4,larva,unknown,unknown,3,3.739666666666667,0.2460286229960517,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,Tim-GAL4,larva,unknown,unknown,3,3.2451666666666665,0.12354081646700163,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,3.2726666666666664,0.09757347658730477,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,large Pdf-GAL4,adult,unknown,unknown,3,4.3501666666666665,0.7413033005007686,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,n/a,adult,unknown,unknown,3,3.2063333333333333,0.21159946439755797,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,small Pdf-GAL4,adult,unknown,unknown,2,4.640000000000001,0.7028641404994287,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shaw,Elav-GAL4,adult,unknown,unknown,3,7.208666666666667,1.0368958883770993,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,Elav-GAL4,larva,unknown,unknown,3,2.7325,0.17614695569325076,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,Pdf-GAL4,larva,unknown,unknown,3,4.1258333333333335,0.8652722596578105,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,Tim-GAL4,larva,unknown,unknown,3,4.544333333333333,0.23982563110171018,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,2.776666666666667,0.1745453618213137,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,large Pdf-GAL4,adult,unknown,unknown,3,4.511833333333333,0.16755770150408897,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,n/a,adult,unknown,unknown,3,3.4186666666666667,0.730946361461177,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,small Pdf-GAL4,adult,unknown,unknown,2,6.7555,1.3505739520663058,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shal,Elav-GAL4,adult,unknown,unknown,3,6.912333333333334,2.3749884912001855,1,1638398_at,descriptive_probe_mapped_summary
-Shal,Elav-GAL4,larva,unknown,unknown,3,3.6253333333333333,0.9181946053715047,1,1638398_at,descriptive_probe_mapped_summary
-Shal,Pdf-GAL4,larva,unknown,unknown,3,5.341333333333334,1.0406614883492775,1,1638398_at,descriptive_probe_mapped_summary
-Shal,Tim-GAL4,larva,unknown,unknown,3,3.733333333333333,1.1965685660810805,1,1638398_at,descriptive_probe_mapped_summary
-Shal,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,5.230666666666667,1.789215004780961,1,1638398_at,descriptive_probe_mapped_summary
-Shal,large Pdf-GAL4,adult,unknown,unknown,3,5.445666666666667,2.4441735481207822,1,1638398_at,descriptive_probe_mapped_summary
-Shal,n/a,adult,unknown,unknown,3,8.532333333333332,0.48003472096644534,1,1638398_at,descriptive_probe_mapped_summary
-Shal,small Pdf-GAL4,adult,unknown,unknown,2,6.306,1.1172287142747452,1,1638398_at,descriptive_probe_mapped_summary
-para,Elav-GAL4,adult,unknown,unknown,3,10.021666666666667,0.1098650687586064,1,1627300_at,descriptive_probe_mapped_summary
-para,Elav-GAL4,larva,unknown,unknown,3,3.0276666666666667,0.03302019584032365,1,1627300_at,descriptive_probe_mapped_summary
-para,Pdf-GAL4,larva,unknown,unknown,3,6.901666666666667,1.6261157195394595,1,1627300_at,descriptive_probe_mapped_summary
-para,Tim-GAL4,larva,unknown,unknown,3,6.347333333333332,0.9023415835111076,1,1627300_at,descriptive_probe_mapped_summary
-para,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,4.7139999999999995,0.5171962876896934,1,1627300_at,descriptive_probe_mapped_summary
-para,large Pdf-GAL4,adult,unknown,unknown,3,8.725666666666667,0.4446148145679964,1,1627300_at,descriptive_probe_mapped_summary
-para,n/a,adult,unknown,unknown,3,6.3389999999999995,1.7942126406867165,1,1627300_at,descriptive_probe_mapped_summary
-para,small Pdf-GAL4,adult,unknown,unknown,2,8.9635,0.33304729393886395,1,1627300_at,descriptive_probe_mapped_summary
-cac,Elav-GAL4,adult,unknown,unknown,3,6.842000000000001,0.16942918874857443,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,Elav-GAL4,larva,unknown,unknown,3,5.020499999999999,0.6995514634392526,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,Pdf-GAL4,larva,unknown,unknown,3,6.489333333333334,0.3519337058784417,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,Tim-GAL4,larva,unknown,unknown,3,6.178166666666667,0.22945442539496458,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,5.7508333333333335,0.5660875226794291,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,large Pdf-GAL4,adult,unknown,unknown,3,6.812333333333332,0.14623981446013065,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,n/a,adult,unknown,unknown,3,6.562166666666667,0.20355977827982982,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,small Pdf-GAL4,adult,unknown,unknown,2,6.853,0.451841233178204,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-Ca-alpha1D,Elav-GAL4,adult,unknown,unknown,3,10.818333333333333,0.12035503036156556,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,Elav-GAL4,larva,unknown,unknown,3,2.640333333333333,0.22190388309656361,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,Pdf-GAL4,larva,unknown,unknown,3,8.869666666666667,1.0228061073993118,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,Tim-GAL4,larva,unknown,unknown,3,8.266333333333334,0.8525874344214401,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,5.141666666666667,1.702156671206659,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,large Pdf-GAL4,adult,unknown,unknown,3,10.363666666666667,0.6113577785007188,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,n/a,adult,unknown,unknown,3,8.545,0.5854331729582801,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,small Pdf-GAL4,adult,unknown,unknown,2,10.8715,0.084145706961199,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1T,Elav-GAL4,adult,unknown,unknown,3,4.363333333333333,1.3004265966725432,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,Elav-GAL4,larva,unknown,unknown,3,2.6413333333333333,0.6665825780301593,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,Pdf-GAL4,larva,unknown,unknown,3,2.283,0.09738583059151877,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,Tim-GAL4,larva,unknown,unknown,3,2.7409999999999997,0.8132103049027356,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,2.308333333333333,0.044769781475157186,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,large Pdf-GAL4,adult,unknown,unknown,3,4.891000000000001,0.7271444148173043,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,n/a,adult,unknown,unknown,3,2.324333333333333,0.023544284515213818,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,small Pdf-GAL4,adult,unknown,unknown,2,3.0955,1.119350034618305,1,1630042_at,descriptive_probe_mapped_summary
-slo,Elav-GAL4,adult,unknown,unknown,3,7.2010000000000005,0.6840226604433512,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,Elav-GAL4,larva,unknown,unknown,3,3.449666666666667,0.4105853545041925,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,Pdf-GAL4,larva,unknown,unknown,3,4.294666666666667,0.6494931357091723,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,Tim-GAL4,larva,unknown,unknown,3,4.373666666666666,1.003798950653632,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,4.358666666666667,0.3951687403291578,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,large Pdf-GAL4,adult,unknown,unknown,3,6.039666666666666,1.3089500881749974,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,n/a,adult,unknown,unknown,3,6.784,0.692548193268887,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,small Pdf-GAL4,adult,unknown,unknown,2,6.4559999999999995,0.7707463914933373,1,1637301_a_at,descriptive_probe_mapped_summary
-sei,Elav-GAL4,adult,unknown,unknown,3,10.063333333333333,0.466701546315559,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,Elav-GAL4,larva,unknown,unknown,3,7.323666666666667,0.6881106984587094,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,Pdf-GAL4,larva,unknown,unknown,3,8.145999999999999,0.8369540011255103,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,Tim-GAL4,larva,unknown,unknown,3,7.960666666666666,0.5255095939498472,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,5.233,1.9917085630181943,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,large Pdf-GAL4,adult,unknown,unknown,3,9.554,0.20472176239960455,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,n/a,adult,unknown,unknown,3,8.119333333333334,0.4572770859482613,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,small Pdf-GAL4,adult,unknown,unknown,2,9.0805,0.3090056633785208,1,1629418_s_at,descriptive_probe_mapped_summary
-eag,Elav-GAL4,adult,unknown,unknown,3,3.549666666666667,0.11657758503817676,1,1635822_at,descriptive_probe_mapped_summary
-eag,Elav-GAL4,larva,unknown,unknown,3,3.4250000000000003,0.08234682750416063,1,1635822_at,descriptive_probe_mapped_summary
-eag,Pdf-GAL4,larva,unknown,unknown,3,3.4766666666666666,0.1064628260630598,1,1635822_at,descriptive_probe_mapped_summary
-eag,Tim-GAL4,larva,unknown,unknown,3,3.426,0.06355312738174242,1,1635822_at,descriptive_probe_mapped_summary
-eag,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,3.587666666666667,0.1102648327134872,1,1635822_at,descriptive_probe_mapped_summary
-eag,large Pdf-GAL4,adult,unknown,unknown,3,3.6043333333333334,0.11624256248609352,1,1635822_at,descriptive_probe_mapped_summary
-eag,n/a,adult,unknown,unknown,3,3.593666666666666,0.07678758580222023,1,1635822_at,descriptive_probe_mapped_summary
-eag,small Pdf-GAL4,adult,unknown,unknown,2,3.6025,0.15909902576697293,1,1635822_at,descriptive_probe_mapped_summary
-Irk1,Elav-GAL4,adult,unknown,unknown,3,3.7358333333333333,0.7623667643157941,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,Elav-GAL4,larva,unknown,unknown,3,2.853666666666667,0.15199451744498346,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,Pdf-GAL4,larva,unknown,unknown,3,6.401,0.4288499154716019,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,Tim-GAL4,larva,unknown,unknown,3,4.6075,0.8536269677089634,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,3.251,0.524756372043256,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,large Pdf-GAL4,adult,unknown,unknown,3,6.738833333333333,0.19911826469044255,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,n/a,adult,unknown,unknown,3,3.7913333333333337,0.36398672136952126,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,small Pdf-GAL4,adult,unknown,unknown,2,7.371,0.2453660530717323,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk2,Elav-GAL4,adult,unknown,unknown,3,2.639333333333333,0.1503340724298165,1,1638466_a_at,descriptive_probe_mapped_summary
-Irk2,Elav-GAL4,larva,unknown,unknown,3,3.0660000000000003,0.3232692376332769,1,1638466_a_at,descriptive_probe_mapped_summary
-Irk2,Pdf-GAL4,larva,unknown,unknown,3,6.830666666666667,2.7715007366647653,1,1638466_a_at,descriptive_probe_mapped_summary
-Irk2,Tim-GAL4,larva,unknown,unknown,3,5.0793333333333335,1.6315049289944952,1,1638466_a_at,descriptive_probe_mapped_summary
-Irk2,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,2.8693333333333335,0.10778373408512681,1,1638466_a_at,descriptive_probe_mapped_summary
-Irk2,large Pdf-GAL4,adult,unknown,unknown,3,2.8333333333333335,0.11143308904151122,1,1638466_a_at,descriptive_probe_mapped_summary
-Irk2,n/a,adult,unknown,unknown,3,10.331333333333333,0.2371588778294691,1,1638466_a_at,descriptive_probe_mapped_summary
-Irk2,small Pdf-GAL4,adult,unknown,unknown,2,3.4615,0.7516545084012998,1,1638466_a_at,descriptive_probe_mapped_summary
-Ork1,Elav-GAL4,adult,unknown,unknown,3,2.342333333333333,0.023158871590242304,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,Elav-GAL4,larva,unknown,unknown,3,2.3433333333333333,0.022501851775650273,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,Pdf-GAL4,larva,unknown,unknown,3,2.3146666666666667,0.031021497922140085,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,Tim-GAL4,larva,unknown,unknown,3,2.4136666666666664,0.12663859338026998,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,2.369333333333333,0.034019602192461564,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,large Pdf-GAL4,adult,unknown,unknown,3,2.3836666666666666,0.01401189970465586,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,n/a,adult,unknown,unknown,3,2.509333333333333,0.09757219549304681,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,small Pdf-GAL4,adult,unknown,unknown,2,2.37,0.016970562748477157,1,1635938_s_at,descriptive_probe_mapped_summary
-trpl,Elav-GAL4,adult,unknown,unknown,3,2.3343333333333334,0.11836102962264788,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,Elav-GAL4,larva,unknown,unknown,3,2.364333333333333,0.061492546973867815,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,Pdf-GAL4,larva,unknown,unknown,3,2.458666666666667,0.10243209132558674,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,Tim-GAL4,larva,unknown,unknown,3,2.3606666666666665,0.05459242926755807,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,3,2.707333333333333,0.4855526061441059,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,large Pdf-GAL4,adult,unknown,unknown,3,2.397,0.024269322199023082,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,n/a,adult,unknown,unknown,3,12.789666666666667,0.721266478725674,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,small Pdf-GAL4,adult,unknown,unknown,2,2.3985,0.04313351365237936,1,1633649_s_at,descriptive_probe_mapped_summary
+gene_symbol,cell_type,developmental_stage,time,background,sex,n_samples,mean_expression,sd_expression,probe_count,probe_ids,status
+Sh,Elav-GAL4,adult,unknown,unknown,unknown,3,9.782666666666666,0.36589661563525466,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,Elav-GAL4,larva,unknown,unknown,unknown,3,3.5446666666666666,0.45806804443590404,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,Pdf-GAL4,larva,unknown,unknown,unknown,3,8.854999999999999,0.8939300867517546,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,Tim-GAL4,larva,unknown,unknown,unknown,3,8.032,0.7267379169962168,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,6.617,2.579114382884171,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,large Pdf-GAL4,adult,unknown,unknown,unknown,3,9.764666666666669,0.6832717858461106,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,n/a,adult,unknown,unknown,unknown,3,9.391,0.6478942814996904,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,small Pdf-GAL4,adult,unknown,unknown,unknown,2,10.119,0.11737972567696715,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Shab,Elav-GAL4,adult,unknown,unknown,unknown,3,5.005833333333333,1.5202268196993942,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,Elav-GAL4,larva,unknown,unknown,unknown,3,2.8125,0.1071459285274062,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,Pdf-GAL4,larva,unknown,unknown,unknown,3,3.739666666666667,0.2460286229960517,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,Tim-GAL4,larva,unknown,unknown,unknown,3,3.2451666666666665,0.12354081646700163,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,3.2726666666666664,0.09757347658730477,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,large Pdf-GAL4,adult,unknown,unknown,unknown,3,4.3501666666666665,0.7413033005007686,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,n/a,adult,unknown,unknown,unknown,3,3.2063333333333333,0.21159946439755797,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,small Pdf-GAL4,adult,unknown,unknown,unknown,2,4.640000000000001,0.7028641404994287,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shaw,Elav-GAL4,adult,unknown,unknown,unknown,3,7.208666666666667,1.0368958883770993,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,Elav-GAL4,larva,unknown,unknown,unknown,3,2.7325,0.17614695569325076,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,Pdf-GAL4,larva,unknown,unknown,unknown,3,4.1258333333333335,0.8652722596578105,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,Tim-GAL4,larva,unknown,unknown,unknown,3,4.544333333333333,0.23982563110171018,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,2.776666666666667,0.1745453618213137,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,large Pdf-GAL4,adult,unknown,unknown,unknown,3,4.511833333333333,0.16755770150408897,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,n/a,adult,unknown,unknown,unknown,3,3.4186666666666667,0.730946361461177,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,small Pdf-GAL4,adult,unknown,unknown,unknown,2,6.7555,1.3505739520663058,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shal,Elav-GAL4,adult,unknown,unknown,unknown,3,6.912333333333334,2.3749884912001855,1,1638398_at,descriptive_probe_mapped_summary
+Shal,Elav-GAL4,larva,unknown,unknown,unknown,3,3.6253333333333333,0.9181946053715047,1,1638398_at,descriptive_probe_mapped_summary
+Shal,Pdf-GAL4,larva,unknown,unknown,unknown,3,5.341333333333334,1.0406614883492775,1,1638398_at,descriptive_probe_mapped_summary
+Shal,Tim-GAL4,larva,unknown,unknown,unknown,3,3.733333333333333,1.1965685660810805,1,1638398_at,descriptive_probe_mapped_summary
+Shal,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,5.230666666666667,1.789215004780961,1,1638398_at,descriptive_probe_mapped_summary
+Shal,large Pdf-GAL4,adult,unknown,unknown,unknown,3,5.445666666666667,2.4441735481207822,1,1638398_at,descriptive_probe_mapped_summary
+Shal,n/a,adult,unknown,unknown,unknown,3,8.532333333333332,0.48003472096644534,1,1638398_at,descriptive_probe_mapped_summary
+Shal,small Pdf-GAL4,adult,unknown,unknown,unknown,2,6.306,1.1172287142747452,1,1638398_at,descriptive_probe_mapped_summary
+para,Elav-GAL4,adult,unknown,unknown,unknown,3,10.021666666666667,0.1098650687586064,1,1627300_at,descriptive_probe_mapped_summary
+para,Elav-GAL4,larva,unknown,unknown,unknown,3,3.0276666666666667,0.03302019584032365,1,1627300_at,descriptive_probe_mapped_summary
+para,Pdf-GAL4,larva,unknown,unknown,unknown,3,6.901666666666667,1.6261157195394595,1,1627300_at,descriptive_probe_mapped_summary
+para,Tim-GAL4,larva,unknown,unknown,unknown,3,6.347333333333332,0.9023415835111076,1,1627300_at,descriptive_probe_mapped_summary
+para,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,4.7139999999999995,0.5171962876896934,1,1627300_at,descriptive_probe_mapped_summary
+para,large Pdf-GAL4,adult,unknown,unknown,unknown,3,8.725666666666667,0.4446148145679964,1,1627300_at,descriptive_probe_mapped_summary
+para,n/a,adult,unknown,unknown,unknown,3,6.3389999999999995,1.7942126406867165,1,1627300_at,descriptive_probe_mapped_summary
+para,small Pdf-GAL4,adult,unknown,unknown,unknown,2,8.9635,0.33304729393886395,1,1627300_at,descriptive_probe_mapped_summary
+cac,Elav-GAL4,adult,unknown,unknown,unknown,3,6.842000000000001,0.16942918874857443,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,Elav-GAL4,larva,unknown,unknown,unknown,3,5.020499999999999,0.6995514634392526,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,Pdf-GAL4,larva,unknown,unknown,unknown,3,6.489333333333334,0.3519337058784417,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,Tim-GAL4,larva,unknown,unknown,unknown,3,6.178166666666667,0.22945442539496458,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,5.7508333333333335,0.5660875226794291,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,large Pdf-GAL4,adult,unknown,unknown,unknown,3,6.812333333333332,0.14623981446013065,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,n/a,adult,unknown,unknown,unknown,3,6.562166666666667,0.20355977827982982,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,small Pdf-GAL4,adult,unknown,unknown,unknown,2,6.853,0.451841233178204,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+Ca-alpha1D,Elav-GAL4,adult,unknown,unknown,unknown,3,10.818333333333333,0.12035503036156556,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,Elav-GAL4,larva,unknown,unknown,unknown,3,2.640333333333333,0.22190388309656361,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,Pdf-GAL4,larva,unknown,unknown,unknown,3,8.869666666666667,1.0228061073993118,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,Tim-GAL4,larva,unknown,unknown,unknown,3,8.266333333333334,0.8525874344214401,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,5.141666666666667,1.702156671206659,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,large Pdf-GAL4,adult,unknown,unknown,unknown,3,10.363666666666667,0.6113577785007188,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,n/a,adult,unknown,unknown,unknown,3,8.545,0.5854331729582801,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,small Pdf-GAL4,adult,unknown,unknown,unknown,2,10.8715,0.084145706961199,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1T,Elav-GAL4,adult,unknown,unknown,unknown,3,4.363333333333333,1.3004265966725432,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,Elav-GAL4,larva,unknown,unknown,unknown,3,2.6413333333333333,0.6665825780301593,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,Pdf-GAL4,larva,unknown,unknown,unknown,3,2.283,0.09738583059151877,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,Tim-GAL4,larva,unknown,unknown,unknown,3,2.7409999999999997,0.8132103049027356,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,2.308333333333333,0.044769781475157186,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,large Pdf-GAL4,adult,unknown,unknown,unknown,3,4.891000000000001,0.7271444148173043,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,n/a,adult,unknown,unknown,unknown,3,2.324333333333333,0.023544284515213818,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,small Pdf-GAL4,adult,unknown,unknown,unknown,2,3.0955,1.119350034618305,1,1630042_at,descriptive_probe_mapped_summary
+slo,Elav-GAL4,adult,unknown,unknown,unknown,3,7.2010000000000005,0.6840226604433512,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,Elav-GAL4,larva,unknown,unknown,unknown,3,3.449666666666667,0.4105853545041925,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,Pdf-GAL4,larva,unknown,unknown,unknown,3,4.294666666666667,0.6494931357091723,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,Tim-GAL4,larva,unknown,unknown,unknown,3,4.373666666666666,1.003798950653632,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,4.358666666666667,0.3951687403291578,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,large Pdf-GAL4,adult,unknown,unknown,unknown,3,6.039666666666666,1.3089500881749974,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,n/a,adult,unknown,unknown,unknown,3,6.784,0.692548193268887,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,small Pdf-GAL4,adult,unknown,unknown,unknown,2,6.4559999999999995,0.7707463914933373,1,1637301_a_at,descriptive_probe_mapped_summary
+sei,Elav-GAL4,adult,unknown,unknown,unknown,3,10.063333333333333,0.466701546315559,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,Elav-GAL4,larva,unknown,unknown,unknown,3,7.323666666666667,0.6881106984587094,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,Pdf-GAL4,larva,unknown,unknown,unknown,3,8.145999999999999,0.8369540011255103,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,Tim-GAL4,larva,unknown,unknown,unknown,3,7.960666666666666,0.5255095939498472,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,5.233,1.9917085630181943,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,large Pdf-GAL4,adult,unknown,unknown,unknown,3,9.554,0.20472176239960455,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,n/a,adult,unknown,unknown,unknown,3,8.119333333333334,0.4572770859482613,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,small Pdf-GAL4,adult,unknown,unknown,unknown,2,9.0805,0.3090056633785208,1,1629418_s_at,descriptive_probe_mapped_summary
+eag,Elav-GAL4,adult,unknown,unknown,unknown,3,3.549666666666667,0.11657758503817676,1,1635822_at,descriptive_probe_mapped_summary
+eag,Elav-GAL4,larva,unknown,unknown,unknown,3,3.4250000000000003,0.08234682750416063,1,1635822_at,descriptive_probe_mapped_summary
+eag,Pdf-GAL4,larva,unknown,unknown,unknown,3,3.4766666666666666,0.1064628260630598,1,1635822_at,descriptive_probe_mapped_summary
+eag,Tim-GAL4,larva,unknown,unknown,unknown,3,3.426,0.06355312738174242,1,1635822_at,descriptive_probe_mapped_summary
+eag,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,3.587666666666667,0.1102648327134872,1,1635822_at,descriptive_probe_mapped_summary
+eag,large Pdf-GAL4,adult,unknown,unknown,unknown,3,3.6043333333333334,0.11624256248609352,1,1635822_at,descriptive_probe_mapped_summary
+eag,n/a,adult,unknown,unknown,unknown,3,3.593666666666666,0.07678758580222023,1,1635822_at,descriptive_probe_mapped_summary
+eag,small Pdf-GAL4,adult,unknown,unknown,unknown,2,3.6025,0.15909902576697293,1,1635822_at,descriptive_probe_mapped_summary
+Irk1,Elav-GAL4,adult,unknown,unknown,unknown,3,3.7358333333333333,0.7623667643157941,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,Elav-GAL4,larva,unknown,unknown,unknown,3,2.853666666666667,0.15199451744498346,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,Pdf-GAL4,larva,unknown,unknown,unknown,3,6.401,0.4288499154716019,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,Tim-GAL4,larva,unknown,unknown,unknown,3,4.6075,0.8536269677089634,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,3.251,0.524756372043256,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,large Pdf-GAL4,adult,unknown,unknown,unknown,3,6.738833333333333,0.19911826469044255,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,n/a,adult,unknown,unknown,unknown,3,3.7913333333333337,0.36398672136952126,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,small Pdf-GAL4,adult,unknown,unknown,unknown,2,7.371,0.2453660530717323,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk2,Elav-GAL4,adult,unknown,unknown,unknown,3,2.639333333333333,0.1503340724298165,1,1638466_a_at,descriptive_probe_mapped_summary
+Irk2,Elav-GAL4,larva,unknown,unknown,unknown,3,3.0660000000000003,0.3232692376332769,1,1638466_a_at,descriptive_probe_mapped_summary
+Irk2,Pdf-GAL4,larva,unknown,unknown,unknown,3,6.830666666666667,2.7715007366647653,1,1638466_a_at,descriptive_probe_mapped_summary
+Irk2,Tim-GAL4,larva,unknown,unknown,unknown,3,5.0793333333333335,1.6315049289944952,1,1638466_a_at,descriptive_probe_mapped_summary
+Irk2,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,2.8693333333333335,0.10778373408512681,1,1638466_a_at,descriptive_probe_mapped_summary
+Irk2,large Pdf-GAL4,adult,unknown,unknown,unknown,3,2.8333333333333335,0.11143308904151122,1,1638466_a_at,descriptive_probe_mapped_summary
+Irk2,n/a,adult,unknown,unknown,unknown,3,10.331333333333333,0.2371588778294691,1,1638466_a_at,descriptive_probe_mapped_summary
+Irk2,small Pdf-GAL4,adult,unknown,unknown,unknown,2,3.4615,0.7516545084012998,1,1638466_a_at,descriptive_probe_mapped_summary
+Ork1,Elav-GAL4,adult,unknown,unknown,unknown,3,2.342333333333333,0.023158871590242304,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,Elav-GAL4,larva,unknown,unknown,unknown,3,2.3433333333333333,0.022501851775650273,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,Pdf-GAL4,larva,unknown,unknown,unknown,3,2.3146666666666667,0.031021497922140085,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,Tim-GAL4,larva,unknown,unknown,unknown,3,2.4136666666666664,0.12663859338026998,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,2.369333333333333,0.034019602192461564,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,large Pdf-GAL4,adult,unknown,unknown,unknown,3,2.3836666666666666,0.01401189970465586,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,n/a,adult,unknown,unknown,unknown,3,2.509333333333333,0.09757219549304681,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,small Pdf-GAL4,adult,unknown,unknown,unknown,2,2.37,0.016970562748477157,1,1635938_s_at,descriptive_probe_mapped_summary
+trpl,Elav-GAL4,adult,unknown,unknown,unknown,3,2.3343333333333334,0.11836102962264788,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,Elav-GAL4,larva,unknown,unknown,unknown,3,2.364333333333333,0.061492546973867815,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,Pdf-GAL4,larva,unknown,unknown,unknown,3,2.458666666666667,0.10243209132558674,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,Tim-GAL4,larva,unknown,unknown,unknown,3,2.3606666666666665,0.05459242926755807,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,Tim-Gal4 and Pdf-Gal80,larva,unknown,unknown,unknown,3,2.707333333333333,0.4855526061441059,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,large Pdf-GAL4,adult,unknown,unknown,unknown,3,2.397,0.024269322199023082,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,n/a,adult,unknown,unknown,unknown,3,12.789666666666667,0.721266478725674,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,small Pdf-GAL4,adult,unknown,unknown,unknown,2,2.3985,0.04313351365237936,1,1633649_s_at,descriptive_probe_mapped_summary

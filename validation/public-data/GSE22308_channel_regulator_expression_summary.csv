@@ -1,191 +1,191 @@
-gene_symbol,cell_type,time,background,n_samples,mean_expression,sd_expression,probe_count,probe_ids,status
-na,ELAV neurons,ZT0,yw,3,4.289308128333333,0.6416238479607341,1,1635546_a_at,descriptive_probe_mapped_summary
-na,ELAV neurons,ZT12,yw,3,4.79058195,1.0456689919032298,1,1635546_a_at,descriptive_probe_mapped_summary
-na,large PDF circadian neurons,ZT0,per01,2,4.4572464835000005,0.035426609058909465,1,1635546_a_at,descriptive_probe_mapped_summary
-na,large PDF circadian neurons,ZT0,yw,3,3.193288221,0.18609346279167913,1,1635546_a_at,descriptive_probe_mapped_summary
-na,large PDF circadian neurons,ZT12,per01,2,2.9171965479999997,0.45424877620465226,1,1635546_a_at,descriptive_probe_mapped_summary
-na,large PDF circadian neurons,ZT12,yw,3,4.379298952,1.0664024338105198,1,1635546_a_at,descriptive_probe_mapped_summary
-na,large PDF circadian neurons,ZT18,yw,2,3.849757617,1.5241953869986504,1,1635546_a_at,descriptive_probe_mapped_summary
-na,large PDF circadian neurons,ZT6,yw,2,3.33987428,0.21955457525027286,1,1635546_a_at,descriptive_probe_mapped_summary
-na,small PDF circadian neurons,ZT0,yw,2,3.4497161615,1.1025139614582893,1,1635546_a_at,descriptive_probe_mapped_summary
-na,small PDF circadian neurons,ZT12,yw,2,6.001026091,0.5897610701741833,1,1635546_a_at,descriptive_probe_mapped_summary
-Irk1,ELAV neurons,ZT0,yw,3,3.405540072333334,0.2851068322935113,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,ELAV neurons,ZT12,yw,3,3.507156772666667,0.563302021561966,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,large PDF circadian neurons,ZT0,per01,2,4.66714693725,0.2649389451981181,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,large PDF circadian neurons,ZT0,yw,3,3.538604372,0.8204507538294997,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,large PDF circadian neurons,ZT12,per01,2,5.2087705905,0.06134463514437235,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,large PDF circadian neurons,ZT12,yw,3,6.4753816975000005,0.34824217647752886,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,large PDF circadian neurons,ZT18,yw,2,4.54335113825,0.4752007676777637,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,large PDF circadian neurons,ZT6,yw,2,3.45287886525,0.5785548415523848,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,small PDF circadian neurons,ZT0,yw,2,4.44000754,0.14853322481755638,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Irk1,small PDF circadian neurons,ZT12,yw,2,6.979513999750001,0.23090816138973583,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
-Ork1,ELAV neurons,ZT0,yw,3,2.404584643,0.014100796991957357,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,ELAV neurons,ZT12,yw,3,2.3469679653333335,0.04532610839794891,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,large PDF circadian neurons,ZT0,per01,2,2.3740641815,0.0012156360579058671,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,large PDF circadian neurons,ZT0,yw,3,2.4206751413333336,0.04319042036143514,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,large PDF circadian neurons,ZT12,per01,2,2.372602283,0.004818839375691344,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,large PDF circadian neurons,ZT12,yw,3,2.426727644666667,0.045779749165076364,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,large PDF circadian neurons,ZT18,yw,2,2.5309043200000003,0.06793825667940569,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,large PDF circadian neurons,ZT6,yw,2,2.430853006,0.012489502625304712,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,small PDF circadian neurons,ZT0,yw,2,2.4690874015,0.14309399257946875,1,1635938_s_at,descriptive_probe_mapped_summary
-Ork1,small PDF circadian neurons,ZT12,yw,2,2.521528777,0.11929312551415942,1,1635938_s_at,descriptive_probe_mapped_summary
-Sh,ELAV neurons,ZT0,yw,3,9.210577858,0.4472835008805703,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,ELAV neurons,ZT12,yw,3,8.933559029,0.333617114919695,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,large PDF circadian neurons,ZT0,per01,2,8.6129526225,0.8234299839735122,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,large PDF circadian neurons,ZT0,yw,3,9.313960698333334,0.17531516781140824,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,large PDF circadian neurons,ZT12,per01,2,9.115003671499998,0.27167997622316514,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,large PDF circadian neurons,ZT12,yw,3,8.792763217333333,0.7747302003209232,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,large PDF circadian neurons,ZT18,yw,2,9.109808942499999,0.021307568956865745,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,large PDF circadian neurons,ZT6,yw,2,9.538252396,0.17386087401637598,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,small PDF circadian neurons,ZT0,yw,2,9.0056097925,0.7208376868408644,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Sh,small PDF circadian neurons,ZT12,yw,2,9.139126282500001,0.3491933030053338,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
-Shab,ELAV neurons,ZT0,yw,3,3.6586737973333334,0.1866159769464243,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,ELAV neurons,ZT12,yw,3,4.290580875,1.0793320981615515,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,large PDF circadian neurons,ZT0,per01,2,2.874843399,0.338374175394702,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,large PDF circadian neurons,ZT0,yw,3,3.7663310096666667,0.5725799308532526,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,large PDF circadian neurons,ZT12,per01,2,2.9054609434999996,0.3989853060475322,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,large PDF circadian neurons,ZT12,yw,3,4.0221359969999995,0.4360638591543663,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,large PDF circadian neurons,ZT18,yw,2,3.09261426775,0.15727492892005054,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,large PDF circadian neurons,ZT6,yw,2,4.07417044475,1.037977094518017,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,small PDF circadian neurons,ZT0,yw,2,3.5919719975,0.6195319125138298,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shab,small PDF circadian neurons,ZT12,yw,2,4.4291246202500005,0.685036129107929,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
-Shal,ELAV neurons,ZT0,yw,3,7.322746089333333,0.521721954876909,1,1638398_at,descriptive_probe_mapped_summary
-Shal,ELAV neurons,ZT12,yw,3,6.2502123240000005,2.086539660332909,1,1638398_at,descriptive_probe_mapped_summary
-Shal,large PDF circadian neurons,ZT0,per01,2,3.796898951,1.7814806950177855,1,1638398_at,descriptive_probe_mapped_summary
-Shal,large PDF circadian neurons,ZT0,yw,3,3.1318913406666664,0.3734246893241962,1,1638398_at,descriptive_probe_mapped_summary
-Shal,large PDF circadian neurons,ZT12,per01,2,2.9117466724999996,0.04386739220340835,1,1638398_at,descriptive_probe_mapped_summary
-Shal,large PDF circadian neurons,ZT12,yw,3,4.9270392240000005,2.200574321383584,1,1638398_at,descriptive_probe_mapped_summary
-Shal,large PDF circadian neurons,ZT18,yw,2,2.651310681,0.47087755747622917,1,1638398_at,descriptive_probe_mapped_summary
-Shal,large PDF circadian neurons,ZT6,yw,2,3.7011452174999997,1.4838350040136221,1,1638398_at,descriptive_probe_mapped_summary
-Shal,small PDF circadian neurons,ZT0,yw,2,5.731383555000001,1.386229127028273,1,1638398_at,descriptive_probe_mapped_summary
-Shal,small PDF circadian neurons,ZT12,yw,2,5.629148704,1.1520037011002677,1,1638398_at,descriptive_probe_mapped_summary
-Shaw,ELAV neurons,ZT0,yw,3,6.989877227,0.49951648448597086,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,ELAV neurons,ZT12,yw,3,6.818953454833334,0.9143690530305038,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,large PDF circadian neurons,ZT0,per01,2,3.339163077,0.8346524962038195,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,large PDF circadian neurons,ZT0,yw,3,5.389807977333334,0.6273083047291493,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,large PDF circadian neurons,ZT12,per01,2,2.82988937425,0.2189084178916443,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,large PDF circadian neurons,ZT12,yw,3,4.8762974275,0.26076967054294076,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,large PDF circadian neurons,ZT18,yw,2,4.59935512,0.27370149480852185,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,large PDF circadian neurons,ZT6,yw,2,3.96325762775,0.11575923952058038,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,small PDF circadian neurons,ZT0,yw,2,6.22426935175,0.8671111882439193,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-Shaw,small PDF circadian neurons,ZT12,yw,2,6.52955980375,0.9301166913522912,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
-sei,ELAV neurons,ZT0,yw,3,8.983517831,0.3072518260722024,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,ELAV neurons,ZT12,yw,3,9.324906820333332,0.539530905453735,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,large PDF circadian neurons,ZT0,per01,2,8.007036189,0.03101248719917851,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,large PDF circadian neurons,ZT0,yw,3,8.761935349,0.20644393056430102,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,large PDF circadian neurons,ZT12,per01,2,8.327175035,0.23784650561232545,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,large PDF circadian neurons,ZT12,yw,3,8.697973660666667,0.2705057183850616,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,large PDF circadian neurons,ZT18,yw,2,9.041807942,0.23993784179993685,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,large PDF circadian neurons,ZT6,yw,2,8.07961739,0.07615445988177187,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,small PDF circadian neurons,ZT0,yw,2,8.896453733,0.10885361312875587,1,1629418_s_at,descriptive_probe_mapped_summary
-sei,small PDF circadian neurons,ZT12,yw,2,8.2780700735,0.3154121547607687,1,1629418_s_at,descriptive_probe_mapped_summary
-eag,ELAV neurons,ZT0,yw,3,4.882510720333333,0.3308518123141239,1,1635822_at,descriptive_probe_mapped_summary
-eag,ELAV neurons,ZT12,yw,3,4.856370878666667,0.2174377698015275,1,1635822_at,descriptive_probe_mapped_summary
-eag,large PDF circadian neurons,ZT0,per01,2,2.81560743,0.04487401315364968,1,1635822_at,descriptive_probe_mapped_summary
-eag,large PDF circadian neurons,ZT0,yw,3,4.666453377333333,0.11448590785454962,1,1635822_at,descriptive_probe_mapped_summary
-eag,large PDF circadian neurons,ZT12,per01,2,2.8544186905,0.0028569511051923986,1,1635822_at,descriptive_probe_mapped_summary
-eag,large PDF circadian neurons,ZT12,yw,3,4.726871965,0.09556482947899488,1,1635822_at,descriptive_probe_mapped_summary
-eag,large PDF circadian neurons,ZT18,yw,2,5.019421595,0.21279748689088496,1,1635822_at,descriptive_probe_mapped_summary
-eag,large PDF circadian neurons,ZT6,yw,2,4.633954865,0.0008736643692817337,1,1635822_at,descriptive_probe_mapped_summary
-eag,small PDF circadian neurons,ZT0,yw,2,4.6061759134999996,0.16507533035410862,1,1635822_at,descriptive_probe_mapped_summary
-eag,small PDF circadian neurons,ZT12,yw,2,4.703255745,0.07684639497986165,1,1635822_at,descriptive_probe_mapped_summary
-slo,ELAV neurons,ZT0,yw,3,6.165094246,0.34244028621177985,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,ELAV neurons,ZT12,yw,3,6.395309444666666,0.5098256666779586,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,large PDF circadian neurons,ZT0,per01,2,5.4301998585,0.47381309218644163,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,large PDF circadian neurons,ZT0,yw,3,5.559429692666666,0.047091891478790136,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,large PDF circadian neurons,ZT12,per01,2,5.468735193,0.49905135743126633,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,large PDF circadian neurons,ZT12,yw,3,5.762066954333334,0.9897550585920983,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,large PDF circadian neurons,ZT18,yw,2,5.812017689499999,0.19874147333756836,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,large PDF circadian neurons,ZT6,yw,2,5.9120693975,0.770715484563038,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,small PDF circadian neurons,ZT0,yw,2,5.5694714775000005,0.060715703260486496,1,1637301_a_at,descriptive_probe_mapped_summary
-slo,small PDF circadian neurons,ZT12,yw,2,5.8034866295,0.48797605634752017,1,1637301_a_at,descriptive_probe_mapped_summary
-para,ELAV neurons,ZT0,yw,3,8.89493287,0.05541798844654375,1,1627300_at,descriptive_probe_mapped_summary
-para,ELAV neurons,ZT12,yw,3,9.257224392,0.103344982940547,1,1627300_at,descriptive_probe_mapped_summary
-para,large PDF circadian neurons,ZT0,per01,2,6.415572964000001,0.2300197598544743,1,1627300_at,descriptive_probe_mapped_summary
-para,large PDF circadian neurons,ZT0,yw,3,7.242703827,0.04214413673586632,1,1627300_at,descriptive_probe_mapped_summary
-para,large PDF circadian neurons,ZT12,per01,2,7.1876052784999995,0.37295732910023616,1,1627300_at,descriptive_probe_mapped_summary
-para,large PDF circadian neurons,ZT12,yw,3,8.120444496333333,0.4034130646751802,1,1627300_at,descriptive_probe_mapped_summary
-para,large PDF circadian neurons,ZT18,yw,2,7.403324809000001,1.3041479668071725,1,1627300_at,descriptive_probe_mapped_summary
-para,large PDF circadian neurons,ZT6,yw,2,8.296274827,0.15604082146525344,1,1627300_at,descriptive_probe_mapped_summary
-para,small PDF circadian neurons,ZT0,yw,2,7.6852014385,0.4938000437700267,1,1627300_at,descriptive_probe_mapped_summary
-para,small PDF circadian neurons,ZT12,yw,2,8.251019655499999,0.32065181742357357,1,1627300_at,descriptive_probe_mapped_summary
-cac,ELAV neurons,ZT0,yw,3,6.510417316333334,0.12326779492015355,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,ELAV neurons,ZT12,yw,3,6.6414172533333335,0.1890253814875551,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,large PDF circadian neurons,ZT0,per01,2,6.446827771,0.3468970812136609,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,large PDF circadian neurons,ZT0,yw,3,6.404593998833334,0.15368299899817686,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,large PDF circadian neurons,ZT12,per01,2,6.5717951255,0.20832267688455106,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,large PDF circadian neurons,ZT12,yw,3,6.649983952166667,0.1983822691272998,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,large PDF circadian neurons,ZT18,yw,2,6.68269246325,0.1319492051729953,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,large PDF circadian neurons,ZT6,yw,2,6.724240557,0.08652884348998849,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,small PDF circadian neurons,ZT0,yw,2,6.884578941000001,0.09427605529130527,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-cac,small PDF circadian neurons,ZT12,yw,2,6.730365084000001,0.5245619705097189,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
-Ca-alpha1D,ELAV neurons,ZT0,yw,3,10.15142691,0.12739836857270975,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,ELAV neurons,ZT12,yw,3,10.124213943333332,0.15087236564667048,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,large PDF circadian neurons,ZT0,per01,2,9.4321939235,0.26740459083522256,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,large PDF circadian neurons,ZT0,yw,3,9.763434619666667,0.473372239904207,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,large PDF circadian neurons,ZT12,per01,2,9.3230351725,0.03311305608002956,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,large PDF circadian neurons,ZT12,yw,3,9.645912547333333,0.6501978480104292,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,large PDF circadian neurons,ZT18,yw,2,9.907180245500001,0.12231551132187861,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,large PDF circadian neurons,ZT6,yw,2,9.699315992,0.4561980404977866,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,small PDF circadian neurons,ZT0,yw,2,10.013212662499999,0.202834114048982,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1D,small PDF circadian neurons,ZT12,yw,2,10.266496265,0.158168423745457,1,1640092_a_at,descriptive_probe_mapped_summary
-Ca-alpha1T,ELAV neurons,ZT0,yw,3,5.457552392333334,0.12245898612075197,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,ELAV neurons,ZT12,yw,3,4.881885842333333,0.9358869796159685,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,large PDF circadian neurons,ZT0,per01,2,2.599805451,0.25233469505212913,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,large PDF circadian neurons,ZT0,yw,3,3.753583641666667,0.3062163139791377,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,large PDF circadian neurons,ZT12,per01,2,2.4460360894999997,0.0019762948640588323,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,large PDF circadian neurons,ZT12,yw,3,5.239010618333333,0.19145457423933965,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,large PDF circadian neurons,ZT18,yw,2,3.3707043089999997,0.22762102737851944,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,large PDF circadian neurons,ZT6,yw,2,4.651011434,0.5115387359078004,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,small PDF circadian neurons,ZT0,yw,2,3.788125358,1.283798365611361,1,1630042_at,descriptive_probe_mapped_summary
-Ca-alpha1T,small PDF circadian neurons,ZT12,yw,2,3.9076566725,0.5150274360102944,1,1630042_at,descriptive_probe_mapped_summary
-trpl,ELAV neurons,ZT0,yw,3,2.9977631403333334,0.3721620467123486,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,ELAV neurons,ZT12,yw,3,2.7312057223333333,0.024482442634112988,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,large PDF circadian neurons,ZT0,per01,2,2.6142452790000004,0.07174313038671944,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,large PDF circadian neurons,ZT0,yw,3,2.748949435666667,0.03453984658281483,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,large PDF circadian neurons,ZT12,per01,2,2.5522545495,0.008868587696863819,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,large PDF circadian neurons,ZT12,yw,3,2.7474494786666668,0.0034034223658387713,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,large PDF circadian neurons,ZT18,yw,2,2.9578861515,0.1695396589166251,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,large PDF circadian neurons,ZT6,yw,2,2.8700921409999998,0.15701227445973234,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,small PDF circadian neurons,ZT0,yw,2,2.7544306785,0.007341982340048408,1,1633649_s_at,descriptive_probe_mapped_summary
-trpl,small PDF circadian neurons,ZT12,yw,2,2.7412458925000003,0.03987769633984144,1,1633649_s_at,descriptive_probe_mapped_summary
-qsm,ELAV neurons,ZT0,yw,3,3.676599019333333,0.3614233449824413,1,1638079_at,descriptive_probe_mapped_summary
-qsm,ELAV neurons,ZT12,yw,3,3.587025599,0.20829806520460525,1,1638079_at,descriptive_probe_mapped_summary
-qsm,large PDF circadian neurons,ZT0,per01,2,2.779944283,0.0031515565389721332,1,1638079_at,descriptive_probe_mapped_summary
-qsm,large PDF circadian neurons,ZT0,yw,3,6.961019974999999,1.2543369869271823,1,1638079_at,descriptive_probe_mapped_summary
-qsm,large PDF circadian neurons,ZT12,per01,2,2.80868722,0.05466109225418837,1,1638079_at,descriptive_probe_mapped_summary
-qsm,large PDF circadian neurons,ZT12,yw,3,3.9483893746666667,0.4951123212866426,1,1638079_at,descriptive_probe_mapped_summary
-qsm,large PDF circadian neurons,ZT18,yw,2,4.232500455,0.23687028106128766,1,1638079_at,descriptive_probe_mapped_summary
-qsm,large PDF circadian neurons,ZT6,yw,2,3.9185905895,0.3931634526732908,1,1638079_at,descriptive_probe_mapped_summary
-qsm,small PDF circadian neurons,ZT0,yw,2,3.5632541365,0.19099150381980412,1,1638079_at,descriptive_probe_mapped_summary
-qsm,small PDF circadian neurons,ZT12,yw,2,3.568054025,0.02997479951250552,1,1638079_at,descriptive_probe_mapped_summary
-Ncc69,ELAV neurons,ZT0,yw,3,2.842787729,0.014216706253096227,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,ELAV neurons,ZT12,yw,3,2.8589927586666666,0.1782943742117667,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,large PDF circadian neurons,ZT0,per01,2,2.4016342395,0.0010721131803146584,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,large PDF circadian neurons,ZT0,yw,3,2.905271251333333,0.056913381793066806,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,large PDF circadian neurons,ZT12,per01,2,2.401879573,0.00018154542342870608,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,large PDF circadian neurons,ZT12,yw,3,3.2227926913333333,0.2955287179192027,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,large PDF circadian neurons,ZT18,yw,2,3.1354908975,0.07171860297380052,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,large PDF circadian neurons,ZT6,yw,2,2.894244981,0.01096430016834275,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,small PDF circadian neurons,ZT0,yw,2,2.8971146379999997,0.21673230278295003,1,1626461_at,descriptive_probe_mapped_summary
-Ncc69,small PDF circadian neurons,ZT12,yw,2,2.9370356859999998,0.04668342869602788,1,1626461_at,descriptive_probe_mapped_summary
-fray,ELAV neurons,ZT0,yw,3,7.499874163333334,0.37448149428561844,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,ELAV neurons,ZT12,yw,3,7.999556708333333,0.33970500897216227,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,large PDF circadian neurons,ZT0,per01,2,7.50332142,0.27511681287168666,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,large PDF circadian neurons,ZT0,yw,3,7.869196524666667,0.870753704687694,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,large PDF circadian neurons,ZT12,per01,2,7.2707033205,0.22834783344752316,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,large PDF circadian neurons,ZT12,yw,3,7.7299607560000005,0.8481709901779655,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,large PDF circadian neurons,ZT18,yw,2,7.9922886415,0.42407783446343306,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,large PDF circadian neurons,ZT6,yw,2,8.47373365,0.4994243718146918,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,small PDF circadian neurons,ZT0,yw,2,8.6323013635,0.7869635072177213,1,1626099_s_at,descriptive_probe_mapped_summary
-fray,small PDF circadian neurons,ZT12,yw,2,8.937816201499999,0.7523063116540233,1,1626099_s_at,descriptive_probe_mapped_summary
-Wnk,ELAV neurons,ZT0,yw,3,6.683710580333333,0.6578365665060918,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,ELAV neurons,ZT12,yw,3,6.970936504333333,0.30986376104950514,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,large PDF circadian neurons,ZT0,per01,2,5.064067653,0.013732716554783152,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,large PDF circadian neurons,ZT0,yw,3,7.334696143333333,0.5813767489002273,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,large PDF circadian neurons,ZT12,per01,2,6.6240570285,0.641007865515607,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,large PDF circadian neurons,ZT12,yw,3,7.536132077,0.9499451570642056,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,large PDF circadian neurons,ZT18,yw,2,5.998554931,1.0261326369723747,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,large PDF circadian neurons,ZT6,yw,2,6.4730406425,0.8629820965314894,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,small PDF circadian neurons,ZT0,yw,2,7.246814418,0.8710991258864743,1,1635378_at,descriptive_probe_mapped_summary
-Wnk,small PDF circadian neurons,ZT12,yw,2,6.658878166,0.6225783908637973,1,1635378_at,descriptive_probe_mapped_summary
+gene_symbol,cell_type,developmental_stage,time,background,sex,n_samples,mean_expression,sd_expression,probe_count,probe_ids,status
+na,ELAV neurons,adult,ZT0,yw,male and female,3,4.289308128333333,0.6416238479607341,1,1635546_a_at,descriptive_probe_mapped_summary
+na,ELAV neurons,adult,ZT12,yw,male and female,3,4.79058195,1.0456689919032298,1,1635546_a_at,descriptive_probe_mapped_summary
+na,large PDF circadian neurons,adult,ZT0,per01,male,2,4.4572464835000005,0.035426609058909465,1,1635546_a_at,descriptive_probe_mapped_summary
+na,large PDF circadian neurons,adult,ZT0,yw,male and female,3,3.193288221,0.18609346279167913,1,1635546_a_at,descriptive_probe_mapped_summary
+na,large PDF circadian neurons,adult,ZT12,per01,male,2,2.9171965479999997,0.45424877620465226,1,1635546_a_at,descriptive_probe_mapped_summary
+na,large PDF circadian neurons,adult,ZT12,yw,male and female,3,4.379298952,1.0664024338105198,1,1635546_a_at,descriptive_probe_mapped_summary
+na,large PDF circadian neurons,adult,ZT18,yw,male and female,2,3.849757617,1.5241953869986504,1,1635546_a_at,descriptive_probe_mapped_summary
+na,large PDF circadian neurons,adult,ZT6,yw,male and female,2,3.33987428,0.21955457525027286,1,1635546_a_at,descriptive_probe_mapped_summary
+na,small PDF circadian neurons,adult,ZT0,yw,male and female,2,3.4497161615,1.1025139614582893,1,1635546_a_at,descriptive_probe_mapped_summary
+na,small PDF circadian neurons,adult,ZT12,yw,male and female,2,6.001026091,0.5897610701741833,1,1635546_a_at,descriptive_probe_mapped_summary
+Irk1,ELAV neurons,adult,ZT0,yw,male and female,3,3.405540072333334,0.2851068322935113,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,ELAV neurons,adult,ZT12,yw,male and female,3,3.507156772666667,0.563302021561966,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,large PDF circadian neurons,adult,ZT0,per01,male,2,4.66714693725,0.2649389451981181,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,large PDF circadian neurons,adult,ZT0,yw,male and female,3,3.538604372,0.8204507538294997,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,large PDF circadian neurons,adult,ZT12,per01,male,2,5.2087705905,0.06134463514437235,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,large PDF circadian neurons,adult,ZT12,yw,male and female,3,6.4753816975000005,0.34824217647752886,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,large PDF circadian neurons,adult,ZT18,yw,male and female,2,4.54335113825,0.4752007676777637,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,large PDF circadian neurons,adult,ZT6,yw,male and female,2,3.45287886525,0.5785548415523848,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,small PDF circadian neurons,adult,ZT0,yw,male and female,2,4.44000754,0.14853322481755638,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Irk1,small PDF circadian neurons,adult,ZT12,yw,male and female,2,6.979513999750001,0.23090816138973583,2,1626256_at;1627795_at,descriptive_probe_mapped_summary
+Ork1,ELAV neurons,adult,ZT0,yw,male and female,3,2.404584643,0.014100796991957357,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,ELAV neurons,adult,ZT12,yw,male and female,3,2.3469679653333335,0.04532610839794891,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,large PDF circadian neurons,adult,ZT0,per01,male,2,2.3740641815,0.0012156360579058671,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,large PDF circadian neurons,adult,ZT0,yw,male and female,3,2.4206751413333336,0.04319042036143514,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,large PDF circadian neurons,adult,ZT12,per01,male,2,2.372602283,0.004818839375691344,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,large PDF circadian neurons,adult,ZT12,yw,male and female,3,2.426727644666667,0.045779749165076364,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,large PDF circadian neurons,adult,ZT18,yw,male and female,2,2.5309043200000003,0.06793825667940569,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,large PDF circadian neurons,adult,ZT6,yw,male and female,2,2.430853006,0.012489502625304712,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,small PDF circadian neurons,adult,ZT0,yw,male and female,2,2.4690874015,0.14309399257946875,1,1635938_s_at,descriptive_probe_mapped_summary
+Ork1,small PDF circadian neurons,adult,ZT12,yw,male and female,2,2.521528777,0.11929312551415942,1,1635938_s_at,descriptive_probe_mapped_summary
+Sh,ELAV neurons,adult,ZT0,yw,male and female,3,9.210577858,0.4472835008805703,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,ELAV neurons,adult,ZT12,yw,male and female,3,8.933559029,0.333617114919695,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,large PDF circadian neurons,adult,ZT0,per01,male,2,8.6129526225,0.8234299839735122,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,large PDF circadian neurons,adult,ZT0,yw,male and female,3,9.313960698333334,0.17531516781140824,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,large PDF circadian neurons,adult,ZT12,per01,male,2,9.115003671499998,0.27167997622316514,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,large PDF circadian neurons,adult,ZT12,yw,male and female,3,8.792763217333333,0.7747302003209232,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,large PDF circadian neurons,adult,ZT18,yw,male and female,2,9.109808942499999,0.021307568956865745,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,large PDF circadian neurons,adult,ZT6,yw,male and female,2,9.538252396,0.17386087401637598,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,small PDF circadian neurons,adult,ZT0,yw,male and female,2,9.0056097925,0.7208376868408644,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Sh,small PDF circadian neurons,adult,ZT12,yw,male and female,2,9.139126282500001,0.3491933030053338,7,1623917_a_at;1623933_at;1626802_a_at;1632879_at;1639174_at;1640193_at;1641501_a_at,descriptive_probe_mapped_summary
+Shab,ELAV neurons,adult,ZT0,yw,male and female,3,3.6586737973333334,0.1866159769464243,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,ELAV neurons,adult,ZT12,yw,male and female,3,4.290580875,1.0793320981615515,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,large PDF circadian neurons,adult,ZT0,per01,male,2,2.874843399,0.338374175394702,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,large PDF circadian neurons,adult,ZT0,yw,male and female,3,3.7663310096666667,0.5725799308532526,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,large PDF circadian neurons,adult,ZT12,per01,male,2,2.9054609434999996,0.3989853060475322,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,large PDF circadian neurons,adult,ZT12,yw,male and female,3,4.0221359969999995,0.4360638591543663,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,large PDF circadian neurons,adult,ZT18,yw,male and female,2,3.09261426775,0.15727492892005054,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,large PDF circadian neurons,adult,ZT6,yw,male and female,2,4.07417044475,1.037977094518017,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,small PDF circadian neurons,adult,ZT0,yw,male and female,2,3.5919719975,0.6195319125138298,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shab,small PDF circadian neurons,adult,ZT12,yw,male and female,2,4.4291246202500005,0.685036129107929,2,1633404_at;1638535_a_at,descriptive_probe_mapped_summary
+Shal,ELAV neurons,adult,ZT0,yw,male and female,3,7.322746089333333,0.521721954876909,1,1638398_at,descriptive_probe_mapped_summary
+Shal,ELAV neurons,adult,ZT12,yw,male and female,3,6.2502123240000005,2.086539660332909,1,1638398_at,descriptive_probe_mapped_summary
+Shal,large PDF circadian neurons,adult,ZT0,per01,male,2,3.796898951,1.7814806950177855,1,1638398_at,descriptive_probe_mapped_summary
+Shal,large PDF circadian neurons,adult,ZT0,yw,male and female,3,3.1318913406666664,0.3734246893241962,1,1638398_at,descriptive_probe_mapped_summary
+Shal,large PDF circadian neurons,adult,ZT12,per01,male,2,2.9117466724999996,0.04386739220340835,1,1638398_at,descriptive_probe_mapped_summary
+Shal,large PDF circadian neurons,adult,ZT12,yw,male and female,3,4.9270392240000005,2.200574321383584,1,1638398_at,descriptive_probe_mapped_summary
+Shal,large PDF circadian neurons,adult,ZT18,yw,male and female,2,2.651310681,0.47087755747622917,1,1638398_at,descriptive_probe_mapped_summary
+Shal,large PDF circadian neurons,adult,ZT6,yw,male and female,2,3.7011452174999997,1.4838350040136221,1,1638398_at,descriptive_probe_mapped_summary
+Shal,small PDF circadian neurons,adult,ZT0,yw,male and female,2,5.731383555000001,1.386229127028273,1,1638398_at,descriptive_probe_mapped_summary
+Shal,small PDF circadian neurons,adult,ZT12,yw,male and female,2,5.629148704,1.1520037011002677,1,1638398_at,descriptive_probe_mapped_summary
+Shaw,ELAV neurons,adult,ZT0,yw,male and female,3,6.989877227,0.49951648448597086,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,ELAV neurons,adult,ZT12,yw,male and female,3,6.818953454833334,0.9143690530305038,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,large PDF circadian neurons,adult,ZT0,per01,male,2,3.339163077,0.8346524962038195,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,large PDF circadian neurons,adult,ZT0,yw,male and female,3,5.389807977333334,0.6273083047291493,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,large PDF circadian neurons,adult,ZT12,per01,male,2,2.82988937425,0.2189084178916443,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,large PDF circadian neurons,adult,ZT12,yw,male and female,3,4.8762974275,0.26076967054294076,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,large PDF circadian neurons,adult,ZT18,yw,male and female,2,4.59935512,0.27370149480852185,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,large PDF circadian neurons,adult,ZT6,yw,male and female,2,3.96325762775,0.11575923952058038,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,small PDF circadian neurons,adult,ZT0,yw,male and female,2,6.22426935175,0.8671111882439193,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+Shaw,small PDF circadian neurons,adult,ZT12,yw,male and female,2,6.52955980375,0.9301166913522912,2,1623070_a_at;1632961_at,descriptive_probe_mapped_summary
+sei,ELAV neurons,adult,ZT0,yw,male and female,3,8.983517831,0.3072518260722024,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,ELAV neurons,adult,ZT12,yw,male and female,3,9.324906820333332,0.539530905453735,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,large PDF circadian neurons,adult,ZT0,per01,male,2,8.007036189,0.03101248719917851,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,large PDF circadian neurons,adult,ZT0,yw,male and female,3,8.761935349,0.20644393056430102,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,large PDF circadian neurons,adult,ZT12,per01,male,2,8.327175035,0.23784650561232545,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,large PDF circadian neurons,adult,ZT12,yw,male and female,3,8.697973660666667,0.2705057183850616,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,large PDF circadian neurons,adult,ZT18,yw,male and female,2,9.041807942,0.23993784179993685,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,large PDF circadian neurons,adult,ZT6,yw,male and female,2,8.07961739,0.07615445988177187,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,small PDF circadian neurons,adult,ZT0,yw,male and female,2,8.896453733,0.10885361312875587,1,1629418_s_at,descriptive_probe_mapped_summary
+sei,small PDF circadian neurons,adult,ZT12,yw,male and female,2,8.2780700735,0.3154121547607687,1,1629418_s_at,descriptive_probe_mapped_summary
+eag,ELAV neurons,adult,ZT0,yw,male and female,3,4.882510720333333,0.3308518123141239,1,1635822_at,descriptive_probe_mapped_summary
+eag,ELAV neurons,adult,ZT12,yw,male and female,3,4.856370878666667,0.2174377698015275,1,1635822_at,descriptive_probe_mapped_summary
+eag,large PDF circadian neurons,adult,ZT0,per01,male,2,2.81560743,0.04487401315364968,1,1635822_at,descriptive_probe_mapped_summary
+eag,large PDF circadian neurons,adult,ZT0,yw,male and female,3,4.666453377333333,0.11448590785454962,1,1635822_at,descriptive_probe_mapped_summary
+eag,large PDF circadian neurons,adult,ZT12,per01,male,2,2.8544186905,0.0028569511051923986,1,1635822_at,descriptive_probe_mapped_summary
+eag,large PDF circadian neurons,adult,ZT12,yw,male and female,3,4.726871965,0.09556482947899488,1,1635822_at,descriptive_probe_mapped_summary
+eag,large PDF circadian neurons,adult,ZT18,yw,male and female,2,5.019421595,0.21279748689088496,1,1635822_at,descriptive_probe_mapped_summary
+eag,large PDF circadian neurons,adult,ZT6,yw,male and female,2,4.633954865,0.0008736643692817337,1,1635822_at,descriptive_probe_mapped_summary
+eag,small PDF circadian neurons,adult,ZT0,yw,male and female,2,4.6061759134999996,0.16507533035410862,1,1635822_at,descriptive_probe_mapped_summary
+eag,small PDF circadian neurons,adult,ZT12,yw,male and female,2,4.703255745,0.07684639497986165,1,1635822_at,descriptive_probe_mapped_summary
+slo,ELAV neurons,adult,ZT0,yw,male and female,3,6.165094246,0.34244028621177985,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,ELAV neurons,adult,ZT12,yw,male and female,3,6.395309444666666,0.5098256666779586,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,large PDF circadian neurons,adult,ZT0,per01,male,2,5.4301998585,0.47381309218644163,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,large PDF circadian neurons,adult,ZT0,yw,male and female,3,5.559429692666666,0.047091891478790136,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,large PDF circadian neurons,adult,ZT12,per01,male,2,5.468735193,0.49905135743126633,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,large PDF circadian neurons,adult,ZT12,yw,male and female,3,5.762066954333334,0.9897550585920983,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,large PDF circadian neurons,adult,ZT18,yw,male and female,2,5.812017689499999,0.19874147333756836,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,large PDF circadian neurons,adult,ZT6,yw,male and female,2,5.9120693975,0.770715484563038,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,small PDF circadian neurons,adult,ZT0,yw,male and female,2,5.5694714775000005,0.060715703260486496,1,1637301_a_at,descriptive_probe_mapped_summary
+slo,small PDF circadian neurons,adult,ZT12,yw,male and female,2,5.8034866295,0.48797605634752017,1,1637301_a_at,descriptive_probe_mapped_summary
+para,ELAV neurons,adult,ZT0,yw,male and female,3,8.89493287,0.05541798844654375,1,1627300_at,descriptive_probe_mapped_summary
+para,ELAV neurons,adult,ZT12,yw,male and female,3,9.257224392,0.103344982940547,1,1627300_at,descriptive_probe_mapped_summary
+para,large PDF circadian neurons,adult,ZT0,per01,male,2,6.415572964000001,0.2300197598544743,1,1627300_at,descriptive_probe_mapped_summary
+para,large PDF circadian neurons,adult,ZT0,yw,male and female,3,7.242703827,0.04214413673586632,1,1627300_at,descriptive_probe_mapped_summary
+para,large PDF circadian neurons,adult,ZT12,per01,male,2,7.1876052784999995,0.37295732910023616,1,1627300_at,descriptive_probe_mapped_summary
+para,large PDF circadian neurons,adult,ZT12,yw,male and female,3,8.120444496333333,0.4034130646751802,1,1627300_at,descriptive_probe_mapped_summary
+para,large PDF circadian neurons,adult,ZT18,yw,male and female,2,7.403324809000001,1.3041479668071725,1,1627300_at,descriptive_probe_mapped_summary
+para,large PDF circadian neurons,adult,ZT6,yw,male and female,2,8.296274827,0.15604082146525344,1,1627300_at,descriptive_probe_mapped_summary
+para,small PDF circadian neurons,adult,ZT0,yw,male and female,2,7.6852014385,0.4938000437700267,1,1627300_at,descriptive_probe_mapped_summary
+para,small PDF circadian neurons,adult,ZT12,yw,male and female,2,8.251019655499999,0.32065181742357357,1,1627300_at,descriptive_probe_mapped_summary
+cac,ELAV neurons,adult,ZT0,yw,male and female,3,6.510417316333334,0.12326779492015355,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,ELAV neurons,adult,ZT12,yw,male and female,3,6.6414172533333335,0.1890253814875551,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,large PDF circadian neurons,adult,ZT0,per01,male,2,6.446827771,0.3468970812136609,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,large PDF circadian neurons,adult,ZT0,yw,male and female,3,6.404593998833334,0.15368299899817686,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,large PDF circadian neurons,adult,ZT12,per01,male,2,6.5717951255,0.20832267688455106,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,large PDF circadian neurons,adult,ZT12,yw,male and female,3,6.649983952166667,0.1983822691272998,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,large PDF circadian neurons,adult,ZT18,yw,male and female,2,6.68269246325,0.1319492051729953,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,large PDF circadian neurons,adult,ZT6,yw,male and female,2,6.724240557,0.08652884348998849,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,small PDF circadian neurons,adult,ZT0,yw,male and female,2,6.884578941000001,0.09427605529130527,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+cac,small PDF circadian neurons,adult,ZT12,yw,male and female,2,6.730365084000001,0.5245619705097189,2,1640033_at;1640614_at,descriptive_probe_mapped_summary
+Ca-alpha1D,ELAV neurons,adult,ZT0,yw,male and female,3,10.15142691,0.12739836857270975,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,ELAV neurons,adult,ZT12,yw,male and female,3,10.124213943333332,0.15087236564667048,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,large PDF circadian neurons,adult,ZT0,per01,male,2,9.4321939235,0.26740459083522256,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,large PDF circadian neurons,adult,ZT0,yw,male and female,3,9.763434619666667,0.473372239904207,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,large PDF circadian neurons,adult,ZT12,per01,male,2,9.3230351725,0.03311305608002956,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,large PDF circadian neurons,adult,ZT12,yw,male and female,3,9.645912547333333,0.6501978480104292,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,large PDF circadian neurons,adult,ZT18,yw,male and female,2,9.907180245500001,0.12231551132187861,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,large PDF circadian neurons,adult,ZT6,yw,male and female,2,9.699315992,0.4561980404977866,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,small PDF circadian neurons,adult,ZT0,yw,male and female,2,10.013212662499999,0.202834114048982,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1D,small PDF circadian neurons,adult,ZT12,yw,male and female,2,10.266496265,0.158168423745457,1,1640092_a_at,descriptive_probe_mapped_summary
+Ca-alpha1T,ELAV neurons,adult,ZT0,yw,male and female,3,5.457552392333334,0.12245898612075197,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,ELAV neurons,adult,ZT12,yw,male and female,3,4.881885842333333,0.9358869796159685,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,large PDF circadian neurons,adult,ZT0,per01,male,2,2.599805451,0.25233469505212913,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,large PDF circadian neurons,adult,ZT0,yw,male and female,3,3.753583641666667,0.3062163139791377,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,large PDF circadian neurons,adult,ZT12,per01,male,2,2.4460360894999997,0.0019762948640588323,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,large PDF circadian neurons,adult,ZT12,yw,male and female,3,5.239010618333333,0.19145457423933965,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,large PDF circadian neurons,adult,ZT18,yw,male and female,2,3.3707043089999997,0.22762102737851944,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,large PDF circadian neurons,adult,ZT6,yw,male and female,2,4.651011434,0.5115387359078004,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,small PDF circadian neurons,adult,ZT0,yw,male and female,2,3.788125358,1.283798365611361,1,1630042_at,descriptive_probe_mapped_summary
+Ca-alpha1T,small PDF circadian neurons,adult,ZT12,yw,male and female,2,3.9076566725,0.5150274360102944,1,1630042_at,descriptive_probe_mapped_summary
+trpl,ELAV neurons,adult,ZT0,yw,male and female,3,2.9977631403333334,0.3721620467123486,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,ELAV neurons,adult,ZT12,yw,male and female,3,2.7312057223333333,0.024482442634112988,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,large PDF circadian neurons,adult,ZT0,per01,male,2,2.6142452790000004,0.07174313038671944,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,large PDF circadian neurons,adult,ZT0,yw,male and female,3,2.748949435666667,0.03453984658281483,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,large PDF circadian neurons,adult,ZT12,per01,male,2,2.5522545495,0.008868587696863819,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,large PDF circadian neurons,adult,ZT12,yw,male and female,3,2.7474494786666668,0.0034034223658387713,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,large PDF circadian neurons,adult,ZT18,yw,male and female,2,2.9578861515,0.1695396589166251,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,large PDF circadian neurons,adult,ZT6,yw,male and female,2,2.8700921409999998,0.15701227445973234,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,small PDF circadian neurons,adult,ZT0,yw,male and female,2,2.7544306785,0.007341982340048408,1,1633649_s_at,descriptive_probe_mapped_summary
+trpl,small PDF circadian neurons,adult,ZT12,yw,male and female,2,2.7412458925000003,0.03987769633984144,1,1633649_s_at,descriptive_probe_mapped_summary
+qsm,ELAV neurons,adult,ZT0,yw,male and female,3,3.676599019333333,0.3614233449824413,1,1638079_at,descriptive_probe_mapped_summary
+qsm,ELAV neurons,adult,ZT12,yw,male and female,3,3.587025599,0.20829806520460525,1,1638079_at,descriptive_probe_mapped_summary
+qsm,large PDF circadian neurons,adult,ZT0,per01,male,2,2.779944283,0.0031515565389721332,1,1638079_at,descriptive_probe_mapped_summary
+qsm,large PDF circadian neurons,adult,ZT0,yw,male and female,3,6.961019974999999,1.2543369869271823,1,1638079_at,descriptive_probe_mapped_summary
+qsm,large PDF circadian neurons,adult,ZT12,per01,male,2,2.80868722,0.05466109225418837,1,1638079_at,descriptive_probe_mapped_summary
+qsm,large PDF circadian neurons,adult,ZT12,yw,male and female,3,3.9483893746666667,0.4951123212866426,1,1638079_at,descriptive_probe_mapped_summary
+qsm,large PDF circadian neurons,adult,ZT18,yw,male and female,2,4.232500455,0.23687028106128766,1,1638079_at,descriptive_probe_mapped_summary
+qsm,large PDF circadian neurons,adult,ZT6,yw,male and female,2,3.9185905895,0.3931634526732908,1,1638079_at,descriptive_probe_mapped_summary
+qsm,small PDF circadian neurons,adult,ZT0,yw,male and female,2,3.5632541365,0.19099150381980412,1,1638079_at,descriptive_probe_mapped_summary
+qsm,small PDF circadian neurons,adult,ZT12,yw,male and female,2,3.568054025,0.02997479951250552,1,1638079_at,descriptive_probe_mapped_summary
+Ncc69,ELAV neurons,adult,ZT0,yw,male and female,3,2.842787729,0.014216706253096227,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,ELAV neurons,adult,ZT12,yw,male and female,3,2.8589927586666666,0.1782943742117667,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,large PDF circadian neurons,adult,ZT0,per01,male,2,2.4016342395,0.0010721131803146584,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,large PDF circadian neurons,adult,ZT0,yw,male and female,3,2.905271251333333,0.056913381793066806,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,large PDF circadian neurons,adult,ZT12,per01,male,2,2.401879573,0.00018154542342870608,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,large PDF circadian neurons,adult,ZT12,yw,male and female,3,3.2227926913333333,0.2955287179192027,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,large PDF circadian neurons,adult,ZT18,yw,male and female,2,3.1354908975,0.07171860297380052,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,large PDF circadian neurons,adult,ZT6,yw,male and female,2,2.894244981,0.01096430016834275,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,small PDF circadian neurons,adult,ZT0,yw,male and female,2,2.8971146379999997,0.21673230278295003,1,1626461_at,descriptive_probe_mapped_summary
+Ncc69,small PDF circadian neurons,adult,ZT12,yw,male and female,2,2.9370356859999998,0.04668342869602788,1,1626461_at,descriptive_probe_mapped_summary
+fray,ELAV neurons,adult,ZT0,yw,male and female,3,7.499874163333334,0.37448149428561844,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,ELAV neurons,adult,ZT12,yw,male and female,3,7.999556708333333,0.33970500897216227,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,large PDF circadian neurons,adult,ZT0,per01,male,2,7.50332142,0.27511681287168666,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,large PDF circadian neurons,adult,ZT0,yw,male and female,3,7.869196524666667,0.870753704687694,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,large PDF circadian neurons,adult,ZT12,per01,male,2,7.2707033205,0.22834783344752316,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,large PDF circadian neurons,adult,ZT12,yw,male and female,3,7.7299607560000005,0.8481709901779655,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,large PDF circadian neurons,adult,ZT18,yw,male and female,2,7.9922886415,0.42407783446343306,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,large PDF circadian neurons,adult,ZT6,yw,male and female,2,8.47373365,0.4994243718146918,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,small PDF circadian neurons,adult,ZT0,yw,male and female,2,8.6323013635,0.7869635072177213,1,1626099_s_at,descriptive_probe_mapped_summary
+fray,small PDF circadian neurons,adult,ZT12,yw,male and female,2,8.937816201499999,0.7523063116540233,1,1626099_s_at,descriptive_probe_mapped_summary
+Wnk,ELAV neurons,adult,ZT0,yw,male and female,3,6.683710580333333,0.6578365665060918,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,ELAV neurons,adult,ZT12,yw,male and female,3,6.970936504333333,0.30986376104950514,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,large PDF circadian neurons,adult,ZT0,per01,male,2,5.064067653,0.013732716554783152,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,large PDF circadian neurons,adult,ZT0,yw,male and female,3,7.334696143333333,0.5813767489002273,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,large PDF circadian neurons,adult,ZT12,per01,male,2,6.6240570285,0.641007865515607,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,large PDF circadian neurons,adult,ZT12,yw,male and female,3,7.536132077,0.9499451570642056,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,large PDF circadian neurons,adult,ZT18,yw,male and female,2,5.998554931,1.0261326369723747,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,large PDF circadian neurons,adult,ZT6,yw,male and female,2,6.4730406425,0.8629820965314894,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,small PDF circadian neurons,adult,ZT0,yw,male and female,2,7.246814418,0.8710991258864743,1,1635378_at,descriptive_probe_mapped_summary
+Wnk,small PDF circadian neurons,adult,ZT12,yw,male and female,2,6.658878166,0.6225783908637973,1,1635378_at,descriptive_probe_mapped_summary

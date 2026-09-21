@@ -22,8 +22,12 @@ class PublicDatasetManifestTests(unittest.TestCase):
         )
         self.assertEqual(result["status"], "verified_public_dataset_manifest")
         self.assertEqual(result["formal_status"], "online_source_content_verified")
-        self.assertEqual(result["n_files"], 12)
-        self.assertEqual(result["n_runs"], 5)
+        manifest = self._payload()
+        self.assertEqual(result["n_files"], len(manifest["files"]))
+        self.assertEqual(result["n_runs"], len(manifest["runs"]))
+        run_ids = {run["run_id"] for run in manifest["runs"]}
+        self.assertIn("extract-gse22308-channel-regulator-expression", run_ids)
+        self.assertIn("descriptive-gse22308-channel-regulator-expression-rhythm", run_ids)
         self.assertEqual(result["warnings"], [])
 
     def test_content_checked_requires_observation_provenance(self):
