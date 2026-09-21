@@ -43,15 +43,23 @@ def _read_candidates(path: Path, column: str) -> list[str]:
     for row in rows:
         symbol = (row.get(column) or "").strip()
         key = symbol.casefold()
-        if symbol and key not in seen:
-            candidates.append(symbol)
-            seen.add(key)
+        if not symbol:
+            raise ValueError(f"candidate list contains a blank value in {column!r}")
+        if key in seen:
+            raise ValueError(f"candidate list contains a duplicate or case-ambiguous symbol: {symbol!r}")
+        candidates.append(symbol)
+        seen.add(key)
     if not candidates:
         raise ValueError(f"candidate list contains no usable values in {column!r}")
     return candidates
 
 
-def audit_matrix(cell_type: str, path: Path, candidates: list[str]) -> dict[str, object]:
+def audit_matrix(
+    cell_type: str,
+    path: Path,
+    candidates: list[str],
+    aliases: dict[str, str] | None = None,
+) -> dict[str, object]:
     if not path.is_file():
         raise ValueError(f"matrix does not exist: {path}")
     candidate_by_key = {symbol.casefold(): symbol for symbol in candidates}
@@ -60,6 +68,8 @@ def audit_matrix(cell_type: str, path: Path, candidates: list[str]) -> dict[str,
     blank_transcript_rows: dict[str, int] = {symbol: 0 for symbol in candidates}
     missing_expression_cells: dict[str, int] = {symbol: 0 for symbol in candidates}
     invalid_expression_cells: dict[str, int] = {symbol: 0 for symbol in candidates}
+    matched_symbols: dict[str, set[str]] = {symbol: set() for symbol in candidates}
+    match_modes: dict[str, Counter[str]] = {symbol: Counter() for symbol in candidates}
     total_rows = 0
 
     with _open_text(path) as handle:
@@ -82,10 +92,19 @@ def audit_matrix(cell_type: str, path: Path, candidates: list[str]) -> dict[str,
                 )
             total_rows += 1
             transcript_id = row[0].strip()
-            symbol_key = row[1].strip().casefold()
+            matrix_symbol = row[1].strip()
+            symbol_key = matrix_symbol.casefold()
             candidate = candidate_by_key.get(symbol_key)
+            match_mode = "casefold_symbol_match"
+            if candidate is None and symbol_key in (aliases or {}):
+                candidate = aliases[symbol_key]
+                match_mode = "explicit_alias_map"
             if candidate is None:
                 continue
+            if matrix_symbol == candidate:
+                match_mode = "exact_symbol_match"
+            matched_symbols[candidate].add(matrix_symbol)
+            match_modes[candidate][match_mode] += 1
             if transcript_id:
                 transcript_ids[candidate].append(transcript_id)
             else:
@@ -118,6 +137,8 @@ def audit_matrix(cell_type: str, path: Path, candidates: list[str]) -> dict[str,
             extra_feature_sample_rows += (transcript_rows - 1) * len(sample_columns)
         candidate_audits.append({
             "candidate_symbol": candidate,
+            "matrix_symbols": sorted(matched_symbols[candidate]),
+            "symbol_match_modes": dict(sorted(match_modes[candidate].items())),
             "status": (
                 "multiple_transcript_rows_per_sample" if multiple_rows
                 else "single_transcript_row_per_sample" if has_rows
@@ -145,7 +166,7 @@ def audit_matrix(cell_type: str, path: Path, candidates: list[str]) -> dict[str,
         "matrix_row_count": total_rows,
         "n_sample_columns": len(sample_columns),
         "sample_column_labels": sample_columns,
-        "candidate_matching": "exact gene-symbol match after case-folding; no alias/synonym expansion",
+        "candidate_matching": "case-folded direct candidate matches plus only aliases supplied through the explicit alias map",
         "n_candidates_requested": len(candidates),
         "n_candidates_with_symbol_rows": len(found),
         "candidate_symbols_not_found": [
@@ -163,6 +184,39 @@ def audit_matrix(cell_type: str, path: Path, candidates: list[str]) -> dict[str,
     }
 
 
+def _read_aliases(path: Path | None, candidates: list[str]) -> dict[str, str]:
+    if path is None:
+        return {}
+    required = {"matrix_symbol", "canonical_gene_symbol", "source_url", "checked_at_utc", "evidence_note"}
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        reader = csv.DictReader(handle)
+        missing = required - set(reader.fieldnames or [])
+        if missing:
+            raise ValueError(f"alias map is missing columns: {', '.join(sorted(missing))}")
+        rows = list(reader)
+    candidates_by_key = {candidate.casefold(): candidate for candidate in candidates}
+    aliases: dict[str, str] = {}
+    for row_number, row in enumerate(rows, start=2):
+        matrix_symbol = (row.get("matrix_symbol") or "").strip()
+        canonical = (row.get("canonical_gene_symbol") or "").strip()
+        source_url = (row.get("source_url") or "").strip()
+        checked_at = (row.get("checked_at_utc") or "").strip()
+        evidence_note = (row.get("evidence_note") or "").strip()
+        if not matrix_symbol or not canonical or not source_url.startswith("https://") or not checked_at or not evidence_note:
+            raise ValueError(f"alias map row {row_number} requires symbol, canonical symbol, HTTPS source, check date, and evidence note")
+        target = candidates_by_key.get(canonical.casefold())
+        if target is None or target != canonical:
+            raise ValueError(f"alias map row {row_number} target is not an exact symbol in the candidate list: {canonical!r}")
+        key = matrix_symbol.casefold()
+        direct_target = candidates_by_key.get(key)
+        if direct_target is not None and direct_target != target:
+            raise ValueError(f"alias map row {row_number} conflicts with direct candidate symbol {direct_target!r}")
+        if key in aliases:
+            raise ValueError(f"alias map has duplicate or case-ambiguous matrix symbol: {matrix_symbol!r}")
+        aliases[key] = target
+    return aliases
+
+
 def _parse_matrix_spec(value: str) -> tuple[str, Path]:
     label, separator, raw_path = value.partition("=")
     label = label.strip()
@@ -176,6 +230,7 @@ def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--candidate-list", type=Path, required=True)
     parser.add_argument("--candidate-column", default="gene_symbol")
+    parser.add_argument("--alias-map", type=Path, help="optional CSV containing explicit, source-documented matrix-symbol aliases")
     parser.add_argument(
         "--matrix", action="append", required=True, metavar="CELLTYPE=PATH",
         help="ESAT transcript-level TSV or TSV.GZ; repeat once per cell group",
@@ -184,11 +239,12 @@ def main(argv: list[str]) -> int:
     args = parser.parse_args(argv[1:])
     try:
         candidates = _read_candidates(args.candidate_list, args.candidate_column)
+        aliases = _read_aliases(args.alias_map, candidates)
         specs = [_parse_matrix_spec(value) for value in args.matrix]
         labels = [label.casefold() for label, _ in specs]
         if len(set(labels)) != len(labels):
             raise ValueError("each --matrix cell-type label must be unique")
-        matrices = [audit_matrix(label, path, candidates) for label, path in specs]
+        matrices = [audit_matrix(label, path, candidates, aliases) for label, path in specs]
     except (OSError, ValueError, csv.Error, gzip.BadGzipFile) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
@@ -199,6 +255,9 @@ def main(argv: list[str]) -> int:
         "candidate_list": args.candidate_list.as_posix(),
         "candidate_list_sha256": _sha256(args.candidate_list),
         "candidate_column": args.candidate_column,
+        "alias_map": args.alias_map.as_posix() if args.alias_map else None,
+        "alias_map_sha256": _sha256(args.alias_map) if args.alias_map else None,
+        "n_explicit_aliases": len(aliases),
         "n_candidates": len(candidates),
         "matrices": matrices,
         "inference_warning": (

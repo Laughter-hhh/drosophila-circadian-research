@@ -1,0 +1,1231 @@
+{
+  "status": "executed_esat_candidate_expression_preparation",
+  "candidate_list": "validation/public-data/candidate-evidence-real.csv",
+  "candidate_list_sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+  "candidate_column": "candidate",
+  "priority_column": "class",
+  "metadata_path": "validation/public-data/GSE77451_sample_metadata.csv",
+  "metadata_sha256": "9b0546a5f8a09c5a8235d89edbc0d3d59a303cf6137acac229b912b754d4ec1a",
+  "alias_map": "validation/public-data/GSE77451-symbol-aliases.csv",
+  "alias_map_sha256": "6949c2c913fb42dcb9a09ecbe6b0283779b98a711dbcab856012db48451abf3e",
+  "n_candidates": 15,
+  "n_matrices": 3,
+  "n_transcript_sample_rows": 5484,
+  "n_candidate_sample_rows_per_aggregation": 540,
+  "aggregation_rules": [
+    "sum",
+    "median",
+    "max"
+  ],
+  "aggregation_note": "Gene-level sum, median, and maximum are explicit exploratory sensitivities, not source-defined biological expression units.",
+  "normalization_status": "none_added_processed_numeric_scale_preserved",
+  "matrix_audits": [
+    {
+      "cell_type_label": "LNv",
+      "path": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+      "sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+      "size_bytes": 647117,
+      "n_matrix_rows": 28067,
+      "n_sample_columns": 12,
+      "sample_columns": [
+        "KA_SEQ_37_unique.bam",
+        "KA_SEQ_38_unique.bam",
+        "KA_SEQ_39_unique.bam",
+        "KA_SEQ_40_unique.bam",
+        "KA_SEQ_41_unique.bam",
+        "KA_SEQ_42_unique.bam",
+        "ZT2_PDF_2_unique.bam",
+        "ZT6_PDF_2_unique.bam",
+        "ZT10_PDF_2_unique.bam",
+        "ZT14_PDF_2_unique.bam",
+        "ZT18_PDF_2_unique.bam",
+        "ZT22_PDF_2_unique.bam"
+      ],
+      "n_candidate_transcript_rows": 151,
+      "status": "parsed_no_normalization"
+    },
+    {
+      "cell_type_label": "LNd",
+      "path": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+      "sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+      "size_bytes": 751969,
+      "n_matrix_rows": 28066,
+      "n_sample_columns": 12,
+      "sample_columns": [
+        "KA_SEQ_49_unique.bam",
+        "KA_SEQ_50_unique.bam",
+        "KA_SEQ_51_unique.bam",
+        "KA_SEQ_52_unique.bam",
+        "KA_SEQ_53_unique.bam",
+        "KA_SEQ_54_unique.bam",
+        "KA_SEQ_61_unique.bam",
+        "KA_SEQ_62_unique.bam",
+        "KA_SEQ_63_unique.bam",
+        "KA_SEQ_64_unique.bam",
+        "KA_SEQ_65_unique.bam",
+        "KA_SEQ_66_unique.bam"
+      ],
+      "n_candidate_transcript_rows": 153,
+      "status": "parsed_no_normalization"
+    },
+    {
+      "cell_type_label": "DN1",
+      "path": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+      "sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+      "size_bytes": 700451,
+      "n_matrix_rows": 28066,
+      "n_sample_columns": 12,
+      "sample_columns": [
+        "DN1_3A",
+        "DN1_7A",
+        "DN1_11A",
+        "DN1_15A",
+        "DN1_19A",
+        "DN1_23A",
+        "DN1_3B",
+        "DN1_7B",
+        "DN1_11B",
+        "DN1_15B",
+        "DN1_19B",
+        "DN1_23B"
+      ],
+      "n_candidate_transcript_rows": 153,
+      "status": "parsed_no_normalization"
+    }
+  ],
+  "candidate_audits": [
+    {
+      "gene_symbol": "Shaw",
+      "priority_class": "gated_Kv3",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "Shaw"
+      ],
+      "transcript_ids": [
+        "FBtr0089274",
+        "FBtr0089275",
+        "FBtr0289989",
+        "FBtr0332184",
+        "FBtr0332185"
+      ],
+      "n_transcripts": 5,
+      "symbol_match_modes": {
+        "exact_symbol_match": 5
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Shal",
+      "priority_class": "gated_Kv4",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "Shal"
+      ],
+      "transcript_ids": [
+        "FBtr0074973",
+        "FBtr0112853",
+        "FBtr0333273"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Irk1",
+      "priority_class": "leak_Kir",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "Ir"
+      ],
+      "transcript_ids": [
+        "FBtr0113273",
+        "FBtr0300388",
+        "FBtr0301382",
+        "FBtr0303041"
+      ],
+      "n_transcripts": 4,
+      "symbol_match_modes": {
+        "explicit_alias_map": 4
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "na",
+      "priority_class": "leak_Na",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "na"
+      ],
+      "transcript_ids": [
+        "FBtr0112815",
+        "FBtr0303764"
+      ],
+      "n_transcripts": 2,
+      "symbol_match_modes": {
+        "exact_symbol_match": 2
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Sh",
+      "priority_class": "gated_Kv",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "Sh"
+      ],
+      "transcript_ids": [
+        "FBtr0089657",
+        "FBtr0089658",
+        "FBtr0089659",
+        "FBtr0089660",
+        "FBtr0089661",
+        "FBtr0089663",
+        "FBtr0301955",
+        "FBtr0302902",
+        "FBtr0302903",
+        "FBtr0308199",
+        "FBtr0308200",
+        "FBtr0332299",
+        "FBtr0332300",
+        "FBtr0332301"
+      ],
+      "n_transcripts": 14,
+      "symbol_match_modes": {
+        "exact_symbol_match": 14
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Shab",
+      "priority_class": "gated_Kv2",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "Shab"
+      ],
+      "transcript_ids": [
+        "FBtr0305201",
+        "FBtr0305202",
+        "FBtr0305203",
+        "FBtr0305205",
+        "FBtr0305206",
+        "FBtr0305207",
+        "FBtr0305208",
+        "FBtr0305209",
+        "FBtr0333898",
+        "FBtr0333899"
+      ],
+      "n_transcripts": 10,
+      "symbol_match_modes": {
+        "exact_symbol_match": 10
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "para",
+      "priority_class": "gated_Nav",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "para"
+      ],
+      "transcript_ids": [
+        "FBtr0074298",
+        "FBtr0111022",
+        "FBtr0111023",
+        "FBtr0290121",
+        "FBtr0303655",
+        "FBtr0303656",
+        "FBtr0303657",
+        "FBtr0303658",
+        "FBtr0303659",
+        "FBtr0303660",
+        "FBtr0303661",
+        "FBtr0303662",
+        "FBtr0303663",
+        "FBtr0303664",
+        "FBtr0303665",
+        "FBtr0303666",
+        "FBtr0303667",
+        "FBtr0303668",
+        "FBtr0303669",
+        "FBtr0303670",
+        "FBtr0303671",
+        "FBtr0303672",
+        "FBtr0303673",
+        "FBtr0303674",
+        "FBtr0303675",
+        "FBtr0303676",
+        "FBtr0303677",
+        "FBtr0303678",
+        "FBtr0303679",
+        "FBtr0303680",
+        "FBtr0303681",
+        "FBtr0303682",
+        "FBtr0303683",
+        "FBtr0303684",
+        "FBtr0303685",
+        "FBtr0303686",
+        "FBtr0303687",
+        "FBtr0303688",
+        "FBtr0303689",
+        "FBtr0303690",
+        "FBtr0303691",
+        "FBtr0303692",
+        "FBtr0303693",
+        "FBtr0303694",
+        "FBtr0303695",
+        "FBtr0303696",
+        "FBtr0303697",
+        "FBtr0303698",
+        "FBtr0303699",
+        "FBtr0303700",
+        "FBtr0303701",
+        "FBtr0303702",
+        "FBtr0303703",
+        "FBtr0303704",
+        "FBtr0303705",
+        "FBtr0303706",
+        "FBtr0303707"
+      ],
+      "n_transcripts": 57,
+      "symbol_match_modes": {
+        "exact_symbol_match": 57
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "cac",
+      "priority_class": "gated_Cav",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "cac"
+      ],
+      "transcript_ids": [
+        "FBtr0307313",
+        "FBtr0307314",
+        "FBtr0307315",
+        "FBtr0307316",
+        "FBtr0307317",
+        "FBtr0307318",
+        "FBtr0307319",
+        "FBtr0307320",
+        "FBtr0307321",
+        "FBtr0307322",
+        "FBtr0307323",
+        "FBtr0307324",
+        "FBtr0307325",
+        "FBtr0308609",
+        "FBtr0332391"
+      ],
+      "n_transcripts": 15,
+      "symbol_match_modes": {
+        "exact_symbol_match": 15
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ca-alpha1D",
+      "priority_class": "gated_CavL",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "Ca-alpha1D"
+      ],
+      "transcript_ids": [
+        "FBtr0090003",
+        "FBtr0090004",
+        "FBtr0090005",
+        "FBtr0090006",
+        "FBtr0332020",
+        "FBtr0332021",
+        "FBtr0332022",
+        "FBtr0332023",
+        "FBtr0332024",
+        "FBtr0332025"
+      ],
+      "n_transcripts": 10,
+      "symbol_match_modes": {
+        "exact_symbol_match": 10
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ca-alpha1T",
+      "priority_class": "gated_CavT",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "Ca-alpha1T"
+      ],
+      "transcript_ids": [
+        "FBtr0089393",
+        "FBtr0112953",
+        "FBtr0304609",
+        "FBtr0304610"
+      ],
+      "n_transcripts": 4,
+      "symbol_match_modes": {
+        "exact_symbol_match": 4
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "slo",
+      "priority_class": "gated_KCa",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "slo"
+      ],
+      "transcript_ids": [
+        "FBtr0084683",
+        "FBtr0084684",
+        "FBtr0084685",
+        "FBtr0100622",
+        "FBtr0100623",
+        "FBtr0100624",
+        "FBtr0100627",
+        "FBtr0100629",
+        "FBtr0100631",
+        "FBtr0100632",
+        "FBtr0100633",
+        "FBtr0100634",
+        "FBtr0100635",
+        "FBtr0100636",
+        "FBtr0100637",
+        "FBtr0100638",
+        "FBtr0301581",
+        "FBtr0301582",
+        "FBtr0330286"
+      ],
+      "n_transcripts": 19,
+      "symbol_match_modes": {
+        "exact_symbol_match": 19
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Irk2",
+      "priority_class": "leak_Kir",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "Irk2"
+      ],
+      "transcript_ids": [
+        "FBtr0084425",
+        "FBtr0084426",
+        "FBtr0301859"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ork1",
+      "priority_class": "leak_K2P_like",
+      "cell_type": "LNv",
+      "matrix_symbols": [],
+      "transcript_ids": [],
+      "n_transcripts": 0,
+      "symbol_match_modes": {},
+      "status": "not_represented_in_processed_matrix"
+    },
+    {
+      "gene_symbol": "sei",
+      "priority_class": "gated_Kv_or_Kir",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "sei"
+      ],
+      "transcript_ids": [
+        "FBtr0072169",
+        "FBtr0072170"
+      ],
+      "n_transcripts": 2,
+      "symbol_match_modes": {
+        "exact_symbol_match": 2
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "trpl",
+      "priority_class": "nonselective_cation",
+      "cell_type": "LNv",
+      "matrix_symbols": [
+        "trpl"
+      ],
+      "transcript_ids": [
+        "FBtr0088471",
+        "FBtr0088473",
+        "FBtr0301662"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Shaw",
+      "priority_class": "gated_Kv3",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Shaw"
+      ],
+      "transcript_ids": [
+        "FBtr0089274",
+        "FBtr0089275",
+        "FBtr0289989",
+        "FBtr0332184",
+        "FBtr0332185"
+      ],
+      "n_transcripts": 5,
+      "symbol_match_modes": {
+        "exact_symbol_match": 5
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Shal",
+      "priority_class": "gated_Kv4",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Shal"
+      ],
+      "transcript_ids": [
+        "FBtr0074973",
+        "FBtr0112853",
+        "FBtr0333273"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Irk1",
+      "priority_class": "leak_Kir",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Ir"
+      ],
+      "transcript_ids": [
+        "FBtr0113273",
+        "FBtr0300388",
+        "FBtr0301382",
+        "FBtr0303041"
+      ],
+      "n_transcripts": 4,
+      "symbol_match_modes": {
+        "explicit_alias_map": 4
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "na",
+      "priority_class": "leak_Na",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "na"
+      ],
+      "transcript_ids": [
+        "FBtr0112815",
+        "FBtr0303764"
+      ],
+      "n_transcripts": 2,
+      "symbol_match_modes": {
+        "exact_symbol_match": 2
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Sh",
+      "priority_class": "gated_Kv",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Sh"
+      ],
+      "transcript_ids": [
+        "FBtr0089657",
+        "FBtr0089658",
+        "FBtr0089659",
+        "FBtr0089660",
+        "FBtr0089661",
+        "FBtr0089663",
+        "FBtr0301955",
+        "FBtr0302902",
+        "FBtr0302903",
+        "FBtr0308199",
+        "FBtr0308200",
+        "FBtr0332299",
+        "FBtr0332300",
+        "FBtr0332301"
+      ],
+      "n_transcripts": 14,
+      "symbol_match_modes": {
+        "exact_symbol_match": 14
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Shab",
+      "priority_class": "gated_Kv2",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Shab"
+      ],
+      "transcript_ids": [
+        "FBtr0305201",
+        "FBtr0305202",
+        "FBtr0305203",
+        "FBtr0305205",
+        "FBtr0305206",
+        "FBtr0305207",
+        "FBtr0305208",
+        "FBtr0305209",
+        "FBtr0333898",
+        "FBtr0333899"
+      ],
+      "n_transcripts": 10,
+      "symbol_match_modes": {
+        "exact_symbol_match": 10
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "para",
+      "priority_class": "gated_Nav",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "para"
+      ],
+      "transcript_ids": [
+        "FBtr0074298",
+        "FBtr0111022",
+        "FBtr0111023",
+        "FBtr0290121",
+        "FBtr0303655",
+        "FBtr0303656",
+        "FBtr0303657",
+        "FBtr0303658",
+        "FBtr0303659",
+        "FBtr0303660",
+        "FBtr0303661",
+        "FBtr0303662",
+        "FBtr0303663",
+        "FBtr0303664",
+        "FBtr0303665",
+        "FBtr0303666",
+        "FBtr0303667",
+        "FBtr0303668",
+        "FBtr0303669",
+        "FBtr0303670",
+        "FBtr0303671",
+        "FBtr0303672",
+        "FBtr0303673",
+        "FBtr0303674",
+        "FBtr0303675",
+        "FBtr0303676",
+        "FBtr0303677",
+        "FBtr0303678",
+        "FBtr0303679",
+        "FBtr0303680",
+        "FBtr0303681",
+        "FBtr0303682",
+        "FBtr0303683",
+        "FBtr0303684",
+        "FBtr0303685",
+        "FBtr0303686",
+        "FBtr0303687",
+        "FBtr0303688",
+        "FBtr0303689",
+        "FBtr0303690",
+        "FBtr0303691",
+        "FBtr0303692",
+        "FBtr0303693",
+        "FBtr0303694",
+        "FBtr0303695",
+        "FBtr0303696",
+        "FBtr0303697",
+        "FBtr0303698",
+        "FBtr0303699",
+        "FBtr0303700",
+        "FBtr0303701",
+        "FBtr0303702",
+        "FBtr0303703",
+        "FBtr0303704",
+        "FBtr0303705",
+        "FBtr0303706",
+        "FBtr0303707"
+      ],
+      "n_transcripts": 57,
+      "symbol_match_modes": {
+        "exact_symbol_match": 57
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "cac",
+      "priority_class": "gated_Cav",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "cac"
+      ],
+      "transcript_ids": [
+        "FBtr0307313",
+        "FBtr0307314",
+        "FBtr0307315",
+        "FBtr0307316",
+        "FBtr0307317",
+        "FBtr0307318",
+        "FBtr0307319",
+        "FBtr0307320",
+        "FBtr0307321",
+        "FBtr0307322",
+        "FBtr0307323",
+        "FBtr0307324",
+        "FBtr0307325",
+        "FBtr0308609",
+        "FBtr0332391"
+      ],
+      "n_transcripts": 15,
+      "symbol_match_modes": {
+        "exact_symbol_match": 15
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ca-alpha1D",
+      "priority_class": "gated_CavL",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Ca-alpha1D"
+      ],
+      "transcript_ids": [
+        "FBtr0090003",
+        "FBtr0090004",
+        "FBtr0090005",
+        "FBtr0090006",
+        "FBtr0332020",
+        "FBtr0332021",
+        "FBtr0332022",
+        "FBtr0332023",
+        "FBtr0332024",
+        "FBtr0332025"
+      ],
+      "n_transcripts": 10,
+      "symbol_match_modes": {
+        "exact_symbol_match": 10
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ca-alpha1T",
+      "priority_class": "gated_CavT",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Ca-alpha1T"
+      ],
+      "transcript_ids": [
+        "FBtr0089393",
+        "FBtr0112953",
+        "FBtr0304609",
+        "FBtr0304610"
+      ],
+      "n_transcripts": 4,
+      "symbol_match_modes": {
+        "exact_symbol_match": 4
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "slo",
+      "priority_class": "gated_KCa",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "slo"
+      ],
+      "transcript_ids": [
+        "FBtr0084683",
+        "FBtr0084684",
+        "FBtr0084685",
+        "FBtr0100622",
+        "FBtr0100623",
+        "FBtr0100624",
+        "FBtr0100627",
+        "FBtr0100629",
+        "FBtr0100631",
+        "FBtr0100632",
+        "FBtr0100633",
+        "FBtr0100634",
+        "FBtr0100635",
+        "FBtr0100636",
+        "FBtr0100637",
+        "FBtr0100638",
+        "FBtr0301581",
+        "FBtr0301582",
+        "FBtr0330286"
+      ],
+      "n_transcripts": 19,
+      "symbol_match_modes": {
+        "exact_symbol_match": 19
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Irk2",
+      "priority_class": "leak_Kir",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Irk2"
+      ],
+      "transcript_ids": [
+        "FBtr0084425",
+        "FBtr0084426",
+        "FBtr0301859"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ork1",
+      "priority_class": "leak_K2P_like",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "Ork1"
+      ],
+      "transcript_ids": [
+        "FBtr0073404",
+        "FBtr0073405"
+      ],
+      "n_transcripts": 2,
+      "symbol_match_modes": {
+        "exact_symbol_match": 2
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "sei",
+      "priority_class": "gated_Kv_or_Kir",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "sei"
+      ],
+      "transcript_ids": [
+        "FBtr0072169",
+        "FBtr0072170"
+      ],
+      "n_transcripts": 2,
+      "symbol_match_modes": {
+        "exact_symbol_match": 2
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "trpl",
+      "priority_class": "nonselective_cation",
+      "cell_type": "LNd",
+      "matrix_symbols": [
+        "trpl"
+      ],
+      "transcript_ids": [
+        "FBtr0088471",
+        "FBtr0088473",
+        "FBtr0301662"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Shaw",
+      "priority_class": "gated_Kv3",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Shaw"
+      ],
+      "transcript_ids": [
+        "FBtr0089274",
+        "FBtr0089275",
+        "FBtr0289989",
+        "FBtr0332184",
+        "FBtr0332185"
+      ],
+      "n_transcripts": 5,
+      "symbol_match_modes": {
+        "exact_symbol_match": 5
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Shal",
+      "priority_class": "gated_Kv4",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Shal"
+      ],
+      "transcript_ids": [
+        "FBtr0074973",
+        "FBtr0112853",
+        "FBtr0333273"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Irk1",
+      "priority_class": "leak_Kir",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Ir"
+      ],
+      "transcript_ids": [
+        "FBtr0113273",
+        "FBtr0300388",
+        "FBtr0301382",
+        "FBtr0303041"
+      ],
+      "n_transcripts": 4,
+      "symbol_match_modes": {
+        "explicit_alias_map": 4
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "na",
+      "priority_class": "leak_Na",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "na"
+      ],
+      "transcript_ids": [
+        "FBtr0112815",
+        "FBtr0303764"
+      ],
+      "n_transcripts": 2,
+      "symbol_match_modes": {
+        "exact_symbol_match": 2
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Sh",
+      "priority_class": "gated_Kv",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Sh"
+      ],
+      "transcript_ids": [
+        "FBtr0089657",
+        "FBtr0089658",
+        "FBtr0089659",
+        "FBtr0089660",
+        "FBtr0089661",
+        "FBtr0089663",
+        "FBtr0301955",
+        "FBtr0302902",
+        "FBtr0302903",
+        "FBtr0308199",
+        "FBtr0308200",
+        "FBtr0332299",
+        "FBtr0332300",
+        "FBtr0332301"
+      ],
+      "n_transcripts": 14,
+      "symbol_match_modes": {
+        "exact_symbol_match": 14
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Shab",
+      "priority_class": "gated_Kv2",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Shab"
+      ],
+      "transcript_ids": [
+        "FBtr0305201",
+        "FBtr0305202",
+        "FBtr0305203",
+        "FBtr0305205",
+        "FBtr0305206",
+        "FBtr0305207",
+        "FBtr0305208",
+        "FBtr0305209",
+        "FBtr0333898",
+        "FBtr0333899"
+      ],
+      "n_transcripts": 10,
+      "symbol_match_modes": {
+        "exact_symbol_match": 10
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "para",
+      "priority_class": "gated_Nav",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "para"
+      ],
+      "transcript_ids": [
+        "FBtr0074298",
+        "FBtr0111022",
+        "FBtr0111023",
+        "FBtr0290121",
+        "FBtr0303655",
+        "FBtr0303656",
+        "FBtr0303657",
+        "FBtr0303658",
+        "FBtr0303659",
+        "FBtr0303660",
+        "FBtr0303661",
+        "FBtr0303662",
+        "FBtr0303663",
+        "FBtr0303664",
+        "FBtr0303665",
+        "FBtr0303666",
+        "FBtr0303667",
+        "FBtr0303668",
+        "FBtr0303669",
+        "FBtr0303670",
+        "FBtr0303671",
+        "FBtr0303672",
+        "FBtr0303673",
+        "FBtr0303674",
+        "FBtr0303675",
+        "FBtr0303676",
+        "FBtr0303677",
+        "FBtr0303678",
+        "FBtr0303679",
+        "FBtr0303680",
+        "FBtr0303681",
+        "FBtr0303682",
+        "FBtr0303683",
+        "FBtr0303684",
+        "FBtr0303685",
+        "FBtr0303686",
+        "FBtr0303687",
+        "FBtr0303688",
+        "FBtr0303689",
+        "FBtr0303690",
+        "FBtr0303691",
+        "FBtr0303692",
+        "FBtr0303693",
+        "FBtr0303694",
+        "FBtr0303695",
+        "FBtr0303696",
+        "FBtr0303697",
+        "FBtr0303698",
+        "FBtr0303699",
+        "FBtr0303700",
+        "FBtr0303701",
+        "FBtr0303702",
+        "FBtr0303703",
+        "FBtr0303704",
+        "FBtr0303705",
+        "FBtr0303706",
+        "FBtr0303707"
+      ],
+      "n_transcripts": 57,
+      "symbol_match_modes": {
+        "exact_symbol_match": 57
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "cac",
+      "priority_class": "gated_Cav",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "cac"
+      ],
+      "transcript_ids": [
+        "FBtr0307313",
+        "FBtr0307314",
+        "FBtr0307315",
+        "FBtr0307316",
+        "FBtr0307317",
+        "FBtr0307318",
+        "FBtr0307319",
+        "FBtr0307320",
+        "FBtr0307321",
+        "FBtr0307322",
+        "FBtr0307323",
+        "FBtr0307324",
+        "FBtr0307325",
+        "FBtr0308609",
+        "FBtr0332391"
+      ],
+      "n_transcripts": 15,
+      "symbol_match_modes": {
+        "exact_symbol_match": 15
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ca-alpha1D",
+      "priority_class": "gated_CavL",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Ca-alpha1D"
+      ],
+      "transcript_ids": [
+        "FBtr0090003",
+        "FBtr0090004",
+        "FBtr0090005",
+        "FBtr0090006",
+        "FBtr0332020",
+        "FBtr0332021",
+        "FBtr0332022",
+        "FBtr0332023",
+        "FBtr0332024",
+        "FBtr0332025"
+      ],
+      "n_transcripts": 10,
+      "symbol_match_modes": {
+        "exact_symbol_match": 10
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ca-alpha1T",
+      "priority_class": "gated_CavT",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Ca-alpha1T"
+      ],
+      "transcript_ids": [
+        "FBtr0089393",
+        "FBtr0112953",
+        "FBtr0304609",
+        "FBtr0304610"
+      ],
+      "n_transcripts": 4,
+      "symbol_match_modes": {
+        "exact_symbol_match": 4
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "slo",
+      "priority_class": "gated_KCa",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "slo"
+      ],
+      "transcript_ids": [
+        "FBtr0084683",
+        "FBtr0084684",
+        "FBtr0084685",
+        "FBtr0100622",
+        "FBtr0100623",
+        "FBtr0100624",
+        "FBtr0100627",
+        "FBtr0100629",
+        "FBtr0100631",
+        "FBtr0100632",
+        "FBtr0100633",
+        "FBtr0100634",
+        "FBtr0100635",
+        "FBtr0100636",
+        "FBtr0100637",
+        "FBtr0100638",
+        "FBtr0301581",
+        "FBtr0301582",
+        "FBtr0330286"
+      ],
+      "n_transcripts": 19,
+      "symbol_match_modes": {
+        "exact_symbol_match": 19
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Irk2",
+      "priority_class": "leak_Kir",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Irk2"
+      ],
+      "transcript_ids": [
+        "FBtr0084425",
+        "FBtr0084426",
+        "FBtr0301859"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "Ork1",
+      "priority_class": "leak_K2P_like",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "Ork1"
+      ],
+      "transcript_ids": [
+        "FBtr0073404",
+        "FBtr0073405"
+      ],
+      "n_transcripts": 2,
+      "symbol_match_modes": {
+        "exact_symbol_match": 2
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "sei",
+      "priority_class": "gated_Kv_or_Kir",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "sei"
+      ],
+      "transcript_ids": [
+        "FBtr0072169",
+        "FBtr0072170"
+      ],
+      "n_transcripts": 2,
+      "symbol_match_modes": {
+        "exact_symbol_match": 2
+      },
+      "status": "mapped"
+    },
+    {
+      "gene_symbol": "trpl",
+      "priority_class": "nonselective_cation",
+      "cell_type": "DN1",
+      "matrix_symbols": [
+        "trpl"
+      ],
+      "transcript_ids": [
+        "FBtr0088471",
+        "FBtr0088473",
+        "FBtr0301662"
+      ],
+      "n_transcripts": 3,
+      "symbol_match_modes": {
+        "exact_symbol_match": 3
+      },
+      "status": "mapped"
+    }
+  ],
+  "limitations": [
+    "Transcript rows are preserved and are not treated as biological replicates.",
+    "A candidate with no matching row is not proved biologically absent.",
+    "Processed numeric units and normalization are not inferred by this adapter.",
+    "Sampled cell-group pools and timecourse labels do not identify individual-fly replication."
+  ]
+}

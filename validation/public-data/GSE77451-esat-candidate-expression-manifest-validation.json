@@ -1,0 +1,207 @@
+{
+  "status": "verified_public_dataset_manifest",
+  "manifest_stage": "verified",
+  "formal_status": "online_source_content_verified",
+  "manifest_id": "GSE77451-esat-candidate-expression-20260922",
+  "dataset_id": "GSE77451",
+  "accession": "GSE77451",
+  "n_files": 15,
+  "n_runs": 5,
+  "n_planned_runs": 0,
+  "planned_run_checks": [],
+  "file_checks": [
+    {
+      "path": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+      "role": "other",
+      "expected_sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+      "observed_sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+      "size_bytes": 647117,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+      "role": "other",
+      "expected_sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+      "observed_sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+      "size_bytes": 751969,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+      "role": "other",
+      "expected_sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+      "observed_sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+      "size_bytes": 700451,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451_sample_metadata.csv",
+      "role": "metadata",
+      "expected_sha256": "9b0546a5f8a09c5a8235d89edbc0d3d59a303cf6137acac229b912b754d4ec1a",
+      "observed_sha256": "9b0546a5f8a09c5a8235d89edbc0d3d59a303cf6137acac229b912b754d4ec1a",
+      "size_bytes": 15367,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/candidate-evidence-real.csv",
+      "role": "candidate_list",
+      "expected_sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+      "observed_sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+      "size_bytes": 7734,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-symbol-aliases.csv",
+      "role": "config",
+      "expected_sha256": "6949c2c913fb42dcb9a09ecbe6b0283779b98a711dbcab856012db48451abf3e",
+      "observed_sha256": "6949c2c913fb42dcb9a09ecbe6b0283779b98a711dbcab856012db48451abf3e",
+      "size_bytes": 216,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-key-audit-20260922.json",
+      "role": "derived",
+      "expected_sha256": "6f11ff112fd2321ebac132c2725f6afe13fcdbcc41da9fef569fa96c5b6d3651",
+      "observed_sha256": "6f11ff112fd2321ebac132c2725f6afe13fcdbcc41da9fef569fa96c5b6d3651",
+      "size_bytes": 35562,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-audit.json",
+      "role": "derived",
+      "expected_sha256": "3ac22a838d371f8f3a12f76421d3ab763282f160070e7e89786eb61cb6690268",
+      "observed_sha256": "3ac22a838d371f8f3a12f76421d3ab763282f160070e7e89786eb61cb6690268",
+      "size_bytes": 29490,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-transcripts.csv",
+      "role": "derived",
+      "expected_sha256": "d880d08d1e6b34f36d9eba62021bcd2cc0b8176893cad434065e42d8bda4dec7",
+      "observed_sha256": "d880d08d1e6b34f36d9eba62021bcd2cc0b8176893cad434065e42d8bda4dec7",
+      "size_bytes": 774572,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+      "role": "derived",
+      "expected_sha256": "a3f1391b4e62a58d20402c9e315a5944bd850a5e1b4b19120315a9e84f9c853b",
+      "observed_sha256": "a3f1391b4e62a58d20402c9e315a5944bd850a5e1b4b19120315a9e84f9c853b",
+      "size_bytes": 214471,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+      "role": "derived",
+      "expected_sha256": "dd46a035ca5d63d67acbc2b2592a7e7e6fe72d9e1552bcb469bd6ae7176ebd61",
+      "observed_sha256": "dd46a035ca5d63d67acbc2b2592a7e7e6fe72d9e1552bcb469bd6ae7176ebd61",
+      "size_bytes": 215668,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+      "role": "derived",
+      "expected_sha256": "bfa5f9438a39e09590934f90f61894b98f8076cc3b466d8ed44305295e200858",
+      "observed_sha256": "bfa5f9438a39e09590934f90f61894b98f8076cc3b466d8ed44305295e200858",
+      "size_bytes": 214050,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-rhythm-sum-20260922.json",
+      "role": "derived",
+      "expected_sha256": "71fb91572c9ecf75fcd930bc7e369cb7ab90fbf656670d70f7c8d7764fdede09",
+      "observed_sha256": "71fb91572c9ecf75fcd930bc7e369cb7ab90fbf656670d70f7c8d7764fdede09",
+      "size_bytes": 75119,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-rhythm-median-20260922.json",
+      "role": "derived",
+      "expected_sha256": "11ca660c6bdd760773b6737d3e4a7e3f818b019816487cd034ec21c07eb75188",
+      "observed_sha256": "11ca660c6bdd760773b6737d3e4a7e3f818b019816487cd034ec21c07eb75188",
+      "size_bytes": 75194,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-rhythm-max-20260922.json",
+      "role": "derived",
+      "expected_sha256": "96bb692785c75140d2baefffec80247ffd85e3749dae71229558448f6b9eddca",
+      "observed_sha256": "96bb692785c75140d2baefffec80247ffd85e3749dae71229558448f6b9eddca",
+      "size_bytes": 75125,
+      "status": "hash_verified"
+    }
+  ],
+  "run_checks": [
+    {
+      "run_id": "gse77451-esat-candidate-key-audit",
+      "script": "scripts/audit_esat_candidate_sample_keys.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/candidate-evidence-real.csv",
+        "validation/public-data/GSE77451-symbol-aliases.csv",
+        "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_DN1_gene_expression.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-key-audit-20260922.json"
+      ]
+    },
+    {
+      "run_id": "gse77451-esat-candidate-expression-adapter",
+      "script": "scripts/prepare_esat_candidate_expression.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE77451_sample_metadata.csv",
+        "validation/public-data/candidate-evidence-real.csv",
+        "validation/public-data/GSE77451-symbol-aliases.csv",
+        "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_DN1_gene_expression.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-transcripts.csv",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-audit.json"
+      ]
+    },
+    {
+      "run_id": "gse77451-esat-descriptive-rhythm-sum",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-rhythm-sum-20260922.json"
+      ]
+    },
+    {
+      "run_id": "gse77451-esat-descriptive-rhythm-median",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-rhythm-median-20260922.json"
+      ]
+    },
+    {
+      "run_id": "gse77451-esat-descriptive-rhythm-max",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-rhythm-max-20260922.json"
+      ]
+    }
+  ],
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+}

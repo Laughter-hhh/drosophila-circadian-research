@@ -16,7 +16,7 @@ class ExpressionRhythmTests(unittest.TestCase):
         fd, name = tempfile.mkstemp(suffix=".csv")
         os.close(fd)
         path = Path(name)
-        fields = ["gene_symbol", "sample_id", "cell_type", "time", "background", "developmental_stage", "sex", "gender", "expression"]
+        fields = ["gene_symbol", "sample_id", "cell_type", "time", "background", "developmental_stage", "sex", "gender", "timecourse_id", "expression"]
         with path.open("w", newline="", encoding="utf-8") as handle:
             writer = csv.DictWriter(handle, fieldnames=fields)
             writer.writeheader()
@@ -88,6 +88,30 @@ class ExpressionRhythmTests(unittest.TestCase):
             path.unlink(missing_ok=True)
         self.assertEqual(len(result), 2)
         self.assertTrue(all(row["status"] == "exploratory_fixed_period_cosinor" for row in result))
+
+    def test_timecourses_are_fit_separately_and_reported(self):
+        rows = []
+        for course, offset in (("course_A", 0), ("course_B", 100)):
+            for index, time in enumerate((0, 4, 8, 12, 16, 20)):
+                rows.append({
+                    "gene_symbol": "Sh",
+                    "sample_id": f"{course}_{index}",
+                    "cell_type": "LNv",
+                    "time": f"ZT{time}",
+                    "background": "yw",
+                    "timecourse_id": course,
+                    "expression": str(offset + index + 1),
+                })
+        path = self._write(rows)
+        try:
+            result = analyze_expression_samples(path, time_system="ZT")
+        finally:
+            path.unlink(missing_ok=True)
+
+        self.assertEqual({row["timecourse_id"] for row in result}, {"course_A", "course_B"})
+        self.assertEqual(len(result), 2)
+        self.assertTrue(all(row["n_observations"] == 6 for row in result))
+        self.assertTrue(all("pooled libraries" in row["replication_unit_warning"] for row in result))
 
 
     def test_sex_and_developmental_stage_strata_are_not_collapsed(self):

@@ -27,6 +27,7 @@ FILE_ROLES = {"raw", "annotation", "metadata", "candidate_list", "config", "deri
 RUN_STATUSES = {"executed", "verified"}
 SOURCE_ACCESS = {"content_checked", "identifier_checked", "not_checked", "blocked"}
 SOURCE_CHECK_METHODS = {"web_open", "browser_manual", "automated_http"}
+MANIFEST_STAGES = {"planning", "executed", "verified"}
 SHA_RE = re.compile(r"^[0-9a-fA-F]{64}$")
 
 
@@ -64,6 +65,106 @@ def _nonempty(value: Any) -> bool:
     return bool(str(value or "").strip())
 
 
+def _validate_planned_runs(
+    planned_runs: Any,
+    root: Path,
+    files_by_path: dict[str, dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    issues: list[dict[str, Any]] = []
+    checks: list[dict[str, Any]] = []
+    if not isinstance(planned_runs, list) or not planned_runs:
+        return [], [{"type": "planned_runs_must_be_nonempty_list"}]
+
+    produced_paths: set[str] = set()
+    seen_ids: set[str] = set()
+    for index, planned in enumerate(planned_runs, start=1):
+        run_issues_before = len(issues)
+        if not isinstance(planned, dict):
+            issues.append({"index": index, "type": "planned_run_record_must_be_object"})
+            continue
+        run_id = str(planned.get("run_id") or "").strip()
+        script = _norm_rel(planned.get("script"))
+        script_hash = str(planned.get("script_sha256") or "").strip().lower()
+        command = str(planned.get("command") or "").strip()
+        argv = planned.get("command_argv")
+        inputs = planned.get("inputs")
+        outputs = planned.get("outputs")
+        if not run_id or not script or not command:
+            issues.append({"index": index, "run_id": run_id, "type": "planned_run_requires_id_script_command"})
+        if "status" in planned:
+            issues.append({"index": index, "run_id": run_id, "type": "planned_run_must_not_claim_execution_status"})
+        if run_id:
+            if run_id in seen_ids:
+                issues.append({"index": index, "run_id": run_id, "type": "duplicate_planned_run_id"})
+            seen_ids.add(run_id)
+
+        if not isinstance(argv, list) or len(argv) < 2 or not all(isinstance(item, str) and item for item in argv):
+            issues.append({"index": index, "run_id": run_id, "type": "planned_command_argv_must_be_nonempty_string_list"})
+        else:
+            normalized_argv = [_norm_rel(item) for item in argv]
+            if argv[0] not in {"python", "python3"}:
+                issues.append({"index": index, "run_id": run_id, "type": "planned_command_argv_requires_python_launcher"})
+            if normalized_argv[1] != script:
+                issues.append({"index": index, "run_id": run_id, "type": "planned_command_argv_script_mismatch", "script": normalized_argv[1]})
+            for argument in argv[1:]:
+                if "\x00" in argument or not _is_safe_relative(_norm_rel(argument)):
+                    issues.append({"index": index, "run_id": run_id, "type": "planned_command_argv_contains_unsafe_path", "argument": argument})
+                    break
+
+        if not _is_safe_relative(script):
+            issues.append({"index": index, "run_id": run_id, "type": "planned_script_path_must_be_safe_relative"})
+        else:
+            script_path = _resolve(root, script)
+            if not _under_root(root, script_path) or not script_path.is_file():
+                issues.append({"index": index, "run_id": run_id, "type": "planned_script_not_found", "script": script})
+            elif not SHA_RE.fullmatch(script_hash):
+                issues.append({"index": index, "run_id": run_id, "type": "invalid_planned_script_sha256"})
+            elif _sha256(script_path) != script_hash:
+                issues.append({"index": index, "run_id": run_id, "type": "planned_script_sha256_mismatch", "script": script})
+
+        if not isinstance(inputs, list) or not inputs:
+            issues.append({"index": index, "run_id": run_id, "type": "planned_run_inputs_must_be_nonempty_list"})
+            inputs = []
+        if not isinstance(outputs, list) or not outputs:
+            issues.append({"index": index, "run_id": run_id, "type": "planned_run_outputs_must_be_nonempty_list"})
+            outputs = []
+
+        normalized_inputs: list[str] = []
+        for raw_path in inputs:
+            relative = _norm_rel(raw_path)
+            normalized_inputs.append(relative)
+            if not _is_safe_relative(relative):
+                issues.append({"index": index, "run_id": run_id, "type": "planned_input_path_must_be_safe_relative", "path": relative})
+            elif relative not in files_by_path and relative not in produced_paths:
+                issues.append({"index": index, "run_id": run_id, "type": "planned_input_not_available_before_run", "path": relative})
+
+        normalized_outputs: list[str] = []
+        for raw_path in outputs:
+            relative = _norm_rel(raw_path)
+            normalized_outputs.append(relative)
+            if not _is_safe_relative(relative):
+                issues.append({"index": index, "run_id": run_id, "type": "planned_output_path_must_be_safe_relative", "path": relative})
+                continue
+            if relative in files_by_path:
+                issues.append({"index": index, "run_id": run_id, "type": "planned_output_must_not_be_declared_as_existing_file", "path": relative})
+            if relative in produced_paths:
+                issues.append({"index": index, "run_id": run_id, "type": "planned_output_path_is_not_unique", "path": relative})
+            resolved = _resolve(root, relative)
+            if not _under_root(root, resolved):
+                issues.append({"index": index, "run_id": run_id, "type": "planned_output_resolves_outside_root", "path": relative})
+            elif resolved.exists():
+                issues.append({"index": index, "run_id": run_id, "type": "planned_output_path_already_exists", "path": relative})
+        produced_paths.update(path for path in normalized_outputs if _is_safe_relative(path))
+        checks.append({
+            "run_id": run_id,
+            "script": script,
+            "status": "planning" if len(issues) == run_issues_before else "blocked",
+            "inputs": normalized_inputs,
+            "planned_outputs": normalized_outputs,
+        })
+    return checks, issues
+
+
 def validate_payload(payload: dict[str, Any], root: Path) -> dict[str, Any]:
     issues: list[dict[str, Any]] = []
     warnings: list[dict[str, Any]] = []
@@ -72,6 +173,11 @@ def validate_payload(payload: dict[str, Any], root: Path) -> dict[str, Any]:
     missing = sorted(REQUIRED - set(payload))
     if missing:
         return {"status": "invalid_public_dataset_manifest", "issues": [{"type": "missing_fields", "fields": missing}], "warnings": []}
+
+    requested_stage = str(payload.get("manifest_stage") or "executed").strip().lower()
+    manifest_stage = requested_stage if requested_stage in MANIFEST_STAGES else "executed"
+    if requested_stage not in MANIFEST_STAGES:
+        issues.append({"type": "invalid_manifest_stage", "value": requested_stage})
 
     source_url = str(payload.get("source_url") or "").strip()
     parsed_url = urlparse(source_url)
@@ -155,12 +261,23 @@ def validate_payload(payload: dict[str, Any], root: Path) -> dict[str, Any]:
                 check["status"] = "hash_verified"
         file_checks.append(check)
 
+    planned_run_checks: list[dict[str, Any]] = []
+    if manifest_stage == "planning":
+        if payload.get("runs") not in ([], None):
+            issues.append({"type": "planning_manifest_runs_must_be_empty"})
+        planned_run_checks, planned_issues = _validate_planned_runs(payload.get("planned_runs"), root, files_by_path)
+        issues.extend(planned_issues)
+    elif payload.get("planned_runs") not in (None, []):
+        issues.append({"type": "planned_runs_not_allowed_after_execution"})
+
     run_records = payload.get("runs")
-    if not isinstance(run_records, list) or not run_records:
-        issues.append({"type": "runs_must_be_nonempty_list"})
+    if not isinstance(run_records, list):
+        issues.append({"type": "runs_must_be_list"})
         run_records = []
+    if manifest_stage != "planning" and not run_records:
+        issues.append({"type": "runs_must_be_nonempty_list"})
     run_checks: list[dict[str, Any]] = []
-    for index, run in enumerate(run_records, start=1):
+    for index, run in enumerate(run_records if manifest_stage != "planning" else [], start=1):
         if not isinstance(run, dict):
             issues.append({"index": index, "type": "run_record_must_be_object"})
             continue
@@ -189,6 +306,8 @@ def validate_payload(payload: dict[str, Any], root: Path) -> dict[str, Any]:
                     break
         if status not in RUN_STATUSES:
             issues.append({"index": index, "run_id": run_id, "type": "invalid_run_status", "value": status})
+        elif manifest_stage == "verified" and status != "verified":
+            issues.append({"index": index, "run_id": run_id, "type": "verified_manifest_requires_verified_runs"})
         if not isinstance(inputs, list) or not inputs:
             issues.append({"index": index, "run_id": run_id, "type": "run_inputs_must_be_nonempty_list"})
             inputs = []
@@ -222,18 +341,29 @@ def validate_payload(payload: dict[str, Any], root: Path) -> dict[str, Any]:
                 issues.append({"run_id": run_id, "type": "duplicate_run_id"})
             seen_runs.add(run_id)
 
-    status = "verified_public_dataset_manifest" if not issues and files_by_path and run_records else "invalid_public_dataset_manifest"
-    formal_status = "online_source_content_verified" if status == "verified_public_dataset_manifest" and access_status == "content_checked" else "conditional_online_source_access"
+    if not issues and files_by_path and manifest_stage == "planning" and planned_run_checks:
+        status = "planning_public_dataset_manifest"
+    elif not issues and files_by_path and run_records:
+        status = "verified_public_dataset_manifest"
+    else:
+        status = "invalid_public_dataset_manifest"
+    if manifest_stage == "planning" and status == "planning_public_dataset_manifest":
+        formal_status = "planning_source_content_checked" if access_status == "content_checked" else "planning_source_access_conditional"
+    else:
+        formal_status = "online_source_content_verified" if status == "verified_public_dataset_manifest" and access_status == "content_checked" else "conditional_online_source_access"
     if issues:
         formal_status = "blocked_by_manifest_issues"
     return {
         "status": status,
+        "manifest_stage": manifest_stage,
         "formal_status": formal_status,
         "manifest_id": payload.get("manifest_id", ""),
         "dataset_id": payload.get("dataset_id", ""),
         "accession": payload.get("accession", ""),
         "n_files": len(file_records),
         "n_runs": len(run_records),
+        "n_planned_runs": len(planned_run_checks),
+        "planned_run_checks": planned_run_checks,
         "file_checks": file_checks,
         "run_checks": run_checks,
         "issues": issues,
@@ -265,13 +395,11 @@ def main(argv: list[str]) -> int:
         args.output.write_text(payload, encoding="utf-8")
     else:
         print(payload, end="")
-    return 0 if result["status"] == "verified_public_dataset_manifest" else 1
+    return 0 if result["status"] in {"planning_public_dataset_manifest", "verified_public_dataset_manifest"} else 1
 
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv))
-
-
 
 
 

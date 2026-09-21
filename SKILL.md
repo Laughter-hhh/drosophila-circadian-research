@@ -38,7 +38,7 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 
 ## 选择工作流
 
-- 对 ESAT 等 transcript-level GEO 处理矩阵审计候选通道的重复样本键（不做表达或节律推断）：运行 scripts/audit_esat_candidate_sample_keys.py；进入基因级 rhythm fit 前必须先处理重复的 gene × sample_id，不得把 isoform/probe 行当作生物学重复。
+- 对 ESAT 等 transcript-level GEO 处理矩阵审计候选通道的重复样本键（不做表达或节律推断）：运行 scripts/audit_esat_candidate_sample_keys.py。要把通过样本映射审计的矩阵整理为候选长表，运行 scripts/prepare_esat_candidate_expression.py；该转换器保留 transcript 行和显式来源核查的 symbol alias，并另行输出 sum/median/max 三种基因级敏感性表，不推断归一化或生物学单位。之后可运行 scripts/analyze_expression_rhythm.py；若 metadata 有 timecourse_id，必须按该字段分组，不得合并独立 time course。进入 rhythm fit 前必须先处理重复的 gene × sample_id，不得把 isoform 行当作生物学重复。
 - 文献检索、综述或事实核查：读取 `references/evidence-search.md`。
 - 深度文献解读、零基础教学、双语输出或逐 Figure/子图解释：读取 `references/deep-literature-reading.md`，并按需再读取 `references/evidence-search.md`；生成逐 panel 清单后运行 `scripts/validate_literature_panel_inventory.py` 做结构核验（不替代来源及原图核查）。
 - 筛选或排序离子通道：同时读取 `references/evidence-search.md` 和 `references/candidate-ranking.md`；若运行 `scripts/score_candidates.py`，还须读取 `references/candidate-scoring.md`，按输出文件格式和 gate-qualified Top 字段解释结果。
@@ -81,7 +81,7 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 - 需要可复现代码、运行日志、数据溯源或论文级产物：读取 `references/reproducibility-and-provenance.md` 和 `references/manuscript-claims.md`。
 - 一项任务跨越多个工作流时，只读取直接相关的参考文件。
 
-- GEO 表达节律的两个 cosinor 脚本按 gene/cell/background/developmental_stage/sex 分组；缺失 strata 标记为 unknown，表达表与 metadata 的 stage/sex 冲突时必须阻断。
+- GEO 表达节律的描述性 cosinor 按 gene/cell/background/developmental_stage/sex 分组；若输入提供 timecourse_id，也将其作为独立分组键，绝不跨 course 合并。缺失 strata 标记为 unknown，表达表与 metadata 的 stage/sex 冲突时必须阻断。输出中的 sample/observation 数不自动等于独立 fly 数。
 
 ## 证据与推理纪律
 

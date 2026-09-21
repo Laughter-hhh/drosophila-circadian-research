@@ -1,0 +1,915 @@
+{
+  "status": "transcript_level_sample_key_audit_completed",
+  "scientific_status": "structural_audit_only_no_expression_or_rhythm_inference",
+  "candidate_list": "validation/public-data/candidate-evidence-real.csv",
+  "candidate_list_sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+  "candidate_column": "candidate",
+  "alias_map": "validation/public-data/GSE77451-symbol-aliases.csv",
+  "alias_map_sha256": "6949c2c913fb42dcb9a09ecbe6b0283779b98a711dbcab856012db48451abf3e",
+  "n_explicit_aliases": 1,
+  "n_candidates": 15,
+  "matrices": [
+    {
+      "cell_type_label": "LNv",
+      "input_file": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+      "input_sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+      "matrix_row_count": 28067,
+      "n_sample_columns": 12,
+      "sample_column_labels": [
+        "KA_SEQ_37_unique.bam",
+        "KA_SEQ_38_unique.bam",
+        "KA_SEQ_39_unique.bam",
+        "KA_SEQ_40_unique.bam",
+        "KA_SEQ_41_unique.bam",
+        "KA_SEQ_42_unique.bam",
+        "ZT2_PDF_2_unique.bam",
+        "ZT6_PDF_2_unique.bam",
+        "ZT10_PDF_2_unique.bam",
+        "ZT14_PDF_2_unique.bam",
+        "ZT18_PDF_2_unique.bam",
+        "ZT22_PDF_2_unique.bam"
+      ],
+      "candidate_matching": "case-folded direct candidate matches plus only aliases supplied through the explicit alias map",
+      "n_candidates_requested": 15,
+      "n_candidates_with_symbol_rows": 14,
+      "candidate_symbols_not_found": [
+        "Ork1"
+      ],
+      "n_candidates_with_multiple_transcript_rows": 14,
+      "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 168,
+      "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 1644,
+      "max_transcript_rows_for_one_candidate": 57,
+      "candidate_audits": [
+        {
+          "candidate_symbol": "Shaw",
+          "matrix_symbols": [
+            "Shaw"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 5
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 5,
+          "n_unique_transcript_ids": 5,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 48,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Shal",
+          "matrix_symbols": [
+            "Shal"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Irk1",
+          "matrix_symbols": [
+            "Ir"
+          ],
+          "symbol_match_modes": {
+            "explicit_alias_map": 4
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 4,
+          "n_unique_transcript_ids": 4,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 36,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "na",
+          "matrix_symbols": [
+            "na"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 2
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 2,
+          "n_unique_transcript_ids": 2,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 12,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Sh",
+          "matrix_symbols": [
+            "Sh"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 14
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 14,
+          "n_unique_transcript_ids": 14,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 156,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Shab",
+          "matrix_symbols": [
+            "Shab"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 10
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 10,
+          "n_unique_transcript_ids": 10,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 108,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "para",
+          "matrix_symbols": [
+            "para"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 57
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 57,
+          "n_unique_transcript_ids": 57,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 672,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "cac",
+          "matrix_symbols": [
+            "cac"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 15
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 15,
+          "n_unique_transcript_ids": 15,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 168,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ca-alpha1D",
+          "matrix_symbols": [
+            "Ca-alpha1D"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 10
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 10,
+          "n_unique_transcript_ids": 10,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 108,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ca-alpha1T",
+          "matrix_symbols": [
+            "Ca-alpha1T"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 4
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 4,
+          "n_unique_transcript_ids": 4,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 36,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "slo",
+          "matrix_symbols": [
+            "slo"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 19
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 19,
+          "n_unique_transcript_ids": 19,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 216,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Irk2",
+          "matrix_symbols": [
+            "Irk2"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ork1",
+          "matrix_symbols": [],
+          "symbol_match_modes": {},
+          "status": "candidate_symbol_not_found_in_matrix",
+          "n_transcript_rows": 0,
+          "n_unique_transcript_ids": 0,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 0,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 0,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "sei",
+          "matrix_symbols": [
+            "sei"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 2
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 2,
+          "n_unique_transcript_ids": 2,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 12,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "trpl",
+          "matrix_symbols": [
+            "trpl"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        }
+      ]
+    },
+    {
+      "cell_type_label": "LNd",
+      "input_file": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+      "input_sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+      "matrix_row_count": 28066,
+      "n_sample_columns": 12,
+      "sample_column_labels": [
+        "KA_SEQ_49_unique.bam",
+        "KA_SEQ_50_unique.bam",
+        "KA_SEQ_51_unique.bam",
+        "KA_SEQ_52_unique.bam",
+        "KA_SEQ_53_unique.bam",
+        "KA_SEQ_54_unique.bam",
+        "KA_SEQ_61_unique.bam",
+        "KA_SEQ_62_unique.bam",
+        "KA_SEQ_63_unique.bam",
+        "KA_SEQ_64_unique.bam",
+        "KA_SEQ_65_unique.bam",
+        "KA_SEQ_66_unique.bam"
+      ],
+      "candidate_matching": "case-folded direct candidate matches plus only aliases supplied through the explicit alias map",
+      "n_candidates_requested": 15,
+      "n_candidates_with_symbol_rows": 15,
+      "candidate_symbols_not_found": [],
+      "n_candidates_with_multiple_transcript_rows": 15,
+      "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 180,
+      "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 1656,
+      "max_transcript_rows_for_one_candidate": 57,
+      "candidate_audits": [
+        {
+          "candidate_symbol": "Shaw",
+          "matrix_symbols": [
+            "Shaw"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 5
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 5,
+          "n_unique_transcript_ids": 5,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 48,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Shal",
+          "matrix_symbols": [
+            "Shal"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Irk1",
+          "matrix_symbols": [
+            "Ir"
+          ],
+          "symbol_match_modes": {
+            "explicit_alias_map": 4
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 4,
+          "n_unique_transcript_ids": 4,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 36,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "na",
+          "matrix_symbols": [
+            "na"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 2
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 2,
+          "n_unique_transcript_ids": 2,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 12,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Sh",
+          "matrix_symbols": [
+            "Sh"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 14
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 14,
+          "n_unique_transcript_ids": 14,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 156,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Shab",
+          "matrix_symbols": [
+            "Shab"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 10
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 10,
+          "n_unique_transcript_ids": 10,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 108,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "para",
+          "matrix_symbols": [
+            "para"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 57
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 57,
+          "n_unique_transcript_ids": 57,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 672,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "cac",
+          "matrix_symbols": [
+            "cac"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 15
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 15,
+          "n_unique_transcript_ids": 15,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 168,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ca-alpha1D",
+          "matrix_symbols": [
+            "Ca-alpha1D"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 10
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 10,
+          "n_unique_transcript_ids": 10,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 108,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ca-alpha1T",
+          "matrix_symbols": [
+            "Ca-alpha1T"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 4
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 4,
+          "n_unique_transcript_ids": 4,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 36,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "slo",
+          "matrix_symbols": [
+            "slo"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 19
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 19,
+          "n_unique_transcript_ids": 19,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 216,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Irk2",
+          "matrix_symbols": [
+            "Irk2"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ork1",
+          "matrix_symbols": [
+            "Ork1"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 2
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 2,
+          "n_unique_transcript_ids": 2,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 12,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "sei",
+          "matrix_symbols": [
+            "sei"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 2
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 2,
+          "n_unique_transcript_ids": 2,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 12,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "trpl",
+          "matrix_symbols": [
+            "trpl"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        }
+      ]
+    },
+    {
+      "cell_type_label": "DN1",
+      "input_file": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+      "input_sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+      "matrix_row_count": 28066,
+      "n_sample_columns": 12,
+      "sample_column_labels": [
+        "DN1_3A",
+        "DN1_7A",
+        "DN1_11A",
+        "DN1_15A",
+        "DN1_19A",
+        "DN1_23A",
+        "DN1_3B",
+        "DN1_7B",
+        "DN1_11B",
+        "DN1_15B",
+        "DN1_19B",
+        "DN1_23B"
+      ],
+      "candidate_matching": "case-folded direct candidate matches plus only aliases supplied through the explicit alias map",
+      "n_candidates_requested": 15,
+      "n_candidates_with_symbol_rows": 15,
+      "candidate_symbols_not_found": [],
+      "n_candidates_with_multiple_transcript_rows": 15,
+      "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 180,
+      "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 1656,
+      "max_transcript_rows_for_one_candidate": 57,
+      "candidate_audits": [
+        {
+          "candidate_symbol": "Shaw",
+          "matrix_symbols": [
+            "Shaw"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 5
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 5,
+          "n_unique_transcript_ids": 5,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 48,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Shal",
+          "matrix_symbols": [
+            "Shal"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Irk1",
+          "matrix_symbols": [
+            "Ir"
+          ],
+          "symbol_match_modes": {
+            "explicit_alias_map": 4
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 4,
+          "n_unique_transcript_ids": 4,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 36,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "na",
+          "matrix_symbols": [
+            "na"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 2
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 2,
+          "n_unique_transcript_ids": 2,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 12,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Sh",
+          "matrix_symbols": [
+            "Sh"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 14
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 14,
+          "n_unique_transcript_ids": 14,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 156,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Shab",
+          "matrix_symbols": [
+            "Shab"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 10
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 10,
+          "n_unique_transcript_ids": 10,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 108,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "para",
+          "matrix_symbols": [
+            "para"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 57
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 57,
+          "n_unique_transcript_ids": 57,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 672,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "cac",
+          "matrix_symbols": [
+            "cac"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 15
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 15,
+          "n_unique_transcript_ids": 15,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 168,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ca-alpha1D",
+          "matrix_symbols": [
+            "Ca-alpha1D"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 10
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 10,
+          "n_unique_transcript_ids": 10,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 108,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ca-alpha1T",
+          "matrix_symbols": [
+            "Ca-alpha1T"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 4
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 4,
+          "n_unique_transcript_ids": 4,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 36,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "slo",
+          "matrix_symbols": [
+            "slo"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 19
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 19,
+          "n_unique_transcript_ids": 19,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 216,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Irk2",
+          "matrix_symbols": [
+            "Irk2"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "Ork1",
+          "matrix_symbols": [
+            "Ork1"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 2
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 2,
+          "n_unique_transcript_ids": 2,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 12,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "sei",
+          "matrix_symbols": [
+            "sei"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 2
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 2,
+          "n_unique_transcript_ids": 2,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 12,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        },
+        {
+          "candidate_symbol": "trpl",
+          "matrix_symbols": [
+            "trpl"
+          ],
+          "symbol_match_modes": {
+            "exact_symbol_match": 3
+          },
+          "status": "multiple_transcript_rows_per_sample",
+          "n_transcript_rows": 3,
+          "n_unique_transcript_ids": 3,
+          "n_repeated_transcript_id_rows": 0,
+          "n_blank_transcript_id_rows": 0,
+          "n_candidate_gene_sample_pairs_with_multiple_feature_rows": 12,
+          "n_extra_feature_sample_rows_beyond_one_per_gene_sample": 24,
+          "n_missing_expression_cells": 0,
+          "n_invalid_or_nonfinite_expression_cells": 0
+        }
+      ]
+    }
+  ],
+  "inference_warning": "This report counts exact gene-symbol transcript rows and repeated gene-sample keys. It does not establish expression absence, normalize data, choose a gene-level aggregation rule, test rhythmicity, or support channel function/causality. Sample column labels have not been mapped to GEO timepoints in this audit."
+}

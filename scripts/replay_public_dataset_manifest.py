@@ -31,6 +31,7 @@ ALLOWED_SCRIPTS = {
     "scripts/parse_geo_series_matrix.py",
     "scripts/extract_gene_expression.py",
     "scripts/audit_esat_candidate_sample_keys.py",
+    "scripts/prepare_esat_candidate_expression.py",
     "scripts/audit_geo_sample_map.py",
     "scripts/audit_published_cycle_candidates.py",
     "scripts/analyze_expression_rhythm.py",
@@ -94,6 +95,14 @@ def _copy_input_tree(source_root: Path, replay_root: Path, payload: dict[str, An
 
 
 def replay_payload(payload: dict[str, Any], source_root: Path, timeout_seconds: int = 120) -> dict[str, Any]:
+    if str(payload.get("manifest_stage") or "").strip().lower() == "planning":
+        return {
+            "status": "blocked_public_dataset_replay",
+            "issues": [{"type": "planning_manifest_not_replayable"}],
+            "runs": [],
+            "output_checks": [],
+            "inference_warning": "No command was executed because a planning manifest contains no observed run outputs to replay.",
+        }
     manifest_issues: list[dict[str, Any]] = []
     files_by_path = {
         _norm_rel(record.get("path")): record
@@ -196,6 +205,15 @@ def replay_payload(payload: dict[str, Any], source_root: Path, timeout_seconds: 
 
 def replay_file(manifest_path: Path, source_root: Path, timeout_seconds: int = 120) -> dict[str, Any]:
     validation = validate_file(manifest_path, source_root)
+    if validation.get("manifest_stage") == "planning":
+        return {
+            "status": "blocked_public_dataset_replay",
+            "manifest_validation": validation,
+            "issues": [{"type": "planning_manifest_not_replayable"}],
+            "runs": [],
+            "output_checks": [],
+            "inference_warning": "No command was executed because a planning manifest contains no observed run outputs to replay.",
+        }
     if validation.get("status") != "verified_public_dataset_manifest":
         return {
             "status": "blocked_public_dataset_replay",

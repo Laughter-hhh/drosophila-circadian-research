@@ -2,6 +2,7 @@
 """Run descriptive fixed-period cosinor fits on probe-mapped expression samples.
 
 The time basis must be declared explicitly; mixed ZT/CT rows are rejected.
+When present, timecourse_id is a grouping stratum and is never pooled.
 For publication-grade inference use ``analyze_cosinor_inference.py`` with a
 metadata join and an experimental-unit declaration.
 """
@@ -58,15 +59,17 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
     normalized_time_system = _normalize_time_system(time_system)
     with path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
+    has_timecourse_column = bool(rows and "timecourse_id" in rows[0])
     required = {"gene_symbol", "sample_id", "cell_type", "time", "background", "expression"}
     if rows and not required.issubset(rows[0]):
         raise ValueError(f"sample expression CSV missing columns: {', '.join(sorted(required - set(rows[0])))}")
-    rows_by_group: dict[tuple[str, str, str, str, str], list[dict[str, str]]] = defaultdict(list)
+    rows_by_group: dict[tuple[str, str, str, str, str, str], list[dict[str, str]]] = defaultdict(list)
     context_by_sample: dict[str, tuple[str, str]] = {}
     for row in rows:
         sample_id = (row.get("sample_id") or "").strip()
         developmental_stage = _context_value(row, ("developmental_stage", "developmental stage", "stage"))
         sex = _context_value(row, ("sex", "gender"))
+        timecourse_id = _context_value(row, ("timecourse_id", "timecourse"))
         if sample_id:
             sample_context = (developmental_stage, sex)
             previous_context = context_by_sample.setdefault(sample_id, sample_context)
@@ -81,16 +84,17 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
             row.get("background", ""),
             developmental_stage,
             sex,
+            timecourse_id,
         )
         rows_by_group[key].append(row)
     output: list[dict[str, object]] = []
     for key in sorted(rows_by_group):
-        gene, cell_type, background, developmental_stage, sex = key
+        gene, cell_type, background, developmental_stage, sex, timecourse_id = key
         all_group_rows = rows_by_group[key]
         sample_ids = [(row.get("sample_id") or "").strip() for row in all_group_rows]
         if any(not sample_id for sample_id in sample_ids):
             raise ValueError(
-                f"blank sample_id in gene/cell/background/stage/sex group {key}; "
+                f"blank sample_id in gene/cell/background/stage/sex/timecourse group {key}; "
                 "each gene-level sample measurement needs a stable sample_id"
             )
         duplicate_sample_ids = sorted(
@@ -99,20 +103,23 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
         if duplicate_sample_ids:
             preview = ", ".join(duplicate_sample_ids[:5])
             raise ValueError(
-                f"duplicate sample_id within gene/cell/background/stage/sex group {key}: {preview}; "
+                f"duplicate sample_id within gene/cell/background/stage/sex/timecourse group {key}: {preview}; "
                 "aggregate probes/transcripts within each sample using an explicit "
                 "gene-level rule before fitting; do not treat feature rows as replicates"
             )
         group = [row for row in all_group_rows if (row.get("expression") or "").strip()]
         if not group:
-            output.append({
+            record: dict[str, object] = {
                 "gene_symbol": gene,
                 "cell_type": cell_type,
                 "background": background,
                 "developmental_stage": developmental_stage,
                 "sex": sex,
                 "status": "no_numeric_expression",
-            })
+            }
+            if has_timecourse_column:
+                record["timecourse_id"] = timecourse_id
+            output.append(record)
             continue
         try:
             analysis_rows = [
@@ -131,11 +138,16 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
                 "developmental_stage": developmental_stage,
                 "sex": sex,
             })
+            if has_timecourse_column:
+                result.update({
+                    "timecourse_id": timecourse_id,
+                    "replication_unit_warning": "n_subjects counts sample_id values, which may be pooled libraries; it does not establish the number of independent flies.",
+                })
             output.append(result)
         except ValueError as exc:
             if "time system mismatch" in str(exc):
                 raise
-            output.append({
+            record = {
                 "gene_symbol": gene,
                 "cell_type": cell_type,
                 "background": background,
@@ -147,7 +159,13 @@ def analyze_expression_samples(path: Path, time_system: str = "unknown") -> list
                 "n_unique_time_points": len({row.get("time", "") for row in group}),
                 "time_system": normalized_time_system,
                 "inference_warning": "No rhythm conclusion; at least four observations and three unique time points are required for the descriptive fit.",
-            })
+            }
+            if has_timecourse_column:
+                record.update({
+                    "timecourse_id": timecourse_id,
+                    "replication_unit_warning": "n_observations count sample_id values, which may be pooled libraries; they do not establish the number of independent flies.",
+                })
+            output.append(record)
     return output
 
 

@@ -1,0 +1,251 @@
+{
+  "manifest_id": "GSE77451-esat-candidate-expression-20260922",
+  "manifest_stage": "verified",
+  "dataset_id": "GSE77451",
+  "accession": "GSE77451",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451",
+  "retrieved_at_utc": "2026-09-21T07:11:30Z",
+  "source_access_status": "content_checked",
+  "source_checked_at_utc": "2026-09-21T07:20:37Z",
+  "source_check_method": "automated_http",
+  "source_observed_tokens": [
+    "GEO series GSE77451 contains processed LNv, LNd and DN1 expression matrices",
+    "All 36 analyzed matrix columns were previously connected to GSM records by an explicit sample map",
+    "The published sample libraries are pooled neuron samples; transcript scale and individual-fly replication are unresolved"
+  ],
+  "source_observation_note": "Online dataset-content checks and sample mapping are documented in the existing GSE77451 sample-map provenance manifest. This analysis reuses the verified local processed matrices, candidate list, symbol alias record and mapped metadata; it does not redownload or re-normalize source data.",
+  "analysis_context": {
+    "time_system": "ZT, from audited GEO sample metadata; each cell-group matrix has two separately labelled six-point time courses. Course labels are curator mapping fields.",
+    "experimental_unit": "pooled_neuron_library; sample_id/GSM is a library record, not an identified individual fly",
+    "normalization_status": "No normalization added. Numeric values from processed ESAT matrices are preserved; original scale/normalization is not established by this adapter.",
+    "biological_unit_limitations": "GEO cell groups are LNv, LNd and DN1, not the requested s-LNv/l-LNv or DN subtypes. Individual fly, sex, age, genotype and temperature are unavailable in the mapped matrix metadata. Transcript rows and pooled libraries are not independent fly replicates; descriptive cosinor outputs do not establish statistically supported rhythmicity or causality."
+  },
+  "files": [
+    {
+      "path": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451"
+    },
+    {
+      "path": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451"
+    },
+    {
+      "path": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+      "role": "other",
+      "sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77451"
+    },
+    {
+      "path": "validation/public-data/GSE77451_sample_metadata.csv",
+      "role": "metadata",
+      "sha256": "9b0546a5f8a09c5a8235d89edbc0d3d59a303cf6137acac229b912b754d4ec1a"
+    },
+    {
+      "path": "validation/public-data/candidate-evidence-real.csv",
+      "role": "candidate_list",
+      "sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c"
+    },
+    {
+      "path": "validation/public-data/GSE77451-symbol-aliases.csv",
+      "role": "config",
+      "sha256": "6949c2c913fb42dcb9a09ecbe6b0283779b98a711dbcab856012db48451abf3e"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-key-audit-20260922.json",
+      "role": "derived",
+      "sha256": "6f11ff112fd2321ebac132c2725f6afe13fcdbcc41da9fef569fa96c5b6d3651"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-audit.json",
+      "role": "derived",
+      "sha256": "3ac22a838d371f8f3a12f76421d3ab763282f160070e7e89786eb61cb6690268"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-transcripts.csv",
+      "role": "derived",
+      "sha256": "d880d08d1e6b34f36d9eba62021bcd2cc0b8176893cad434065e42d8bda4dec7"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+      "role": "derived",
+      "sha256": "a3f1391b4e62a58d20402c9e315a5944bd850a5e1b4b19120315a9e84f9c853b"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+      "role": "derived",
+      "sha256": "dd46a035ca5d63d67acbc2b2592a7e7e6fe72d9e1552bcb469bd6ae7176ebd61"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+      "role": "derived",
+      "sha256": "bfa5f9438a39e09590934f90f61894b98f8076cc3b466d8ed44305295e200858"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-rhythm-sum-20260922.json",
+      "role": "derived",
+      "sha256": "71fb91572c9ecf75fcd930bc7e369cb7ab90fbf656670d70f7c8d7764fdede09"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-rhythm-median-20260922.json",
+      "role": "derived",
+      "sha256": "11ca660c6bdd760773b6737d3e4a7e3f818b019816487cd034ec21c07eb75188"
+    },
+    {
+      "path": "validation/public-data/GSE77451-esat-candidate-rhythm-max-20260922.json",
+      "role": "derived",
+      "sha256": "96bb692785c75140d2baefffec80247ffd85e3749dae71229558448f6b9eddca"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "gse77451-esat-candidate-key-audit",
+      "script": "scripts/audit_esat_candidate_sample_keys.py",
+      "script_sha256": "868cf7f4b9f74f2ce2fd31f6d0dbffddb6876b91649648cdd06481fac652a342",
+      "command": "python scripts/audit_esat_candidate_sample_keys.py --candidate-list validation/public-data/candidate-evidence-real.csv --candidate-column candidate --alias-map validation/public-data/GSE77451-symbol-aliases.csv --matrix LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz --matrix LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz --matrix DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz --output validation/public-data/GSE77451-esat-candidate-key-audit-20260922.json",
+      "command_argv": [
+        "python",
+        "scripts/audit_esat_candidate_sample_keys.py",
+        "--candidate-list",
+        "validation/public-data/candidate-evidence-real.csv",
+        "--candidate-column",
+        "candidate",
+        "--alias-map",
+        "validation/public-data/GSE77451-symbol-aliases.csv",
+        "--matrix",
+        "LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "--matrix",
+        "LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "--matrix",
+        "DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+        "--output",
+        "validation/public-data/GSE77451-esat-candidate-key-audit-20260922.json"
+      ],
+      "inputs": [
+        "validation/public-data/candidate-evidence-real.csv",
+        "validation/public-data/GSE77451-symbol-aliases.csv",
+        "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_DN1_gene_expression.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-key-audit-20260922.json"
+      ],
+      "status": "verified"
+    },
+    {
+      "run_id": "gse77451-esat-candidate-expression-adapter",
+      "script": "scripts/prepare_esat_candidate_expression.py",
+      "script_sha256": "bc98edddbc1a2e1de36a5a530abfd03ddcccb0e4d4624dd2a7e6e9a3db182b63",
+      "command": "python scripts/prepare_esat_candidate_expression.py --matrix LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz --matrix LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz --matrix DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz --metadata validation/public-data/GSE77451_sample_metadata.csv --candidates validation/public-data/candidate-evidence-real.csv --candidate-column candidate --priority-column class --alias-map validation/public-data/GSE77451-symbol-aliases.csv --output-prefix validation/public-data/GSE77451-esat-candidate-expression-20260922",
+      "command_argv": [
+        "python",
+        "scripts/prepare_esat_candidate_expression.py",
+        "--matrix",
+        "LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "--matrix",
+        "LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "--matrix",
+        "DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+        "--metadata",
+        "validation/public-data/GSE77451_sample_metadata.csv",
+        "--candidates",
+        "validation/public-data/candidate-evidence-real.csv",
+        "--candidate-column",
+        "candidate",
+        "--priority-column",
+        "class",
+        "--alias-map",
+        "validation/public-data/GSE77451-symbol-aliases.csv",
+        "--output-prefix",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922"
+      ],
+      "inputs": [
+        "validation/public-data/GSE77451_sample_metadata.csv",
+        "validation/public-data/candidate-evidence-real.csv",
+        "validation/public-data/GSE77451-symbol-aliases.csv",
+        "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "validation/public-data/GSE77451_DN1_gene_expression.txt.gz"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-transcripts.csv",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-audit.json"
+      ],
+      "status": "verified"
+    },
+    {
+      "run_id": "gse77451-esat-descriptive-rhythm-sum",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "script_sha256": "fac09ae5a4c2b2155ae230d3a44f767f392c72a050aa104ae00307cfbeade40c",
+      "command": "python scripts/analyze_expression_rhythm.py validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv --time-system ZT --output validation/public-data/GSE77451-esat-candidate-rhythm-sum-20260922.json",
+      "command_argv": [
+        "python",
+        "scripts/analyze_expression_rhythm.py",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv",
+        "--time-system",
+        "ZT",
+        "--output",
+        "validation/public-data/GSE77451-esat-candidate-rhythm-sum-20260922.json"
+      ],
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-sum.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-rhythm-sum-20260922.json"
+      ],
+      "status": "verified"
+    },
+    {
+      "run_id": "gse77451-esat-descriptive-rhythm-median",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "script_sha256": "fac09ae5a4c2b2155ae230d3a44f767f392c72a050aa104ae00307cfbeade40c",
+      "command": "python scripts/analyze_expression_rhythm.py validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv --time-system ZT --output validation/public-data/GSE77451-esat-candidate-rhythm-median-20260922.json",
+      "command_argv": [
+        "python",
+        "scripts/analyze_expression_rhythm.py",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv",
+        "--time-system",
+        "ZT",
+        "--output",
+        "validation/public-data/GSE77451-esat-candidate-rhythm-median-20260922.json"
+      ],
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-median.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-rhythm-median-20260922.json"
+      ],
+      "status": "verified"
+    },
+    {
+      "run_id": "gse77451-esat-descriptive-rhythm-max",
+      "script": "scripts/analyze_expression_rhythm.py",
+      "script_sha256": "fac09ae5a4c2b2155ae230d3a44f767f392c72a050aa104ae00307cfbeade40c",
+      "command": "python scripts/analyze_expression_rhythm.py validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv --time-system ZT --output validation/public-data/GSE77451-esat-candidate-rhythm-max-20260922.json",
+      "command_argv": [
+        "python",
+        "scripts/analyze_expression_rhythm.py",
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv",
+        "--time-system",
+        "ZT",
+        "--output",
+        "validation/public-data/GSE77451-esat-candidate-rhythm-max-20260922.json"
+      ],
+      "inputs": [
+        "validation/public-data/GSE77451-esat-candidate-expression-20260922-max.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE77451-esat-candidate-rhythm-max-20260922.json"
+      ],
+      "status": "verified"
+    }
+  ]
+}

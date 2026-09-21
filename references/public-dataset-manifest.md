@@ -38,5 +38,12 @@ python scripts/replay_public_dataset_manifest.py validation/public-data/GSE22308
 
 该检查仍不能证明 raw-data normalization 合理、pool/cell identity 代表个体 fly、统计模型充分，或基因/离子通道存在因果作用。每次重放报告都是运行记录，不是生物学结论。
 
+## 三阶段工作流
+
+先在 `manifest_stage: "planning"` 中登记当前输入与哈希、经审阅脚本与脚本哈希，以及 `planned_runs` 的 `command_argv`、输入和**尚不存在**的预期输出路径。此阶段 `runs` 必须为空。运行 manifest validator 只做计划预检；planning manifest 不可重放，也不得称为已执行。
+
+计划通过后，按依赖顺序运行命令。把实际命令、输入/输出路径和输出 SHA-256 写入 `runs`，将 `manifest_stage` 改为 `executed`，再运行 validator 和隔离 replay。二者通过后，将 manifest 改为 `verified`、所有 run 状态改为 `verified`，并再次运行 validator 与 replay。只有最后这一套输入、脚本、输出哈希互相一致的记录才可称为 `verified_public_dataset_replay`。planning → executed → verified 是人工按 gate 逐阶段推进的工作流；validator 不会替用户执行命令或自动升级状态。
+
+历史 manifest 若缺少 `manifest_stage`，按 `executed` 兼容处理；新任务应明确写出阶段。
 
 

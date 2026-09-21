@@ -2,6 +2,7 @@ import copy
 import json
 import sys
 import unittest
+import uuid
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -72,6 +73,64 @@ class PublicDatasetManifestTests(unittest.TestCase):
         result = validate_payload(payload, ROOT)
         self.assertEqual(result["status"], "invalid_public_dataset_manifest")
         self.assertTrue(any(issue["type"] == "command_argv_contains_unsafe_path" for issue in result["issues"]))
+
+    def _planning_payload(self):
+        payload = copy.deepcopy(self._payload())
+        source_record = next(
+            record for record in payload["files"]
+            if record["path"].endswith("GSE22308_candidate_expression_samples.csv")
+        )
+        planned = copy.deepcopy(next(
+            run for run in payload["runs"]
+            if run["script"] == "scripts/analyze_expression_rhythm.py"
+        ))
+        planned.pop("status", None)
+        old_output = planned["outputs"][0]
+        new_output = f"validation/public-data/.planning-preflight-{uuid.uuid4().hex}.json"
+        planned["outputs"] = [new_output]
+        planned["command"] = planned["command"].replace(old_output, new_output)
+        planned["command_argv"] = [
+            new_output if item == old_output else item
+            for item in planned["command_argv"]
+        ]
+        payload["manifest_stage"] = "planning"
+        payload["files"] = [source_record]
+        payload["runs"] = []
+        payload["planned_runs"] = [planned]
+        return payload, new_output
+
+    def test_planning_preflight_checks_inputs_and_safe_future_outputs_without_claiming_execution(self):
+        payload, output_path = self._planning_payload()
+        result = validate_payload(payload, ROOT)
+        self.assertEqual(result["status"], "planning_public_dataset_manifest")
+        self.assertEqual(result["manifest_stage"], "planning")
+        self.assertEqual(result["n_runs"], 0)
+        self.assertEqual(result["n_planned_runs"], 1)
+        self.assertEqual(result["planned_run_checks"][0]["status"], "planning")
+        self.assertFalse(any(record["path"] == output_path for record in payload["files"]))
+        self.assertFalse((ROOT / output_path).exists())
+
+    def test_planning_output_must_be_new_and_safe(self):
+        payload, _ = self._planning_payload()
+        payload["planned_runs"][0]["outputs"] = ["../outside.json"]
+        result = validate_payload(payload, ROOT)
+        self.assertEqual(result["status"], "invalid_public_dataset_manifest")
+        self.assertTrue(any(issue["type"] == "planned_output_path_must_be_safe_relative" for issue in result["issues"]))
+
+    def test_planning_stage_cannot_contain_executed_runs(self):
+        payload, _ = self._planning_payload()
+        payload["runs"] = [copy.deepcopy(self._payload()["runs"][0])]
+        result = validate_payload(payload, ROOT)
+        self.assertEqual(result["status"], "invalid_public_dataset_manifest")
+        self.assertTrue(any(issue["type"] == "planning_manifest_runs_must_be_empty" for issue in result["issues"]))
+
+    def test_verified_manifest_requires_verified_run_records(self):
+        payload = copy.deepcopy(self._payload())
+        payload["manifest_stage"] = "verified"
+        payload["runs"][0]["status"] = "executed"
+        result = validate_payload(payload, ROOT)
+        self.assertEqual(result["status"], "invalid_public_dataset_manifest")
+        self.assertTrue(any(issue["type"] == "verified_manifest_requires_verified_runs" for issue in result["issues"]))
 
 
 if __name__ == "__main__":
