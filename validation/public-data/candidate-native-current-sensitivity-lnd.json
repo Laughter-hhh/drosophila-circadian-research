@@ -5,18 +5,63 @@
     "genetic_tools_priority"
   ],
   "target_cells_requested": [
-    "s-LNv",
-    "l-LNv",
-    "LNd",
-    "DN"
+    "LNd"
   ],
-  "readout_match_used": null,
-  "directness_source": "candidate_row_summary",
-  "ranking_status": "insufficient_scored_evidence",
+  "readout_match_used": "membrane_potential_or_current",
+  "directness_source": "checked_evidence_search_log",
+  "ranking_status": "scored_ranking_available",
   "rankings": {
-    "default": [],
-    "expression_ephys_priority": [],
-    "genetic_tools_priority": []
+    "default": [
+      "na",
+      "Shaw",
+      "Shal",
+      "Irk1",
+      "para",
+      "Sh",
+      "Ork1",
+      "trpl",
+      "Shab",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "slo",
+      "Irk2",
+      "cac",
+      "sei"
+    ],
+    "expression_ephys_priority": [
+      "na",
+      "Shaw",
+      "Shal",
+      "Irk1",
+      "para",
+      "Sh",
+      "Ork1",
+      "trpl",
+      "Shab",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "slo",
+      "Irk2",
+      "cac",
+      "sei"
+    ],
+    "genetic_tools_priority": [
+      "na",
+      "Shaw",
+      "Shal",
+      "Irk1",
+      "para",
+      "trpl",
+      "Sh",
+      "Ork1",
+      "Shab",
+      "Ca-alpha1D",
+      "Ca-alpha1T",
+      "slo",
+      "Irk2",
+      "cac",
+      "sei"
+    ]
   },
   "shortlist_gate_pass": {
     "default": [],
@@ -29,57 +74,9 @@
     "genetic_tools_priority": []
   },
   "unscored_candidates": {
-    "default": [
-      "Sh",
-      "Shab",
-      "Shaw",
-      "Shal",
-      "cac",
-      "Ca-alpha1D",
-      "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
-      "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
-    ],
-    "expression_ephys_priority": [
-      "Sh",
-      "Shab",
-      "Shaw",
-      "Shal",
-      "cac",
-      "Ca-alpha1D",
-      "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
-      "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
-    ],
-    "genetic_tools_priority": [
-      "Sh",
-      "Shab",
-      "Shaw",
-      "Shal",
-      "cac",
-      "Ca-alpha1D",
-      "Ca-alpha1T",
-      "slo",
-      "sei",
-      "eag",
-      "Irk1",
-      "Irk2",
-      "Ork1",
-      "trpl",
-      "para"
-    ]
+    "default": [],
+    "expression_ephys_priority": [],
+    "genetic_tools_priority": []
   },
   "top_candidates": {
     "default": null,
@@ -92,9 +89,9 @@
     "genetic_tools_priority": []
   },
   "top_candidate_status": {
-    "default": "insufficient_scored_evidence",
-    "expression_ephys_priority": "insufficient_scored_evidence",
-    "genetic_tools_priority": "insufficient_scored_evidence"
+    "default": "no_target_scoped_scored_candidates",
+    "expression_ephys_priority": "no_target_scoped_scored_candidates",
+    "genetic_tools_priority": "no_target_scoped_scored_candidates"
   },
   "top_candidate_set_stable": null,
   "top_candidate_stable": null,

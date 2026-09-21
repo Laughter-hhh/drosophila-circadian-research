@@ -38,6 +38,7 @@ class CandidateScoringTests(unittest.TestCase):
         self.assertIn("rankings", result)
         self.assertIn("top_candidates", result)
         self.assertEqual(set(result["top_candidates"].values()), {"expression-led", "tools-led"})
+        self.assertFalse(result["top_candidate_set_stable"])
         self.assertIn("coverage_adjusted_score", result["ranking_rule"])
 
     def test_rank_uses_coverage_to_avoid_single_dimension_false_top(self):

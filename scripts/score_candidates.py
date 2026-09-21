@@ -509,6 +509,10 @@ def sensitivity(
     any_scored = any(rankings.values())
     top_values = list(top_candidates.values())
     any_target_scoped_top = any(top_ties.values())
+    top_candidate_set_stable = (
+        all(top_ties[name] for name in scenarios)
+        and len({tuple(sorted(top_ties[name])) for name in scenarios}) == 1
+    ) if any_target_scoped_top else None
     top_status = {
         name: ("target_scoped_top_available" if top_ties[name] else ("no_target_scoped_scored_candidates" if rankings[name] else "insufficient_scored_evidence"))
         for name in scenarios
@@ -526,7 +530,13 @@ def sensitivity(
         "top_candidates": top_candidates,
         "top_candidate_ties": top_ties,
         "top_candidate_status": top_status,
+        "top_candidate_set_stable": top_candidate_set_stable,
         "top_candidate_stable": (len(set(top_values)) == 1 and None not in top_values) if any_target_scoped_top else None,
+        "top_candidate_stability_interpretation": (
+            "top_candidate_stable means the same unique winner across all weight scenarios; "
+            "top_candidate_set_stable means the same non-empty top/tie set across all scenarios. "
+            "A stable tie is not a unique winner."
+        ),
         "ranking_rule": "rank all scored evidence rows for the long list by target-specific directness, coverage_adjusted_score = score * weighted_coverage, coverage, and raw score; choose Top only among exact-gated or conditional-directness target-scoped rows; unscored, partial-coverage, and mismatched rows cannot become Top; tied tops are reported without an arbitrary single winner",
         "shortlist_gate_rule": (
             f"pass requires direct target-neuron evidence (direct label, target_cell_scope=direct_target_neuron, named assay, "

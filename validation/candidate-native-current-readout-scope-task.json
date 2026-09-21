@@ -1,0 +1,134 @@
+{
+  "task_id": "candidate-native-current-readout-scope-20260921",
+  "status": "verified",
+  "research_question": "When literature candidate evidence is evaluated specifically for native clock-neuron membrane-potential/current readouts, which candidates pass target-specific directness gates for s-LNv, l-LNv, LNd, and DN?",
+  "hypothesis": "Separating evidence by target subtype and readout prevents cultured-cell current, transcript expression, intracellular chloride, and behavioral period evidence from being mistaken for native clock-neuron current evidence.",
+  "alternative_hypotheses": [
+    "A candidate can be biologically relevant without yet having direct native-current evidence in the requested subtype.",
+    "A target-specific score can identify evidence-triage priorities without establishing candidate-specific causal channel function.",
+    "A repeated tied shortlist across weight scenarios can be stable as a set while still lacking a unique winner."
+  ],
+  "species": "Drosophila melanogaster",
+  "preparation": "Curated candidate literature table plus checked source-level evidence-search log; no new wet-lab measurements.",
+  "cell_type": "Separate target queries for s-LNv, l-LNv, LNd, and DN.",
+  "experimental_unit": "Curated candidate/source-log evidence record; no animal-level or biological-replicate inference.",
+  "primary_readout": "Readout- and target-scoped directness gate for membrane_potential_or_current, plus target-specific score sensitivity across three weight scenarios.",
+  "secondary_readouts": [
+    "Unique-winner stability versus top/tie-set stability.",
+    "Candidate table and source-log schema/linkage status.",
+    "GSE157504 transcript-only all-NA diagnostic remains without a Top candidate."
+  ],
+  "time_system": "No time-course data were re-analysed in this task; no ZT/CT or LD/DD inference is made.",
+  "input_files": [
+    "validation/public-data/candidate-evidence-real.csv",
+    "validation/public-data/candidate-evidence-search-log.csv",
+    "validation/public-data/GSE157504_candidate_evidence_handoff.csv",
+    "scripts/validate_candidate_evidence.py",
+    "scripts/score_candidates.py"
+  ],
+  "required_metadata": [
+    "Candidate identifier and evidence row.",
+    "Checked source identifier, assay, evidence target-cell scope, evidence_target_cells, evidence_label, and readout_match.",
+    "Explicit requested target-cell subtype and selected readout domain.",
+    "Observed score dimensions, coverage, shortlist gate, and all three sensitivity scenarios."
+  ],
+  "analysis_plan": "Validate the candidate table jointly with its checked evidence-search log. For each target subtype independently, run score_candidates.py with the same validated search log, readout_match=membrane_potential_or_current, and one target-cell query. Compare sensitivity top/tie sets across the three weights. As a public-data negative control, rerun the GSE157504 transcript-only candidate handoff whose seven numeric score dimensions are NA; require empty rankings and no Top. Retain results as evidence triage, not as biological or causal conclusions.",
+  "commands": [
+    "python scripts/validate_candidate_evidence.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --output validation/public-data/candidate-evidence-real-readout-scoped-validation.json",
+    "python scripts/score_candidates.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell s-LNv --output validation/public-data/candidate-native-current-score-slnv.csv --sensitivity-output validation/public-data/candidate-native-current-sensitivity-slnv.json",
+    "python scripts/score_candidates.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell l-LNv --output validation/public-data/candidate-native-current-score-llnv.csv --sensitivity-output validation/public-data/candidate-native-current-sensitivity-llnv.json",
+    "python scripts/score_candidates.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell LNd --output validation/public-data/candidate-native-current-score-lnd.csv --sensitivity-output validation/public-data/candidate-native-current-sensitivity-lnd.json",
+    "python scripts/score_candidates.py validation/public-data/candidate-evidence-real.csv --search-log validation/public-data/candidate-evidence-search-log.csv --readout-match membrane_potential_or_current --target-cell DN --output validation/public-data/candidate-native-current-score-dn.csv --sensitivity-output validation/public-data/candidate-native-current-sensitivity-dn.json",
+    "python scripts/score_candidates.py validation/public-data/GSE157504_candidate_evidence_handoff.csv --target-cell s-LNv --target-cell l-LNv --target-cell LNd --target-cell DN --output validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv --sensitivity-output validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
+    "python scripts/validate_public_dataset_manifest.py validation/public-data/GSE157504-candidate-evidence-bridge-manifest.json --root . --output validation/public-data/GSE157504-candidate-evidence-bridge-manifest-validation.json",
+    "python scripts/replay_public_dataset_manifest.py validation/public-data/GSE157504-candidate-evidence-bridge-manifest.json --root . --timeout-seconds 120 --output validation/public-data/GSE157504-candidate-evidence-bridge-replay.json",
+    "python scripts/validate_public_dataset_manifest.py validation/public-data/GSE157504-candidate-context-overlay-manifest.json --root . --output validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json",
+    "python scripts/replay_public_dataset_manifest.py validation/public-data/GSE157504-candidate-context-overlay-manifest.json --root . --timeout-seconds 120 --output validation/public-data/GSE157504-candidate-context-overlay-replay.json",
+    "python -m unittest discover -s tests"
+  ],
+  "decision_gate": "Accept the workflow only if candidate and search-log validation has zero issues; each target has an independent source-log/readout-specific score output; all-NA public transcript evidence produces no Top; ties are not reported as unique winners; and the affected GSE157504 manifests and isolated replays pass.",
+  "expected_outputs": [
+    "validation/public-data/candidate-evidence-real-readout-scoped-validation.json",
+    "validation/public-data/candidate-native-current-score-slnv.csv",
+    "validation/public-data/candidate-native-current-score-llnv.csv",
+    "validation/public-data/candidate-native-current-score-lnd.csv",
+    "validation/public-data/candidate-native-current-score-dn.csv",
+    "validation/public-data/candidate-native-current-sensitivity-slnv.json",
+    "validation/public-data/candidate-native-current-sensitivity-llnv.json",
+    "validation/public-data/candidate-native-current-sensitivity-lnd.json",
+    "validation/public-data/candidate-native-current-sensitivity-dn.json",
+    "validation/iteration-20260921-candidate-ranking-readout-scope.md"
+  ],
+  "acceptance_tests": [
+    "Candidate table validation returns verified_candidate_evidence_table for 15 candidates and its 19-record evidence log has zero schema/linkage issues.",
+    "Scorer receives the same checked search log, explicit membrane_potential_or_current readout, and one target subtype per run.",
+    "s-LNv returns Shaw and Shal as a tied direct-gate set across all three weight scenarios; top_candidate_set_stable=true and top_candidate_stable=false.",
+    "l-LNv returns na as the same unique Top across scenarios while Shaw and Shal also pass the direct gate.",
+    "LNd and broad DN produce no target-scoped Top; Irk1 is not conditional/direct for native current in s-LNv or l-LNv.",
+    "The GSE157504 all-NA transcript handoff reports insufficient_scored_evidence, empty rankings, and null Top stability.",
+    "The full unittest suite passes and both affected GSE157504 manifests and isolated replays pass with matching output hashes."
+  ],
+  "verification": {
+    "python": "3.12.14",
+    "full_test_suite": "271 tests passed",
+    "focused_tests": {
+      "target_cell_matching": "10 passed",
+      "candidate_scoring": "6 passed",
+      "candidate_search_log_gate": "5 passed"
+    },
+    "candidate_table_validation": {
+      "status": "verified_candidate_evidence_table",
+      "candidate_rows": 15,
+      "search_log_records": 19,
+      "issues": 0
+    },
+    "native_current_readout": {
+      "s-LNv": "Shaw and Shal tied in all three scenarios; stable top set, no unique winner; no conditional candidates.",
+      "l-LNv": "na is the stable unique Top; Shaw and Shal also pass the direct gate; no conditional candidates.",
+      "LNd": "No target-scoped Top.",
+      "DN": "No target-scoped Top.",
+      "Irk1": "needs_direct_evidence for s-LNv and l-LNv native current; its checked s-LNv intracellular-chloride record belongs to a different readout."
+    },
+    "GSE157504_transcript_diagnostic": "insufficient_scored_evidence; empty rankings and Top sets; stability values null.",
+    "GSE157504_candidate_evidence_bridge": {
+      "manifest": "verified_public_dataset_manifest; 11 files; 4 runs; zero issues",
+      "isolated_replay": "verified_public_dataset_replay; 4 runs; 7 output hashes; zero issues"
+    },
+    "GSE157504_candidate_context_overlay": {
+      "manifest": "verified_public_dataset_manifest; 19 files; 1 run; zero issues",
+      "isolated_replay": "verified_public_dataset_replay; 1 run; 2 output hashes; zero issues"
+    },
+    "sha256": {
+      "candidate-evidence-real.csv": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+      "candidate-evidence-search-log.csv": "dbc0ce8efb48db48a2e572799064b96fcbf350d84ea1980d7a9006c978054300",
+      "GSE157504_candidate_evidence_handoff.csv": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+      "scripts/score_candidates.py": "0600cf17134199fccfb786aeec7736a8e0d2bfb00f2deb0ccac582f313c3ee34",
+      "candidate-evidence-real-readout-scoped-validation.json": "1a0237aced6212d9b9603d4035e1e44ae638dfd79f492b8abca53465f7eece6e",
+      "candidate-native-current-score-slnv.csv": "faf74a37dec12154429ea5be80700f5f0424e476d972f50a6115dbb1e7785682",
+      "candidate-native-current-score-llnv.csv": "f936f6456a5d04b0ec1c9332b1b9987590f49bbec66d6f45d6ea876c5df29553",
+      "candidate-native-current-score-lnd.csv": "3b0fd0d8ddabc35c03fd3845fc50190fdf11d8dae83e22367b8d36a7eb3d5afd",
+      "candidate-native-current-score-dn.csv": "045b1971c773d07e99a4f839f8dfefe94aff695dedffcee7b482e2b8140657a9",
+      "candidate-native-current-sensitivity-slnv.json": "18b95f0cd9c0968e9e5bf5a9e5b33f3972eaa85bd145dd2d7411b5853bac0d01",
+      "candidate-native-current-sensitivity-llnv.json": "ef76483bf4c34e37069fb8445b0173afe25ad926be4adf24a3915daf8a7bbf27",
+      "candidate-native-current-sensitivity-lnd.json": "1ac6544cf585340a0ecb645e9ea3b0026f21dccc8c4881fb215a87ded468b9ff",
+      "candidate-native-current-sensitivity-dn.json": "e78d69f14771fedb39adb2acbb3d9230f2d12dd76ca99eb4534ec5cc19087039",
+      "GSE157504_candidate_evidence_score_sensitivity.json": "527e770f46557403ddeeb17655f3eb22e6719b2b2a86fd64126e18fbd6c738d3"
+    }
+  },
+  "result_summary": "The source-level scorer correctly excludes Irk1 from native s-/l-LNv current shortlists despite checked evidence for cultured-cell current and a separate s-LNv intracellular-chloride readout. The s-LNv direct-gate outcome is a stable Shaw/Shal tie, while l-LNv has na as the unique evidence-score Top. LNd and broad DN lack target-scoped Top candidates in this evidence table. GSE157504 transcript-only data remain unscored and produce no Top.",
+  "source_log": [
+    "validation/public-data/candidate-evidence-search-log.csv",
+    "https://pubmed.ncbi.nlm.nih.gov/31612994/",
+    "https://pubmed.ncbi.nlm.nih.gov/35303418/",
+    "https://pubmed.ncbi.nlm.nih.gov/26276633/",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
+    "https://elifesciences.org/articles/63056"
+  ],
+  "limitations": [
+    "Candidate and search-log schema validation proves traceability and internal consistency, not that every source substantively supports every claim; this iteration did not independently re-audit each full text.",
+    "A score or directness gate is evidence triage, not candidate-specific causal proof.",
+    "GSE157504 single-cell raw UMI detection and author rhythm-list membership are transcript-only; cells are not animal-level biological replicates.",
+    "Formal patch-clamp design remains blocked on sex, age, temperature, lighting history/time system, cell-identification method, biological-unit definition, power basis, reagent identity/specificity, and QC/exclusion criteria.",
+    "The skill-creator quick_validate.py could not run because the available Python environment lacks PyYAML; no package was installed. Frontmatter was manually inspected and unchanged."
+  ]
+}

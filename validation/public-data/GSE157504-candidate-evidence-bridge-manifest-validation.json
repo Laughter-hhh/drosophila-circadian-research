@@ -90,9 +90,9 @@
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
       "role": "derived",
-      "expected_sha256": "57c26848cd8aaa151f0f6693bd4fcb11b7a676c9dbe5f2c8f15d0fc9796d9ab1",
-      "observed_sha256": "57c26848cd8aaa151f0f6693bd4fcb11b7a676c9dbe5f2c8f15d0fc9796d9ab1",
-      "size_bytes": 3158,
+      "expected_sha256": "527e770f46557403ddeeb17655f3eb22e6719b2b2a86fd64126e18fbd6c738d3",
+      "observed_sha256": "527e770f46557403ddeeb17655f3eb22e6719b2b2a86fd64126e18fbd6c738d3",
+      "size_bytes": 3443,
       "status": "hash_verified"
     }
   ],

@@ -79,6 +79,8 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 
 ## 证据与推理纪律
 
+候选排序工作流的详细边界见 `references/candidate-ranking.md`：真实候选必须以已验证 search log、明确的 `--readout-match` 和逐个 `--target-cell` 运行来源级评分；仅用候选表摘要的结果只能作为探索性长名单，不得报告为来源级 directness shortlist。
+
 对每个关键陈述标注以下之一：
 
 - **结论｜直接证据**：目标物种、目标神经元或紧邻 readout 的实验直接支持。

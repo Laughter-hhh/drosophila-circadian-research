@@ -80,7 +80,7 @@
     {
       "path": "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
       "role": "derived",
-      "sha256": "57c26848cd8aaa151f0f6693bd4fcb11b7a676c9dbe5f2c8f15d0fc9796d9ab1"
+      "sha256": "527e770f46557403ddeeb17655f3eb22e6719b2b2a86fd64126e18fbd6c738d3"
     }
   ],
   "runs": [
@@ -174,7 +174,7 @@
     {
       "run_id": "score-gse157504-evidence-readiness-diagnostic",
       "script": "scripts/score_candidates.py",
-      "script_sha256": "e8a0e9f8d0681f76dbe902320494d0a71436625d9792d6a04eab78225aac0753",
+      "script_sha256": "0600cf17134199fccfb786aeec7736a8e0d2bfb00f2deb0ccac582f313c3ee34",
       "command": "python scripts/score_candidates.py validation/public-data/GSE157504_candidate_evidence_handoff.csv --target-cell s-LNv --target-cell l-LNv --target-cell LNd --target-cell DN --output validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv --sensitivity-output validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
       "inputs": [
         "validation/public-data/GSE157504_candidate_evidence_handoff.csv"

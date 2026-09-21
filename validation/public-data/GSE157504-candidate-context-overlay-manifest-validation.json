@@ -26,9 +26,9 @@
     {
       "path": "scripts/score_candidates.py",
       "role": "config",
-      "expected_sha256": "e8a0e9f8d0681f76dbe902320494d0a71436625d9792d6a04eab78225aac0753",
-      "observed_sha256": "e8a0e9f8d0681f76dbe902320494d0a71436625d9792d6a04eab78225aac0753",
-      "size_bytes": 30236,
+      "expected_sha256": "0600cf17134199fccfb786aeec7736a8e0d2bfb00f2deb0ccac582f313c3ee34",
+      "observed_sha256": "0600cf17134199fccfb786aeec7736a8e0d2bfb00f2deb0ccac582f313c3ee34",
+      "size_bytes": 30798,
       "status": "hash_verified"
     },
     {

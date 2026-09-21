@@ -77,6 +77,7 @@ class CandidateTargetCellMatchingTests(unittest.TestCase):
         self.assertEqual(result["top_candidates"]["default"], None)
         self.assertEqual(result["top_candidate_ties"]["default"], [])
         self.assertIsNone(result["top_candidate_stable"])
+        self.assertIsNone(result["top_candidate_set_stable"])
         self.assertEqual(result["unscored_candidates"]["default"], ["Shab"])
 
     def test_tied_scored_candidates_are_not_declared_as_a_single_stable_top(self):
@@ -87,6 +88,8 @@ class CandidateTargetCellMatchingTests(unittest.TestCase):
         self.assertEqual(result["top_candidates"]["default"], None)
         self.assertEqual(set(result["top_candidate_ties"]["default"]), {"Shaw", "Shal"})
         self.assertFalse(result["top_candidate_stable"])
+        self.assertTrue(result["top_candidate_set_stable"])
+        self.assertIn("A stable tie is not a unique winner", result["top_candidate_stability_interpretation"])
 
 
     def test_mismatched_or_partial_cell_evidence_cannot_be_called_top(self):
@@ -107,4 +110,3 @@ class CandidateTargetCellMatchingTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
