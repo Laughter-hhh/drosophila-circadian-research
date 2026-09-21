@@ -41,7 +41,7 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 - 对 ESAT 等 transcript-level GEO 处理矩阵审计候选通道的重复样本键（不做表达或节律推断）：运行 scripts/audit_esat_candidate_sample_keys.py；进入基因级 rhythm fit 前必须先处理重复的 gene × sample_id，不得把 isoform/probe 行当作生物学重复。
 - 文献检索、综述或事实核查：读取 `references/evidence-search.md`。
 - 深度文献解读、零基础教学、双语输出或逐 Figure/子图解释：读取 `references/deep-literature-reading.md`，并按需再读取 `references/evidence-search.md`。
-- 筛选或排序离子通道：同时读取 `references/evidence-search.md` 和 `references/candidate-ranking.md`。
+- 筛选或排序离子通道：同时读取 `references/evidence-search.md` 和 `references/candidate-ranking.md`；若运行 `scripts/score_candidates.py`，还须读取 `references/candidate-scoring.md`，按输出文件格式和 gate-qualified Top 字段解释结果。
 - 提出假说或设计实验：读取 `references/experiment-design.md`；涉及候选排序时再读取 `references/candidate-ranking.md`。
 - 将 channel screen、channel rhythm、external neural input 和 behavior link 组织成可审计的分阶段实验蓝图：读取 `references/experiment-plan-schema.md` 和 `references/power-basis-schema.md`，运行 `scripts/validate_power_basis.py`，再运行 `scripts/validate_experiment_plan.py --power-report ...`。
 - 设计果蝇遗传杂交或查 stock：读取 `references/genetics-and-stocks.md`，并联网核查当前记录。
@@ -63,7 +63,7 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 - 对包含多个 cell/ROI/trace 的嵌套数据做 biological-unit 聚合与 cluster bootstrap：读取 `references/nested-cosinor.md`，运行 `scripts/analyze_nested_cosinor.py`；先按 `biological_replicate_id × time` 聚合，不得把下层观测当成独立动物，输出仍需标注为探索性且不替代 mixed-effects model。
 - 准备 formal mixed-effects handoff：读取 `references/mixed-model-handoff.md`，运行 `scripts/prepare_mixed_model_input.py`；仅当 manifest 为 `ready_for_mixed_model` 时运行 `scripts/emit_mixed_model_templates.py`，并在有可用统计运行时后再拟合，缺失运行时必须标记 `blocked`。
 - 检查 formal mixed-effects runtime：运行 `scripts/check_mixed_model_runtime.py`；该检查不安装依赖、不修改环境，只报告可用后端，所有拟合前仍需 ready manifest、收敛诊断和预先定义的 contrasts。
-- 审计候选证据表的来源、目标细胞亚型、评分字段和淘汰理由：读取 `references/candidate-ranking.md`，先用同一份 `--search-log` 联合验证候选表，再用配对的 `--search-log`、`--readout-match` 和明确的 `--target-cell` 运行 `scripts/score_candidates.py`；评分/current 表缺 log 或候选声明与 log 不一致时 scorer 会 fail closed。仅 all-NA、非电生理 readout 的探索性上下文诊断允许无 log，且不得生成 Top。宽泛 `LNv` 不得自动等同于 s-/l-LNv，DN1p 也不得代表全部 DN。
+- 审计候选证据表的来源、目标细胞亚型、评分字段和淘汰理由：读取 `references/candidate-ranking.md` 和 `references/candidate-scoring.md`，先用同一份 `--search-log` 联合验证候选表，再用配对的 `--search-log`、`--readout-match` 和明确的 `--target-cell` 运行 `scripts/score_candidates.py`；评分/current 表缺 log 或候选声明与 log 不一致时 scorer 会 fail closed。仅 all-NA、非电生理 readout 的探索性上下文诊断允许无 log，且不得生成 Top。宽泛 `LNv` 不得自动等同于 s-/l-LNv，DN1p 也不得代表全部 DN。
 - 建立或审计文献/数据库检索证据链：读取 `references/evidence-search-log-schema.md`，运行 `scripts/validate_evidence_search_log.py`；每条证据必须记录查询、数据库、日期、物种、目标细胞、assay、readout、证据标签、来源标识和纳入/排除决定，不能只保留不可回溯的 URL 串。
 - 设计或审核信息增益预实验：读取 `references/information-gain-pilot-schema.md`，运行 `scripts/validate_information_gain_pilot.py`；必须写出缺失事实、最小 readout、experimental unit、对照、成人期边界和 go/no-go 规则，未核实的药物或 stock 只能标为待审计。
 - 审核电生理、成像、表达或行为数据的实验元数据：读取 `references/experimental-metadata-gate.md`，运行 `scripts/validate_experiment_metadata.py --assay ... --stage ...`；在节律或药理拟合前先核对 cell identity、sex、age、temperature、ZT/CT、batch、biological replicate 和技术重复层级。

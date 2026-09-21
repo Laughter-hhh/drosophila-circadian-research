@@ -14,6 +14,8 @@
 4. 对“为什么做这篇文章”“为什么此时能发表”分开写：来源支持的事实标为结论，依据时间线与研究缺口提出的解释标为推断，并列出替代解释；不要猜测作者未公开的动机、审稿过程或经费细节。
 5. 预印本、非果蝇物种和方法论文单独标记；学位论文只在用户主动上传时使用。沿用 `evidence-search.md` 的证据分级、检索日志和 Nature 引用规则。
 
+**全文与图像的有限回退顺序**：先检查用户提供的全文、图像和补充材料；再查出版社的全文/图像页面及作者或机构仓储中的 accepted manuscript；再查可访问的文章 HTML、正式 figure 页面或补充文件；最后才使用可索引的图注文本。每一步记录尝试过的来源、版本、是否可访问及其提供的材料类型。索引图注或摘要只能支持 caption-/abstract-level 解读，不能当作看过原图。完成这几类来源检查后仍拿不到图像或补充材料，就停止声称视觉核验，并把相应内容标为不可核实；不要无上限地反复搜索，也不要从二手文字推造图中信息。
+
 ## 固定解读框架
 
 ### 1. Article map｜文章地图
@@ -59,24 +61,28 @@
 
 #### Figure X｜图 X
 
+在图题或文章摘要处醒目标明本次 Figure 覆盖状态：`image-verified｜已核查原图`、`caption-limited｜仅图注解读` 或 `source-unavailable｜来源不可访问`。每个 panel 单独记录访问状态与证据来源；一个可读图注不能使同图其他不可见 panel 自动变成已核查。
+
 1. **Figure question｜本图问题**：这张图想区分什么假说或获得什么信息。
 2. **Caption walkthrough｜图注逐项解读**：逐句解释图注中实验对象、干预、时间条件、颜色或线型、统计、误差线、n、比例尺和 panel 关系。用自己的话翻译和解释，不大段逐字复制受版权保护的图注。
-3. **Panel inventory｜子图清单**：列出全部子图及 inset，说明 x/y 轴、单位、组别、每个符号、代表性图像或 trace、样本量和统计标记。
+3. **Panel inventory｜子图清单**：主文及所需补充图的每个 panel、inset 和 representative trace 各占一行，记录 `panel_id`、caption/image 状态、所依据的版本/页面/直接链接、可见或可从图注核实的轴与单位/组别/符号、无法检查的视觉项目。可用 `unknown｜未知` 或 `unavailable｜不可访问`；不得用同图其他 panel 的信息填补。轴、颜色、线型、比例尺、代表性 trace 或图中文字若只能从图像判断，只有实际查看原图后才能描述。
 4. **Abbreviation and symbol glossary｜缩写与符号表**：
 
    | Abbreviation/symbol | Full English | 中文 | In this panel |
    |---|---|---|---|
 
-   覆盖所有图注中出现且影响理解的字母、单词、缩写、基因名、细胞类型、ZT/CT、n、p、星号、error bars、scale bar、颜色和线型；不要假设读者知道常见符号。
+   覆盖所有图注中出现且影响理解的字母、单词、缩写、基因名、细胞类型、ZT/CT、n、p、星号、error bars、scale bar、颜色和线型；不要假设读者知道常见符号。图像不可访问、因此无法辨认的 artwork-only 标签须逐 panel 标为未知，不能依靠记忆补全。
 
 5. **Principle｜实验原理**：用零基础语言解释为什么该 assay 能测量目标变量、信号来自哪里、关键对照排除什么；再给一段技术层面的原理或必要公式与定义。
 6. **Example｜具体示例**：挑一个点、trace、细胞或组别，演示如何从图上读出方向、大小、时间或空间关系；必要时用日常比喻，但明确比喻不是数据。
 7. **What the data show｜数据实际显示什么**：只描述可直接从图或统计结果支持的观察，区分代表性图像与群体定量。
-8. **Conclusion｜本图结论**：说明该结果支持、削弱或不能区分哪些假说，并标注 `direct evidence｜直接证据`、`indirect evidence｜间接证据`、`inference｜推断` 或 `not established｜未建立`。
+8. **Conclusion｜本图结论**：说明该结果支持、削弱或不能区分哪些假说，并标注 `direct evidence｜直接证据`、`indirect evidence｜间接证据`、`inference｜推断` 或 `not established｜未建立`。紧邻结论给出 panel-level source/provenance；文末总参考文献不能替代某项图示结论的直接来源。
 9. **Caveats｜限制与替代解释**：指出选择性、相关不等于因果、时间采样、样本量、批次、细胞或动物嵌套、统计模型和未测量变量的影响。
 10. **Figure-to-figure link｜图间逻辑**：说明本图如何承接前一图、为后一图提供什么前提，以及证据链在哪一处仍断裂。
 
 遇到电生理、钙成像、免疫染色、RNA-seq 或 single-cell 图时，额外解释 signal、normalization、ROI、current/voltage、spike、cluster、marker、differential expression、rhythmic model 等术语，并核对方法部分的定义。不要把“有显著差异”自动翻译成“机制已证明”。
+
+对 `n`、`N`、trials、recordings 等字段，只有原文明确时才说明其代表 fly、brain、cell、culture、animal、独立样本还是技术重复。图注仅列出数字而 methods 不可访问时，写明数字及其单位/experimental unit 为 `unknown｜未知`，并说明需要查看哪一段 Methods 或补充材料才能确认；绝不把细胞数、记录次数或 trials 默认等同于独立动物数。
 
 ### 5. Conclusion/discussion｜结论与讨论
 
@@ -114,4 +120,6 @@
 - 是否区分观察、结论、推断、无证据和替代解释？
 - 是否核查作者团队背景与文章历史，而没有臆测作者动机？
 - 是否给出全文、图像或补充材料不可得时的明确限制？
+- 是否对每个 panel 标注图像/图注访问状态与逐项来源；若仅有图注，标题或摘要是否醒目标为 caption-limited，而非视觉核验？
+- 是否把 `n`、trial、recording 和独立 experimental unit 区分；方法未说明时是否保留 `unknown`？
 - 是否给出直接链接、Nature 风格参考文献和检索日期？
