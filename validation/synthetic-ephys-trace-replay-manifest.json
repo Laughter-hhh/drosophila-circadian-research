@@ -1,5 +1,6 @@
 {
   "manifest_id": "synthetic-ephys-trace-replay-20260908",
+  "manifest_stage": "verified",
   "analysis_scope": "synthetic Drosophila s-LNv whole-cell trace QC and exploratory cosinor pipeline",
   "analysis_context": {
     "species": "Drosophila melanogaster",
@@ -240,4 +241,3 @@
     }
   ]
 }
-

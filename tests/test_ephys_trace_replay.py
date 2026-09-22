@@ -30,6 +30,9 @@ class EphysTraceReplayTests(unittest.TestCase):
         )
 
     def test_real_synthetic_trace_manifest_replays_in_isolation(self):
+        with self.manifest_path.open(encoding="utf-8") as handle:
+            manifest = json.load(handle)
+        self.assertEqual(manifest["manifest_stage"], "verified")
         result = replay_file(self.manifest_path, ROOT, timeout_seconds=120)
         self.assertEqual(result["status"], "verified_ephys_trace_replay")
         self.assertEqual(result["n_runs"], 5)
@@ -59,4 +62,3 @@ class EphysTraceReplayTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
