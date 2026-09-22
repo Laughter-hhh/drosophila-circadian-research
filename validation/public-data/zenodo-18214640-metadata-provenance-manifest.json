@@ -1,5 +1,6 @@
 {
   "manifest_id": "zenodo-18214640-20lux-metadata-audit-20260908",
+  "manifest_stage": "verified",
   "dataset_id": "zenodo-18214640-20lux-main",
   "accession": "10.5281/zenodo.18214640",
   "species": "Drosophila melanogaster",
@@ -66,4 +67,3 @@
     }
   ]
 }
-

@@ -16,6 +16,7 @@ class BehaviorPublicManifestTests(unittest.TestCase):
     def test_real_zenodo_manifest_verifies(self):
         result = validate_file(MANIFEST, ROOT)
         self.assertEqual(result["status"], "verified_public_dataset_manifest")
+        self.assertEqual(result["manifest_stage"], "verified")
         self.assertEqual(result["formal_status"], "online_source_content_verified")
         self.assertEqual(result["n_files"], 2)
         self.assertEqual(result["n_runs"], 1)
@@ -26,6 +27,7 @@ class BehaviorPublicManifestTests(unittest.TestCase):
         self.assertEqual(result["n_runs"], 1)
         self.assertEqual(result["n_output_checks"], 1)
         self.assertEqual(result["output_checks"][0]["status"], "replay_hash_verified")
+        self.assertEqual(result["manifest_validation"]["manifest_stage"], "verified")
 
 
 if __name__ == "__main__":
