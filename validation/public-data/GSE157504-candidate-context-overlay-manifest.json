@@ -1,10 +1,11 @@
 {
   "manifest_id": "GSE157504-candidate-context-overlay-20260921",
+  "manifest_stage": "verified",
   "dataset_id": "GSE157504",
   "accession": "GSE157504",
   "species": "Drosophila melanogaster",
   "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157504",
-  "retrieved_at_utc": "2026-09-21T03:35:05.342510Z",
+  "retrieved_at_utc": "2026-09-22T17:04:16.042952Z",
   "source_access_status": "content_checked",
   "source_checked_at_utc": "2026-09-20T06:30:43Z",
   "source_check_method": "web_open",
@@ -57,17 +58,17 @@
     {
       "path": "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json",
       "role": "metadata",
-      "sha256": "889066d8c7e45ba77186fb0db9b1c5b7f03e2182cd232cc2e1f1896cd7766365"
+      "sha256": "7ada5eb9b85fb4abb7225269ddc6f018f9b3847c66a84172cf26a18302e33795"
     },
     {
       "path": "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json",
       "role": "metadata",
-      "sha256": "0403f4d79561bac7fe9e51e5277e9de3e36c71d8ac41c4db23f8266987df4ee5"
+      "sha256": "f5fa2be244eb9d32cf84b35e57ef098125042cb798e97daeebed570e24d01ff2"
     },
     {
       "path": "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json",
       "role": "metadata",
-      "sha256": "ae88da7a77f98c25dbd29b28b20a99aa8981f89097b0aa3eddca91937dae1003"
+      "sha256": "bf36ca66bf7e79476eed997a3df54d205ded651631ecc6e58a140de0caf3e38e"
     },
     {
       "path": "validation/public-data/GSE157504_candidate_context_overlay.csv",
@@ -77,7 +78,7 @@
     {
       "path": "validation/public-data/GSE157504_candidate_context_overlay_report.json",
       "role": "derived",
-      "sha256": "03ac4a0ba8ba1b9131f1c19f407ded3525d5067833c73db4ecad65078e7d821b"
+      "sha256": "af1342168a98f6b71c3379201eb75b5f73d0354a4d7e364a63ddc07908071c93"
     },
     {
       "path": "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",

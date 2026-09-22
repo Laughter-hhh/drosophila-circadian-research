@@ -5,9 +5,9 @@
   "accession": "GSE157504; GSE77451; PLOS DOI 10.1371/journal.pgen.1006613.s003",
   "species": "Drosophila melanogaster",
   "source_url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006613",
-  "retrieved_at_utc": "2026-09-22T11:35:10.154339Z",
+  "retrieved_at_utc": "2026-09-22T17:11:15.120414Z",
   "source_access_status": "content_checked",
-  "source_checked_at_utc": "2026-09-22T11:35:10.154339Z",
+  "source_checked_at_utc": "2026-09-22T17:11:15.120414Z",
   "source_check_method": "web_open",
   "source_observed_tokens": [
     "GSE157504",
@@ -113,32 +113,32 @@
     {
       "path": "validation/public-data/GSE157504-candidate-channel-rhythm-manifest-validation.json",
       "role": "metadata",
-      "sha256": "889066d8c7e45ba77186fb0db9b1c5b7f03e2182cd232cc2e1f1896cd7766365"
+      "sha256": "7ada5eb9b85fb4abb7225269ddc6f018f9b3847c66a84172cf26a18302e33795"
     },
     {
       "path": "validation/public-data/GSE157504-candidate-channel-rhythm-provenance-manifest.json",
       "role": "metadata",
-      "sha256": "0403f4d79561bac7fe9e51e5277e9de3e36c71d8ac41c4db23f8266987df4ee5"
+      "sha256": "f5fa2be244eb9d32cf84b35e57ef098125042cb798e97daeebed570e24d01ff2"
     },
     {
       "path": "validation/public-data/GSE157504-candidate-channel-rhythm-replay.json",
       "role": "metadata",
-      "sha256": "ae88da7a77f98c25dbd29b28b20a99aa8981f89097b0aa3eddca91937dae1003"
+      "sha256": "bf36ca66bf7e79476eed997a3df54d205ded651631ecc6e58a140de0caf3e38e"
     },
     {
       "path": "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json",
       "role": "metadata",
-      "sha256": "4a6c1872d8bbaa33903978e77a6052be5e4bed74a447f786071ae45f42a42bb5"
+      "sha256": "0e12803e7cb9d80bd870f7b94913a5cdb9f1c39ed2d28a99f957fc730a82fa9f"
     },
     {
       "path": "validation/public-data/GSE157504-candidate-context-overlay-manifest.json",
       "role": "metadata",
-      "sha256": "fa7ea0229ef200571b3190dbb92e50da81f423aaee134712c8b4f2ae7b91e076"
+      "sha256": "bf638203a16555a11656acc2bc270109c81e12f6b4d27f70f7e87ecbe6d14c24"
     },
     {
       "path": "validation/public-data/GSE157504-candidate-context-overlay-replay.json",
       "role": "metadata",
-      "sha256": "8f0192b63f2a0bd8e7a5880e67164ad5265de572bdc9618d4155b36246812d7a"
+      "sha256": "1ec1b45859a2bd42fb4e95331a79e28874792b4ba2689e5747e0a2e20192cfff"
     },
     {
       "path": "validation/public-data/GSE157504_candidate_context_overlay.csv",
@@ -148,7 +148,7 @@
     {
       "path": "validation/public-data/GSE157504_candidate_context_overlay_report.json",
       "role": "derived",
-      "sha256": "03ac4a0ba8ba1b9131f1c19f407ded3525d5067833c73db4ecad65078e7d821b"
+      "sha256": "af1342168a98f6b71c3379201eb75b5f73d0354a4d7e364a63ddc07908071c93"
     },
     {
       "path": "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
@@ -198,7 +198,7 @@
     {
       "path": "validation/public-data/combined-transcript-candidate-context-report.json",
       "role": "derived",
-      "sha256": "60209a719365c1be6ff632d56249397b2e785d5b82c26fc3adc1e2f413bb03dc"
+      "sha256": "3405c8aa6b327d0b5e15f43c6b02054b43080b8e852a739c4936e6ba003b22b3"
     },
     {
       "path": "validation/public-data/combined-transcript-candidate-context.csv",
