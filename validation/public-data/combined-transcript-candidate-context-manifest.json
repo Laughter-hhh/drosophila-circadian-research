@@ -1,12 +1,13 @@
 {
   "manifest_id": "GSE157504-Abruzzi2017-S3-candidate-context-20260921",
+  "manifest_stage": "verified",
   "dataset_id": "GSE157504-plus-Abruzzi2017-S3-candidate-context",
   "accession": "GSE157504; GSE77451; PLOS DOI 10.1371/journal.pgen.1006613.s003",
   "species": "Drosophila melanogaster",
   "source_url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006613",
-  "retrieved_at_utc": "2026-09-21T15:41:10.816626Z",
+  "retrieved_at_utc": "2026-09-22T11:35:10.154339Z",
   "source_access_status": "content_checked",
-  "source_checked_at_utc": "2026-09-21T15:41:10.816626Z",
+  "source_checked_at_utc": "2026-09-22T11:35:10.154339Z",
   "source_check_method": "web_open",
   "source_observed_tokens": [
     "GSE157504",
@@ -56,7 +57,7 @@
     {
       "path": "scripts/replay_public_dataset_manifest.py",
       "role": "config",
-      "sha256": "8bdb0f1879882b726e3455c3759c7247f27a96ce43f1386eeda3a6cac59517f9"
+      "sha256": "01f6b371bbe37f971d0423a2e5f90ac5e8a33281c85237c58ac8de17bd1e8e76"
     },
     {
       "path": "scripts/score_candidates.py",
@@ -76,22 +77,22 @@
     {
       "path": "scripts/validate_public_dataset_manifest.py",
       "role": "config",
-      "sha256": "30b3f7a77e547fd30850c8bec15696d3dcaecad678e39464ee4fa3e41a90295d"
+      "sha256": "68225fa8022e4e0bda05d30e343fd33fba912b5ea36123f74503f10a8ddc6ba6"
     },
     {
       "path": "validation/public-data/Abruzzi2017-candidate-cycle-manifest-validation.json",
       "role": "metadata",
-      "sha256": "2b8c05b9e78f2f3853bdae433314f2e8207dad24fa375a4bf1d5e4b863e8d221"
+      "sha256": "719cd418955086f6b461cf2d25340f4e9b008e2d41400143200be1724465ecbb"
     },
     {
       "path": "validation/public-data/Abruzzi2017-candidate-cycle-manifest.json",
       "role": "metadata",
-      "sha256": "55c752b882a9d6595db9fd7fc6f601defa32d1374e4e14dfb966a72912dcba30"
+      "sha256": "0b0de1cfd7fa4bb8f781e253defef297d2f3cd79d16d89cafffe7640205a3c46"
     },
     {
       "path": "validation/public-data/Abruzzi2017-candidate-cycle-replay.json",
       "role": "metadata",
-      "sha256": "fe1617d98c21d4cdfdebc879433958a9e96417437477561645fd1b4de9687920"
+      "sha256": "1e49d59a5a688f25c557a48de9e5edf8e22f900a009f6ecc91c5892af779c2e0"
     },
     {
       "path": "validation/public-data/Abruzzi2017_S3_cycle-transcripts.xlsx",
@@ -197,7 +198,7 @@
     {
       "path": "validation/public-data/combined-transcript-candidate-context-report.json",
       "role": "derived",
-      "sha256": "c1a4393958400f3e2ce941834a16827821cb0ecc7bc5691f24435265610223b1"
+      "sha256": "60209a719365c1be6ff632d56249397b2e785d5b82c26fc3adc1e2f413bb03dc"
     },
     {
       "path": "validation/public-data/combined-transcript-candidate-context.csv",
@@ -243,7 +244,7 @@
         "--manifest-output",
         "validation/public-data/combined-transcript-candidate-context-manifest.json"
       ],
-      "status": "executed",
+      "status": "verified",
       "inputs": [
         "scripts/build_candidate_evidence_context.py",
         "scripts/build_gse157504_candidate_evidence.py",

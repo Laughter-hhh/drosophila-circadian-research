@@ -256,9 +256,9 @@
     "The LNv manuscript-versus-S3 HC count discrepancy is carried forward unresolved."
   ],
   "input_sha256": {
-    "validation/public-data/Abruzzi2017-candidate-cycle-manifest-validation.json": "2b8c05b9e78f2f3853bdae433314f2e8207dad24fa375a4bf1d5e4b863e8d221",
-    "validation/public-data/Abruzzi2017-candidate-cycle-manifest.json": "55c752b882a9d6595db9fd7fc6f601defa32d1374e4e14dfb966a72912dcba30",
-    "validation/public-data/Abruzzi2017-candidate-cycle-replay.json": "fe1617d98c21d4cdfdebc879433958a9e96417437477561645fd1b4de9687920",
+    "validation/public-data/Abruzzi2017-candidate-cycle-manifest-validation.json": "719cd418955086f6b461cf2d25340f4e9b008e2d41400143200be1724465ecbb",
+    "validation/public-data/Abruzzi2017-candidate-cycle-manifest.json": "0b0de1cfd7fa4bb8f781e253defef297d2f3cd79d16d89cafffe7640205a3c46",
+    "validation/public-data/Abruzzi2017-candidate-cycle-replay.json": "1e49d59a5a688f25c557a48de9e5edf8e22f900a009f6ecc91c5892af779c2e0",
     "validation/public-data/Abruzzi2017_channel-candidate-cycle-audit.json": "cc5097021712b6f8e9b925d6a61d696d5eb23d57add5d5eef14af1520538c7b3",
     "validation/public-data/Abruzzi2017_channel-candidate-cycle-evidence.csv": "46eb7b58e1c53753ef62dd15c8b94a7f9af05baae30640075f938a65d9a45337",
     "validation/public-data/GSE157504-candidate-context-overlay-manifest-validation.json": "4a6c1872d8bbaa33903978e77a6052be5e4bed74a447f786071ae45f42a42bb5",

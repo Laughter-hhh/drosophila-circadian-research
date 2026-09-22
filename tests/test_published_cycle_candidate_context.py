@@ -303,6 +303,16 @@ class PublishedCycleCandidateContextTests(unittest.TestCase):
             self.assertEqual(len(replay["output_checks"]), 2)
             self.assertTrue(all(check["status"] == "replay_hash_verified" for check in replay["output_checks"]))
 
+    def test_checked_in_combined_context_manifest_is_currently_verified(self):
+        manifest_path = ROOT / "validation/public-data/combined-transcript-candidate-context-manifest.json"
+        validation = validate_file(manifest_path, ROOT)
+        self.assertEqual(validation["status"], "verified_public_dataset_manifest", validation.get("issues"))
+        self.assertEqual(validation["manifest_stage"], "verified")
+        replay = replay_file(manifest_path, ROOT, timeout_seconds=180)
+        self.assertEqual(replay["status"], "verified_public_dataset_replay", replay.get("issues"))
+        self.assertEqual(replay["manifest_validation"]["manifest_stage"], "verified")
+        self.assertEqual(len(replay["output_checks"]), 2)
+
 
 if __name__ == "__main__":
     unittest.main()
