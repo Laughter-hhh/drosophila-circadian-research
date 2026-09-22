@@ -36,6 +36,7 @@ ALLOWED_SCRIPTS = {
     "scripts/audit_published_cycle_candidates.py",
     "scripts/analyze_expression_rhythm.py",
     "scripts/analyze_cosinor_inference.py",
+    "scripts/audit_design_confounding.py",
     "scripts/audit_public_behavior_metadata.py",
     "scripts/extract_published_sc_clock_channel_rhythms.py",
     "scripts/audit_gse157504_candidate_detection.py",

@@ -38,50 +38,13 @@ description: 面向果蝇神经生理与昼夜节律研究的证据检索、候�
 
 ## 选择工作流
 
-- 对 ESAT 等 transcript-level GEO 处理矩阵审计候选通道的重复样本键（不做表达或节律推断）：运行 scripts/audit_esat_candidate_sample_keys.py。要把通过样本映射审计的矩阵整理为候选长表，运行 scripts/prepare_esat_candidate_expression.py；该转换器保留 transcript 行和显式来源核查的 symbol alias，并另行输出 sum/median/max 三种基因级敏感性表，不推断归一化或生物学单位。之后可运行 scripts/analyze_expression_rhythm.py；若 metadata 有 timecourse_id，必须按该字段分组，不得合并独立 time course。进入 rhythm fit 前必须先处理重复的 gene × sample_id，不得把 isoform 行当作生物学重复。
 - 文献检索、综述或事实核查：读取 `references/evidence-search.md`。
 - 深度文献解读、零基础教学、双语输出或逐 Figure/子图解释：读取 `references/deep-literature-reading.md`，并按需再读取 `references/evidence-search.md`；生成逐 panel 清单后运行 `scripts/validate_literature_panel_inventory.py` 做结构核验（不替代来源及原图核查）。
 - 筛选或排序离子通道：同时读取 `references/evidence-search.md` 和 `references/candidate-ranking.md`；若运行 `scripts/score_candidates.py`，还须读取 `references/candidate-scoring.md`，按输出文件格式和 gate-qualified Top 字段解释结果。
 - 提出假说或设计实验：读取 `references/experiment-design.md`；涉及候选排序时再读取 `references/candidate-ranking.md`。
-- 将 channel screen、channel rhythm、external neural input 和 behavior link 组织成可审计的分阶段实验蓝图：读取 `references/experiment-plan-schema.md` 和 `references/power-basis-schema.md`，运行 `scripts/validate_power_basis.py`，再运行 `scripts/validate_experiment_plan.py --power-report ...`。
 - 设计果蝇遗传杂交或查 stock：读取 `references/genetics-and-stocks.md`，并联网核查当前记录。
-- 编写遗传杂交计划或在订购前做字段审计：读取 `references/genetics-plan-schema.md`，运行 `scripts/validate_cross_plan.py`。
-- 审计 FlyBase/BDSC/VDRC stock 身份、完整 genotype 与背景后再进入 formal cross：读取 `references/stock-audit-schema.md`，运行 `scripts/validate_stock_audit.py`。
-- 在报告 stock、药物或论文来源前核对 URL 可达性与页面 identifier 是否实际出现：读取 `references/online-source-audit.md`，运行 `scripts/check_source_access.py`；`conditional_source_access` 只能作为待人工联网核对的 traceability，不得升级为 `identity_verified` 或直接证据。
-- 将 stock 审计结果接入 formal 遗传设计、检查 driver 表达、成人期限制、发育控制和背景匹配：读取 `references/genetic-stage-gate.md`，运行 `scripts/validate_genetic_stage_gate.py --stock-audit ...`；`pilot`/`conditional_pilot` 的 warning 不得写成 formal 因果证据。
-- 将亲本 genotype/F1/balancer 字段与 stock-to-cross gate 合并，并检查 driver/effector 是否真的出现在亲本 stock 中：读取 `references/integrated-cross-plan.md`，运行 `scripts/validate_integrated_cross_plan.py --stock-audit ...`。
-- 从 primary paper 抽取 driver/effector、温度、LD/DD、实验单位和 n：读取 `references/primary-genetics-schema.md`，运行 `scripts/validate_primary_genetics.py`。
 - 分析表格、图像或电生理数据并作图：读取 `references/data-and-figures.md`。
-- 处理 GEO 表达矩阵、探针注释、候选基因汇总或探索性表达节律：读取 `references/geo-data-workflow.md` 和 `references/public-dataset-manifest.md`；对已有输入 manifest 先做适用的哈希验证，对已完成的 `executed`/`verified` 上游分析先 replay；将新解析/提取/分析命令登记为 `planned_runs` 并通过 `planning` validator 后再执行。完成后记录真实输出与哈希，按 `executed` validator + replay、再 `verified` validator + replay 的阶段推进；不要在计划阶段重放尚未产生的输出。
-- 将 GEO processed matrix 的列与 GEO family SOFT 样本记录连接：先提供显式 `matrix_path × matrix_column × matrix_alias × GSM × timecourse_id` 映射表，再运行 `scripts/audit_geo_sample_map.py`；脚本核对列完整性、GSM/title、cell type、ZT/CT 与每个独立 timecourse 的采样覆盖，不从列名静默猜时间。输出 metadata 仍不能替代个体 fly、sex、age、genotype 或温度记录。
-- 将候选通道符号与 Abruzzi et al. (2017) 的 GSE77451 S3 已发表 cycler 表核对：读取 `references/published-cycle-table-workflow.md`，运行 `scripts/audit_published_cycle_candidates.py`；按每张 worksheet 的表头解析 F24/JTK 列、精确匹配完整 gene symbol、保留 HC/LC 和重复行、对照论文与 supplement 的 HC 数量。未列出不等于无表达或无节律；将此 transcript evidence 与蛋白、膜电流、膜电位及因果证据分开，并运行 public-dataset manifest validator 与 isolated replay。
-- 筛选时钟神经元候选通道的单细胞检出或查询 GSE157504 已发表节律：读取 `references/published-sc-clock-rhythm-audit.md`；运行 `scripts/audit_gse157504_candidate_detection.py` 匹配 raw counts 与细胞注释、运行 `scripts/extract_published_sc_clock_channel_rhythms.py` 提取作者高置信度节律表，再运行 public-dataset manifest validator 与 isolated replay。必须保留 DD 的 CT 时间系统、`LN_ITP` 混合类别、未匹配/未覆盖的 barcode 与 gene symbol，并将 raw UMI 检出解释限制为描述性转录证据。
-- 将已验证的 GSE157504 转录检出/作者节律数据并列叠加到文献候选长名单，且不更改评分或电生理 gate：读取 `references/candidate-context-overlay.md`，先核实上游 manifest/replay，再运行 `scripts/build_candidate_evidence_context.py`；输出必须保留候选集差异、零 UMI/dropout、未评估候选、`LN_ITP` 模糊亚群、DN 子群范围及静态淘汰理由的人工复核标记。
-- 将已验证的 GSE157504 候选 context 与 Abruzzi2017 S3 author cycler calls 合并成 score-neutral transcript sidecar：读取 `references/combined-transcript-candidate-context.md`，先重新验证双方 parent manifest/replay，再运行 `scripts/build_published_cycle_candidate_context.py`；保留 s-/l-LNv 混合组、LNd+第五个 PDF-negative s-LNv、DN1 subset 的范围，不将 HC/LC 或未列出结果升级为膜电流/膜电位因果证据，也不更改候选分数或电生理 gate。
-- 处理公开果蝇行为数据、Ethoscope 元数据或体量很大的原始录像归档：读取 `references/public-behavior-metadata.md`，先将输入、metadata audit 命令和预期输出登记为 `planning` 并完成 validator 预检，再执行审计；记录实际输出后完成 `executed` validator + replay，并在通过后进入 `verified` validator + replay。元数据审计通过不等于已经获得行为节律证据，缺少 genotype/sex/age/temperature/LD-DD、个体标识或 raw checksums 时必须保持 blocked。
-- 对满足时间点要求的表达数据做探索性置换/bootstrap cosinor：读取 `references/cosinor-inference.md`，运行 `scripts/analyze_cosinor_inference.py`；必须提供 `--metadata` 或明确的 `--experimental-unit`，脚本会核对 sample/time、biological replicate 和重复观测，按 `timecourse_id` 分层，course 映射部分缺失时阻断；pooled/library 的样本数不得写作个体动物 n，全空候选必须保留为 `no_numeric_expression` 而不能解释为无表达；不得把探索性 p/q 值当作论文级 mixed-model 结论。
-- 对包含多个 cell/ROI/trace 的嵌套数据做 biological-unit 聚合与 cluster bootstrap：读取 `references/nested-cosinor.md`，运行 `scripts/analyze_nested_cosinor.py`；先按 `biological_replicate_id × time` 聚合，不得把下层观测当成独立动物，输出仍需标注为探索性且不替代 mixed-effects model。
-- 准备 formal mixed-effects handoff：读取 `references/mixed-model-handoff.md`，运行 `scripts/prepare_mixed_model_input.py`；仅当 manifest 为 `ready_for_mixed_model` 时运行 `scripts/emit_mixed_model_templates.py`，并在有可用统计运行时后再拟合，缺失运行时必须标记 `blocked`。
-- 检查 formal mixed-effects runtime：运行 `scripts/check_mixed_model_runtime.py`；该检查不安装依赖、不修改环境，只报告可用后端，所有拟合前仍需 ready manifest、收敛诊断和预先定义的 contrasts。
-- 审计候选证据表的来源、目标细胞亚型、评分字段和淘汰理由：读取 `references/candidate-ranking.md` 和 `references/candidate-scoring.md`，先用同一份 `--search-log` 联合验证候选表，再用配对的 `--search-log`、`--readout-match` 和明确的 `--target-cell` 运行 `scripts/score_candidates.py`；评分/current 表缺 log 或候选声明与 log 不一致时 scorer 会 fail closed。仅 all-NA、非电生理 readout 的探索性上下文诊断允许无 log，且不得生成 Top。宽泛 `LNv` 不得自动等同于 s-/l-LNv，DN1p 也不得代表全部 DN。
-- 建立或审计文献/数据库检索证据链：读取 `references/evidence-search-log-schema.md`，运行 `scripts/validate_evidence_search_log.py`；每条证据必须记录查询、数据库、日期、物种、目标细胞、assay、readout、证据标签、来源标识和纳入/排除决定，不能只保留不可回溯的 URL 串。
-- 设计或审核信息增益预实验：读取 `references/information-gain-pilot-schema.md`，运行 `scripts/validate_information_gain_pilot.py`；必须写出缺失事实、最小 readout、experimental unit、对照、成人期边界和 go/no-go 规则，未核实的药物或 stock 只能标为待审计。
-- 审核电生理、成像、表达或行为数据的实验元数据：读取 `references/experimental-metadata-gate.md`，运行 `scripts/validate_experiment_metadata.py --assay ... --stage ...`；在节律或药理拟合前先核对 cell identity、sex、age、temperature、ZT/CT、batch、biological replicate 和技术重复层级。
-- 审核原始 ephys/imaging 文件、QC 指标和派生结果溯源：读取 `references/raw-qc-provenance-schema.md`，运行 `scripts/validate_raw_qc_provenance.py --assay ...`；在解释 channel blocker、膜电位或成像效应前核对 raw-file 哈希、metadata linkage、seal/access resistance、holding current、漂移、ROI/image QC 和 exclusion reason。
-- 从标准化 trace CSV 派生可追溯的 ephys/imaging measurement：读取 `references/trace-derivation.md`，运行 `scripts/derive_trace_measurements.py`；先通过 metadata/raw-QC gate，只转换 `qc_status=pass` 记录，按 ZT/CT 从 metadata 锚定时间，并将结果接入 pre-analysis bundle；不自行解码未核实的 ABF/TIFF 二进制格式。
-- 需要将已附 raw ephys trace 的 metadata→raw-QC→measurement→exploratory cosinor 链标为可重放：读取 `references/ephys-trace-replay-manifest.md`，以仓库相对 raw path 建立 manifest，先运行 `scripts/validate_ephys_trace_replay_manifest.py`，再运行 `scripts/replay_ephys_trace_manifest.py`。只有 `verified_ephys_trace_replay` 可证明当前输入、参数和代码的逐项 output hash 重现；它仍不代表 cell identity、节律或因果结论。
-- 将 metadata、raw-QC manifest 与派生测量作为一个 pre-analysis bundle 审核：读取 `references/preanalysis-bundle-gate.md`，运行 `scripts/validate_preanalysis_bundle.py`；要求 pass raw record 与派生行一一可追溯，阻断 orphan/non-pass measurements 后再进入 cosinor 或药理效应分析。
-- 对已通过 bundle gate 的 ephys/imaging 派生时序做探索性 cosinor：读取 `references/bundle-cosinor-analysis.md`，运行 `scripts/analyze_preanalysis_cosinor.py`；先在 `biological_replicate_id × time_hours` 内平均技术重复，报告 longitudinal/cross-sectional 设计与时间系统警告；formal 阶段必须阻断并转交 biological-unit-aware mixed-effects backend。
-- 对已通过 bundle gate 且含多个 subunit/cell/ROI 的嵌套时序做 exploratory cluster permutation/bootstrap：读取 `references/nested-bundle-inference.md`，运行 `scripts/analyze_preanalysis_nested_cosinor.py`；先选择单一 `metric_name` 与一致 `value_unit`，按 `biological_replicate_id × time_hours` 聚合并按 biological unit 重采样；formal 阶段必须转交 mixed-effects backend。
-- 创建或执行科研分析任务、整理输入输出和验收标准：读取 `references/research-task-contract.md`。
-- 检查实验元数据、数据字典或 biological replicate：读取 `references/metadata-and-data-dictionary.md`。
-- 设计或质控全细胞膜片钳、膜电位或离子通道电流实验：读取 `references/electrophysiology-qc.md`。
-- 编写急性药理学阻断方案或在正式膜片钳前做浓度/选择性字段审计：读取 `references/pharmacology-plan-schema.md`，运行 `scripts/validate_pharmacology_plan.py`。
-- 设计或质控钙成像、免疫染色、RNA-seq 或 single-cell 分析：读取 `references/imaging-and-sequencing-qc.md`。
-- 需要可复现代码、运行日志、数据溯源或论文级产物：读取 `references/reproducibility-and-provenance.md` 和 `references/manuscript-claims.md`。
-- 一项任务跨越多个工作流时，只读取直接相关的参考文件。
-
-- GEO 表达节律的描述性 cosinor 按 gene/cell/background/developmental_stage/sex 分组；若输入提供 timecourse_id，也将其作为独立分组键，绝不跨 course 合并。推断性 cosinor 同样按 course 分层，并阻断只对部分样本提供的 course 标记。缺失 strata 标记为 unknown，表达表与 metadata 的 stage/sex/timecourse 冲突时必须阻断。pooled/library 的 sample 数不自动等于独立 fly 数；全空候选不解释为生物学未表达。
+- 对不属于以上常见任务的专用数据/验证流程，只有在任务匹配时才读取 `references/workflow-routing.md` 中对应的小节；不要预载无关工作流。
 
 ## 证据与推理纪律
 

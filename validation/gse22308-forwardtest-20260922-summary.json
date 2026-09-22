@@ -1,0 +1,63 @@
+{
+  "status": "verified",
+  "manifest_id": "gse22308-channel-candidate-rhythm-forwardtest-20260922",
+  "dataset_id": "GSE22308",
+  "accession": "GSE22308",
+  "species": "Drosophila melanogaster",
+  "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22308",
+  "source_note": "NCBI GEO record checked: adult purified clock-neuron array data under LD; large PDF samples at ZT0/6/12/18, other listed groups at ZT0/12.",
+  "forward_test_scope": {
+    "inputs_only": true,
+    "prior_report_contents_read": false,
+    "prior_validation_filenames_seen_while_locating_scripts": true,
+    "blindness_claim": "isolated-input forward test; not fully blind"
+  },
+  "inputs": [
+    {"path": "GSE22308_series_matrix.txt.gz", "sha256": "ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7"},
+    {"path": "GSE22308_sample_metadata.csv", "sha256": "b11120c62d262eaf6b326697778ac2c19f78bb839901997e0ddc612e8889c9dc"},
+    {"path": "GSE22308_candidate_genes.csv", "sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce"},
+    {"path": "GPL1322.annot.gz", "sha256": "25688be239d3b79e3caf7bd0dbb1800a06ffef443e280fbf90a0412e069b4c52"}
+  ],
+  "commands": [
+    ["python", "scripts/parse_geo_series_matrix.py", "GSE22308_series_matrix.txt.gz", "--expected-sha256", "ad40dc0c4ce2338a241c09d3cc116ae78484bbf3f37fe69474c82d36e5cc27f7", "--summary-output", "results/geo_parse_summary.json", "--metadata-output", "results/series_metadata.csv", "--provenance-path", "GSE22308_series_matrix.txt.gz"],
+    ["python", "scripts/extract_gene_expression.py", "GSE22308_series_matrix.txt.gz", "GPL1322.annot.gz", "results/series_metadata.csv", "GSE22308_candidate_genes.csv", "--summary-output", "results/candidate_expression_summary.csv", "--sample-output", "results/candidate_expression_samples.csv"],
+    ["python", "scripts/analyze_expression_rhythm.py", "results/candidate_expression_samples.csv", "--output", "results/candidate_rhythm.json", "--time-system", "ZT"],
+    ["python", "scripts/audit_design_confounding.py", "GSE22308_sample_metadata.csv", "--factor", "sex", "--factor", "genotype_background", "--factor", "cell_type", "--factor", "ZT_or_CT", "--output", "results/design_confounding.json"]
+  ],
+  "data_checks": {
+    "sample_columns_aligned": "24/24",
+    "feature_rows": 18952,
+    "duplicate_feature_ids": 0,
+    "nonnumeric_values": 0,
+    "candidate_genes_mapped": 15,
+    "descriptive_fit_groups": 15,
+    "insufficient_time_series_groups": 45,
+    "inferential_cosinor_run": false
+  },
+  "design_confounding": {
+    "script_sha256": "1afac34251aade0b95bf1e9a98f357722907bd4e314755cb768f13251d8c1c9f",
+    "output_sha256": "151a718c4ed2d3b08234e7fc9009135b700217210d2afc2f24f60a3f17c9a209",
+    "status": "warning",
+    "perfectly_confounded_pair": ["sex", "genotype_background"],
+    "interpretation": "The observed sex and genetic-background levels are one-to-one in this table; an independent sex effect is not estimable without additional strata."
+  },
+  "verification": {
+    "manifest_stage": "verified",
+    "manifest_files": 10,
+    "manifest_runs": 4,
+    "manifest_sha256": "12bfc03667dffcd436dc9e8daa1b95f7ed8bb3e524df4a7aaccd17cc8f1ea766",
+    "validator_status": "verified_public_dataset_manifest",
+    "validator_issues": 0,
+    "replay_status": "verified_public_dataset_replay",
+    "replay_output_checks": 6,
+    "replay_issues": 0,
+    "replay_report_sha256": "65986b57a14d31720c34f2a64880a5cdd457ecfd2cc2f2ad182baa0610da642b"
+  },
+  "scientific_limits": [
+    "Samples are pooled cell samples; sample/library counts are not fly-level n.",
+    "Only adult yw large-PDF samples span four ZT phases; other strata have two phases and cannot support a 24-hour fit.",
+    "The descriptive fits are exploratory GCRMA log2 waveforms, not significance tests.",
+    "LD expression cannot establish free-running circadian regulation, and transcript abundance cannot establish channel protein, current, membrane potential, or causal behavior effects.",
+    "Age in days, temperature, batch, and fly-level pooling composition remain unknown."
+  ]
+}
