@@ -1,0 +1,158 @@
+{
+  "status": "verified_public_dataset_manifest",
+  "manifest_stage": "verified",
+  "formal_status": "online_source_content_verified",
+  "manifest_id": "GSE157504-candidate-evidence-bridge-20260920-target-cell-gated",
+  "dataset_id": "GSE157504",
+  "accession": "GSE157504",
+  "n_files": 11,
+  "n_runs": 4,
+  "n_planned_runs": 0,
+  "planned_run_checks": [],
+  "file_checks": [
+    {
+      "path": "validation/public-data/GSE22308_candidate_genes.csv",
+      "role": "candidate_list",
+      "expected_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+      "observed_sha256": "ee46819993f11916145bdab8f13e35f73895986b4cdb0d3fd9b89c6dd1f0e7ce",
+      "size_bytes": 251,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+      "role": "derived",
+      "expected_sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a",
+      "observed_sha256": "8497a45e398c094e5ea88a7279730cffae50ad989feb750ac42c063fe495939a",
+      "size_bytes": 2584,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+      "role": "derived",
+      "expected_sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857",
+      "observed_sha256": "5fd7550bc2f2155717c7e9b5b298e768c4186a6def610d34aeb06466de2f8857",
+      "size_bytes": 10677,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_rhythm_details.csv",
+      "role": "derived",
+      "expected_sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1",
+      "observed_sha256": "a4b10e9274011b4e48eca3923d3a40a54795480e66daad08064e7e9dc0a40ec1",
+      "size_bytes": 2994,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_evidence_handoff.csv",
+      "role": "derived",
+      "expected_sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+      "observed_sha256": "7fe4b2926bf7ef056d6e41ef0de8c8382f029482a7f3917eda3337df3d153df4",
+      "size_bytes": 22960,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_evidence_search_log.csv",
+      "role": "derived",
+      "expected_sha256": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7",
+      "observed_sha256": "1cc0a4bf9bbcda53e75c6735568c1cff2d75928899d01ba7bf0ce172a4d22ac7",
+      "size_bytes": 28410,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_evidence_handoff_report.json",
+      "role": "derived",
+      "expected_sha256": "5762451588d294102fec32074ce20ed75b5a2aaedc5ca07d1721a3a1f57e7907",
+      "observed_sha256": "5762451588d294102fec32074ce20ed75b5a2aaedc5ca07d1721a3a1f57e7907",
+      "size_bytes": 1750,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_evidence_search_log_validation.json",
+      "role": "derived",
+      "expected_sha256": "2de0ada01d19286bf63e6cc3020340b654b3d39bd7351e1f4e28fe0a2a66f1ce",
+      "observed_sha256": "2de0ada01d19286bf63e6cc3020340b654b3d39bd7351e1f4e28fe0a2a66f1ce",
+      "size_bytes": 258,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_evidence_handoff_validation.json",
+      "role": "derived",
+      "expected_sha256": "ea63d330e49330fc7a1f9f3e2c5a39bc390daba82d7bb1dd9a7b2e3edfdd9f7b",
+      "observed_sha256": "ea63d330e49330fc7a1f9f3e2c5a39bc390daba82d7bb1dd9a7b2e3edfdd9f7b",
+      "size_bytes": 707,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv",
+      "role": "derived",
+      "expected_sha256": "830a4336e5374823e9384c855ca92e6dd1a6b3c0e0bfe78357a315697e8369cb",
+      "observed_sha256": "830a4336e5374823e9384c855ca92e6dd1a6b3c0e0bfe78357a315697e8369cb",
+      "size_bytes": 27595,
+      "status": "hash_verified"
+    },
+    {
+      "path": "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json",
+      "role": "derived",
+      "expected_sha256": "527e770f46557403ddeeb17655f3eb22e6719b2b2a86fd64126e18fbd6c738d3",
+      "observed_sha256": "527e770f46557403ddeeb17655f3eb22e6719b2b2a86fd64126e18fbd6c738d3",
+      "size_bytes": 3443,
+      "status": "hash_verified"
+    }
+  ],
+  "run_checks": [
+    {
+      "run_id": "build-gse157504-candidate-evidence",
+      "script": "scripts/build_gse157504_candidate_evidence.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE22308_candidate_genes.csv",
+        "validation/public-data/GSE157504_candidate_raw_feature_status.csv",
+        "validation/public-data/GSE157504_candidate_raw_detection_by_group.csv",
+        "validation/public-data/GSE157504_candidate_rhythm_details.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE157504_candidate_evidence_handoff.csv",
+        "validation/public-data/GSE157504_candidate_evidence_search_log.csv",
+        "validation/public-data/GSE157504_candidate_evidence_handoff_report.json"
+      ]
+    },
+    {
+      "run_id": "validate-gse157504-evidence-search-log",
+      "script": "scripts/validate_evidence_search_log.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE157504_candidate_evidence_search_log.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE157504_candidate_evidence_search_log_validation.json"
+      ]
+    },
+    {
+      "run_id": "validate-gse157504-candidate-evidence-table",
+      "script": "scripts/validate_candidate_evidence.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE157504_candidate_evidence_handoff.csv",
+        "validation/public-data/GSE157504_candidate_evidence_search_log.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE157504_candidate_evidence_handoff_validation.json"
+      ]
+    },
+    {
+      "run_id": "score-gse157504-evidence-readiness-diagnostic",
+      "script": "scripts/score_candidates.py",
+      "status": "verified",
+      "inputs": [
+        "validation/public-data/GSE157504_candidate_evidence_handoff.csv"
+      ],
+      "outputs": [
+        "validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv",
+        "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json"
+      ]
+    }
+  ],
+  "issues": [],
+  "warnings": [],
+  "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+}

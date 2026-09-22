@@ -9,9 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from scripts.build_gse157504_candidate_evidence import run
+from scripts.replay_public_dataset_manifest import replay_file
 from scripts.score_candidates import rank_rows
 from scripts.validate_candidate_evidence import validate as validate_candidate_table
 from scripts.validate_evidence_search_log import validate as validate_search_log
+from scripts.validate_public_dataset_manifest import validate_file as validate_manifest
 
 
 class GSE157504CandidateEvidenceBridgeTests(unittest.TestCase):
@@ -140,6 +142,24 @@ class GSE157504CandidateEvidenceBridgeTests(unittest.TestCase):
             )))
             self.assertEqual(sum(row["candidate"] == "Shab" and row["evidence_label"] == "direct" for row in evidence), 1)
             self.assertTrue(all(row["shortlist_gate"] == "needs_evidence" for row in rank_rows(evidence)))
+
+    def test_checked_in_bridge_manifest_is_verified_and_replayable(self):
+        manifest = ROOT / "validation" / "public-data" / "GSE157504-candidate-evidence-bridge-manifest.json"
+        validation = validate_manifest(manifest, ROOT)
+        self.assertEqual(validation["status"], "verified_public_dataset_manifest", validation.get("issues"))
+        self.assertEqual(validation["manifest_stage"], "verified")
+        self.assertEqual(validation["n_runs"], 4)
+        replay = replay_file(manifest, ROOT, timeout_seconds=180)
+        self.assertEqual(replay["status"], "verified_public_dataset_replay", replay.get("issues"))
+        self.assertEqual(replay["n_runs"], 4)
+        self.assertEqual(replay["n_output_checks"], 7)
+        report = json.loads((ROOT / "validation/public-data/GSE157504_candidate_evidence_handoff_report.json").read_text(encoding="utf-8"))
+        self.assertEqual(report["n_candidates_with_all_ranking_dimensions_unrated"], 15)
+        score_path = ROOT / "validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv"
+        with score_path.open(newline="", encoding="utf-8") as handle:
+            score_rows = list(csv.DictReader(handle))
+        self.assertTrue(score_rows)
+        self.assertTrue(all(row["shortlist_gate"] == "needs_evidence" for row in score_rows))
 
 
 if __name__ == "__main__":

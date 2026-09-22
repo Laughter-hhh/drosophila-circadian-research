@@ -1,5 +1,6 @@
 {
   "manifest_id": "GSE157504-candidate-evidence-bridge-20260920-target-cell-gated",
+  "manifest_stage": "verified",
   "dataset_id": "GSE157504",
   "accession": "GSE157504",
   "species": "Drosophila melanogaster",
@@ -100,7 +101,7 @@
         "validation/public-data/GSE157504_candidate_evidence_search_log.csv",
         "validation/public-data/GSE157504_candidate_evidence_handoff_report.json"
       ],
-      "status": "executed",
+      "status": "verified",
       "command_argv": [
         "python",
         "scripts/build_gse157504_candidate_evidence.py",
@@ -139,7 +140,7 @@
       "outputs": [
         "validation/public-data/GSE157504_candidate_evidence_search_log_validation.json"
       ],
-      "status": "executed",
+      "status": "verified",
       "command_argv": [
         "python",
         "scripts/validate_evidence_search_log.py",
@@ -160,7 +161,7 @@
       "outputs": [
         "validation/public-data/GSE157504_candidate_evidence_handoff_validation.json"
       ],
-      "status": "executed",
+      "status": "verified",
       "command_argv": [
         "python",
         "scripts/validate_candidate_evidence.py",
@@ -183,7 +184,7 @@
         "validation/public-data/GSE157504_candidate_evidence_score_diagnostic.csv",
         "validation/public-data/GSE157504_candidate_evidence_score_sensitivity.json"
       ],
-      "status": "executed",
+      "status": "verified",
       "command_argv": [
         "python",
         "scripts/score_candidates.py",
