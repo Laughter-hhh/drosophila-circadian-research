@@ -1,5 +1,6 @@
 {
   "manifest_id": "GSE77451-candidate-channel-transcript-key-audit-20260921",
+  "manifest_stage": "verified",
   "dataset_id": "GSE77451",
   "accession": "GSE77451",
   "species": "Drosophila melanogaster",
@@ -54,14 +55,14 @@
     {
       "path": "validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json",
       "role": "derived",
-      "sha256": "926f25851572713b66a9797f981210e4e27db08e2c30ffbde4ee9e29839c796f"
+      "sha256": "7fd69b648eeb658f4ba9e81ef18300c15a1ad5497adceb72cec4fc8ccf8e965c"
     }
   ],
   "runs": [
     {
       "run_id": "audit-candidate-transcript-sample-keys",
       "script": "scripts/audit_esat_candidate_sample_keys.py",
-      "script_sha256": "a182592b623ab1f4fec4c1eaed1774f3c439969fa9bcd7152213c4f91cc6f651",
+      "script_sha256": "868cf7f4b9f74f2ce2fd31f6d0dbffddb6876b91649648cdd06481fac652a342",
       "command": "python scripts/audit_esat_candidate_sample_keys.py --candidate-list validation/public-data/candidate-evidence-real.csv --candidate-column candidate --matrix LNv=validation/public-data/GSE77451_LNv_gene_expression.txt.gz --matrix LNd=validation/public-data/GSE77451_LNd_gene_expression.txt.gz --matrix DN1=validation/public-data/GSE77451_DN1_gene_expression.txt.gz --output validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json",
       "inputs": [
         "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",

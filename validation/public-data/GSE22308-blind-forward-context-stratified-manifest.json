@@ -1,5 +1,6 @@
 {
   "manifest_id": "GSE22308-blind-forward-context-stratified-20260921",
+  "manifest_stage": "verified",
   "dataset_id": "GSE22308",
   "accession": "GSE22308",
   "species": "Drosophila melanogaster",
@@ -75,7 +76,7 @@
     {
       "path": "validation/public-data/GSE22308_blind_context_stratified_cosinor_inference.json",
       "role": "derived",
-      "sha256": "d345997e8b3a03485d694eeac84b9645bb6b6524e03acb80fe037dc41befa4b1"
+      "sha256": "390cf98cd38d7f008724d746f73a89bb94aa9bd42945e6d6f84b8f4ad1130c94"
     }
   ],
   "runs": [
@@ -138,7 +139,7 @@
     {
       "run_id": "descriptive-gse22308-context-forward-rhythm",
       "script": "scripts/analyze_expression_rhythm.py",
-      "script_sha256": "47bd472d4e4950799d3875aa5e7f97deb19033beac5e1be8576bdd94eff60039",
+      "script_sha256": "fac09ae5a4c2b2155ae230d3a44f767f392c72a050aa104ae00307cfbeade40c",
       "command": "python scripts/analyze_expression_rhythm.py validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv --time-system ZT --output validation/public-data/GSE22308_blind_context_stratified_expression_rhythms.json",
       "inputs": [
         "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv"
@@ -160,7 +161,7 @@
     {
       "run_id": "exploratory-gse22308-context-forward-cosinor",
       "script": "scripts/analyze_cosinor_inference.py",
-      "script_sha256": "ad51f124c79c26a9f1eba83f4b89a394cd7c61f0a39a30e4d6b55c8eb3ba5f0c",
+      "script_sha256": "e01e3be42879ba48a8d2d9b564753280aad1f99d3852c2369fc0e796c7763033",
       "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv --experimental-unit pooled_cell_sample --time-system ZT --n-permutations 1000 --n-bootstrap 1000 --seed 20260921 --output validation/public-data/GSE22308_blind_context_stratified_cosinor_inference.json",
       "inputs": [
         "validation/public-data/GSE22308_blind_context_stratified_candidate_expression_samples.csv"

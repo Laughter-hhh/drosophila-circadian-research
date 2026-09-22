@@ -1,0 +1,99 @@
+{
+  "status": "verified_public_dataset_replay",
+  "n_runs": 1,
+  "n_output_checks": 1,
+  "runs": [
+    {
+      "run_id": "audit-candidate-transcript-sample-keys",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_preview": "",
+      "stderr_preview": ""
+    }
+  ],
+  "output_checks": [
+    {
+      "run_id": "audit-candidate-transcript-sample-keys",
+      "path": "validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json",
+      "expected_sha256": "7fd69b648eeb658f4ba9e81ef18300c15a1ad5497adceb72cec4fc8ccf8e965c",
+      "observed_sha256": "7fd69b648eeb658f4ba9e81ef18300c15a1ad5497adceb72cec4fc8ccf8e965c",
+      "status": "replay_hash_verified"
+    }
+  ],
+  "issues": [],
+  "inference_warning": "Replay verifies deterministic execution and declared output hashes in an isolated temporary mirror; it does not establish biological validity, normalization suitability, statistical adequacy or causal conclusions.",
+  "manifest_validation": {
+    "status": "verified_public_dataset_manifest",
+    "manifest_stage": "verified",
+    "formal_status": "online_source_content_verified",
+    "manifest_id": "GSE77451-candidate-channel-transcript-key-audit-20260921",
+    "dataset_id": "GSE77451",
+    "accession": "GSE77451",
+    "n_files": 5,
+    "n_runs": 1,
+    "n_planned_runs": 0,
+    "planned_run_checks": [],
+    "file_checks": [
+      {
+        "path": "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+        "role": "other",
+        "expected_sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+        "observed_sha256": "fb5228fcc81dda46185b7183472478d97656621ae0b028079d0c52c1cb17c360",
+        "size_bytes": 647117,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+        "role": "other",
+        "expected_sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+        "observed_sha256": "a130a58c8ab5bfaf7f2859ed4dbeee928705531de86aa4553df5018e517e0221",
+        "size_bytes": 751969,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+        "role": "other",
+        "expected_sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+        "observed_sha256": "badc62a594e5a8a3615fed2f8c72233bb4fe548cb30d89137abba00e4e1b07b7",
+        "size_bytes": 700451,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/candidate-evidence-real.csv",
+        "role": "candidate_list",
+        "expected_sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+        "observed_sha256": "5908ea101e20e6975d8a20fb229f66959f6de62efa42bbe66176a1020ae13f0c",
+        "size_bytes": 7734,
+        "status": "hash_verified"
+      },
+      {
+        "path": "validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json",
+        "role": "derived",
+        "expected_sha256": "7fd69b648eeb658f4ba9e81ef18300c15a1ad5497adceb72cec4fc8ccf8e965c",
+        "observed_sha256": "7fd69b648eeb658f4ba9e81ef18300c15a1ad5497adceb72cec4fc8ccf8e965c",
+        "size_bytes": 35277,
+        "status": "hash_verified"
+      }
+    ],
+    "run_checks": [
+      {
+        "run_id": "audit-candidate-transcript-sample-keys",
+        "script": "scripts/audit_esat_candidate_sample_keys.py",
+        "status": "verified",
+        "inputs": [
+          "validation/public-data/GSE77451_LNv_gene_expression.txt.gz",
+          "validation/public-data/GSE77451_LNd_gene_expression.txt.gz",
+          "validation/public-data/GSE77451_DN1_gene_expression.txt.gz",
+          "validation/public-data/candidate-evidence-real.csv"
+        ],
+        "outputs": [
+          "validation/public-data/GSE77451_candidate_transcript_sample_key_audit.json"
+        ]
+      }
+    ],
+    "issues": [],
+    "warnings": [],
+    "inference_warning": "Manifest verification establishes local file integrity, provenance linkage and declared context only; it does not verify normalization suitability, biological representativeness, cell identity, statistical validity or causality."
+  }
+}

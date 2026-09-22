@@ -1,5 +1,6 @@
 {
   "manifest_id": "GSE22308-blind-forward-sex-aware-20260921",
+  "manifest_stage": "verified",
   "dataset_id": "GSE22308",
   "accession": "GSE22308",
   "species": "Drosophila melanogaster",
@@ -70,12 +71,12 @@
     {
       "path": "validation/public-data/GSE22308_blind_forward_expression_rhythms.json",
       "role": "derived",
-      "sha256": "96e9bff734d3fadd7c269acf2270a17c7d78b31fb5c961f6fc51b1b8fe8836a5"
+      "sha256": "7c575ffaab4624c6e18a71773226c7c178a696f523203eda56b451ad92a70c35"
     },
     {
       "path": "validation/public-data/GSE22308_blind_forward_cosinor_inference.json",
       "role": "derived",
-      "sha256": "a52104deb99ad3cede886afd5e79dd1d937ac5500ae5daa975a74a3c08286d36"
+      "sha256": "eca6010da949035604e9160fce94f87ceee1b7e450e7c8341f1a25537166b9ea"
     }
   ],
   "runs": [
@@ -138,7 +139,7 @@
     {
       "run_id": "descriptive-gse22308-blind-forward-rhythm",
       "script": "scripts/analyze_expression_rhythm.py",
-      "script_sha256": "6e0651e1556773905795a274cc0844856464c796e72d0a9dccd9b619e58347cc",
+      "script_sha256": "fac09ae5a4c2b2155ae230d3a44f767f392c72a050aa104ae00307cfbeade40c",
       "command": "python scripts/analyze_expression_rhythm.py validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv --time-system ZT --output validation/public-data/GSE22308_blind_forward_expression_rhythms.json",
       "inputs": [
         "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv"
@@ -160,7 +161,7 @@
     {
       "run_id": "exploratory-gse22308-blind-forward-cosinor",
       "script": "scripts/analyze_cosinor_inference.py",
-      "script_sha256": "561b5bc22203a2c9224d860a0ca2459fb7a2068c81b84621948fcf77d4a0ee2c",
+      "script_sha256": "e01e3be42879ba48a8d2d9b564753280aad1f99d3852c2369fc0e796c7763033",
       "command": "python scripts/analyze_cosinor_inference.py validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv --experimental-unit pooled_cell_sample --time-system ZT --n-permutations 1000 --n-bootstrap 1000 --seed 20260921 --output validation/public-data/GSE22308_blind_forward_cosinor_inference.json",
       "inputs": [
         "validation/public-data/GSE22308_blind_forward_candidate_expression_samples.csv"
